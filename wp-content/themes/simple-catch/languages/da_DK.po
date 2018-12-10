@@ -1,0 +1,1043 @@
+# Copyright (C) 2012 the Catch Themes Team
+# This file is distributed under the  GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Catch\n"
+"Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
+"POT-Creation-Date: 2017-06-08 16:03+0545\n"
+"PO-Revision-Date: 2017-06-08 16:03+0545\n"
+"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
+"Language-Team: \n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:12
+msgid "Error 404 - Page Not Found."
+msgstr "Error 404 – Siden blev ikke fundet."
+
+#: ../404.php:15
+msgid "We&rsquo;re sorry! This page is not available."
+msgstr "Vi beklager - denne side er desværre ikke tilgængelig."
+
+#: ../404.php:16
+msgid "This might be because:"
+msgstr "Det kan skyldes:"
+
+#: ../404.php:17
+msgid ""
+"You have typed the web address incorrectly, or the page you were looking for "
+"may have been moved, updated or deleted."
+msgstr ""
+"At du har indtastet forkert web-adresse, eller at den side du leder efter er "
+"blevet flyttet, opdateret eller slettet."
+
+#: ../404.php:18
+msgid "Please try the following options instead:"
+msgstr "Prøv følgende mulighed i stedet for:"
+
+#: ../404.php:19
+msgid ""
+"Check for a mis-typed URL error, then press the refresh button on your "
+"browser or Use the search box below."
+msgstr ""
+"Kontrollér om du har indtastet forkert URL og tryk derefter Refresh i din "
+"browser eller brug søgeboksen i sidehovedet (Header)."
+
+#: ../comments.php:21
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Dette indlæg er password-beskyttet. Indtast password for at se kommentarer."
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "No Comments"
+msgstr "Ingen kommentarer"
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "% Comments"
+msgstr "% Kommentarer"
+
+#: ../comments.php:60
+msgid "Comments are closed."
+msgstr "Lukket for kommentarer."
+
+#: ../content.php:47 ../functions/core.php:996 ../image.php:21
+#: ../page-blog.php:49
+msgid "By"
+msgstr "Af"
+
+#: ../content.php:77 ../page-blog.php:96
+msgid "Not found"
+msgstr "Ikke fundet"
+
+#: ../content.php:80 ../page-blog.php:99
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+"Beklageligvis blev der intet resultat fundet. Måske vil søgning hjælpe til "
+"at finde et relevant indlæg."
+
+#: ../functions.php:115 ../functions/core.php:689
+msgid "Primary Menu"
+msgstr "Primær menu"
+
+#: ../functions/core.php:540
+#, php-format
+msgid "%s on Facebook"
+msgstr "%s på Facebook"
+
+#: ../functions/core.php:545
+#, php-format
+msgid "%s on Twitter"
+msgstr "%s på Twitter"
+
+#: ../functions/core.php:550
+#, php-format
+msgid "%s on Google+"
+msgstr "%s på Google+"
+
+#: ../functions/core.php:555
+#, php-format
+msgid "%s on Linkedin"
+msgstr "%s på Linkedin"
+
+#: ../functions/core.php:560
+#, php-format
+msgid "%s on Pinterest"
+msgstr "%s på Pinterest"
+
+#: ../functions/core.php:565
+#, php-format
+msgid "%s on YouTube"
+msgstr "%s på YouTube"
+
+#: ../functions/core.php:570
+#, php-format
+msgid "%s on Vimeo"
+msgstr "%s på Vimeo"
+
+#: ../functions/core.php:575
+#, php-format
+msgid "%s on Slideshare"
+msgstr "%s på Slideshare"
+
+#: ../functions/core.php:580
+#, php-format
+msgid "%s on Foursquare"
+msgstr "%s på Foursquare"
+
+#: ../functions/core.php:585
+#, php-format
+msgid "%s on Flickr"
+msgstr "%s på Flickr"
+
+#: ../functions/core.php:590
+#, php-format
+msgid "%s on Tumblr"
+msgstr "%s på Tumblr"
+
+#: ../functions/core.php:595
+#, php-format
+msgid "%s on deviantART"
+msgstr "%s på deviantART"
+
+#: ../functions/core.php:600
+#, php-format
+msgid "%s on Dribbble"
+msgstr "%s på Dribbble"
+
+#: ../functions/core.php:605
+#, php-format
+msgid "%s on MySpace"
+msgstr "%s på MySpace"
+
+#: ../functions/core.php:610
+#, php-format
+msgid "%s on WordPress"
+msgstr "%s på WordPress"
+
+#: ../functions/core.php:615
+#, php-format
+msgid "%s on RSS"
+msgstr "%s på RSS"
+
+#: ../functions/core.php:620
+#, php-format
+msgid "%s on Delicious"
+msgstr "%s på Delicious"
+
+#: ../functions/core.php:625
+#, php-format
+msgid "%s on Last.fm"
+msgstr "%s på Last.fm"
+
+#: ../functions/core.php:630
+#, php-format
+msgid "%s on Instagram"
+msgstr "%s på Instagram"
+
+#: ../functions/core.php:635
+#, php-format
+msgid "%s on GitHub"
+msgstr "%s på GitHub"
+
+#: ../functions/core.php:640
+#, php-format
+msgid "%s on Vkontakte"
+msgstr "%s på Vkontakte"
+
+#: ../functions/core.php:645
+#, php-format
+msgid "%s on My World"
+msgstr "%s på My World"
+
+#: ../functions/core.php:650
+#, php-format
+msgid "%s on Odnoklassniki"
+msgstr "%s på Odnoklassniki"
+
+#: ../functions/core.php:655
+#, php-format
+msgid "%s on Goodreads"
+msgstr "%s på Goodreads"
+
+#: ../functions/core.php:660
+#, php-format
+msgid "%s on Skype"
+msgstr "%s på Skype"
+
+#: ../functions/core.php:665
+#, php-format
+msgid "%s on Soundcloud"
+msgstr "%s på Soundcloud"
+
+#: ../functions/core.php:670
+#, php-format
+msgid "%s on Email"
+msgstr "%s på Email"
+
+#: ../functions/core.php:687 ../functions/core.php:1112
+msgid "Menu"
+msgstr "Menu"
+
+#: ../functions/core.php:690
+msgid "Primary menu"
+msgstr "Primær menu"
+
+#: ../functions/core.php:1019
+msgid "Categories: "
+msgstr "Kategorier:"
+
+#: ../functions/core.php:1021
+msgid "Tags"
+msgstr ""
+
+#: ../functions/core.php:1040
+msgid "Name"
+msgstr "Navn"
+
+#: ../functions/core.php:1040 ../functions/core.php:1041
+msgid "( required )"
+msgstr "( påkrævet )"
+
+#: ../functions/core.php:1041
+msgid "Email"
+msgstr "Email"
+
+#: ../functions/core.php:1042
+msgid "Website"
+msgstr "Website"
+
+#: ../functions/metabox.php:14 ../functions/metabox.php:20
+msgid "Simple Catch Options"
+msgstr "Simple Catch indstillinger"
+
+#: ../functions/metabox.php:33
+#, php-format
+msgid "Default Layout Set in <a href=\"%s\">Customize</a>"
+msgstr "Standard Layout Set i <a href=\\\"%s\\\">Tema indstillinger</ a>"
+
+#: ../functions/metabox.php:39
+msgid "No sidebar"
+msgstr "Ingen sidebar"
+
+#: ../functions/metabox.php:45
+msgid "No sidebar, Full Width"
+msgstr "Ingen sidebar, fuld bredde"
+
+#: ../functions/metabox.php:51
+msgid "Left sidebar"
+msgstr "Venstre sidebar"
+
+#: ../functions/metabox.php:57
+msgid "Right sidebar"
+msgstr "Højre sidebar"
+
+#: ../functions/metabox.php:74
+msgid "Sidebar Layout Options"
+msgstr "Vælg layout for Sidebar"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:224
+msgid "Y"
+msgstr "Y"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:244
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:253
+msgid "Simple Catch"
+msgstr "Simple Catch"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:262
+msgid "https://catchthemes.com"
+msgstr "https://catchthemes.com/https://catchthemes.com"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:262
+msgid "Catch Themes"
+msgstr "Catch Themes"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:287
+msgid "Content on Left"
+msgstr "Indhold i venstre side"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:288
+msgid "Content on Right"
+msgstr "ndhold i højre side"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:289
+msgid "No Sidebar"
+msgstr "Ingen Seitenleiste"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:290
+msgid "No Sidebar, Full Width"
+msgstr "Ingen Sidebar, fuld bredde"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:303
+msgid "fade"
+msgstr "Tone ud (fade)"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:304
+msgid "wipe"
+msgstr "slette (wipe)"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:305
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:307
+msgid "scrollUp"
+msgstr "scrollUp"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:306
+msgid "scrollDown"
+msgstr "scrollDown"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:308
+msgid "scrollLeft"
+msgstr "scrollLeft"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:309
+msgid "scrollRight"
+msgstr "scrollRight"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:310
+msgid "blindX"
+msgstr "blindX"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:311
+msgid "blindY"
+msgstr "blindY"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:312
+msgid "blindZ"
+msgstr "blindZ"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:313
+msgid "cover"
+msgstr "cover"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:314
+msgid "shuffle"
+msgstr "shuffle"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:327
+msgid "Excerpt/Blog Display"
+msgstr "Uddrag/Blog visningstype"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:328
+msgid "Full Content Display"
+msgstr "Fuldt indhold visningstype"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:341
+msgid "Homepage / Frontpage"
+msgstr "Homepage / Forside"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:342
+msgid "Entire Site"
+msgstr "Hele sitet"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:343
+msgid "Disable"
+msgstr "Deaktivér"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:356
+msgid "Featured Image Slider"
+msgstr "Publiceret billed-slider"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:357
+msgid "Featured Post Slider"
+msgstr "Publiceret indlægs-slider"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:358
+msgid "Featured Page Slider"
+msgstr "Publiceret side-slider"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:359
+msgid "Featured Category Slider"
+msgstr "Publiceret kategori-slider"
+
+#: ../functions/widgets.php:17
+msgid "Main Sidebar"
+msgstr ""
+
+#: ../functions/widgets.php:19
+msgid "This is main sideabar"
+msgstr ""
+
+#: ../functions/widgets.php:42
+msgid "CT: Custom Tag Cloud"
+msgstr ""
+
+#: ../functions/widgets.php:43
+msgid "Displays Custom Tag Cloud"
+msgstr ""
+
+#: ../functions/widgets.php:101 ../functions/widgets.php:229
+msgid "Title (optional):"
+msgstr "Titel (valgfri):"
+
+#: ../functions/widgets.php:123
+msgid "CT: Advertisement"
+msgstr "CT: Annoncering"
+
+#: ../functions/widgets.php:124
+msgid "Use this widget to add any type of Advertisement as a widget"
+msgstr "Brug denne widget til at tilføje enhver form for reklame som en widget"
+
+#: ../functions/widgets.php:172
+msgid "Add Advertisement Code or Image URL"
+msgstr "Tilføj annoncerings kode eller billed url"
+
+#: ../functions/widgets.php:234
+msgid "Ad Code:"
+msgstr "Annoncerings kode:"
+
+#: ../functions/widgets.php:240
+msgid "Image Url:"
+msgstr "Billed url:"
+
+#: ../functions/widgets.php:244
+msgid "Link URL:"
+msgstr "Link URL:"
+
+#: ../functions/widgets.php:249
+msgid "Open Link in New Window"
+msgstr "Åben link i nyt vindue"
+
+#: ../functions/widgets.php:252
+msgid "Alt text:"
+msgstr "Alt tekst:"
+
+#: ../functions/widgets.php:256
+msgid "Check to Hide Ad on 404 page"
+msgstr "Afmærk for at skjule annonce på 404 siden"
+
+#: ../functions/widgets.php:279
+msgid "CT: Social Icons"
+msgstr ""
+
+#: ../functions/widgets.php:280
+msgid "Displays Social Icons added from Customizer / Theme Options Panel"
+msgstr ""
+
+#: ../header.php:34
+msgid "Skip to content"
+msgstr "Spring til indhold"
+
+#: ../image.php:86
+msgid "Previous Image"
+msgstr "Forrige motiv"
+
+#: ../image.php:87
+msgid "Next Image"
+msgstr "Næste motiv"
+
+#: ../page-blog.php:83 ../search.php:44
+msgid "Previous"
+msgstr "Forrige"
+
+#: ../page-blog.php:85 ../search.php:45
+msgid "Next"
+msgstr "Næste"
+
+#: ../search.php:15
+#, php-format
+msgid "Showing results for: <span>%s</span>"
+msgstr "Viser resultater for: <span>%s</span>"
+
+#: ../search.php:54
+#, php-format
+msgid "Your search <span> \"%s\" </span> did not match any documents"
+msgstr "Din søgning <span> \"%s\" </span> fandt ingen passende dokumenter"
+
+#: ../search.php:57
+msgid "A few suggestions"
+msgstr "Nogle enkelte forslag"
+
+#: ../search.php:59
+msgid "Make sure all words are spelled correctly"
+msgstr "Sørg for at alle ord der stavet korrekt"
+
+#: ../search.php:60
+msgid "Try different keywords"
+msgstr "Prøv at bruge forskellige søgeord"
+
+#: ../search.php:61
+msgid "Try more general keywords"
+msgstr "Prøv at bruge mere generelle søgeord"
+
+#: ../sidebar.php:59
+msgid "Archives"
+msgstr "Arkiv"
+
+#~ msgid "%s"
+#~ msgstr "%s"
+
+#~ msgid ""
+#~ "Check for a mis-typed URL error, then press the refresh button on your "
+#~ "browser or Use the search box at the Header."
+#~ msgstr ""
+#~ "Kontrollér om du har indtastet forkert URL og tryk derefter Refresh i din "
+#~ "browser eller brug søgeboksen i sidehovedet (Header)."
+
+#~ msgid "Permalink to %s"
+#~ msgstr "Permalink til %s"
+
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
+
+#~ msgid "All Rights Reserved."
+#~ msgstr "Alle rettigheder er forbeholdt."
+
+#~ msgid "Support"
+#~ msgstr "Support"
+
+#~ msgid "Theme Options"
+#~ msgstr "Indstillinger for Tema"
+
+#~ msgid "Default Layout"
+#~ msgstr "Standard Layout"
+
+#~ msgid "Homepage / Frontpage Category Setting"
+#~ msgstr "Indstillinger for Homepage / Forside kategorier"
+
+#~ msgid "Search Text Settings"
+#~ msgstr "Søg efter indstillinger for tekst"
+
+#~ msgid "Excerpt / More Tag Settings"
+#~ msgstr "Ekstrakt / flere Tag Indstillinger"
+
+#~ msgid "Feed Redirect"
+#~ msgstr "Feed Redirect"
+
+#~ msgid "Custom CSS"
+#~ msgstr "Custom CSS"
+
+#~ msgid "Add Slider Options"
+#~ msgstr "Tilføj valg for Slider"
+
+#~ msgid "Slider Effect Options"
+#~ msgstr "Effekter for Slider"
+
+#~ msgid "Social Links"
+#~ msgstr "Sociale Links"
+
+#~ msgid "Webmaster Tools"
+#~ msgstr "Webmaster Værktøjer"
+
+#~ msgid "Default Color Scheme"
+#~ msgstr "Default Color Scheme"
+
+#~ msgid "Check to Reset Color"
+#~ msgstr "Check to Reset Color"
+
+#~ msgid "Front page posts categories:"
+#~ msgstr "Forsidens indlægs- kategorier:"
+
+#~ msgid "Default Display Text in Search"
+#~ msgstr "Standardtekst i søgefelt"
+
+#~ msgid "Search Button's text"
+#~ msgstr "Tekst til Søgeknap"
+
+#~ msgid "More Tag Text"
+#~ msgstr "Mere Tag Tekst"
+
+#~ msgid "Excerpt length(words)"
+#~ msgstr "Uddrag længde (ord)"
+
+#~ msgid "Feed Redirect URL"
+#~ msgstr "Feed Redirect URL"
+
+#~ msgid "Number of Slides"
+#~ msgstr "Antal Slides"
+
+#~ msgid "Transition Delay"
+#~ msgstr "Transition - forsinkelse"
+
+#~ msgid "Transition Length"
+#~ msgstr "Transitions-længde"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+#~ msgid "Pinterest"
+#~ msgstr "Pinterest"
+
+#~ msgid "Youtube"
+#~ msgstr "Youtube"
+
+#~ msgid "Vimeo"
+#~ msgstr "Vimeo"
+
+#~ msgid "Slideshare"
+#~ msgstr "Slideshare"
+
+#~ msgid "Foursquare"
+#~ msgstr "Foursquare"
+
+#~ msgid "Flickr"
+#~ msgstr "Flickr"
+
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+#~ msgid "deviantART"
+#~ msgstr "deviantART"
+
+#~ msgid "Dribbble"
+#~ msgstr "Dribbble"
+
+#~ msgid "MySpace"
+#~ msgstr "MySpace"
+
+#~ msgid "RSS"
+#~ msgstr "RSS"
+
+#~ msgid "Delicious"
+#~ msgstr "Delicious"
+
+#~ msgid "Last.fm"
+#~ msgstr "Last.fm"
+
+#~ msgid "Instagram"
+#~ msgstr "Instagram"
+
+#~ msgid "GitHub"
+#~ msgstr "GitHub"
+
+#~ msgid "Vkontakte"
+#~ msgstr "Vkontakte"
+
+#~ msgid "My World"
+#~ msgstr "My World"
+
+#~ msgid "Odnoklassniki"
+#~ msgstr "Odnoklassniki"
+
+#~ msgid "Goodreads"
+#~ msgstr "Goodreads"
+
+#~ msgid "Skype"
+#~ msgstr "Skype"
+
+#~ msgid "Soundcloud"
+#~ msgstr "Soundcloud"
+
+#~ msgid "Code to display on Header"
+#~ msgstr "Kode til visning i sidehoved (Header)"
+
+#~ msgid "Code to display on Footer"
+#~ msgstr "Kode til visning i sidefod (Footer)"
+
+#~ msgid "Options Saved"
+#~ msgstr "Gemte Indstillinger"
+
+#~ msgid "Theme Options By"
+#~ msgstr "Tema indstillinger af"
+
+#~ msgid "https://catchthemes.com/"
+#~ msgstr "https://catchthemes.com/"
+
+#~ msgid "https://catchthemes.com/themes/simple-catch-pro/"
+#~ msgstr "https://catchthemes.com/themes/simple-catch-pro/"
+
+#~ msgid "Upgrade to Simple Catch Pro"
+#~ msgstr "Opgradér til Simple Catch Pro"
+
+#~ msgid "https://catchthemes.com/donate/"
+#~ msgstr "https://catchthemes.com/donate/"
+
+#~ msgid "Donate"
+#~ msgstr "Donate"
+
+#~ msgid "https://catchthemes.com/support/"
+#~ msgstr "https://catchthemes.com/support/"
+
+#~ msgid "https://catchthemes.com/theme-instructions/simple-catch/"
+#~ msgstr "https://catchthemes.com/theme-instructions/simple-catch/"
+
+#~ msgid "Theme Instruction"
+#~ msgstr "Instruktion for Tema"
+
+#~ msgid "https://www.facebook.com/catchthemes/"
+#~ msgstr "https://www.facebook.com/catchthemes/"
+
+#~ msgid "Like Catch Themes on Facebook"
+#~ msgstr "Vælg Like Catch Themes på Facebook"
+
+#~ msgid "https://twitter.com/catchthemes/"
+#~ msgstr "https://twitter.com/catchthemes/"
+
+#~ msgid "Follow Catch Themes on Twitter"
+#~ msgstr "Følg Catch Themes på Twitter"
+
+#~ msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
+#~ msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
+
+#~ msgid "Rate us 5 Star on WordPress"
+#~ msgstr "Tildel os 5 stjerner på WordPress"
+
+#~ msgid "5 Star Rating"
+#~ msgstr "5-stjernet bedømmelse"
+
+#~ msgid "Logo Options"
+#~ msgstr "Logo Indstillinger"
+
+#~ msgid "Header logo url:"
+#~ msgstr "Sidehoved (Header) logo url:"
+
+#~ msgid "Preview: "
+#~ msgstr "Preview:"
+
+#~ msgid "Disable Header Logo?"
+#~ msgstr "Deaktivér Logo for sidehoved (header)?"
+
+#~ msgid "Check to Disable."
+#~ msgstr "Afmærk for at deaktivere."
+
+#~ msgid "Disable Site Title?"
+#~ msgstr "Deaktivér titel på Site?"
+
+#~ msgid "Disable Site Description?"
+#~ msgstr "Deaktivér beskrivelse af Site?"
+
+#~ msgid "Footer logo url: "
+#~ msgstr "Sidefod (Footer) logo url: "
+
+#~ msgid "Disable Footer Logo?"
+#~ msgstr "Deaktivér logo for sidefod (Footer)?"
+
+#~ msgid "Save"
+#~ msgstr "Gem"
+
+#~ msgid "Fav Icon Option"
+#~ msgstr "Fav Icon Indstilling"
+
+#~ msgid "Favicon URL:"
+#~ msgstr "Favicon URL:"
+
+#~ msgid "Disable Fav Icon?"
+#~ msgstr "Deaktivér Fav Icon?"
+
+#~ msgid "Web Clip Icon Option"
+#~ msgstr "Web Clip Icon Indstillinger"
+
+#~ msgid "Web Clip Icon URL:"
+#~ msgstr "Web Clip Icon URL:"
+
+#~ msgid "No Web Clip Icon Found. Upload Web Clip Icon."
+#~ msgstr "Intet Web Clip Icon fundet. Upload Web Clip Icon."
+
+#~ msgid "Color Options"
+#~ msgstr "Color Options"
+
+#~ msgid "Default"
+#~ msgstr "Default"
+
+#~ msgid "Dark"
+#~ msgstr "Dark"
+
+#~ msgid "Brown"
+#~ msgstr "Brown"
+
+#~ msgid "Content Background:"
+#~ msgstr "Content Background:"
+
+#~ msgid "Need to replace default background?"
+#~ msgstr "Ønsker du for at ændre standard for baggrund?"
+
+#~ msgid "<a class=\"button\" href=\"%s\">Click here</a>"
+#~ msgstr "<a class=\"button\" href=\"%s\">Klik her</a>"
+
+#~ msgid "Heading Color:"
+#~ msgstr "Farve på sidehoved (Heading):"
+
+#~ msgid "Meta Description Color:"
+#~ msgstr "Meta Description farve:"
+
+#~ msgid "Text Color:"
+#~ msgstr "Tekst-farve:"
+
+#~ msgid "Link Color:"
+#~ msgstr "Link til farver:"
+
+#~ msgid "Sidebar Widget Heading Color:"
+#~ msgstr "Sidebar Widget – farve på sidehoved (Heading):"
+
+#~ msgid "Sidebar Widget Text Color:"
+#~ msgstr "Sidebar Widget – tekst-farve:"
+
+#~ msgid "Reset Color:"
+#~ msgstr "Nulstil farve:"
+
+#~ msgid ""
+#~ "Only posts that belong to the categories selected here will be displayed "
+#~ "on the front page."
+#~ msgstr "Kun indlæg som hører til de valgte kategorier vil blive vist på"
+
+#~ msgid "--Disabled--"
+#~ msgstr "--Deaktiveret--"
+
+#~ msgid "You may select multiple categories by holding down the CTRL key."
+#~ msgstr ""
+#~ "Du kan vælge flere kategorier på én gang ved at holde CTRL-tasten nede."
+
+#~ msgid "Enter your custom CSS styles."
+#~ msgstr "Indtast custom CSS styles."
+
+#~ msgid "CSS Tutorial from W3Schools."
+#~ msgstr "CSS Tutorial fra W3Schools."
+
+#~ msgid "http://www.w3schools.com/css/default.asp"
+#~ msgstr "http://www.w3schools.com/css/default.asp"
+
+#~ msgid "CSS Tutorial"
+#~ msgstr "CSS Tutorial"
+
+#~ msgid "Click Here to Read"
+#~ msgstr "Klik her for at læse"
+
+#~ msgid "Exclude Slider post from Home page posts:"
+#~ msgstr "Udeluk Slider indlæg fra Home page indlæg:"
+
+#~ msgid "Featured Post ID"
+#~ msgstr "Featured Post ID"
+
+#~ msgid "Click Here To Edit"
+#~ msgstr "Klik her for at redigere"
+
+#~ msgid ""
+#~ "Note: Here You can put your Post IDs which displays on Homepage as slider."
+#~ msgstr ""
+#~ "Note: Her kan du indtaste dine indlægs-ID'er, der vises på din Homepage "
+#~ "som Slider."
+
+#~ msgid "Disable Slider Background Effect:"
+#~ msgstr "Deaktivér baggrunds-effekt for Slider:"
+
+#~ msgid "Transition Effect:"
+#~ msgstr "Transitions-effekt:"
+
+#~ msgid "second(s)"
+#~ msgstr "sekund(er)"
+
+#~ msgid "Linkedin"
+#~ msgstr "Linkedin"
+
+#~ msgid "Header and Footer Codes"
+#~ msgstr "Koder for sidehoved og –fod (Header og Footer)"
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook etc. which will load "
+#~ "on Header"
+#~ msgstr ""
+#~ "Note: Her kan du lægge scripts fra Google, Facebook osv. som vil blive "
+#~ "indlæst i sidehoved (Header)"
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
+#~ "will load on footer"
+#~ msgstr ""
+#~ "Note: Her kan du lægge scripts fra Google, Facebook, Add This osv. som "
+#~ "vil blive indlæst i sidefod (Footer)"
+
+#~ msgid "Powered By:"
+#~ msgstr "Styret af:"
+
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://wordpress.org/"
+
+#~ msgid "Powered By WordPress"
+#~ msgstr "Styret af WordPress"
+
+#~ msgid "Theme:"
+#~ msgstr "Tema:"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Select Sidebar layout"
+#~ msgstr "Vælg layout for Sidebar"
+
+#~ msgid "sidebar"
+#~ msgstr "sidebar"
+
+#~ msgid "Advertisement Code:"
+#~ msgstr "Advertisement Code:"
+
+#~ msgid "Showing results for: <span class=\"img-title\">%s</span>"
+#~ msgstr "Viser resultater for: <span class=\"img-title\">%s</span>"
+
+#, fuzzy
+#~ msgid "Simple Catch Pro"
+#~ msgstr "Simple Catch"
+
+#, fuzzy
+#~ msgid "https://catchthemes.com/themes/simple-catch"
+#~ msgstr "https://catchthemes.com/themes/simple-catch-pro/"
+
+#, fuzzy
+#~ msgid "Catch Themes Team"
+#~ msgstr "Catch Themes"
+
+#~ msgid "Change Header Logo"
+#~ msgstr "Skift logo i sidehoved (Header)"
+
+#~ msgid "Change Footer Logo"
+#~ msgstr "Skift log for sidefod (Footer)"
+
+#~ msgid "Change Fav icon Logo"
+#~ msgstr "Skift logo på Fav icon"
+
+#~ msgid "Upload/Change Web Clip Icon"
+#~ msgstr "Upload/Skift Web Clip Icon"
+
+#~ msgid "Page %s"
+#~ msgstr "Side %s"
+
+#~ msgid "Default Layout Set in"
+#~ msgstr "Standard Layout Set in"
+
+#~ msgid "Theme Settings"
+#~ msgstr "Indstillinger for tema"
+
+#~ msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
+#~ msgstr "Viser brugerdefineret Tag Cloud designet for Simple Catch tema."
+
+#~ msgid "1. Simple Catch: Tag Clouds"
+#~ msgstr "1. Simple Catch: Tag Clouds"
+
+#~ msgid "Displays Social Icons added from Theme Options Panel."
+#~ msgstr "Viser Social Icons tilføjet fra Tema Indstillings-panelet."
+
+#~ msgid "2. Simple Catch: Social Icons"
+#~ msgstr "2. Simple Catch: Social Icons"
+
+#~ msgid "Use this widget to add any type of Advertisement as a widget."
+#~ msgstr "Use this widget to add any type of Advertisement as a widget."
+
+#~ msgid "3. Simple Catch: Advertisement"
+#~ msgstr "3. Simple Catch: Advertisement"
+
+#~ msgid "http://facebook.com/catchthemes"
+#~ msgstr "http://facebook.com/catchthemes"
+
+#~ msgid "https://twitter.com/catchthemes"
+#~ msgstr "https://twitter.com/catchthemes"
+
+#~ msgid "Content Color Options"
+#~ msgstr "Indstillinger af farver på Indhold"
+
+#~ msgid "https://catchthemes.com/support-forum/forum/simple-catch-public/"
+#~ msgstr "https://catchthemes.com/support-forum/forum/simple-catch-public/"
+
+#~ msgid "Featured Slider Post #"
+#~ msgstr "Featured Slider Post #"
+
+#~ msgid "Change Logo"
+#~ msgstr "Logo ändern"
+
+#~ msgid "Upload Logo"
+#~ msgstr "Logo hochladen"
+
+#~ msgid "Preview:"
+#~ msgstr "Vorschau:"
+
+#~ msgid "No Header Image Found. Upload Header Image."
+#~ msgstr "Kein Header-Bild gefunden. Header-Bild hochladen."
+
+#~ msgid "Upload/Change Favicon"
+#~ msgstr "Upload/Change Favicon"
+
+#~ msgid "No Favicon Found. Upload Favicon."
+#~ msgstr "Kein Favicon gefunden. Favicon hochladen."
+
+#~ msgid "Site Verification"
+#~ msgstr "Site Verification"
+
+#~ msgid "Google Site Verification ID"
+#~ msgstr "Google Site Verification ID"
+
+#~ msgid "Enter your Google ID number only"
+#~ msgstr "Gib nur deine Google ID Nummer ein"
+
+#~ msgid "Yahoo Site Verification ID"
+#~ msgstr "Yahoo Site Verification ID"
+
+#~ msgid "Enter your Yahoo ID number only"
+#~ msgstr "Gib nur deine Yahoo ID Nummer ein"
+
+#~ msgid "Bing Site Verification ID"
+#~ msgstr "Bing Site Verification ID"
+
+#~ msgid "Enter your Bing ID number only"
+#~ msgstr "Gib nur deine Bing ID Nummer ein"
+
+#~ msgid "Design Settings"
+#~ msgstr "Design Einstellungen"
+
+#~ msgid "No Sidebar, One Column"
+#~ msgstr "Keine Seitenleiste, eine Spalte"
+
+#~ msgid "Upload Favicon"
+#~ msgstr "Favicon hochladen"

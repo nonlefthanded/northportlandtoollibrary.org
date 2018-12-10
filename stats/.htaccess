@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName " Statistics"
+AuthName "northportlandtoollibrary.org Statistics"
+AuthUserFile /var/chroot/home/content/74/9931874/html/stats/.statspwd
+Require valid-user
+DirectoryIndex index.html

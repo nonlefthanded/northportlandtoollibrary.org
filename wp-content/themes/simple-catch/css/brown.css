@@ -1,0 +1,193 @@
+/*
+	A Clean color scheme for Simple Catch Theme
+*/
+
+body {
+	background-color: #2c211b;
+	color: #bbb;
+}
+#masthead,
+#footer-sidebar,
+#site-generator,
+.post .post-thumb a {
+	background: none #221915;
+}
+#masthead .top-bg {
+    background: none #3e2e27;
+    height: 0;
+}
+.site-title a,
+.gallery .gallery-caption {
+	color: #ddd;
+}
+.site-title a:hover,
+.site-title a:focus {
+	color: #fff;
+}
+.site-description {
+	color: #aaa;
+}
+#masthead,
+#masthead .top-bg,
+#masthead .bottom-bg,
+#colophon,
+#site-generator,
+hr,
+#sidebar hr,
+.post .post-thumb a {
+	border-color: #3e2e27;
+}
+#masthead .searchform button {
+	background-color: #3e2e27; 
+}
+#colophon {
+	padding-top: 0;
+}
+.entry-title a,
+.widget-title,
+a.readmore, 
+a.more-link,
+ul li a, 
+ol li a,
+#sidebar ul li a, 
+#sidebar ol li a,
+#site-generator span,
+#site-generator a {
+    color: #ddd;
+}
+.entry-meta ul li,
+.entry-meta ul li a {
+    color: #aaa;
+}
+.entry-meta ul li a:hover,
+.entry-meta ul li a:focus {
+	color: #bbb;
+}
+.entry-title a:hover,
+ul li a:hover, 
+ol li a:hover,
+#sidebar ul li a:hover, 
+#sidebar ol li a:hover,
+#site-generator a:hover span,
+.entry-title a:focus,
+ul li a:focus, 
+ol li a:focus,
+#sidebar ul li a:focus, 
+#sidebar ol li a:focus,
+#site-generator a:focus span {
+	color: #fff;
+}
+ul.default-wp-page li.previous a {
+    background-image: url("../images/ul-bg-prev-dark.png");
+}
+ul.default-wp-page li.next a {
+    background-image: url("../images/ul-bg-dark.png");
+}
+#sidebar, 
+#sidebar p {
+	color: #ccc;
+}
+ul {
+    list-style: disc outside url("../images/ul-bg-dark.png");
+}
+#site-generator {
+	color: #aaa;
+}
+#access {
+	background-color: #2c211b;
+	border-color: #3e2e27;
+	box-shadow: none;
+}
+#access ul li,
+.breadcrumb ul,
+.breadcrumb ul li a,
+.breadcrumb ul li.current_item a, 
+.breadcrumb ul li.current_item {
+	border-color: #3e2e27;
+}
+#access ul li a {
+	color: #ddd;
+}
+#controllers a {
+    background-color: #fff;
+}
+#controllers a:hover,
+#controllers a:focus, 
+#controllers a.active {
+    background-color: #999;
+}
+.featured-img,
+.gallery img {
+    background-color: #2c211b;
+	border-color: #3e2e27;
+}
+#content #wp_page_numbers {
+	background: transparent;
+}
+.breadcrumb ul li a {
+	background-color: #221915;
+}
+.breadcrumb ul li a {
+    background: url("../images/breadcrumb-bg-dark.png") no-repeat scroll right -15px #221915;
+	color: #bbb;
+}
+.breadcrumb ul li a:hover,
+.breadcrumb ul li a:focus {
+	background-position: right 8px;
+	color: #fff;
+}
+.breadcrumb ul li.current_item a, 
+.breadcrumb ul li.current_item {
+	background-color: #3e2e27;
+}
+#access ul li a:hover, 
+#access ul li a:focus, 
+#access ul li.current-menu-item a, 
+#access ul li.current-menu-parent a, 
+#access ul li.current_page_item a, 
+#access ul li.current_page_ancestor a, 
+#access ul li:hover > a,
+#access ul li:focus > a {
+    background-color: #3e2e27;
+}
+#access ul li ul {
+    background-color: #3e2e27;
+}
+#access ul li ul li a:hover, 
+#access ul li ul li:hover > a,
+#access ul li ul li a:focus, 
+#access ul li ul li:focus > a {
+	background-color: #2c211b;
+}
+h3, h4, h5, h6 {
+	color: #bbb;
+}
+a {
+	color: #ddd;
+}
+a:focus, 
+a:active, 
+a:hover {
+	color: #fff;
+}
+img[class*="align"], 
+img[class*="wp-image-"],
+.wp-caption,
+blockquote {
+    background-color: #221915;
+    border-color: #3e2e27;
+}
+blockquote {
+    background-image: url("../images/blockquote-bg-dark.jpg");
+}
+blockquote p {
+	color: #ddd;
+}
+.page-title {
+	color: #eee;
+	border-color: #3e2e27;
+}
+.commentlist > li.bypostauthor,
+.commentlist .children > li.bypostauthor {
+	background: none #2c211b;
+}

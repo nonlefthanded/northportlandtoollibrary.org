@@ -1,0 +1,213 @@
+/* -------- Nav Menu ---------- */
+#primary-menu {
+	background: fade(black, 20%);
+}
+
+#site-navigation {
+	width: auto;
+	clear: none;
+	margin-top: 15px;
+	@media screen and (max-width: 991px) { width: 100%; margin-top: 0; }
+	.body-font;
+	.nav-container {
+		padding: 0px;
+		display: block;
+	}
+	ul {
+		text-align: center;
+		@media screen and (max-width: 991px) { text-align: center; }
+		li {
+			float: none;
+			display: inline-block;
+			@media screen and (max-width: 991px) {
+				float: none;
+				display: inline-block;
+			}
+			a {
+				padding: 38px 24px;
+				@media screen and (max-width: 991px) {  }
+				color: @onaccent;
+				text-transform: uppercase;
+				font-weight: normal;
+				letter-spacing: 1px;
+				font-size: 13px;
+				background: none;
+				.transition( 0.4s all ease );
+				position: relative;
+
+			}
+			&:hover {
+				a {
+					color: @accent;
+					&:after {
+						transform-origin: center;
+						.transform(translateY(0px));
+						opacity: 1;
+					}			
+				}
+				& > a { 
+
+					
+				}
+			}
+			
+			ul li .menu-desc {
+				display: none;
+			}
+			ul.sub-menu, ul.children {
+				background: darken(@background, 1%);
+				box-shadow: 0px 0px 2px fade(black, 20%);
+
+				top: ~"calc(100% - 22px)";
+				display: block;
+				.transition( 0.2s all ease );
+				perspective: 1000;
+				-webkit-perspective: 1000;
+				transform-origin: top;
+				.transform(translateY(10px));
+				opacity: 0;
+				text-align: left;
+				visibility: hidden;
+				padding: 8px 0px;
+				border-bottom: 2px solid @accent;
+				&:before {
+					content: "";
+					position: absolute;
+					top: -7px;
+					left: 20%;
+					width: 0;
+					height: 0;
+					border: solid 8px white;
+					.transform(rotate(45deg));
+					border-bottom-color: transparent;
+					border-right-color: transparent;
+					box-shadow: -1px -1px 1px -1px fade(black, 20%);
+				}
+				a {
+					color: @content;
+					font-size: 12px;
+				}
+				li ul { //3rd Level
+					transform-origin: left;
+					-webkit-transform-origin: left;
+					.transition( 0.4s all ease );
+					left: 100%;
+					top: 0;
+					opacity: 0 !important;
+					-webkit-transform: rotateY(1deg) !important;
+					transform: rotateY(1deg) !important;
+					-moz-transform: rotateY(1deg) !important;
+					&:before {
+						display: none !important;
+					}
+					li ul {
+						display: none !important;
+					}
+				}
+				li:hover {
+					
+					/* -webkit-transition: 0.2s all ease !important; */
+					ul {
+						opacity: 1 !important; 
+						.transform(translateY(0px));
+					}
+				}
+				a {
+					padding: 8px 15px;
+					font-weight: lighter;
+					font-size: 11px;
+					.transition(0s);
+					&:after {
+						content: none;
+					}
+					&:hover {
+						background: @accent;
+						color: @onaccent;
+					}
+				}
+			}
+			&:hover {
+				//-webkit-transition: 0.4s all ease !important;
+				ul.sub-menu, ul.children {
+					display: block;
+					.transition(0.6s all ease);
+					transform: rotateX(0deg);
+					-webkit-transform: rotateX(0deg);
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+		/* for the Currently active page */
+		.current_page_item > a, .current-menu-item > a, .current_page_ancestor > a {
+		}
+	}
+	.fa {
+		padding: 0 5px 0 0;
+	}
+	.menu-desc {
+		font-size: 12px;
+		font-weight: 300;
+		color: #eee;
+		display: inline-block;
+		margin-top: -5px;
+		font-style: italic;
+		text-transform: lowercase;
+	}
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a {
+		color: @accent;
+	}
+	@media screen and (max-width: 767px) {
+		margin-top: 0;
+		float: none;
+		text-align: center;
+		width: 100%;
+		.td_mobile_menu_wrap {
+			min-height: 42px;
+			padding: 20px;
+			position: relative;
+			min-width: 150px;
+			display: inline-block;
+			&:after {
+		    	content: "\f103";
+		    	font-family: "FontAwesome";
+		    	color: white;
+		    	position: absolute;
+		    	right: 27px;
+		    	top: 23px;
+		    	font-size: 18px;
+		    }
+		}
+		.mobileMenu {
+		    padding: 5px 8px;
+		    border: none;
+		    box-shadow: none;
+		    background: fade(black, 50%);
+		    color: white;
+		    min-width: 150px;
+		    background-image: none;
+		    -webkit-appearance: none;
+		    position: relative;
+		    &:focus {
+		    	outline: none;
+		    }	
+		}
+		
+	}
+}
+
+//Mobile Menu
+@media screen and (min-width: 768px) {
+	#mobile-menu {
+		display: none;
+	}
+}
+
+#mobile-menu {
+	text-align: center;
+	background: darken(@background, 6%);
+	padding: 10px;
+	margin: 20px auto;
+}

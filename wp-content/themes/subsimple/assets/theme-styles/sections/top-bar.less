@@ -1,0 +1,45 @@
+#top-bar {
+	color: @onaccent;
+	box-shadow: 0 2px 2px darken(@background, 13%);
+	background: @s-accent;
+	#contact-icons {
+		display: inline-block;
+		float: left;
+		text-align: left;
+		@media screen and (max-width: 576px) {
+			text-align: center;
+			width: 100%;
+		}
+		.icon {
+			display: inline-block;
+			padding: 12px 0;
+			margin-right: 16px;
+			.fa {
+				transform-origin: center;
+//				transform: scale(1.15);
+				margin-right: 5px;
+				display: inline-block;
+			}
+		}
+	}	 
+	#social-icons {
+		display: inline-block;
+		float: right;
+		@media screen and (max-width: 576px) {
+			text-align: center;
+			width: 100%;
+		}
+		a {
+			padding: 11px 7px;
+			display: inline-block;
+			color: lighten(@content,10%);
+			font-size: 16px;
+			&:before {
+				background: darken(@background, 6%);
+			}
+			&:hover {
+				color: darken(@content, 12%);
+			}
+		}
+	}
+}

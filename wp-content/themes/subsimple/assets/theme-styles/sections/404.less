@@ -1,0 +1,56 @@
+.page404 {
+	text-align: center;
+	.page-header h1.page-title {
+		font-weight: bold;
+		border-bottom: none;
+		font-size: 24px;
+		
+	}
+	.page-content {
+		margin-top: 0px;
+		input[type=search] {
+			.placeholder(fade(@content, 60%), false);
+			padding: 10px;
+			border-radius: 5px;
+		}
+		input[type=submit]{
+			padding: 12px;
+		    font-size: 14px;
+		    line-height: 1em;
+		    text-transform: uppercase;
+		    background: @header-bg;
+		    box-shadow: none;
+		    text-shadow: none;
+		    color: @header-color;
+		    border: none;
+		}
+		.widget_recent_entries {
+			text-align: left;
+			margin-bottom: 100px;
+			.widgettitle {
+				font-size: 24px;
+				font-weight: bold;
+			}
+			ul {
+				list-style: none;
+				margin-left: 0;
+				li {
+					float: none;
+					margin-bottom: 15px;
+					display: inline-block;
+					margin-right: 15px;
+				}
+				li a {
+					display: inline-block;
+					background: darken(@background, 5%);
+					border: solid 1px darken(@background, 10%);
+					padding: 10px;
+					margin-bottom: 5px;
+				}
+			}
+		}
+	}
+	p {
+		font-size: 16px;
+	}
+}

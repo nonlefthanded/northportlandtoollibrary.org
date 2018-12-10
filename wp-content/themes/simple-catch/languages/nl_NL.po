@@ -1,0 +1,1083 @@
+# Copyright (C) 2012 the Catch Themes Team
+# This file is distributed under the  GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Catch\n"
+"Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
+"POT-Creation-Date: 2017-06-08 16:04+0545\n"
+"PO-Revision-Date: 2017-06-08 16:04+0545\n"
+"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
+"Language-Team: Thomas Gerard <beldin2000@gmail.com>\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:12
+msgid "Error 404 - Page Not Found."
+msgstr "Error 404 - Pagina niet gevonden."
+
+#: ../404.php:15
+msgid "We&rsquo;re sorry! This page is not available."
+msgstr "Het spijt ons! Deze pagina is niet beschikbaar."
+
+#: ../404.php:16
+msgid "This might be because:"
+msgstr "Mogelijke oorzaken zijn:"
+
+#: ../404.php:17
+msgid ""
+"You have typed the web address incorrectly, or the page you were looking for "
+"may have been moved, updated or deleted."
+msgstr ""
+"Je hebt het webadres verkeerd getypt, ofwel is de pagina waarnaar je op zoek "
+"bent verplaatst, bijgewerkt of verwijderd."
+
+#: ../404.php:18
+msgid "Please try the following options instead:"
+msgstr "Probeer de volgende zaken:"
+
+#: ../404.php:19
+msgid ""
+"Check for a mis-typed URL error, then press the refresh button on your "
+"browser or Use the search box below."
+msgstr ""
+"Controleer de URL op typfouten, corrigeer deze en duw op enter; je kan ook "
+"gebruikmaken van de zoekfunctie in de hoofding."
+
+#: ../comments.php:21
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Dit bericht is beveiligd met een paswoord. Vul het paswoord in om reacties "
+"te zien."
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "No Comments"
+msgstr "Geen reacties"
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "1 Comment"
+msgstr "Eén reactie"
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "% Comments"
+msgstr "% reacties"
+
+#: ../comments.php:60
+msgid "Comments are closed."
+msgstr "Reacties zijn afgesloten."
+
+#: ../content.php:47 ../functions/core.php:996 ../image.php:21
+#: ../page-blog.php:49
+msgid "By"
+msgstr "Door"
+
+#: ../content.php:77 ../page-blog.php:96
+msgid "Not found"
+msgstr "Niet gevonden"
+
+#: ../content.php:80 ../page-blog.php:99
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+"Onze excuses, maar er werden geen resultaten gevonden. Misschien kan de "
+"zoekfunctie een gerelateerde post helpen vinden."
+
+#: ../functions.php:115 ../functions/core.php:689
+msgid "Primary Menu"
+msgstr "Hoofdmenu"
+
+#: ../functions/core.php:540
+#, php-format
+msgid "%s on Facebook"
+msgstr "%s op Facebook"
+
+#: ../functions/core.php:545
+#, php-format
+msgid "%s on Twitter"
+msgstr "%s op Twitter"
+
+#: ../functions/core.php:550
+#, php-format
+msgid "%s on Google+"
+msgstr "%s op Google+"
+
+#: ../functions/core.php:555
+#, php-format
+msgid "%s on Linkedin"
+msgstr "%s op Linkedin"
+
+#: ../functions/core.php:560
+#, php-format
+msgid "%s on Pinterest"
+msgstr "%s op Pinterest"
+
+#: ../functions/core.php:565
+#, php-format
+msgid "%s on YouTube"
+msgstr "%s op YouTube"
+
+#: ../functions/core.php:570
+#, php-format
+msgid "%s on Vimeo"
+msgstr "%s op Vimeo"
+
+#: ../functions/core.php:575
+#, php-format
+msgid "%s on Slideshare"
+msgstr "%s op Slideshare"
+
+#: ../functions/core.php:580
+#, php-format
+msgid "%s on Foursquare"
+msgstr "%s op Foursquare"
+
+#: ../functions/core.php:585
+#, php-format
+msgid "%s on Flickr"
+msgstr "%s op Flickr"
+
+#: ../functions/core.php:590
+#, php-format
+msgid "%s on Tumblr"
+msgstr "%s op Tumblr"
+
+#: ../functions/core.php:595
+#, php-format
+msgid "%s on deviantART"
+msgstr "%s op deviantART"
+
+#: ../functions/core.php:600
+#, php-format
+msgid "%s on Dribbble"
+msgstr "%s op Dribbble"
+
+#: ../functions/core.php:605
+#, php-format
+msgid "%s on MySpace"
+msgstr "%s opMySpace"
+
+#: ../functions/core.php:610
+#, php-format
+msgid "%s on WordPress"
+msgstr "%s op WordPress"
+
+#: ../functions/core.php:615
+#, php-format
+msgid "%s on RSS"
+msgstr "%s op RSS"
+
+#: ../functions/core.php:620
+#, php-format
+msgid "%s on Delicious"
+msgstr "%s op Delicious"
+
+#: ../functions/core.php:625
+#, php-format
+msgid "%s on Last.fm"
+msgstr "%s op Last.fm"
+
+#: ../functions/core.php:630
+#, php-format
+msgid "%s on Instagram"
+msgstr "%s op Instagram"
+
+#: ../functions/core.php:635
+#, php-format
+msgid "%s on GitHub"
+msgstr "%s op GitHub"
+
+#: ../functions/core.php:640
+#, php-format
+msgid "%s on Vkontakte"
+msgstr "%s on Vkontakte"
+
+#: ../functions/core.php:645
+#, php-format
+msgid "%s on My World"
+msgstr "%s op My World"
+
+#: ../functions/core.php:650
+#, php-format
+msgid "%s on Odnoklassniki"
+msgstr "%s op Odnoklassniki"
+
+#: ../functions/core.php:655
+#, php-format
+msgid "%s on Goodreads"
+msgstr "%s op Goodreads"
+
+#: ../functions/core.php:660
+#, php-format
+msgid "%s on Skype"
+msgstr "%s op Skype"
+
+#: ../functions/core.php:665
+#, php-format
+msgid "%s on Soundcloud"
+msgstr "%s op Soundcloud"
+
+#: ../functions/core.php:670
+#, php-format
+msgid "%s on Email"
+msgstr "%s op Email"
+
+#: ../functions/core.php:687 ../functions/core.php:1112
+msgid "Menu"
+msgstr "Menu"
+
+#: ../functions/core.php:690
+msgid "Primary menu"
+msgstr "Primair menu"
+
+#: ../functions/core.php:1019
+msgid "Categories: "
+msgstr "Categorieën: "
+
+#: ../functions/core.php:1021
+msgid "Tags"
+msgstr ""
+
+#: ../functions/core.php:1040
+msgid "Name"
+msgstr "Naam"
+
+#: ../functions/core.php:1040 ../functions/core.php:1041
+msgid "( required )"
+msgstr "( verplicht )"
+
+#: ../functions/core.php:1041
+msgid "Email"
+msgstr "E-mail"
+
+#: ../functions/core.php:1042
+msgid "Website"
+msgstr "Website"
+
+#: ../functions/metabox.php:14 ../functions/metabox.php:20
+msgid "Simple Catch Options"
+msgstr "Simple Catch Opties"
+
+#: ../functions/metabox.php:33
+#, php-format
+msgid "Default Layout Set in <a href=\"%s\">Customize</a>"
+msgstr "Standaard layout geselecteerd in <a href=\"%s\"> Customize</a>"
+
+#: ../functions/metabox.php:39
+msgid "No sidebar"
+msgstr "Geen zijbalk"
+
+#: ../functions/metabox.php:45
+msgid "No sidebar, Full Width"
+msgstr "Geen zijbalk, volledige breedte"
+
+#: ../functions/metabox.php:51
+msgid "Left sidebar"
+msgstr "Linkerzijbalk"
+
+#: ../functions/metabox.php:57
+msgid "Right sidebar"
+msgstr "Rechterzijbalk"
+
+#: ../functions/metabox.php:74
+msgid "Sidebar Layout Options"
+msgstr "Zijbalk lay-out opties"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:224
+msgid "Y"
+msgstr "Y"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:244
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:253
+msgid "Simple Catch"
+msgstr "Simple Catch"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:262
+msgid "https://catchthemes.com"
+msgstr "https://catchthemes.com"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:262
+msgid "Catch Themes"
+msgstr "Catch Themes"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:287
+msgid "Content on Left"
+msgstr "Inhoud links"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:288
+msgid "Content on Right"
+msgstr "Inhoud rechts"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:289
+msgid "No Sidebar"
+msgstr "Geen zijbalk"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:290
+msgid "No Sidebar, Full Width"
+msgstr "Geen zijbalk, volledige breedte"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:303
+msgid "fade"
+msgstr "vervagen"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:304
+msgid "wipe"
+msgstr "vegen"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:305
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:307
+msgid "scrollUp"
+msgstr "naar boven"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:306
+msgid "scrollDown"
+msgstr "naar beneden"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:308
+msgid "scrollLeft"
+msgstr "naar links"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:309
+msgid "scrollRight"
+msgstr "naar rechts"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:310
+msgid "blindX"
+msgstr "lamellenX"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:311
+msgid "blindY"
+msgstr "lamellenY"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:312
+msgid "blindZ"
+msgstr "lamellenZ"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:313
+msgid "cover"
+msgstr "bedekken"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:314
+msgid "shuffle"
+msgstr "schudden"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:327
+msgid "Excerpt/Blog Display"
+msgstr "Toon uitgelichte tekst/bericht"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:328
+msgid "Full Content Display"
+msgstr "Toon volledige inhoud"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:341
+msgid "Homepage / Frontpage"
+msgstr "Startpagina/eerstepagina"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:342
+msgid "Entire Site"
+msgstr "Volledige website"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:343
+msgid "Disable"
+msgstr "Uitzetten"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:356
+msgid "Featured Image Slider"
+msgstr "Uitgelichte afbeeldingen glijder"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:357
+msgid "Featured Post Slider"
+msgstr "Uitgelichte berichten glijder"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:358
+msgid "Featured Page Slider"
+msgstr "Uitgelichte pagina glijder"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:359
+msgid "Featured Category Slider"
+msgstr "Uitgelichte categorie glijder"
+
+#: ../functions/widgets.php:17
+msgid "Main Sidebar"
+msgstr "Hoofd zijbalk"
+
+#: ../functions/widgets.php:19
+msgid "This is main sideabar"
+msgstr "Dit is de hoofdzijbalk"
+
+#: ../functions/widgets.php:42
+msgid "CT: Custom Tag Cloud"
+msgstr ""
+
+#: ../functions/widgets.php:43
+msgid "Displays Custom Tag Cloud"
+msgstr "Vertoon Custom Tag Cloud"
+
+#: ../functions/widgets.php:101 ../functions/widgets.php:229
+msgid "Title (optional):"
+msgstr "Title (optional):"
+
+#: ../functions/widgets.php:123
+msgid "CT: Advertisement"
+msgstr ""
+
+#: ../functions/widgets.php:124
+msgid "Use this widget to add any type of Advertisement as a widget"
+msgstr ""
+"Gebruik deze widget om eender welk type van Ad als een widget te gebruiken"
+
+#: ../functions/widgets.php:172
+msgid "Add Advertisement Code or Image URL"
+msgstr "Add Advertisement Code or Image URL"
+
+#: ../functions/widgets.php:234
+msgid "Ad Code:"
+msgstr ""
+
+#: ../functions/widgets.php:240
+msgid "Image Url:"
+msgstr "Image Url:"
+
+#: ../functions/widgets.php:244
+msgid "Link URL:"
+msgstr "Link URL:"
+
+#: ../functions/widgets.php:249
+msgid "Open Link in New Window"
+msgstr "Open Link in New Window"
+
+#: ../functions/widgets.php:252
+msgid "Alt text:"
+msgstr "Alt text:"
+
+#: ../functions/widgets.php:256
+msgid "Check to Hide Ad on 404 page"
+msgstr ""
+
+#: ../functions/widgets.php:279
+msgid "CT: Social Icons"
+msgstr ""
+
+#: ../functions/widgets.php:280
+msgid "Displays Social Icons added from Customizer / Theme Options Panel"
+msgstr ""
+
+#: ../header.php:34
+msgid "Skip to content"
+msgstr "Doorgaan naar inhoud"
+
+#: ../image.php:86
+msgid "Previous Image"
+msgstr "Vorige afbeelding"
+
+#: ../image.php:87
+msgid "Next Image"
+msgstr "Volgende afbeelding"
+
+#: ../page-blog.php:83 ../search.php:44
+msgid "Previous"
+msgstr "Vorige"
+
+#: ../page-blog.php:85 ../search.php:45
+msgid "Next"
+msgstr "Volgende"
+
+#: ../search.php:15
+#, php-format
+msgid "Showing results for: <span>%s</span>"
+msgstr "Dit zijn de resultaten voor <span>%s</span>"
+
+#: ../search.php:54
+#, php-format
+msgid "Your search <span> \"%s\" </span> did not match any documents"
+msgstr "Er zijn geen items gevonden voor uw zoekopdracht <span> \"%s\" </span>"
+
+#: ../search.php:57
+msgid "A few suggestions"
+msgstr "Een paar suggesties"
+
+#: ../search.php:59
+msgid "Make sure all words are spelled correctly"
+msgstr "Zorg dat alle woorden correct gespeld zijn"
+
+#: ../search.php:60
+msgid "Try different keywords"
+msgstr "Probeer andere zoektermen"
+
+#: ../search.php:61
+msgid "Try more general keywords"
+msgstr "Probeer meer algemene zoektermen"
+
+#: ../sidebar.php:59
+msgid "Archives"
+msgstr "Archieven"
+
+#~ msgid "%s"
+#~ msgstr "%s"
+
+#~ msgid ""
+#~ "Check for a mis-typed URL error, then press the refresh button on your "
+#~ "browser or Use the search box at the Header."
+#~ msgstr ""
+#~ "Controleer de URL op typfouten, corrigeer deze en duw op enter; je kan "
+#~ "ook gebruikmaken van de zoekfunctie in de hoofding."
+
+#~ msgid "Permalink to %s"
+#~ msgstr "Permalink naar %s"
+
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
+
+#~ msgid "All Rights Reserved."
+#~ msgstr "Alle rechten voorbehouden."
+
+#~ msgid "Support"
+#~ msgstr "Support"
+
+#~ msgid "Theme Options"
+#~ msgstr "Thema opties"
+
+#~ msgid "Default Layout"
+#~ msgstr "Standaard lay-out"
+
+#~ msgid "Homepage / Frontpage Category Setting"
+#~ msgstr "Categorie-instelling van de homepagina/startpagina"
+
+#~ msgid "Search Text Settings"
+#~ msgstr "Zoekinstellingen"
+
+#~ msgid "Excerpt / More Tag Settings"
+#~ msgstr "Uitgelichte tekst / \"Lees meer\" instellingen"
+
+#~ msgid "Feed Redirect"
+#~ msgstr "Feed redirect"
+
+#~ msgid "Custom CSS"
+#~ msgstr "Aangepaste CSS"
+
+#~ msgid "Add Slider Options"
+#~ msgstr "Opties voor glijder"
+
+#~ msgid "Slider Effect Options"
+#~ msgstr "Glijder effectmogelijkheden"
+
+#~ msgid "Social Links"
+#~ msgstr "Links naar sociale netwerksites"
+
+#~ msgid "Webmaster Tools"
+#~ msgstr "Webmaster tools"
+
+#~ msgid "Default Color Scheme"
+#~ msgstr "Default Color Scheme"
+
+#~ msgid "Check to Reset Color"
+#~ msgstr "Check to Reset Color"
+
+#~ msgid "Front page posts categories:"
+#~ msgstr "Berichtcategorieën op de homepagina:"
+
+#~ msgid "Default Display Text in Search"
+#~ msgstr "Standaard weer te geven tekst in de zoekfunctie"
+
+#~ msgid "Search Button's text"
+#~ msgstr "Tekst van de zoekknop"
+
+#~ msgid "More Tag Text"
+#~ msgstr "Tekst weer te geven als \"Lees meer\""
+
+#~ msgid "Excerpt length(words)"
+#~ msgstr "Lengte van de uitgelichte tekst (in aantal woorden)"
+
+#~ msgid "Feed Redirect URL"
+#~ msgstr "URL voor de redirect feed"
+
+#~ msgid "Number of Slides"
+#~ msgstr "Aantal slides"
+
+#~ msgid "Transition Delay"
+#~ msgstr "Overgangsvertraging"
+
+#~ msgid "Transition Length"
+#~ msgstr "Duur van een overgang"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+#~ msgid "Pinterest"
+#~ msgstr "Pinterest"
+
+#~ msgid "Youtube"
+#~ msgstr "Youtube"
+
+#~ msgid "Vimeo"
+#~ msgstr "Vimeo"
+
+#~ msgid "Slideshare"
+#~ msgstr "Slideshare"
+
+#~ msgid "Foursquare"
+#~ msgstr "Foursquare"
+
+#~ msgid "Flickr"
+#~ msgstr "Flickr"
+
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+#~ msgid "deviantART"
+#~ msgstr "deviantART"
+
+#~ msgid "Dribbble"
+#~ msgstr "Dribbble"
+
+#~ msgid "MySpace"
+#~ msgstr "MySpace"
+
+#~ msgid "RSS"
+#~ msgstr "RSS"
+
+#~ msgid "Delicious"
+#~ msgstr "Delicious"
+
+#~ msgid "Last.fm"
+#~ msgstr "Last.fm"
+
+#~ msgid "Instagram"
+#~ msgstr "Instagram"
+
+#~ msgid "GitHub"
+#~ msgstr "GitHub"
+
+#~ msgid "Vkontakte"
+#~ msgstr "Vkontakte"
+
+#~ msgid "My World"
+#~ msgstr "My World"
+
+#~ msgid "Odnoklassniki"
+#~ msgstr "Odnoklassniki"
+
+#~ msgid "Goodreads"
+#~ msgstr "Goodreads"
+
+#~ msgid "Skype"
+#~ msgstr "Skype"
+
+#~ msgid "Soundcloud"
+#~ msgstr "Soundcloud"
+
+#~ msgid "Code to display on Header"
+#~ msgstr "Code weer te geven in de hoofding"
+
+#~ msgid "Code to display on Footer"
+#~ msgstr "Code weer te geven in de voettekst"
+
+#~ msgid "Options Saved"
+#~ msgstr "Opties bewaard"
+
+#~ msgid "Theme Options By"
+#~ msgstr "Thema Opties Door"
+
+#~ msgid "https://catchthemes.com/"
+#~ msgstr "https://catchthemes.com/"
+
+#~ msgid "https://catchthemes.com/themes/simple-catch-pro/"
+#~ msgstr "https://catchthemes.com/themes/simple-catch-pro/"
+
+#~ msgid "Upgrade to Simple Catch Pro"
+#~ msgstr "Upgrade naar Simple Catch Pro"
+
+#~ msgid "https://catchthemes.com/donate/"
+#~ msgstr "https://catchthemes.com/donate/"
+
+#~ msgid "Donate"
+#~ msgstr "Donate"
+
+#~ msgid "https://catchthemes.com/support/"
+#~ msgstr "https://catchthemes.com/support/"
+
+#~ msgid "https://catchthemes.com/theme-instructions/simple-catch/"
+#~ msgstr "https://catchthemes.com/theme-instructions/simple-catch/"
+
+#~ msgid "Theme Instruction"
+#~ msgstr "Thema Instructies"
+
+#~ msgid "https://www.facebook.com/catchthemes/"
+#~ msgstr "https://www.facebook.com/catchthemes/"
+
+#~ msgid "Like Catch Themes on Facebook"
+#~ msgstr "Like Catch Themes op Facebook"
+
+#~ msgid "https://twitter.com/catchthemes/"
+#~ msgstr "https://twitter.com/catchthemes/"
+
+#~ msgid "Follow Catch Themes on Twitter"
+#~ msgstr "Volg Catch Themes op Twitter"
+
+#~ msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
+#~ msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
+
+#~ msgid "Rate us 5 Star on WordPress"
+#~ msgstr "Geef ons 5 Sterren op WordPress"
+
+#~ msgid "5 Star Rating"
+#~ msgstr "5 Star Rating"
+
+#~ msgid "Logo Options"
+#~ msgstr "Logo-opties"
+
+#~ msgid "Header logo url:"
+#~ msgstr "URL van het logo in de hoofding:"
+
+#~ msgid "Preview: "
+#~ msgstr "Voorbeeld:"
+
+#~ msgid "Disable Header Logo?"
+#~ msgstr "Logo in de hoofding uitzetten?"
+
+#~ msgid "Check to Disable."
+#~ msgstr "Aanvinken om uit te zetten."
+
+#~ msgid "Disable Site Title?"
+#~ msgstr "Website titel uitzetten?"
+
+#~ msgid "Disable Site Description?"
+#~ msgstr "Website beschrijving uitzetten?"
+
+#~ msgid "Footer logo url: "
+#~ msgstr "URL van het logo in de voettekst:"
+
+#~ msgid "Disable Footer Logo?"
+#~ msgstr "Logo in de voettekst uitzetten?"
+
+#~ msgid "Save"
+#~ msgstr "Bewaar"
+
+#~ msgid "Fav Icon Option"
+#~ msgstr "Fav Icon Opties"
+
+#~ msgid "Favicon URL:"
+#~ msgstr "Favicon URL:"
+
+#~ msgid "Disable Fav Icon?"
+#~ msgstr "Fav icon uitzetten?"
+
+#~ msgid "Web Clip Icon Option"
+#~ msgstr "Web Clip Icon Optie"
+
+#~ msgid "Web Clip Icon URL:"
+#~ msgstr "Web Clip Icon URL:"
+
+#~ msgid "No Web Clip Icon Found. Upload Web Clip Icon."
+#~ msgstr "Geen Web Clip Icon gevonden. Upload Web Clip Icon."
+
+#~ msgid "Color Options"
+#~ msgstr "Color Options"
+
+#~ msgid "Default"
+#~ msgstr "Default"
+
+#~ msgid "Dark"
+#~ msgstr "Dark"
+
+#~ msgid "Brown"
+#~ msgstr "Brown"
+
+#~ msgid "Content Background:"
+#~ msgstr "Content Background:"
+
+#~ msgid "Need to replace default background?"
+#~ msgstr "Wens je de standaard achtergrond te wijzigen?"
+
+#~ msgid "<a class=\"button\" href=\"%s\">Click here</a>"
+#~ msgstr "<a class=\"button\" href=\"%s\">Klik hier</a>"
+
+#~ msgid "Heading Color:"
+#~ msgstr "Kleur van de hoofding:"
+
+#~ msgid "Meta Description Color:"
+#~ msgstr "Kleur van de meta-omschrijving:"
+
+#~ msgid "Text Color:"
+#~ msgstr "Tekstkleur:"
+
+#~ msgid "Link Color:"
+#~ msgstr "Linkkleur:"
+
+#~ msgid "Sidebar Widget Heading Color:"
+#~ msgstr "Kleur van de hoofding van een widget in de zijbalk:"
+
+#~ msgid "Sidebar Widget Text Color:"
+#~ msgstr "Tekstkleur van een widget in de zijbalk:"
+
+#~ msgid "Reset Color:"
+#~ msgstr "Kleuren resetten:"
+
+#~ msgid ""
+#~ "Only posts that belong to the categories selected here will be displayed "
+#~ "on the front page."
+#~ msgstr ""
+#~ "Enkel berichten die tot de geselecteerde categorieën behoren, zullen "
+#~ "worden weergegeven op de homepagina."
+
+#~ msgid "--Disabled--"
+#~ msgstr "--Uitgeschakeld--"
+
+#~ msgid "You may select multiple categories by holding down the CTRL key."
+#~ msgstr ""
+#~ "Je kan meerdere categorieën selecteren door de CTRL-knop ingedrukt te "
+#~ "houden."
+
+#~ msgid "Enter your custom CSS styles."
+#~ msgstr "Vul hier je eigen CSS stijlen in."
+
+#~ msgid "CSS Tutorial from W3Schools."
+#~ msgstr "CSS handleiding op W3Schools."
+
+#~ msgid "http://www.w3schools.com/css/default.asp"
+#~ msgstr "http://www.w3schools.com/css/default.asp"
+
+#~ msgid "CSS Tutorial"
+#~ msgstr "CSS handleiding"
+
+#~ msgid "Click Here to Read"
+#~ msgstr "Lees deze hier"
+
+#~ msgid "Exclude Slider post from Home page posts:"
+#~ msgstr "Bericht in glijder niet meer weergeven op de homepagina:"
+
+#~ msgid "Featured Post ID"
+#~ msgstr "Uitgelicht bericht ID"
+
+#~ msgid "Click Here To Edit"
+#~ msgstr "Klik hier om te wijzigen"
+
+#~ msgid ""
+#~ "Note: Here You can put your Post IDs which displays on Homepage as slider."
+#~ msgstr ""
+#~ "Tip: vul hier het berichtID in van de tekst voor de glijder op de "
+#~ "Homepagina."
+
+#~ msgid "Disable Slider Background Effect:"
+#~ msgstr "Zet het achtergrondeffect van de glijder uit:"
+
+#~ msgid "Transition Effect:"
+#~ msgstr "Overgangseffect:"
+
+#~ msgid "second(s)"
+#~ msgstr "second(en)"
+
+#~ msgid "Linkedin"
+#~ msgstr "Linkedin"
+
+#~ msgid "Header and Footer Codes"
+#~ msgstr "Hoofding en voettekst Codes"
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook etc. which will load "
+#~ "on Header"
+#~ msgstr ""
+#~ "Tip: hier kan je scripts van Google, Facebook enz invullen, die geladen "
+#~ "zullen worden in de hoofding"
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
+#~ "will load on footer"
+#~ msgstr ""
+#~ "Tip: hier kan je scripts van Google, Facebook enz invullen, die geladen "
+#~ "zullen worden in de voettekst"
+
+#~ msgid "Powered By:"
+#~ msgstr "Met de hulp van: "
+
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://wordpress.org/"
+
+#~ msgid "Powered By WordPress"
+#~ msgstr "Met dank aan Wordpress"
+
+#~ msgid "Theme:"
+#~ msgstr "Thema:"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Select Sidebar layout"
+#~ msgstr "Selecteer de lay-out voor de zijbalk"
+
+#~ msgid "sidebar"
+#~ msgstr "zijbalk"
+
+#~ msgid "Advertisement Code:"
+#~ msgstr "Advertisement Code:"
+
+#~ msgid "Showing results for: <span class=\"img-title\">%s</span>"
+#~ msgstr "Dit zijn de resultaten voor <span class=\"img-title\">%s</span>"
+
+#, fuzzy
+#~ msgid "Simple Catch Pro"
+#~ msgstr "Simple Catch"
+
+#, fuzzy
+#~ msgid "https://catchthemes.com/themes/simple-catch"
+#~ msgstr "https://catchthemes.com/themes/simple-catch-pro/"
+
+#, fuzzy
+#~ msgid "Catch Themes Team"
+#~ msgstr "Catch thema's"
+
+#~ msgid "Change Header Logo"
+#~ msgstr "Verander logo in de hoofding"
+
+#~ msgid "Change Footer Logo"
+#~ msgstr "Verander het logo in de voettekst"
+
+#~ msgid "Change Fav icon Logo"
+#~ msgstr "Verander Fav icon logo"
+
+#~ msgid "Upload/Change Web Clip Icon"
+#~ msgstr "Upload/Verander Web Clip Icon"
+
+#~ msgid "Page %s"
+#~ msgstr "Pagina %s"
+
+#~ msgid "Default Layout Set in"
+#~ msgstr "Standaard lay-outweergave in"
+
+#~ msgid "Theme Settings"
+#~ msgstr "Thema-instellingen"
+
+#~ msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
+#~ msgstr "Vertoont de Custom Tag Cloud ontwikkeld voor Simple Catch Theme."
+
+#~ msgid "1. Simple Catch: Tag Clouds"
+#~ msgstr "1. Simple Catch: Tag Clouds"
+
+#~ msgid "Displays Social Icons added from Theme Options Panel."
+#~ msgstr ""
+#~ "Vertoont de Sociale Iconen toegevoegd vanuit het Thema Opties Paneel."
+
+#~ msgid "2. Simple Catch: Social Icons"
+#~ msgstr "2. Simple Catch: Social Icons"
+
+#~ msgid "Use this widget to add any type of Advertisement as a widget."
+#~ msgstr "Use this widget to add any type of Advertisement as a widget."
+
+#~ msgid "3. Simple Catch: Advertisement"
+#~ msgstr "3. Simple Catch: Advertisement"
+
+#~ msgid "http://facebook.com/catchthemes"
+#~ msgstr "http://facebook.com/catchthemes"
+
+#~ msgid "https://twitter.com/catchthemes"
+#~ msgstr "https://twitter.com/catchthemes"
+
+#~ msgid "Content Color Options"
+#~ msgstr "Kleurmogelijkheden van de inhoud"
+
+#~ msgid "https://catchthemes.com/support-forum/forum/simple-catch-public/"
+#~ msgstr "https://catchthemes.com/support-forum/forum/simple-catch-public/"
+
+#~ msgid "Featured Slider Post #"
+#~ msgstr "Uitgelichte tekst #"
+
+#~ msgid "Change Logo"
+#~ msgstr "Change Logo"
+
+#~ msgid "Upload Logo"
+#~ msgstr "Upload Logo"
+
+#~ msgid "Preview:"
+#~ msgstr "Voorbeeld:"
+
+#~ msgid "No Header Image Found. Upload Header Image."
+#~ msgstr "No Header Image Found. Upload Header Image."
+
+#~ msgid "Upload/Change Favicon"
+#~ msgstr "Upload/Change Favicon"
+
+#~ msgid "No Favicon Found. Upload Favicon."
+#~ msgstr "No Favicon Found. Upload Favicon."
+
+#~ msgid "Site Verification"
+#~ msgstr "Website verificatie"
+
+#~ msgid "Google Site Verification ID"
+#~ msgstr "Google Site verificatie-ID"
+
+#~ msgid "Enter your Google ID number only"
+#~ msgstr "Vul hier (alleen) uw Google ID nummer in"
+
+#~ msgid "Yahoo Site Verification ID"
+#~ msgstr "Yahoo Site verificatie-ID"
+
+#~ msgid "Enter your Yahoo ID number only"
+#~ msgstr "Vul hier (alleen) uwYahoo-nummer in"
+
+#~ msgid "Bing Site Verification ID"
+#~ msgstr "Bing site verificatie-ID"
+
+#~ msgid "Enter your Bing ID number only"
+#~ msgstr "Vul hier (alleen) uwYahoo-nummer in"
+
+#~ msgid "Design Settings"
+#~ msgstr "Ontwerpinstellingen"
+
+#~ msgid "No Sidebar, One Column"
+#~ msgstr "No Sidebar, One Column"
+
+#~ msgid "Upload Favicon"
+#~ msgstr "Upload Favicon"
+
+#~ msgid "Slider Options"
+#~ msgstr "Glijderopties"
+
+#~ msgid "Featured Slider Options"
+#~ msgstr "Instellingen tekstglijder"
+
+#~ msgid "Social Links Option"
+#~ msgstr "Links sociale sites"
+
+#~ msgid "Webmaster Tools Option"
+#~ msgstr "Instellingen webmaster tools"
+
+#~ msgid "Analytics"
+#~ msgstr "Analytics"
+
+#~ msgid ""
+#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
+#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
+#~ "Custom Widgets, "
+#~ msgstr ""
+#~ "Simple Catch is een eenvoudige en handige template voor Wordpress, vlot "
+#~ "aanpasbaar dankzij de verschillende thema-opties en widgets. "
+#~ "Mogelijkheden: aanpasbaar menu, widgets,"
+
+#~ msgid ""
+#~ "black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
+#~ "right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
+#~ "template, theme-options, threaded-comments, translation-ready"
+#~ msgstr ""
+#~ "zwart, grijs, zilver, wit, licht, enkele kolom, twee kolommen, linker "
+#~ "zijbalk, rechter zijbalk, vaste breedte, eigen menu mogelijk, uitgelichte "
+#~ "afbeeldingen, een template op volledige breedte, thema-opties, reacties "
+#~ "in threads, vertaald"

@@ -1,0 +1,106 @@
+body {
+	.body-font;
+	background: @background;
+	word-wrap: break-word;
+}
+.mega-container {
+	max-width: 1170px;
+	margin: auto;
+	margin-top: 20px;
+	overflow: visible;
+	clear: both;
+}
+a {
+	color: @accent;
+	cursor: pointer;
+	&:hover {
+		text-decoration: none;
+		color: @accent;
+	}
+}
+.container {
+	margin: auto;
+}
+.panel {
+	background: none;
+}
+
+::selection {
+	background: @accent;
+	color: @onaccent;
+}
+
+#main {
+	overflow: visible; //May break masonry layouts
+	clear: both;
+}
+
+#content {
+	margin-top: 50px;
+	padding: 35px 0;
+	overflow: visible;
+}
+
+#primary {
+	overflow: visible;
+}
+/* section titles */	
+.section-title {
+	color: darken(@content,18%);
+	font-weight: normal;
+	text-align: center;
+	font-size: 35px;
+	margin-bottom: 50px;
+	@media screen and (max-width: 576px) {
+			margin-bottom: 30px;
+		}
+	margin-top: 0px;
+	position: relative;
+	z-index: 3;
+	.title-font;
+	.dots .fa {
+		border: none;
+		margin: 2px 22px;
+		color: @accent;
+		font-size: 16px;
+	}
+	span {
+		position: relative;
+		font-family: Squada One;
+		font-size: 25px;
+		padding: 5px 20px;
+		padding-right: 15px;
+		z-index: 1;
+		display: inline-block;
+	}
+}
+
+.featured-section-area {
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 35px 0;
+	.section-title {
+		margin: 0;
+		font-size:20px;
+		text-align: left;
+		padding-left: 15px;
+		border-bottom: 3px solid @s-accent	;
+		span {
+			color: @onaccent;
+			background: @accent-bg;
+		}
+	}
+}
+
+.section-title {
+	margin: 0;
+	font-size:20px;
+	text-align: left;
+	padding-left: 15px;
+	border-bottom: 3px solid @s-accent	;
+	span {
+		color: @onaccent;
+		background: @accent-bg;
+	}
+}

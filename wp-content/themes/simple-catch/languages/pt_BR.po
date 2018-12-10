@@ -1,0 +1,1178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Catch\n"
+"Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
+"POT-Creation-Date: 2017-06-08 16:04+0545\n"
+"PO-Revision-Date: 2017-06-08 16:04+0545\n"
+"Last-Translator: gatinhobranco <giovanna@chinellato.com.br>\n"
+"Language-Team: Catch Themes <info@catchthemes.com>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ simplecatch
+#: 404.php:12
+msgid "Error 404 - Page Not Found."
+msgstr "Erro 404 - Página não encontrada."
+
+# @ simplecatch
+#: 404.php:15
+msgid "We&rsquo;re sorry! This page is not available."
+msgstr "Desculpe, essa página não está disponível."
+
+# @ simplecatch
+#: 404.php:16
+msgid "This might be because:"
+msgstr "Isso pode acontecer porque:"
+
+# @ simplecatch
+#: 404.php:17
+msgid ""
+"You have typed the web address incorrectly, or the page you were looking for "
+"may have been moved, updated or deleted."
+msgstr ""
+"Você digitou o endereço incorretamente, ou a página que você está buscando "
+"foi movida, atualizada ou deletada."
+
+# @ simplecatch
+#: 404.php:18
+msgid "Please try the following options instead:"
+msgstr "Por favor, tente as seguintes opções:"
+
+#: 404.php:19
+msgid ""
+"Check for a mis-typed URL error, then press the refresh button on your "
+"browser or Use the search box below."
+msgstr ""
+"Confira a URL digitada e atualize a página, ou use o campo de busca no topo "
+"da página."
+
+# @ simplecatch
+#: comments.php:21
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Esse post é protegido por senha. Digite a senha para ver os comentários."
+
+# @ simplecatch
+#: comments.php:29 content.php:49 functions/core.php:998 image.php:23
+#: page-blog.php:51
+msgid "No Comments"
+msgstr "Nenhum comentário"
+
+# @ simplecatch
+#: comments.php:29 content.php:49 functions/core.php:998 image.php:23
+#: page-blog.php:51
+msgid "1 Comment"
+msgstr "1 Comentário"
+
+# @ simplecatch
+#: comments.php:29 content.php:49 functions/core.php:998 image.php:23
+#: page-blog.php:51
+msgid "% Comments"
+msgstr "% Comentários"
+
+# @ simplecatch
+#: comments.php:60
+msgid "Comments are closed."
+msgstr "Comentários desativados."
+
+# @ simplecatch
+#: content.php:47 functions/core.php:996 image.php:21 page-blog.php:49
+msgid "By"
+msgstr "Por"
+
+# @ simplecatch
+#: content.php:77 page-blog.php:96
+msgid "Not found"
+msgstr "Não encontrado"
+
+# @ simplecatch
+#: content.php:80 page-blog.php:99
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+"Nenhum resultado foi encontrado para esse arquivo. Talvez usando a busca "
+"você encontre um post relacionado."
+
+# @ simplecatch
+#: functions.php:115
+msgid "Primary Menu"
+msgstr "Menu Principal"
+
+#: functions/core.php:687 functions/core.php:1112
+msgid "Menu"
+msgstr "Menu"
+
+#: functions/core.php:690
+msgid "Primary menu"
+msgstr "Menu principal"
+
+# @ simplecatch
+#: functions/core.php:1019
+msgid "Categories: "
+msgstr "Categorias:"
+
+#: functions/core.php:1021
+msgid "Tags"
+msgstr "Tags"
+
+# @ simplecatch
+#: functions/core.php:1040
+msgid "Name"
+msgstr "Nome"
+
+# @ simplecatch
+#: functions/core.php:1041
+msgid "Email"
+msgstr "Email"
+
+# @ simplecatch
+#: functions/core.php:1042
+msgid "Website"
+msgstr "Site"
+
+#: functions/metabox.php:14 functions/metabox.php:20
+msgid "Simple Catch Options"
+msgstr "Opções Simple Catch"
+
+#: functions/metabox.php:33
+#, php-format
+msgid "Default Layout Set in <a href=\"%s\">Customize</a>"
+msgstr "Layout Padrao em <a href=\"%s\">Customize</a>"
+
+# @ simplecatch
+#: functions/metabox.php:39
+msgid "No sidebar"
+msgstr "Sem barra lateral"
+
+# @ simplecatch
+#: functions/metabox.php:45
+msgid "No sidebar, Full Width"
+msgstr "Sem barra lateral, largura completa"
+
+# @ simplecatch
+#: functions/metabox.php:51
+msgid "Left sidebar"
+msgstr "Barra lateral à esquerda"
+
+# @ simplecatch
+#: functions/metabox.php:57
+msgid "Right sidebar"
+msgstr "Barra lateral à direita"
+
+#: functions/metabox.php:74
+msgid "Sidebar Layout Options"
+msgstr "Opções de Layout da Barra Lateral"
+
+#: functions/panel/simplecatch_themeoptions_defaults.php:224
+msgid "Y"
+msgstr "Y"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:244
+msgid "WordPress"
+msgstr "WordPress"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:262
+msgid "https://catchthemes.com"
+msgstr "https://catchthemes.com"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:287
+msgid "Content on Left"
+msgstr "Conteúdo à esquerda"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:288
+msgid "Content on Right"
+msgstr "Conteúdo à direita"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:289
+msgid "No Sidebar"
+msgstr "Sem barra lateral"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:290
+msgid "No Sidebar, Full Width"
+msgstr "Sem barra lateral, largura inteira"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:303
+msgid "fade"
+msgstr "dissolver"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:304
+msgid "wipe"
+msgstr "sobrepor"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:305
+#: functions/panel/simplecatch_themeoptions_defaults.php:307
+msgid "scrollUp"
+msgstr "deslizar para cima"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:306
+msgid "scrollDown"
+msgstr "deslizar para baixo"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:308
+msgid "scrollLeft"
+msgstr "deslizar para esquerda"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:309
+msgid "scrollRight"
+msgstr "deslizar para direita"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:310
+msgid "blindX"
+msgstr "trocarX"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:311
+msgid "blindY"
+msgstr "trocarY"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:312
+msgid "blindZ"
+msgstr "trocarZ"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:313
+msgid "cover"
+msgstr "cobrir"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:314
+msgid "shuffle"
+msgstr "embaralhar"
+
+#: functions/panel/simplecatch_themeoptions_defaults.php:327
+msgid "Excerpt/Blog Display"
+msgstr "Mostrar trecho/resumo"
+
+#: functions/panel/simplecatch_themeoptions_defaults.php:328
+msgid "Full Content Display"
+msgstr "Mostra conteúdo completo"
+
+#: functions/panel/simplecatch_themeoptions_defaults.php:341
+msgid "Homepage / Frontpage"
+msgstr "Página inicial"
+
+#: functions/panel/simplecatch_themeoptions_defaults.php:342
+msgid "Entire Site"
+msgstr "Todo o site"
+
+#: functions/panel/simplecatch_themeoptions_defaults.php:343
+msgid "Disable"
+msgstr "Desativar"
+
+#: functions/panel/simplecatch_themeoptions_defaults.php:356
+msgid "Featured Image Slider"
+msgstr "Slider de imagens destacadas"
+
+# @ simplecatch
+#: functions/panel/simplecatch_themeoptions_defaults.php:357
+msgid "Featured Post Slider"
+msgstr "Slider de posts destacados"
+
+#: functions/panel/simplecatch_themeoptions_defaults.php:358
+msgid "Featured Page Slider"
+msgstr "Slide de páginas destacadas"
+
+#: functions/panel/simplecatch_themeoptions_defaults.php:359
+msgid "Featured Category Slider"
+msgstr "Slider de categorias destacadas"
+
+#: functions/widgets.php:17
+msgid "Main Sidebar"
+msgstr "Barra lateral principal"
+
+#: functions/widgets.php:19
+msgid "This is main sideabar"
+msgstr "Essa é a barra lateral principal"
+
+#: functions/widgets.php:42
+msgid "CT: Custom Tag Cloud"
+msgstr ""
+
+#: functions/widgets.php:43
+msgid "Displays Custom Tag Cloud"
+msgstr "Mostrar nuvem de tags personalizada"
+
+# @ simplecatch
+#: functions/widgets.php:101 functions/widgets.php:229
+msgid "Title (optional):"
+msgstr "Título (opcional):"
+
+#: functions/widgets.php:123
+msgid "CT: Advertisement"
+msgstr ""
+
+#: functions/widgets.php:124
+msgid "Use this widget to add any type of Advertisement as a widget"
+msgstr ""
+
+# @ simplecatch
+#: functions/widgets.php:172
+msgid "Add Advertisement Code or Image URL"
+msgstr "Adicionar código de anúncio ou URL de imagem"
+
+#: functions/widgets.php:234
+msgid "Ad Code:"
+msgstr ""
+
+# @ simplecatch
+#: functions/widgets.php:240
+msgid "Image Url:"
+msgstr "URL da imagem:"
+
+# @ simplecatch
+#: functions/widgets.php:244
+msgid "Link URL:"
+msgstr "URL do link:"
+
+# @ simplecatch
+#: functions/widgets.php:249
+msgid "Open Link in New Window"
+msgstr "Abrir link em uma nova janela"
+
+# @ simplecatch
+#: functions/widgets.php:252
+msgid "Alt text:"
+msgstr "Texto alternativo:"
+
+#: functions/widgets.php:256
+msgid "Check to Hide Ad on 404 page"
+msgstr ""
+
+#: functions/widgets.php:279
+msgid "CT: Social Icons"
+msgstr ""
+
+#: functions/widgets.php:280
+msgid "Displays Social Icons added from Customizer / Theme Options Panel"
+msgstr ""
+
+#: header.php:34
+msgid "Skip to content"
+msgstr "Ir para o conteúdo"
+
+# @ simplecatch
+#: image.php:86
+msgid "Previous Image"
+msgstr "Imagem Anterior"
+
+# @ simplecatch
+#: image.php:87
+msgid "Next Image"
+msgstr "Próxima Imagem"
+
+# @ simplecatch
+#: page-blog.php:83 search.php:44
+msgid "Previous"
+msgstr "Anteriores"
+
+# @ simplecatch
+#: page-blog.php:85 search.php:45
+msgid "Next"
+msgstr "Próximos"
+
+#: search.php:15
+#, php-format
+msgid "Showing results for: <span>%s</span>"
+msgstr "Estes são os resultados para <span>%s</span>"
+
+# @ simplecatch
+#: search.php:54
+#, php-format
+msgid "Your search <span> \"%s\" </span> did not match any documents"
+msgstr "Sua busca <span> \"%s\" </span> não encontrou nenhum documento."
+
+# @ simplecatch
+#: search.php:57
+msgid "A few suggestions"
+msgstr "Algumas sugestões"
+
+# @ simplecatch
+#: search.php:59
+msgid "Make sure all words are spelled correctly"
+msgstr "Certifique‐se de que as palavras estão escritas corretamente"
+
+# @ simplecatch
+#: search.php:60
+msgid "Try different keywords"
+msgstr "Tente outras palavras‐chave"
+
+# @ simplecatch
+#: search.php:61
+msgid "Try more general keywords"
+msgstr "Tente termos menos específicos"
+
+#: sidebar.php:59
+msgid "Archives"
+msgstr "Arquivos"
+
+# @ simplecatch
+#~ msgid "%s"
+#~ msgstr "%s"
+
+# @ simplecatch
+#~ msgid ""
+#~ "Check for a mis-typed URL error, then press the refresh button on your "
+#~ "browser or Use the search box at the Header."
+#~ msgstr ""
+#~ "Veja se não tem nenhum erro na URL, atualize a página ou use o campo de "
+#~ "busca no topo do site."
+
+# @ simplecatch
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
+
+# @ simplecatch
+#~ msgid "All Rights Reserved."
+#~ msgstr "Todos os direitos reservados."
+
+# @ simplecatch
+#~ msgid "Support"
+#~ msgstr "Suporte"
+
+# @ simplecatch
+#~ msgid "Theme Options"
+#~ msgstr "Opções do Tema"
+
+# @ simplecatch
+#~ msgid "Default Layout"
+#~ msgstr "Layout Padrão"
+
+# @ simplecatch
+#~ msgid "Homepage / Frontpage Category Setting"
+#~ msgstr "Configurações para Home"
+
+# @ simplecatch
+#~ msgid "Search Text Settings"
+#~ msgstr "Configurações da Busca"
+
+# @ simplecatch
+#~ msgid "Excerpt / More Tag Settings"
+#~ msgstr "Configurações de Trecho do Post / Link Ler Mais"
+
+# @ simplecatch
+#~ msgid "Feed Redirect"
+#~ msgstr "Redirecionamento"
+
+# @ simplecatch
+#~ msgid "Custom CSS"
+#~ msgstr "CCS Personalizado"
+
+# @ simplecatch
+#~ msgid "Add Slider Options"
+#~ msgstr "Adicionar Opções de Slider"
+
+# @ simplecatch
+#~ msgid "Slider Effect Options"
+#~ msgstr "Opções de efeito do slider"
+
+# @ simplecatch
+#~ msgid "Social Links"
+#~ msgstr "Links Sociais"
+
+# @ simplecatch
+#~ msgid "Webmaster Tools"
+#~ msgstr "Ferramentas para Desenvolvedores"
+
+# @ catcheverest
+#~ msgid "Default Color Scheme"
+#~ msgstr "Default Color Scheme"
+
+# @ simplecatch
+#~ msgid "Check to Reset Color"
+#~ msgstr "Selecione para voltar para o padrão."
+
+# @ simplecatch
+#~ msgid "Front page posts categories:"
+#~ msgstr "Categorias de Post na Home:"
+
+# @ simplecatch
+#~ msgid "Default Display Text in Search"
+#~ msgstr "Texto no Campo de Busca"
+
+# @ simplecatch
+#~ msgid "Search Button's text"
+#~ msgstr "Texto no Botão de Busca"
+
+# @ simplecatch
+#~ msgid "More Tag Text"
+#~ msgstr "Texto para Ler Mais"
+
+# @ simplecatch
+#~ msgid "Excerpt length(words)"
+#~ msgstr "Tamanho do Trecho do Post a Mostrar (em palavras)"
+
+# @ simplecatch
+#~ msgid "Feed Redirect URL"
+#~ msgstr "URL para Redirecionar"
+
+# @ simplecatch
+#~ msgid "Number of Slides"
+#~ msgstr "Número de Slides"
+
+# @ simplecatch
+#~ msgid "Transition Delay"
+#~ msgstr "Tempo para Transição"
+
+# @ simplecatch
+#~ msgid "Transition Length"
+#~ msgstr "Duração da Transição"
+
+# @ simplecatch
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+# @ simplecatch
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+# @ simplecatch
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+# @ simplecatch
+#~ msgid "Pinterest"
+#~ msgstr "Pinterest"
+
+# @ simplecatch
+#~ msgid "Youtube"
+#~ msgstr "Youtube"
+
+# @ simplecatch
+#~ msgid "Vimeo"
+#~ msgstr "Vimeo"
+
+# @ simplecatch
+#~ msgid "Slideshare"
+#~ msgstr "Slideshare"
+
+# @ simplecatch
+#~ msgid "Foursquare"
+#~ msgstr "Foursquare"
+
+# @ simplecatch
+#~ msgid "Flickr"
+#~ msgstr "Flickr"
+
+# @ simplecatch
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+# @ simplecatch
+#~ msgid "deviantART"
+#~ msgstr "deviantART"
+
+# @ simplecatch
+#~ msgid "Dribbble"
+#~ msgstr "Dribbble"
+
+# @ simplecatch
+#~ msgid "MySpace"
+#~ msgstr "MySpace"
+
+# @ simplecatch
+#~ msgid "RSS"
+#~ msgstr "RSS"
+
+# @ simplecatch
+#~ msgid "Delicious"
+#~ msgstr "Delicious"
+
+# @ simplecatch
+#~ msgid "Last.fm"
+#~ msgstr "Last.fm"
+
+# @ simplecatch
+#~ msgid "Instagram"
+#~ msgstr "Instagram"
+
+# @ simplecatch
+#~ msgid "GitHub"
+#~ msgstr "GitHub"
+
+# @ simplecatch
+#~ msgid "Vkontakte"
+#~ msgstr "Vkontakte"
+
+# @ simplecatch
+#~ msgid "My World"
+#~ msgstr "My World"
+
+# @ simplecatch
+#~ msgid "Odnoklassniki"
+#~ msgstr "Odnoklassniki"
+
+# @ simplecatch
+#~ msgid "Goodreads"
+#~ msgstr "Goodreads"
+
+# @ simplecatch
+#~ msgid "Skype"
+#~ msgstr "Skype"
+
+# @ simplecatch
+#~ msgid "Soundcloud"
+#~ msgstr "Soundcloud"
+
+# @ simplecatch
+#~ msgid "Code to display on Header"
+#~ msgstr "Código de Cabeçalho"
+
+# @ simplecatch
+#~ msgid "Code to display on Footer"
+#~ msgstr "Código do Rodapé"
+
+# @ simplecatch
+#~ msgid "Options Saved"
+#~ msgstr "Opções Salvas"
+
+# @ simplecatch
+#~ msgid "Theme Options By"
+#~ msgstr "Opções do Tema por"
+
+# @ simplecatch
+#~ msgid "https://catchthemes.com/"
+#~ msgstr "https://catchthemes.com/"
+
+# @ simplecatch
+#~ msgid "Catch Themes"
+#~ msgstr "Catch Themes"
+
+# @ simplecatch
+#~ msgid "https://catchthemes.com/themes/simple-catch-pro/"
+#~ msgstr "https://catchthemes.com/themes/simple-catch-pro/"
+
+# @ simplecatch
+#~ msgid "Upgrade to Simple Catch Pro"
+#~ msgstr "Faça um upgrade para Simple Catch Pro"
+
+# @ simplecatch
+#~ msgid "https://catchthemes.com/donate/"
+#~ msgstr "https://catchthemes.com/donate/"
+
+# @ simplecatch
+#~ msgid "Donate"
+#~ msgstr "Doar"
+
+# @ simplecatch
+#~ msgid "https://catchthemes.com/support/"
+#~ msgstr "https://catchthemes.com/support/"
+
+# @ simplecatch
+#~ msgid "https://catchthemes.com/theme-instructions/simple-catch/"
+#~ msgstr "https://catchthemes.com/theme-instructions/simple-catch/"
+
+# @ simplecatch
+#~ msgid "Theme Instruction"
+#~ msgstr "Instruções do Tema"
+
+# @ simplecatch
+#~ msgid "https://www.facebook.com/catchthemes/"
+#~ msgstr "https://www.facebook.com/catchthemes/"
+
+# @ simplecatch
+#~ msgid "https://twitter.com/catchthemes/"
+#~ msgstr "https://twitter.com/catchthemes/"
+
+# @ simplecatch
+#~ msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
+#~ msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
+
+# @ simplecatch
+#~ msgid "5 Star Rating"
+#~ msgstr "Votar 5 estrelas"
+
+# @ simplecatch
+#~ msgid "Logo Options"
+#~ msgstr "Opções de Logo"
+
+# @ simplecatch
+#~ msgid "Header logo url:"
+#~ msgstr "URL do logo do topo:"
+
+# @ simplecatch
+#~ msgid "Preview: "
+#~ msgstr "Visualizar:"
+
+# @ simplecatch
+#~ msgid "Disable Header Logo?"
+#~ msgstr "Desativar logo no topo?"
+
+# @ simplecatch
+#~ msgid "Check to Disable."
+#~ msgstr "Selecione para desativar."
+
+# @ simplecatch
+#~ msgid "Disable Site Title?"
+#~ msgstr "Desativar título do site?"
+
+# @ simplecatch
+#~ msgid "Disable Site Description?"
+#~ msgstr "Desativar descrição do site?"
+
+# @ simplecatch
+#~ msgid "Footer logo url: "
+#~ msgstr "URL do logo de rodapé:"
+
+# @ simplecatch
+#~ msgid "Disable Footer Logo?"
+#~ msgstr "Desativar logo no rodapé?"
+
+# @ simplecatch
+#~ msgid "Fav Icon Option"
+#~ msgstr "Opções de Favicon"
+
+# @ simplecatch
+#~ msgid "Favicon URL:"
+#~ msgstr "URL do Favicon:"
+
+# @ simplecatch
+#~ msgid "Disable Fav Icon?"
+#~ msgstr "Desativar Favicon?"
+
+# @ simplecatch
+#~ msgid "Web Clip Icon Option"
+#~ msgstr "Opções de Ícone Web Clip"
+
+# @ simplecatch
+#~ msgid "Web Clip Icon URL:"
+#~ msgstr "URL do Web Clip:"
+
+# @ simplecatch
+#~ msgid "No Web Clip Icon Found. Upload Web Clip Icon."
+#~ msgstr "Nenhum Web Clip encontrado. Envie um."
+
+# @ simplecatch
+#~ msgid "Color Options"
+#~ msgstr "Opções de Cor"
+
+# @ catcheverest
+#~ msgid "Default"
+#~ msgstr "Default"
+
+# @ catcheverest
+#~ msgid "Dark"
+#~ msgstr "Dark"
+
+# @ catcheverest
+#~ msgid "Brown"
+#~ msgstr "Brown"
+
+# @ simplecatch
+#~ msgid "Content Background:"
+#~ msgstr "Plano de Fundo:"
+
+# @ simplecatch
+#~ msgid "Need to replace default background?"
+#~ msgstr "Precisa substituir o plano de fundo padrão?"
+
+# @ simplecatch
+#~ msgid "<a class=\"button\" href=\"%s\">Click here</a>"
+#~ msgstr "<a class=\"button\" href=\"%s\">Clique aqui</a>"
+
+# @ simplecatch
+#~ msgid "Heading Color:"
+#~ msgstr "Cor do topo:"
+
+# @ simplecatch
+#~ msgid "Meta Description Color:"
+#~ msgstr "Cor da Meta Descrição:"
+
+# @ simplecatch
+#~ msgid "Text Color:"
+#~ msgstr "Cor do Texto:"
+
+# @ simplecatch
+#~ msgid "Link Color:"
+#~ msgstr "Cor do Link:"
+
+# @ simplecatch
+#~ msgid "Sidebar Widget Heading Color:"
+#~ msgstr "Cor dos Títulos na Barra Lateral:"
+
+# @ simplecatch
+#~ msgid "Sidebar Widget Text Color:"
+#~ msgstr "Cor dos Textos na Barra Lateral:"
+
+# @ simplecatch
+#~ msgid "Reset Color:"
+#~ msgstr "Voltar para cor padrão:"
+
+# @ simplecatch
+#~ msgid ""
+#~ "Only posts that belong to the categories selected here will be displayed "
+#~ "on the front page."
+#~ msgstr ""
+#~ "Apenas os posts de categorias selecionadas irão ser mostrados na home."
+
+# @ simplecatch
+#~ msgid "--Disabled--"
+#~ msgstr "--Desativado--"
+
+# @ simplecatch
+#~ msgid "You may select multiple categories by holding down the CTRL key."
+#~ msgstr "Você pode selecionar várias categorias apertando a tecla CTRL."
+
+# @ simplecatch
+#~ msgid "Enter your custom CSS styles."
+#~ msgstr "Insira aqui seus estilos CSS personalizados."
+
+# @ simplecatch
+#~ msgid "CSS Tutorial from W3Schools."
+#~ msgstr "Tutorial de CSS da W3Schools."
+
+# @ simplecatch
+#~ msgid "http://www.w3schools.com/css/default.asp"
+#~ msgstr "http://www.w3schools.com/css/default.asp"
+
+# @ simplecatch
+#~ msgid "Click Here to Read"
+#~ msgstr "Clique aqui para ler"
+
+# @ simplecatch
+#~ msgid "Exclude Slider post from Home page posts:"
+#~ msgstr "Remover posts do slider da home:"
+
+# @ simplecatch
+#~ msgid "Featured Post ID"
+#~ msgstr "ID do Post Destacado"
+
+# @ default
+# @ simplecatch
+#~ msgid "Click Here To Edit"
+#~ msgstr "Clique Aqui para Editar"
+
+# @ simplecatch
+#~ msgid ""
+#~ "Note: Here You can put your Post IDs which displays on Homepage as slider."
+#~ msgstr ""
+#~ "Nota: aqui você pode pôr os IDs dos posts que quer destacar no slider da "
+#~ "home."
+
+# @ simplecatch
+#~ msgid "Disable Slider Background Effect:"
+#~ msgstr "Desativar Efeito de Fundo:"
+
+# @ simplecatch
+#~ msgid "Transition Effect:"
+#~ msgstr "Efeito de Transição:"
+
+# @ simplecatch
+#~ msgid "second(s)"
+#~ msgstr "segundo (s)"
+
+# @ simplecatch
+#~ msgid "Linkedin"
+#~ msgstr "Linkedin"
+
+# @ simplecatch
+#~ msgid "Header and Footer Codes"
+#~ msgstr "Códigos de Cabeçalho e Rodapé"
+
+# @ simplecatch
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook etc. which will load "
+#~ "on Header"
+#~ msgstr ""
+#~ "Nota: aqui você pode colocar scripts do Google, Facebook e etc, que vão "
+#~ "carregar com o cabeçalho."
+
+# @ simplecatch
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
+#~ "will load on footer"
+#~ msgstr ""
+#~ "Nota: aqui você pode colocar scripts do Google, Facebook e etc, que vão "
+#~ "carregar com o rodapé."
+
+# @ simplecatch
+#~ msgid "Powered By:"
+#~ msgstr "Por:"
+
+# @ simplecatch
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://wordpress.org/"
+
+# @ simplecatch
+#~ msgid "Theme:"
+#~ msgstr "Tema:"
+
+# @ simplecatch
+#~ msgid "Simple Catch"
+#~ msgstr "Simple Catch"
+
+# @ simplecatch
+#~ msgid "ID"
+#~ msgstr "ID"
+
+# @ simplecatch
+#~ msgid "Select Sidebar layout"
+#~ msgstr "Selecione o Layout da sua Barra Lateral"
+
+# @ simplecatch
+#~ msgid "sidebar"
+#~ msgstr "barra lateral"
+
+# @ simplecatch
+#~ msgid "Advertisement Code:"
+#~ msgstr "Código do anúncio:"
+
+# @ simplecatch
+#~ msgid "Showing results for: <span class=\"img-title\">%s</span>"
+#~ msgstr "Mostrando resultados para: <span class=\"img-title\">%s</span>"
+
+# @ simplecatch
+#~ msgid "Permalink to %s"
+#~ msgstr "Link permanente para %s"
+
+# @ simplecatch
+#, fuzzy
+#~ msgid "Simple Catch Pro"
+#~ msgstr "Simple Catch"
+
+# @ simplecatch
+#~ msgid "Like Catch Themes on Facebook"
+#~ msgstr "Siga Catch Themes no Facebook"
+
+# @ simplecatch
+#~ msgid "Follow Catch Themes on Twitter"
+#~ msgstr "Siga Catch Themes  no Twitter"
+
+# @ simplecatch
+#~ msgid "Rate us 5 Star on WordPress"
+#~ msgstr "Vote 5 estrelas no WordPress"
+
+# @ simplecatch
+#, fuzzy
+#~ msgid "Insert Header Logo"
+#~ msgstr "Mudar Logo do Topo"
+
+# @ simplecatch
+#, fuzzy
+#~ msgid "Add/Change Header Logo"
+#~ msgstr "Mudar Logo do Topo"
+
+# @ simplecatch
+#, fuzzy
+#~ msgid "Insert Footer Logo"
+#~ msgstr "Mudar Logo de Rodapé"
+
+# @ simplecatch
+#, fuzzy
+#~ msgid "Add/Change Footer Logo"
+#~ msgstr "Mudar Logo de Rodapé"
+
+# @ simplecatch
+#~ msgid "Save"
+#~ msgstr "Salvar"
+
+# @ simplecatch
+#, fuzzy
+#~ msgid "Add/Change Favicon"
+#~ msgstr "Mudar logo do Favicon"
+
+# @ simplecatch
+#, fuzzy
+#~ msgid "Insert Web Clip Icon"
+#~ msgstr "URL do Web Clip:"
+
+# @ simplecatch
+#, fuzzy
+#~ msgid "Add/Change Web Clip Icon"
+#~ msgstr "Enviar/Mudar Ícone Web Clip"
+
+# @ simplecatch
+#, fuzzy
+#~ msgid "Click here to change header image"
+#~ msgstr "Clique aqui para ler"
+
+# @ simplecatch
+#~ msgid "CSS Tutorial"
+#~ msgstr "Tutorial de CSS"
+
+# @ simplecatch
+#~ msgid "%s on Facebook"
+#~ msgstr "%s no Facebook"
+
+# @ simplecatch
+#~ msgid "%s on Twitter"
+#~ msgstr "%s no Twitter"
+
+# @ simplecatch
+#~ msgid "%s on Google+"
+#~ msgstr "%s no Google+"
+
+# @ simplecatch
+#~ msgid "%s on Linkedin"
+#~ msgstr "%s no Linkedin"
+
+# @ simplecatch
+#~ msgid "%s on Pinterest"
+#~ msgstr "%s no Pinterest"
+
+# @ simplecatch
+#~ msgid "%s on YouTube"
+#~ msgstr "%s no Youtube"
+
+# @ simplecatch
+#~ msgid "%s on Vimeo"
+#~ msgstr "%s no Vimeo"
+
+# @ simplecatch
+#~ msgid "%s on Slideshare"
+#~ msgstr "%s no Slideshare"
+
+# @ simplecatch
+#~ msgid "%s on Foursquare"
+#~ msgstr "%s no Foursquare"
+
+# @ simplecatch
+#~ msgid "%s on Flickr"
+#~ msgstr "%s no Flickr"
+
+# @ simplecatch
+#~ msgid "%s on Tumblr"
+#~ msgstr "%s no Tumblr"
+
+# @ simplecatch
+#~ msgid "%s on deviantART"
+#~ msgstr "%s no deviantART"
+
+# @ simplecatch
+#~ msgid "%s on Dribbble"
+#~ msgstr "%s no Dribbble"
+
+# @ simplecatch
+#~ msgid "%s on MySpace"
+#~ msgstr "%s no MySpace"
+
+# @ simplecatch
+#~ msgid "%s on WordPress"
+#~ msgstr "%s no WordPress"
+
+# @ simplecatch
+#~ msgid "%s on RSS"
+#~ msgstr "%s no RSS"
+
+# @ simplecatch
+#~ msgid "%s on Delicious"
+#~ msgstr "%s no Delicious"
+
+# @ simplecatch
+#~ msgid "%s on Last.fm"
+#~ msgstr "%s no Last.fm"
+
+# @ simplecatch
+#~ msgid "%s on Instagram"
+#~ msgstr "%s no Instagram"
+
+# @ simplecatch
+#~ msgid "%s on GitHub"
+#~ msgstr "%s no GitHub"
+
+# @ simplecatch
+#~ msgid "%s on Vkontakte"
+#~ msgstr "%s no Vkontakte"
+
+# @ simplecatch
+#~ msgid "%s on My World"
+#~ msgstr "%s no My World"
+
+# @ simplecatch
+#~ msgid "%s on Odnoklassniki"
+#~ msgstr "%s no Odnoklassniki"
+
+# @ simplecatch
+#~ msgid "%s on Goodreads"
+#~ msgstr "%s no Goodreads"
+
+# @ simplecatch
+#~ msgid "%s on Skype"
+#~ msgstr "%s no Skype"
+
+# @ simplecatch
+#~ msgid "%s on Soundcloud"
+#~ msgstr "%s no Soundcloud"
+
+# @ simplecatch
+#~ msgid "%s on Email"
+#~ msgstr "%s Email"
+
+# @ simplecatch
+#~ msgid "Powered By WordPress"
+#~ msgstr "Criado com WordPress"
+
+# @ simplecatch
+#~ msgid "( required )"
+#~ msgstr "( obrigatório )"
+
+# @ simplecatch
+#, fuzzy
+#~ msgid "https://catchthemes.com/themes/simple-catch"
+#~ msgstr "https://catchthemes.com/themes/simple-catch-pro/"
+
+# @ simplecatch
+#, fuzzy
+#~ msgid "Catch Themes Team"
+#~ msgstr "Catch Themes"
+
+# @ simplecatch
+#~ msgid "Page %s"
+#~ msgstr "Página %s"
+
+# @ simplecatch
+#~ msgid "Default Layout Set in"
+#~ msgstr "Layout Padrão Selecionado"
+
+# @ simplecatch
+#~ msgid "Theme Settings"
+#~ msgstr "Configurações do Tema"
+
+# @ simplecatch
+#~ msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
+#~ msgstr "Habilita nuvem de tags personalizada para o tema Simple Catch."
+
+# @ simplecatch
+#~ msgid "1. Simple Catch: Tag Clouds"
+#~ msgstr "1. Simple Catch: Nuvem de Tags"
+
+# @ simplecatch
+#~ msgid "Displays Social Icons added from Theme Options Panel."
+#~ msgstr "Habilita ícones sociais adicionados pelo painel Opções do Tema."
+
+# @ simplecatch
+#~ msgid "2. Simple Catch: Social Icons"
+#~ msgstr "2. Simple Catch: ícones sociais"
+
+# @ simplecatch
+#~ msgid "Use this widget to add any type of Advertisement as a widget."
+#~ msgstr ""
+#~ "Use esse widget para adicionar qualquer tipo de anúncio como widget."
+
+# @ simplecatch
+#~ msgid "3. Simple Catch: Advertisement"
+#~ msgstr "3. Simple Catch: Anúncios"

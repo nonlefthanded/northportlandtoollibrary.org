@@ -1,0 +1,1428 @@
+# Copyright (C) 2012 the Catch Themes Team
+# This file is distributed under the  GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Catch\n"
+"Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
+"POT-Creation-Date: 2017-06-08 16:03+0545\n"
+"PO-Revision-Date: 2017-06-08 16:03+0545\n"
+"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
+"Language-Team: Catch Themes Team <info@catchthemes.com>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:12
+msgid "Error 404 - Page Not Found."
+msgstr "Chyba 404 - Stránka bohužel nebyla nalezena."
+
+#: ../404.php:15
+msgid "We&rsquo;re sorry! This page is not available."
+msgstr ""
+"Stránka na kterou přistupujete neexistuje, nebo byla přesunuta. Použíjte "
+"prosím menu nebo vyhledávač k nalezení Vámi hledaného obsahu."
+
+#: ../404.php:16
+msgid "This might be because:"
+msgstr "Tohle se stalo, protože "
+
+#: ../404.php:17
+msgid ""
+"You have typed the web address incorrectly, or the page you were looking for "
+"may have been moved, updated or deleted."
+msgstr ""
+"Vypadá to, že jste adresu nezadali správně . Je ale také možné, že byl "
+"hledaný cíl přesunut nebo smazán."
+
+#: ../404.php:18
+msgid "Please try the following options instead:"
+msgstr "Můžete zkusit toto: "
+
+#: ../404.php:19
+msgid ""
+"Check for a mis-typed URL error, then press the refresh button on your "
+"browser or Use the search box below."
+msgstr ""
+"Zkuste zkontrolovat, zda jste zadali URL adresu správně. TIP! Pokud si "
+"nejste jistý, použijte vyhledávač."
+
+#: ../comments.php:21
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Tento článek mohou kompletně zobrazit pouze vyvolení. Jestli mezi ně "
+"patříte, zadejte heslo."
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "No Comments"
+msgstr "Žádné komentáře"
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "1 Comment"
+msgstr "1 komentář"
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "% Comments"
+msgstr "% komentářů"
+
+#: ../comments.php:60
+msgid "Comments are closed."
+msgstr "U tohoto článku nemůžete přidávat komentáře."
+
+#: ../content.php:47 ../functions/core.php:996 ../image.php:21
+#: ../page-blog.php:49
+msgid "By"
+msgstr "od"
+
+#: ../content.php:77 ../page-blog.php:96
+msgid "Not found"
+msgstr "nebyla nalezena"
+
+#: ../content.php:80 ../page-blog.php:99
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+"Bohužel jsem v dané kategorii nic nenašel. Zkuste vyhledávat podle štítků."
+
+#: ../functions.php:115 ../functions/core.php:689
+msgid "Primary Menu"
+msgstr "Hlavní menu"
+
+#: ../functions/core.php:540
+#, php-format
+msgid "%s on Facebook"
+msgstr "%s on Facebook"
+
+#: ../functions/core.php:545
+#, php-format
+msgid "%s on Twitter"
+msgstr "%s on Twitter"
+
+#: ../functions/core.php:550
+#, php-format
+msgid "%s on Google+"
+msgstr "%s on Google+"
+
+#: ../functions/core.php:555
+#, php-format
+msgid "%s on Linkedin"
+msgstr "%s on Linkedin"
+
+#: ../functions/core.php:560
+#, php-format
+msgid "%s on Pinterest"
+msgstr "%s on Pinterest"
+
+#: ../functions/core.php:565
+#, php-format
+msgid "%s on YouTube"
+msgstr "%s on YouTube"
+
+#: ../functions/core.php:570
+#, php-format
+msgid "%s on Vimeo"
+msgstr "%s on Vimeo"
+
+#: ../functions/core.php:575
+#, php-format
+msgid "%s on Slideshare"
+msgstr "%s on Slideshare"
+
+#: ../functions/core.php:580
+#, php-format
+msgid "%s on Foursquare"
+msgstr "%s on Foursquare"
+
+#: ../functions/core.php:585
+#, php-format
+msgid "%s on Flickr"
+msgstr "%s on Flickr"
+
+#: ../functions/core.php:590
+#, php-format
+msgid "%s on Tumblr"
+msgstr "%s on Tumblr"
+
+#: ../functions/core.php:595
+#, php-format
+msgid "%s on deviantART"
+msgstr "%s on deviantART"
+
+#: ../functions/core.php:600
+#, php-format
+msgid "%s on Dribbble"
+msgstr "%s on Dribbble"
+
+#: ../functions/core.php:605
+#, php-format
+msgid "%s on MySpace"
+msgstr "%s on MySpace"
+
+#: ../functions/core.php:610
+#, php-format
+msgid "%s on WordPress"
+msgstr "%s on WordPress"
+
+#: ../functions/core.php:615
+#, php-format
+msgid "%s on RSS"
+msgstr "%s on RSS"
+
+#: ../functions/core.php:620
+#, php-format
+msgid "%s on Delicious"
+msgstr "%s on Delicious"
+
+#: ../functions/core.php:625
+#, php-format
+msgid "%s on Last.fm"
+msgstr "%s on Last.fm"
+
+#: ../functions/core.php:630
+#, php-format
+msgid "%s on Instagram"
+msgstr "%s on Instagram"
+
+#: ../functions/core.php:635
+#, php-format
+msgid "%s on GitHub"
+msgstr "%s on GitHub"
+
+#: ../functions/core.php:640
+#, php-format
+msgid "%s on Vkontakte"
+msgstr "%s on Vkontakte"
+
+#: ../functions/core.php:645
+#, php-format
+msgid "%s on My World"
+msgstr "%s on My World"
+
+#: ../functions/core.php:650
+#, php-format
+msgid "%s on Odnoklassniki"
+msgstr "%s on Odnoklassniki"
+
+#: ../functions/core.php:655
+#, php-format
+msgid "%s on Goodreads"
+msgstr "%s on Goodreads"
+
+#: ../functions/core.php:660
+#, php-format
+msgid "%s on Skype"
+msgstr "%s on Skype"
+
+#: ../functions/core.php:665
+#, php-format
+msgid "%s on Soundcloud"
+msgstr "%s on Soundcloud"
+
+#: ../functions/core.php:670
+#, php-format
+msgid "%s on Email"
+msgstr "%s on Email"
+
+#: ../functions/core.php:687 ../functions/core.php:1112
+msgid "Menu"
+msgstr "Menu"
+
+#: ../functions/core.php:690
+msgid "Primary menu"
+msgstr "Primární menu"
+
+#: ../functions/core.php:1019
+msgid "Categories: "
+msgstr "kategorií:"
+
+#: ../functions/core.php:1021
+msgid "Tags"
+msgstr ""
+
+#: ../functions/core.php:1040
+msgid "Name"
+msgstr "Jméno"
+
+#: ../functions/core.php:1040 ../functions/core.php:1041
+msgid "( required )"
+msgstr "( požadovaný )"
+
+#: ../functions/core.php:1041
+msgid "Email"
+msgstr "E-Mail"
+
+#: ../functions/core.php:1042
+msgid "Website"
+msgstr "webové stránky"
+
+#: ../functions/metabox.php:14 ../functions/metabox.php:20
+msgid "Simple Catch Options"
+msgstr ""
+
+#: ../functions/metabox.php:33
+#, php-format
+msgid "Default Layout Set in <a href=\"%s\">Customize</a>"
+msgstr "Default Layout Set in <a href=\"%s\">Customize</a>"
+
+#: ../functions/metabox.php:39
+msgid "No sidebar"
+msgstr "Bez sidebarů"
+
+#: ../functions/metabox.php:45
+msgid "No sidebar, Full Width"
+msgstr "Přes celou šířku, žádné sidebary"
+
+#: ../functions/metabox.php:51
+msgid "Left sidebar"
+msgstr "Levý boční panel"
+
+#: ../functions/metabox.php:57
+msgid "Right sidebar"
+msgstr "Pravý sidebar"
+
+#: ../functions/metabox.php:74
+msgid "Sidebar Layout Options"
+msgstr "Nastavení rozložení sidebaru"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:224
+msgid "Y"
+msgstr "Y"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:244
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:253
+msgid "Simple Catch"
+msgstr "Simple Catch"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:262
+msgid "https://catchthemes.com"
+msgstr "https://catchthemes.com"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:262
+msgid "Catch Themes"
+msgstr "Catch Themes"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:287
+msgid "Content on Left"
+msgstr "Pravý sidebar"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:288
+msgid "Content on Right"
+msgstr "Levý boční panel"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:289
+msgid "No Sidebar"
+msgstr "Žádný sidebar"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:290
+msgid "No Sidebar, Full Width"
+msgstr "Přes celou šířku, žádné sidebary"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:303
+msgid "fade"
+msgstr "zeslábnutí"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:304
+msgid "wipe"
+msgstr "wipe"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:305
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:307
+msgid "scrollUp"
+msgstr "Vyměnit ze shora"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:306
+msgid "scrollDown"
+msgstr "Vyměnit z dola"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:308
+msgid "scrollLeft"
+msgstr "Vyměnit z leva"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:309
+msgid "scrollRight"
+msgstr "Vyměnit z prava"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:310
+msgid "blindX"
+msgstr "roletaX"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:311
+msgid "blindY"
+msgstr "roletaY"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:312
+msgid "blindZ"
+msgstr "roletaZ"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:313
+msgid "cover"
+msgstr "překrýt"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:314
+msgid "shuffle"
+msgstr "Přehodit"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:327
+msgid "Excerpt/Blog Display"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:328
+msgid "Full Content Display"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:341
+msgid "Homepage / Frontpage"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:342
+msgid "Entire Site"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:343
+msgid "Disable"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:356
+msgid "Featured Image Slider"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:357
+msgid "Featured Post Slider"
+msgstr "Featured Post Slider"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:358
+msgid "Featured Page Slider"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:359
+msgid "Featured Category Slider"
+msgstr ""
+
+#: ../functions/widgets.php:17
+msgid "Main Sidebar"
+msgstr ""
+
+#: ../functions/widgets.php:19
+msgid "This is main sideabar"
+msgstr ""
+
+#: ../functions/widgets.php:42
+msgid "CT: Custom Tag Cloud"
+msgstr ""
+
+#: ../functions/widgets.php:43
+msgid "Displays Custom Tag Cloud"
+msgstr ""
+
+#: ../functions/widgets.php:101 ../functions/widgets.php:229
+msgid "Title (optional):"
+msgstr "Název (doporovolný):"
+
+#: ../functions/widgets.php:123
+msgid "CT: Advertisement"
+msgstr ""
+
+#: ../functions/widgets.php:124
+msgid "Use this widget to add any type of Advertisement as a widget"
+msgstr ""
+
+#: ../functions/widgets.php:172
+msgid "Add Advertisement Code or Image URL"
+msgstr "Add Advertisement Code or Image URL"
+
+#: ../functions/widgets.php:234
+msgid "Ad Code:"
+msgstr "Kód reklamy:"
+
+#: ../functions/widgets.php:240
+msgid "Image Url:"
+msgstr "URL obrázku:"
+
+#: ../functions/widgets.php:244
+msgid "Link URL:"
+msgstr "Link URL:"
+
+#: ../functions/widgets.php:249
+msgid "Open Link in New Window"
+msgstr "Open Link in New Window"
+
+#: ../functions/widgets.php:252
+msgid "Alt text:"
+msgstr "Alt text:"
+
+#: ../functions/widgets.php:256
+msgid "Check to Hide Ad on 404 page"
+msgstr ""
+
+#: ../functions/widgets.php:279
+msgid "CT: Social Icons"
+msgstr ""
+
+#: ../functions/widgets.php:280
+msgid "Displays Social Icons added from Customizer / Theme Options Panel"
+msgstr ""
+
+#: ../header.php:34
+msgid "Skip to content"
+msgstr ""
+
+#: ../image.php:86
+msgid "Previous Image"
+msgstr "Předešlý Obrázek"
+
+#: ../image.php:87
+msgid "Next Image"
+msgstr "Další Obrázek"
+
+#: ../page-blog.php:83 ../search.php:44
+msgid "Previous"
+msgstr "Předešlý"
+
+#: ../page-blog.php:85 ../search.php:45
+msgid "Next"
+msgstr "Další"
+
+#: ../search.php:15
+#, php-format
+msgid "Showing results for: <span>%s</span>"
+msgstr "Výsledky hledání pro: <span>%s</span>"
+
+#: ../search.php:54
+#, php-format
+msgid "Your search <span> \"%s\" </span> did not match any documents"
+msgstr "Vaše hledání <span> \"%s\" </span> Nenalezeno"
+
+#: ../search.php:57
+msgid "A few suggestions"
+msgstr " "
+
+#: ../search.php:59
+msgid "Make sure all words are spelled correctly"
+msgstr " "
+
+#: ../search.php:60
+msgid "Try different keywords"
+msgstr "Zkuste to prosím znovu s nějakým jiným klíčovým slovem."
+
+#: ../search.php:61
+msgid "Try more general keywords"
+msgstr " "
+
+#: ../sidebar.php:59
+msgid "Archives"
+msgstr "Archiv"
+
+#~ msgid "%s"
+#~ msgstr "%s"
+
+#~ msgid ""
+#~ "Check for a mis-typed URL error, then press the refresh button on your "
+#~ "browser or Use the search box at the Header."
+#~ msgstr ""
+#~ "Zkuste zkontrolovat, zda jste zadali URL adresu správně. TIP! Pokud si "
+#~ "nejste jistý, použijte vyhledávač."
+
+#~ msgid "Permalink to %s"
+#~ msgstr "Permalink pro %s"
+
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
+
+#~ msgid "All Rights Reserved."
+#~ msgstr "Všechna práva vyhrazena."
+
+#~ msgid "Support"
+#~ msgstr "Sodpora"
+
+#~ msgid "Theme Options"
+#~ msgstr "Natavení šablony"
+
+#~ msgid "Default Layout"
+#~ msgstr "Základní  rozložení"
+
+#~ msgid "Homepage / Frontpage Category Setting"
+#~ msgstr "Nastaven kategorií pro domovskou stránku"
+
+#~ msgid "Search Text Settings"
+#~ msgstr "Search Text Settings"
+
+#~ msgid "Excerpt / More Tag Settings"
+#~ msgstr "Výňatek "
+
+#~ msgid "Feed Redirect"
+#~ msgstr "Přesměrování"
+
+#~ msgid "Custom CSS"
+#~ msgstr "Vlastní CSS stylování"
+
+#~ msgid "Add Slider Options"
+#~ msgstr "Nastavení slideru"
+
+#~ msgid "Slider Effect Options"
+#~ msgstr "Nastavení efektu přechodu mezi položkami ve slideru"
+
+#~ msgid "Social Links"
+#~ msgstr "Sociální sítě"
+
+#~ msgid "Webmaster Tools"
+#~ msgstr "Webmaster Tools"
+
+#~ msgid "Default Color Scheme"
+#~ msgstr "Defaultní barva"
+
+#~ msgid "Check to Reset Color"
+#~ msgstr "Check to Reset Color"
+
+#~ msgid "Front page posts categories:"
+#~ msgstr "Kategorie pro domovskou obrazovku:"
+
+#~ msgid "Default Display Text in Search"
+#~ msgstr "Default Display Text in Search"
+
+#~ msgid "Search Button's text"
+#~ msgstr "Search Button's text"
+
+#~ msgid "More Tag Text"
+#~ msgstr "Zobrazení celého příspěvku"
+
+#~ msgid "Excerpt length(words)"
+#~ msgstr "Přesná délka podle počtu slov"
+
+#~ msgid "Feed Redirect URL"
+#~ msgstr "Přesměrování"
+
+#~ msgid "Number of Slides"
+#~ msgstr "Počet slidů"
+
+#~ msgid "Transition Delay"
+#~ msgstr "Doba statického zobrazení"
+
+#~ msgid "Transition Length"
+#~ msgstr "Délka trvání přechodu"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+#~ msgid "Pinterest"
+#~ msgstr "Pinterest"
+
+#~ msgid "Youtube"
+#~ msgstr "Youtube"
+
+#~ msgid "Vimeo"
+#~ msgstr "Vimeo"
+
+#~ msgid "Slideshare"
+#~ msgstr "Slideshare"
+
+#~ msgid "Foursquare"
+#~ msgstr "Foursquare"
+
+#~ msgid "Flickr"
+#~ msgstr "Flickr"
+
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+#~ msgid "deviantART"
+#~ msgstr "deviantART"
+
+#~ msgid "Dribbble"
+#~ msgstr "Dribbble"
+
+#~ msgid "MySpace"
+#~ msgstr "MySpace"
+
+#~ msgid "RSS"
+#~ msgstr "RSS"
+
+#~ msgid "Delicious"
+#~ msgstr "Delicious"
+
+#~ msgid "Last.fm"
+#~ msgstr "Last.fm"
+
+#~ msgid "Instagram"
+#~ msgstr "Instagram"
+
+#~ msgid "GitHub"
+#~ msgstr "GitHub"
+
+#~ msgid "Vkontakte"
+#~ msgstr "Vkontakte"
+
+#~ msgid "My World"
+#~ msgstr "My World"
+
+#~ msgid "Odnoklassniki"
+#~ msgstr "Odnoklassniki"
+
+#~ msgid "Goodreads"
+#~ msgstr "Goodreads"
+
+#~ msgid "Skype"
+#~ msgstr "Skype"
+
+#~ msgid "Soundcloud"
+#~ msgstr "Soundcloud"
+
+#~ msgid "Code to display on Header"
+#~ msgstr "Code to display on Header"
+
+#~ msgid "Code to display on Footer"
+#~ msgstr "Code to display on Footer"
+
+#~ msgid "Options Saved"
+#~ msgstr "Nastavení uloženo"
+
+#~ msgid "Theme Options By"
+#~ msgstr "Theme Options By"
+
+#~ msgid "https://catchthemes.com/"
+#~ msgstr "https://catchthemes.com/"
+
+#~ msgid "https://catchthemes.com/themes/simple-catch-pro/"
+#~ msgstr "https://catchthemes.com/themes/simple-catch-pro/"
+
+#~ msgid "Upgrade to Simple Catch Pro"
+#~ msgstr "Upgradovat na Simple Catch Pro"
+
+#~ msgid "https://catchthemes.com/donate/"
+#~ msgstr "https://catchthemes.com/donate/"
+
+#~ msgid "Donate"
+#~ msgstr "Přispět"
+
+#~ msgid "https://catchthemes.com/support/"
+#~ msgstr "https://catchthemes.com/"
+
+#~ msgid "https://catchthemes.com/theme-instructions/simple-catch/"
+#~ msgstr "https://catchthemes.com/theme-instructions/simple-catch/"
+
+#~ msgid "Theme Instruction"
+#~ msgstr "Nápověda k šabloně"
+
+#~ msgid "https://www.facebook.com/catchthemes/"
+#~ msgstr "https://www.facebook.com/catchthemes/"
+
+#~ msgid "Like Catch Themes on Facebook"
+#~ msgstr "Like Catch Themes on Facebook"
+
+#~ msgid "https://twitter.com/catchthemes/"
+#~ msgstr "https://twitter.com/catchthemes/"
+
+#~ msgid "Follow Catch Themes on Twitter"
+#~ msgstr "Follow Catch Themes on Twitter"
+
+#~ msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
+#~ msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
+
+#~ msgid "Rate us 5 Star on WordPress"
+#~ msgstr "Rate us 5 Star on WordPress"
+
+#~ msgid "5 Star Rating"
+#~ msgstr "5 Star Rating"
+
+#~ msgid "Logo Options"
+#~ msgstr "loga možnosti"
+
+#~ msgid "Header logo url:"
+#~ msgstr "Záhlaví loga url:"
+
+#~ msgid "Preview: "
+#~ msgstr "Náhled:"
+
+#~ msgid "Disable Header Logo?"
+#~ msgstr "Zrušit Záhlaví loga"
+
+#~ msgid "Check to Disable."
+#~ msgstr "Nezobrazovat."
+
+#~ msgid "Disable Site Title?"
+#~ msgstr "Disable Site Title?"
+
+#~ msgid "Disable Site Description?"
+#~ msgstr "Disable Site Description?"
+
+#~ msgid "Footer logo url: "
+#~ msgstr "Zápatí loga url:"
+
+#~ msgid "Disable Footer Logo?"
+#~ msgstr "Deaktivovat Zápatí loga"
+
+#~ msgid "Save"
+#~ msgstr "Uložit"
+
+#~ msgid "Fav Icon Option"
+#~ msgstr "Nastavení Faviconu"
+
+#~ msgid "Favicon URL:"
+#~ msgstr "Favicon URL:"
+
+#~ msgid "Disable Fav Icon?"
+#~ msgstr "Zrušit Favicon?"
+
+#~ msgid "Web Clip Icon Option"
+#~ msgstr "Nastavení Web Clip Icon"
+
+#~ msgid "Web Clip Icon URL:"
+#~ msgstr "URL Web Clip Icon"
+
+#~ msgid "No Web Clip Icon Found. Upload Web Clip Icon."
+#~ msgstr "No Web Clip Icon Found. Upload Web Clip Icon."
+
+#~ msgid "Color Options"
+#~ msgstr "Nastavení barvy"
+
+#~ msgid "Default"
+#~ msgstr "Defaultní"
+
+#~ msgid "Dark"
+#~ msgstr "Tmavé"
+
+#~ msgid "Brown"
+#~ msgstr "Brown"
+
+#~ msgid "Content Background:"
+#~ msgstr "Barva pozadí"
+
+#~ msgid "Need to replace default background?"
+#~ msgstr "Need to replace default background?"
+
+#~ msgid "<a class=\"button\" href=\"%s\">Click here</a>"
+#~ msgstr "<a class=\"button\" href=\"%s\">Klikněte zde</a>"
+
+#~ msgid "Heading Color:"
+#~ msgstr "Heading Color:"
+
+#~ msgid "Meta Description Color:"
+#~ msgstr "Barva Meta podrobností:"
+
+#~ msgid "Text Color:"
+#~ msgstr "Barva textu"
+
+#~ msgid "Link Color:"
+#~ msgstr "Barva odkazů:"
+
+#~ msgid "Sidebar Widget Heading Color:"
+#~ msgstr "Barva názvu widgetu v bočním panelu:"
+
+#~ msgid "Sidebar Widget Text Color:"
+#~ msgstr "Barva textu widgetu v bočním panelu"
+
+#~ msgid "Reset Color:"
+#~ msgstr "Resetoat barvu:"
+
+#~ msgid ""
+#~ "Only posts that belong to the categories selected here will be displayed "
+#~ "on the front page."
+#~ msgstr ""
+#~ "Na domovské stránce budou zobrazeny příspěvky pouze z těchto kategorií."
+
+#~ msgid "--Disabled--"
+#~ msgstr "--Zrušeno--"
+
+#~ msgid "You may select multiple categories by holding down the CTRL key."
+#~ msgstr "Můžete zvolit více kategorií pomocí tlačítka CTRL"
+
+#~ msgid "Enter your custom CSS styles."
+#~ msgstr "Vlastní CSS stylování."
+
+#~ msgid "CSS Tutorial from W3Schools."
+#~ msgstr "CSS Tutorial od W3Schools"
+
+#~ msgid "http://www.w3schools.com/css/default.asp"
+#~ msgstr "http://www.w3schools.com/css/default.asp"
+
+#~ msgid "CSS Tutorial"
+#~ msgstr "CSS Tutorial"
+
+#~ msgid "Click Here to Read"
+#~ msgstr "Číst"
+
+#~ msgid "Exclude Slider post from Home page posts:"
+#~ msgstr ""
+#~ "Vyloučit příspěvky, které jsou použity ve slideru, z výpisu článků na "
+#~ "domácí obrazovce: "
+
+#~ msgid "Featured Post ID"
+#~ msgstr "Featured Post ID"
+
+#~ msgid "Click Here To Edit"
+#~ msgstr "Klikněte zde pro úpravu"
+
+#~ msgid ""
+#~ "Note: Here You can put your Post IDs which displays on Homepage as slider."
+#~ msgstr ""
+#~ "<strong>Poznámka</strong>: Zde můžete zadat ID číslo článků, podle "
+#~ "kterého se budou články ve slideru zobrazovat."
+
+#~ msgid "Disable Slider Background Effect:"
+#~ msgstr "Disable Slider Background Effect:"
+
+#~ msgid "Transition Effect:"
+#~ msgstr "efekt přechodu:"
+
+#~ msgid "second(s)"
+#~ msgstr "vteřin"
+
+#~ msgid "Linkedin"
+#~ msgstr "Linkedin"
+
+#~ msgid "Header and Footer Codes"
+#~ msgstr "Kódy záhlaví a zápatí"
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook etc. which will load "
+#~ "on Header"
+#~ msgstr ""
+#~ "Note: Here you can put scripts from Google, Facebook etc. which will load "
+#~ "on Header"
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
+#~ "will load on footer"
+#~ msgstr ""
+#~ "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
+#~ "will load on footer"
+
+#~ msgid "Powered By:"
+#~ msgstr "Powered By:"
+
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://wordpress.org/"
+
+#~ msgid "Powered By WordPress"
+#~ msgstr "Powered By WordPress"
+
+#~ msgid "Theme:"
+#~ msgstr "Šablona:"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Select Sidebar layout"
+#~ msgstr "Nastavení rozložení sidebaru"
+
+#~ msgid "sidebar"
+#~ msgstr "sidebar"
+
+#~ msgid "Advertisement Code:"
+#~ msgstr "Advertisement Code:"
+
+#~ msgid "Showing results for: <span class=\"img-title\">%s</span>"
+#~ msgstr "Výsledky hledání pro: <span class=\"img-title\">%s</span>"
+
+#, fuzzy
+#~ msgid "Simple Catch Pro"
+#~ msgstr "Simple Catch"
+
+#, fuzzy
+#~ msgid "https://catchthemes.com/themes/simple-catch"
+#~ msgstr "https://catchthemes.com/themes/simple-catch-pro/"
+
+#, fuzzy
+#~ msgid "Catch Themes Team"
+#~ msgstr "Catch Themes"
+
+#~ msgid "Change Header Logo"
+#~ msgstr "Změny záhlaví loga"
+
+#~ msgid "Change Footer Logo"
+#~ msgstr "Změny Zápatí loga"
+
+#~ msgid "Change Fav icon Logo"
+#~ msgstr "Přidat/změnit Favicon"
+
+#~ msgid "Upload/Change Web Clip Icon"
+#~ msgstr "Přidat/změnit Web Clip Icon"
+
+#~ msgid "Page %s"
+#~ msgstr "Stránka  %s"
+
+#~ msgid "Default Layout Set in"
+#~ msgstr "Základní  rozložení"
+
+#~ msgid "Theme Settings"
+#~ msgstr "Theme Settings"
+
+#~ msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
+#~ msgstr "Displays Custom Tag Cloud designed for Simple Catch Theme."
+
+#~ msgid "1. Simple Catch: Tag Clouds"
+#~ msgstr "1. Simple Catch: Tag Clouds"
+
+#~ msgid "Displays Social Icons added from Theme Options Panel."
+#~ msgstr "Displays Social Icons added from Theme Options Panel."
+
+#~ msgid "2. Simple Catch: Social Icons"
+#~ msgstr "2. Simple Catch: Social Icons"
+
+#~ msgid "Use this widget to add any type of Advertisement as a widget."
+#~ msgstr "Use this widget to add any type of Advertisement as a widget."
+
+#~ msgid "3. Simple Catch: Advertisement"
+#~ msgstr "3. Simple Catch: Advertisement"
+
+#~ msgid "http://facebook.com/catchthemes"
+#~ msgstr "http://facebook.com/catchthemes"
+
+#~ msgid "https://twitter.com/catchthemes"
+#~ msgstr "https://twitter.com/catchthemes"
+
+#~ msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+#~ msgstr "Vypadá to, že nemohu&rsquo; najít to, co hledáte."
+
+#~ msgid "Daily Archives: %s"
+#~ msgstr "Denní archiv: %s"
+
+#~ msgid "Monthly Archives: %s"
+#~ msgstr "Měsíční archiv: %s"
+
+#~ msgid "F Y"
+#~ msgstr "F Y"
+
+#~ msgid "Yearly Archives: %s"
+#~ msgstr "Roční archiv: %s"
+
+#~ msgid "Blog Archives"
+#~ msgstr "Archiv od počátku věků, tedy od vzniku webu."
+
+#~ msgid "Author Archives: %s"
+#~ msgstr "Od autora: %s"
+
+#~ msgid "About %s"
+#~ msgstr "O  %s"
+
+#~ msgid "One thought on &ldquo;%2$s&rdquo;"
+#~ msgstr "komentář u &ldquo;%2$s&rdquo;"
+
+#~ msgid "Comment navigation"
+#~ msgstr "Navigaci v komentářích"
+
+#~ msgid "&larr; Older Comments"
+#~ msgstr "&larr; Starší komentáře"
+
+#~ msgid "Newer Comments &rarr;"
+#~ msgstr "Novější komentáře &rarr;"
+
+#~ msgid "Reply"
+#~ msgstr "Odpověď"
+
+#~ msgid "1"
+#~ msgstr "1"
+
+#~ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Celý článek <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "Pages:"
+#~ msgstr "Stránky:"
+
+#~ msgid "Leave a reply"
+#~ msgstr "Zanechte komentář"
+
+#~ msgid "<b>1</b> Reply"
+#~ msgstr "<b>1</b> komentář"
+
+#~ msgid "<b>%</b> Replies"
+#~ msgstr "<b>%</b> komentářů"
+
+#~ msgid "Edit"
+#~ msgstr "Upravit"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid ""
+#~ "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s"
+#~ "\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Publikováno: %1$s Štítky: %2$s. <a href=\"%3$s\" title=\"Permalink %4$s\" "
+#~ "rel=\"bookmark\">Permalink</a>"
+
+#~ msgid ""
+#~ "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
+#~ "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Publikováno:  %1$s. <a href=\"%3$s\" title=\"Permalink %4$s\" rel="
+#~ "\"bookmark\">permalink</a>"
+
+#~ msgid "Gallery"
+#~ msgstr "Galerie"
+
+#~ msgid "This gallery contains <a %1$s>%2$s photo</a>."
+#~ msgstr "V této galerii najdete <a %1$s>%2$s Fotos</a>."
+
+#~ msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+#~ msgstr "<span class=\"%1$s\">Publikováno:</span> %2$s"
+
+#~ msgid "<span class=\"%1$s\">Tagged</span> %2$s"
+#~ msgstr "<span class=\"%1$s\">Štítky:  </span> %2$s"
+
+#~ msgid ""
+#~ "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime="
+#~ "\"%2$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span class="
+#~ "\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" "
+#~ "href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+#~ msgstr ""
+#~ "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime="
+#~ "\"%2$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span class="
+#~ "\"sep\"> Autor:  </span> <span class=\"author vcard\"><a class=\"url fn n"
+#~ "\" href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+
+#~ msgid "View all posts by %s"
+#~ msgstr "Zobrazit všechny články od : %s "
+
+#~ msgid "Link"
+#~ msgstr "Link"
+
+#~ msgid "Quote"
+#~ msgstr "Citovat"
+
+#~ msgid ""
+#~ "This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</"
+#~ "a>. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel="
+#~ "\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Publikováno: %1$s Štítky: %2$s Autor: <a href=\"%6$s\">%5$s</a>. <a href="
+#~ "\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a>"
+
+#~ msgid ""
+#~ "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the "
+#~ "<a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</"
+#~ "a>."
+#~ msgstr ""
+#~ "Publikováno: %1$s Autor:  <a href=\"%6$s\">%5$s</a>. <a href=\"%3$s\" "
+#~ "title=\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a>"
+
+#~ msgid ""
+#~ "This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href="
+#~ "\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Tento článek napsal <a href=\"%6$s\">%5$s</a>. <a href=\"%3$s\" title="
+#~ "\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a>"
+
+#~ msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr ""
+#~ "Všechny články od tohoto autora %s <span class=\"meta-nav\">&rarr;</span> "
+#~ "ansehen"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Featured"
+#~ msgstr "Doporučené"
+
+#~ msgid "Footer menu"
+#~ msgstr "Menu v zápatí"
+
+#~ msgid "Secondary Menu"
+#~ msgstr "Duhé ménu"
+
+#~ msgid "Footer Menu"
+#~ msgstr "Menu v zápatí"
+
+#~ msgid "Garden"
+#~ msgstr "Zahrada"
+
+#~ msgid "Flower"
+#~ msgstr "Kytice"
+
+#~ msgid "Mountain"
+#~ msgstr "hory"
+
+#~ msgid "Footer Area One"
+#~ msgstr "Zápatí 1"
+
+#~ msgid "An optional widget area for your site footer"
+#~ msgstr "Místo pro widget, který bude zobrazen v zápatí"
+
+#~ msgid "Footer Area Two"
+#~ msgstr "Zápatí 2"
+
+#~ msgid "Footer Area Three"
+#~ msgstr "Zápatí 3"
+
+#~ msgid "Post navigation"
+#~ msgstr "Navigace v příspěvku"
+
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Starší"
+
+#~ msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Novější <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "Pingback:"
+#~ msgstr "Pingback:"
+
+#~ msgid "%1$s on %2$s <span class=\"says\">said:</span>"
+#~ msgstr "%1$s na %2$s <span class=\"says\">řekl:</span>"
+
+#~ msgid "%1$s at %2$s"
+#~ msgstr "%1$s v %2$s"
+
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Váš komentář čeká na schválení."
+
+#~ msgid "Reply <span>&darr;</span>"
+#~ msgstr "Odpověd <span>&darr;</span>"
+
+#~ msgid ""
+#~ "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
+#~ "\"bookmark\"><time class=\"entry-date updated\" datetime=\"%3$s\" pubdate>"
+#~ "%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> "
+#~ "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title="
+#~ "\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+#~ msgstr ""
+#~ "<span class=\"sep\">Publikováno: </span><a href=\"%1$s\" title=\"%2$s\" "
+#~ "rel=\"bookmark\"><time class=\"entry-date updated\" datetime=\"%3$s\" "
+#~ "pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> "
+#~ "Autor: </span> <span class=\"author vcard\"><a class=\"url fn n\" href="
+#~ "\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+
+#~ msgid "Skip to primary content"
+#~ msgstr "Přeskočit k primárnímu obsahu."
+
+#~ msgid "Skip to secondary content"
+#~ msgstr "Přeskočit k sekundárnímu obsahu."
+
+#~ msgid "Secondary menu"
+#~ msgstr "Sekundární menu"
+
+#~ msgid "Theme Catch Box by Catch Themes"
+#~ msgstr "Theme Catch Box od  Catch Themes"
+
+#~ msgid "Image navigation"
+#~ msgstr "Navigace v galerii"
+
+#~ msgid "Next &rarr;"
+#~ msgstr "Další  &rarr;"
+
+#~ msgid ""
+#~ "<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span "
+#~ "class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</"
+#~ "abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s "
+#~ "&times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
+#~ "\"gallery\">%8$s</a>"
+#~ msgstr ""
+#~ "<span class=\"meta-prep meta-prep-entry-date\">Publikováno:  </span> "
+#~ "<span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</"
+#~ "abbr></span> v <a href=\"%3$s\" title=\"Link to full-size image\">%4$s "
+#~ "&times; %5$s</a> v <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery"
+#~ "\">%8$s</a>"
+
+#~ msgid "Move Site Title and Tagline?"
+#~ msgstr "Move Site Title and Tagline?"
+
+#~ msgid "Enable Secondary & Footer Menu in Mobile Devices?"
+#~ msgstr "Zapnout Sekundární & zápatí menu in Mobile Devices?"
+
+#~ msgid "Light"
+#~ msgstr "Světlé"
+
+#~ msgid "Blue"
+#~ msgstr "Modré"
+
+#~ msgid "Green"
+#~ msgstr "Green"
+
+#~ msgid "Red"
+#~ msgstr "Red"
+
+#~ msgid "Orange"
+#~ msgstr "Orange"
+
+#~ msgid "One-column, no sidebar"
+#~ msgstr "Jeden seznam, žádné sidebary"
+
+#~ msgid "Show excerpt"
+#~ msgstr "Zobrazit výpis"
+
+#~ msgid "Show full content"
+#~ msgstr "Zobrazit celý obsah článku"
+
+#~ msgid "Default color: %s"
+#~ msgstr "Základní barva: %s"
+
+#~ msgid "Check to move above the Header/Logo Image"
+#~ msgstr "Check to move above the Header/Logo Image"
+
+#~ msgid "Check to Enable"
+#~ msgstr "umožnit"
+
+#~ msgid "https://catchthemes.com/support-forum/forum/simple-catch-public/"
+#~ msgstr "https://catchthemes.com/support-forum/forum/simple-catch-public/"
+
+#~ msgid "Support Forum"
+#~ msgstr "Support Forum"
+
+#~ msgid "Check to disable"
+#~ msgstr "Nezobrazovat: "
+
+#~ msgid "RSS Feed"
+#~ msgstr "RSS Feed"
+
+#~ msgid "Aim"
+#~ msgstr "Aim"
+
+#~ msgid ""
+#~ "<strong>Note:</strong> Enter the url for correponding social networking "
+#~ "website"
+#~ msgstr ""
+#~ "<strong>Poznámka:</strong>Zadejte URL adresy pro dané profily na určených "
+#~ "sociálních sítích."
+
+#~ msgid "Catch Box Adspace Widget"
+#~ msgstr "Catch Box Adspace Widget"
+
+#~ msgid "Search Results for: %s"
+#~ msgstr "Výsledky vyhledávání pro : %s"
+
+#~ msgid ""
+#~ "Sorry, but nothing matched your search criteria. Please try again with "
+#~ "some different keywords."
+#~ msgstr "Bohužel jsem nic nenašel. Zkuste zadat jiná klíčová slova."
+
+#~ msgid "Search"
+#~ msgstr "Vyhledávání"
+
+#~ msgid "Meta"
+#~ msgstr "Další"
+
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Předešlý"
+
+#~ msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Další <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "Tag Archives: %s"
+#~ msgstr "Více se stejným štíkem: %s"
+
+#~ msgid ""
+#~ "Some themes provide customization options that are grouped together on a "
+#~ "Theme Options screen. If you change themes, options may change or "
+#~ "disappear, as they are theme-specific. Your current theme, Catch Box, "
+#~ "provides the following Theme Options:"
+#~ msgstr ""
+#~ "Některá nastavení jsou shromážděny v položce menu Nastavení. Pokud "
+#~ "šablonu změníte na jinou, můžé se nastavení změnit. Pro nastavení šablony "
+#~ "Catch Box přejděte do Nastavení šablony."
+
+#~ msgid ""
+#~ "<strong>Color Scheme</strong>: You can choose a color palette of \"Light"
+#~ "\" (light background with dark text) or \"Dark\" (dark background with "
+#~ "light text) for your site."
+#~ msgstr ""
+#~ "<strong>Barevný styl</strong>: Můžete si zvolit jedno z barevných stylů"
+#~ "\"Hell\" (bílé pozadí s černým textem) nebo\"Dunkel\" (černé pozadí s "
+#~ "bílým textem) pro vaši stránku."
+
+#~ msgid ""
+#~ "<strong>Link Color</strong>: You can choose the color used for text links "
+#~ "on your site. You can enter the HTML color or hex code, or you can choose "
+#~ "visually by clicking the \"Select a Color\" button to pick from a color "
+#~ "wheel."
+#~ msgstr ""
+#~ "<strong>Barva odkazů</strong>: Zde můžete nastavit, jakou barvu budou mít "
+#~ "všechny aktivní odkazy. Můžete jej zadat pomocí HTML nebo hex kódem. Taky "
+#~ "můžete barvu zvolit kliknutím  na \"Zvolit barvu\"  a vybrat si z "
+#~ "barevného spektra."
+
+#~ msgid ""
+#~ "<strong>Default Layout</strong>: You can choose if you want your "
+#~ "site&#8217;s default layout to have a sidebar on the left, the right, or "
+#~ "not at all."
+#~ msgstr ""
+#~ "<strong>Základní rozložení</strong>: Pokud chcete základní rozložení se "
+#~ "sidebarem na levé, pravé nebo žádné straně."
+
+#~ msgid ""
+#~ "Remember to click \"Save Changes\" to save any changes you have made to "
+#~ "the theme options."
+#~ msgstr ""
+#~ "Nezapomeň kliknut na \"Uložit změny\" aby jsi uložit všechy provedené "
+#~ "změny."
+
+#~ msgid "For more information:"
+#~ msgstr "Pro více informací: "
+
+#~ msgid ""
+#~ "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" "
+#~ "target=\"_blank\">Documentation on Theme Options</a>"
+#~ msgstr ""
+#~ "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" "
+#~ "target=\"_blank\">Nápověda pro Nastavení šablony</a>"
+
+#~ msgid ""
+#~ "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Support "
+#~ "Forums</a>"
+#~ msgstr ""
+#~ "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Fórum "
+#~ "podpory</a>"
+
+#~ msgid "Overview"
+#~ msgstr "Přehled"
+
+#~ msgid ""
+#~ "Slider Some themes provide customization options that are grouped "
+#~ "together on a Theme Options screen. If you change themes, options may "
+#~ "change or disappear, as they are theme-specific. Your current theme, "
+#~ "Catch Box, provides the following Theme Options:"
+#~ msgstr ""
+#~ "Posuvník Některé šablony si můžete uživatelsky přizpůsobit. Všechny tyto "
+#~ "možnosti najdete v Nastavení šablony. Pokud šablonu změníte na jinou, "
+#~ "můžete o současné nastavení přijít. Vaše současná šablona Catch Box "
+#~ "nabízí zmiňované nastavení zde: "
+
+#~ msgid "Webmaster Site Verification IDs"
+#~ msgstr "Webmaster Site Verification IDs"
+
+#~ msgid "Google Site Verification ID"
+#~ msgstr "Google Site Verification ID"
+
+#~ msgid "Enter your Google ID number only"
+#~ msgstr "Geben Sie nur Ihre Google-ID-Nummer ein"
+
+#~ msgid "Yahoo Site Verification ID"
+#~ msgstr "Yahoo Site Verification ID"
+
+#~ msgid "Enter your Yahoo ID number only"
+#~ msgstr "Geben Sie nur Ihre Yahoo-ID-Nummer ein"
+
+#~ msgid "Bing Site Verification ID"
+#~ msgstr "Bing Site Verification ID"
+
+#~ msgid "Enter your Bing ID number only"
+#~ msgstr "Geben Sie nur Ihre Bing-ID-Nummer ein"
+
+#~ msgid "Webmaster Site Verification Code"
+#~ msgstr "Webmaster Site Verification Code"
+
+#~ msgid "Analytics, site stats Header code"
+#~ msgstr "Analytics, statistiky Header kód"
+
+#~ msgid "Analytics, site stats footer code"
+#~ msgstr "Analytics, statistiky kód v zápatí"
+
+#~ msgid "Viemo"
+#~ msgstr "Viemo"

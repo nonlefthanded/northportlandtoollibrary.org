@@ -1,0 +1,30 @@
+.testimonial {
+	border-bottom: solid 1px darken(@background, 5%);
+	.featured-thumb {
+		text-align: center;
+		border: none;
+		overflow: visible;
+		img {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+		}
+	}
+	h1.entry-title {
+		font-size: 15px;
+	}
+	.author {
+		font-style: italic;
+		font-size: 12px;
+		color: lighten(@content,15%);
+		margin-left: 10px;
+		&:before {
+			content: "-";
+			display: inline-block;
+			margin-right: 5px;
+		}
+		a {
+			color: fade(@accent, 80%);
+		}
+	}
+}

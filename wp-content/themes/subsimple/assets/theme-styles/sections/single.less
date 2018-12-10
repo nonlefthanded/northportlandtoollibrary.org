@@ -1,0 +1,187 @@
+/* Single Posts Area */
+#primary-mono {
+	padding: 0 10px;
+	padding-left: 20px;
+	@media screen and (max-width:767px) {
+		padding-left: 10px;
+	}
+	h1.entry-title {
+		font-weight: bold;
+		color: darken(@content,10%);
+		font-size: 36px;
+		margin-top: 0px;
+		padding: 2px 0px;
+		margin-bottom: 10px;
+		.title-font;
+	}
+	.entry-meta, .entry-footer {
+		border-bottom: solid 1px darken(@background, 6%);
+		padding-bottom: 7px;
+		overflow: auto;
+		
+		a {
+			color: @content;
+			text-decoration: underline;
+			&:hover {
+				color: @accent;
+			}
+		}
+	}
+	.entry-meta {
+		color: lighten(@content, 10%);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		display: inline-block;
+		padding: 2px 0px;
+		padding-bottom: 8px;
+		font-size: 13px;
+		border-bottom: none;
+		a {
+			color: @accent;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	.entry-footer {
+		border: none;
+		padding-top: 7px;
+		margin-top: 25px;
+		.post-edit-link {
+			float: right;
+			
+		}
+		.cat-links {
+			margin-right: 6px;
+		}
+	}
+	.cat-links, .tags-links {
+		display: block;
+		overflow: auto;
+		padding: 10px 0;
+		font-weight: bold;
+		font-size: 14px;
+		margin-bottom: 20px;
+		.cat-title, .tag-title {
+			margin-right: 10px;
+			display: inline-block;
+			text-transform: uppercase;
+		}
+		a {
+			display: inline;
+			text-decoration: none;
+			padding: 10px 15px;
+			font-weight: normal;
+			border: solid 1px fade(@content, 80%);
+			border-radius: 4px;
+			margin-right: 8px;
+			
+		}
+	}
+	#featured-image {
+		border-top: solid 5px darken(@background, 5%);
+		img {
+			width: 100%;
+		}
+	}
+	
+	.nav-links {
+		border-bottom: solid 1px darken(@background, 5%);
+		padding: 5px;
+		font-size: 13px;
+		overflow: auto;
+		display: block;
+		color: @content;
+		a {
+			color: @content;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+	
+	article.post {
+		border-bottom: solid 2px darken(@background, 6%);
+	}
+	
+	.entry-content {
+		color: @content;
+		line-height: 1.8em;
+		font-size: 16px;
+		a {
+			color: @accent;
+			&:hover {
+				color: lighten(@content, 15%);
+				text-decoration: underline;
+			}
+		}
+		blockquote {
+			font-family: "Georgia", serif;
+			border-left-color: fade(@content,60%);
+		}
+		table {
+			
+			tr:nth-child(even) {
+				background: darken(@background, 2%);
+			}
+			tr:nth-child(odd) {
+				background: lighten(@background, 3%);
+			}
+			thead tr {
+				background: darken(@background, 8%) !important;
+				border-bottom: solid 2px @background;
+			}
+			tr {
+				border-bottom: solid 1px @background;
+			}
+			td, th {
+				padding: 5px;
+			}
+		}
+		code, pre {
+				background: darken(@background, 5%);
+				border: darken(@background, 12%) solid 1px;
+				color: @content;
+				padding: 3px;
+			}
+		pre {
+			border: solid 1px @background;
+			padding: 10px;
+		}	
+		
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: bold;
+		}
+		h1, h2, h3 {
+			color: @accent;
+		}
+	}
+	
+	#featured-image {
+		margin-top: 10px;
+	}	
+}
+
+#primary-mono.page h1.entry-title:after {
+	display: none;
+}
+.edit-link {
+	display: inline-block;
+	float: right;
+}
+.page-header {
+	margin-top: 0px;
+	border-bottom: none;
+	h1 {
+	font-size: 18px;
+	font-weight: 400;
+	border-bottom: solid 1px darken(@background, 6%);
+	display: inline-block;
+	padding-bottom: 10px;
+	}
+}
+
+h1.template-entry-title {
+	text-align: center;
+	.title-font;
+}

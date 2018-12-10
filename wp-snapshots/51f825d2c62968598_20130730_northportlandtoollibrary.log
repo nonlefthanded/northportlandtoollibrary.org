@@ -1,0 +1,75 @@
+******************************************************************************** 
+PACKAGE-LOG: 08:45:06 
+NOTICE: Do not post to public sites or forums 
+******************************************************************************** 
+duplicator: 0.4.6 
+wordpress: 3.5.2 
+php: 5.2.17 
+php sapi: cgi-fcgi 
+server: Apache 
+browser: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.71 Safari/537.36 
+package name: 20130730_northportlandtoollibrary 
+php_max_time: set from=30 to=5000 
+php_max_memory: set from=256M to=5000M 
+mysql wait_timeout:5000 
+recorded table id: 1 
+******************************************************************************** 
+BUILD SQL SCRIPT: 
+******************************************************************************** 
+wp_commentmeta (2) 
+wp_comments (3) 
+wp_duplicator (1) 
+wp_links (7) 
+wp_ngg_album (0) 
+wp_ngg_gallery (0) 
+wp_ngg_pictures (0) 
+wp_options (248) 
+wp_postmeta (264) 
+wp_posts (188) 
+wp_term_relationships (41) 
+wp_term_taxonomy (19) 
+wp_terms (19) 
+wp_usermeta (27) 
+wp_users (1) 
+SQL CREATED: /home/content/74/9931874/html/wp-snapshots/51f825d2c62968598_20130730_northportlandtoollibrary_database.sql 
+SQL FILE SIZE: 1.04MB 
+SQL RUNTIME: 0.2735 sec. 
+******************************************************************************** 
+BUILD ZIP PACKAGE: 
+******************************************************************************** 
+PACKAGE DIR:  /home/content/74/9931874/html 
+PACKAGE FILE: /home/content/74/9931874/html/wp-snapshots/51f825d2c62968598_20130730_northportlandtoollibrary_package.zip 
+FILTER EXTENSIONS:  '' 
+FILTER DIRECTORIES: '' 
+---------------------------------------- 
+STARTING PACKAGE BUILD 
+ADDED=>SQL: /home/content/74/9931874/html/wp-snapshots/51f825d2c62968598_20130730_northportlandtoollibrary_database.sql 
+BUILDING FILE LIST 
+FILE LIST COMPLETE: 1.6400 sec. 
+FILE LIST STATS: Dirs 246 | Files 2211 | Links 1 |  
+
+PACKAGE INFO: ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 2458
+    [filename] => /home/content/74/9931874/html/wp-snapshots/51f825d2c62968598_20130730_northportlandtoollibrary_package.zip
+    [comment] => 
+)
+ 
+CREATING PACKAGE 
+CLOSING PACKAGE RESULT: '1' 
+PACKAGE FILE SIZE: 24.63MB 
+PACKAGE RUNTIME: 23.4326 sec. 
+******************************************************************************** 
+BUILD INSTALLER FILE: 
+******************************************************************************** 
+INSTALLER FILE: Build Start 
+INSTALLER FILE: Build Finished 
+INSTALLER FILE: Preping for use 
+INSTALLER FILE: Complete [/home/content/74/9931874/html/wp-snapshots/51f825d2c62968598_20130730_northportlandtoollibrary_installer.php] 
+******************************************************************************** 
+FILE SIZE: Zip:24.63MB | SQL:1.04MB | Installer:527.07KB 
+TOTAL PROCESS RUNTIME: 23.8353 sec. 
+DONE PROCESSING => 20130730_northportlandtoollibrary 08:45:30 
+******************************************************************************** 

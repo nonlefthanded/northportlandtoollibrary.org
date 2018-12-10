@@ -1,0 +1,50 @@
+.verge {
+	padding: 0 !important;
+	margin: 0;
+	position: relative;
+	border-bottom: none;
+	.featured-thumb {
+		border-top: none;
+	}
+	.out-thumb {
+		position: absolute;
+		bottom: 0;
+		padding: 5px;
+		width: 100%;
+		background: linear-gradient(to top, fade(white, 80%) 0%, fade(white, 50%) 70%,fade(white,0%));
+		padding-top: 25px;
+		opacity: 0;
+		@media screen and (max-width: 767px) {
+			opacity: 1;
+		}
+		.transition(0.6s all ease);
+		.entry-title {
+			font-weight: bold;
+			@media screen and (max-width: 767px) {
+				font-size: 16px;				
+			}
+		}
+		.posted-on a {
+			text-decoration: none;
+			display: inline-block;
+			background: fade(@background,95%);
+			color: darken(@content, 20%);
+			padding: 2px 5px;
+			text-transform: uppercase;
+			font-size: 11px;
+			letter-spacing: 1px;
+			border-radius: 1px;
+			@media screen and (max-width: 767px) {
+				font-size: 10px;				
+			}
+		}
+	}
+	&:hover {
+		.out-thumb {
+			opacity: 1;
+		}
+		.featured-thumb img { 
+			.transform(none);
+		}
+	}
+}

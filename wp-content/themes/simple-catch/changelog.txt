@@ -1,0 +1,420 @@
+== Change Log ==
+
+Version 3.6
+* Internationalized date() to date_i18n()
+* Compatible with WordPress 4.8
+
+Version 3.5.7
+* Bug Fixed: Blog page showing full content instead of default excerpt  (Reported by Maile Vanderford)
+
+Version 3.5.6
+* Bug Fixed: Undefined variable: blog_query in Blog template
+
+Version 3.5.5
+* Bug Fixed: Primary div closing issue in singular, search pages
+
+Version 3.5.4
+* Bug Fixed: Main div closing issue in singular, search, image and 404 pages
+
+Version 3.5.3
+* Bug Fixed: Slider Image not linking to post (Reported By: john.latham)
+* Code Optimization
+
+Version 3.5.2
+* Bug Fixed: Homepage/Frontpage categories update option causing blog to show no posts
+
+Version 3.5.1
+* Featured slider needs to show only in homepage (Reported by Marlo)
+
+Version 3.5 (Major Version Update)
+* Added: Responsive design and disable option
+* Bug Fixed: more_tag_text sanitize issue
+* Enhanced: Keyboard Navigation
+* Enhanced: Heading tags
+* Enhanced: ARIA Landmark Roles
+* Optimized: Code
+* Removed: Unnecessary codes
+* Removed: Theme Options Panel
+* Upgraded: HTML4 and CSS2 to HTML5 and CSS3
+
+Version 3.4.1
+* Bug Fixed: Fatal error when WPML, qtranslate, polylang, etc plugins installed (Reported By: agu5ka)
+
+Version 3.4
+* Bug Fixed: Reset Options in customizer updated
+* Updated: Upgrade Button in customizer with respect to trt decision
+* Updated: Custom CSS to Additional CSS( Core Support ) for WP version 4.7
+* Code Optimization
+
+Version 3.3.1
+* Bug Fixed: white space issue
+* Bug Fixed: ID column display issue in mobile devices
+* Updated: Instagram and YouTube logo
+* Updated: All instances of http://catchthemes.com changed to https://catchthemes.com
+* Updated: Theme tags
+
+Version 3.3
+* Updated: Media Uploader in Theme Options
+* Updated: Favicon and Web Clip Migration to Site Icon( Core Support )
+* Updated: Logo to Custom Logo( Core Support ) for WP version 4.5
+
+Version 3.2
+* Bug Fixed: Google font now loads in all protocols(previously nor loading properly in https protocol)
+* Enhanced: Google font delivery
+
+Version 3.1
+* Added Text Domain in style.css
+* Added Button that links to Customizer-> Header Image in Theme Options
+* Bug Fixed: Some Select types not updating in Customizer
+* Bug Fixed: Excerpt More Tag sanitization issue
+* Bug Fixed: Header meta charset issue
+* Compatibility fix: Customizer Reset option not working when returning any value in WordPress 4.4
+* Updated: German translation
+* Updated: Removed @import 978 grid from style.css and added it as dependency for main stylesheet
+
+Version 3.0
+* Added all theme options to customizer
+
+Version 2.9
+* Added title tag via add theme support
+* Compatible with WordPress 4.3
+* Removed support for WordPress version less than 4.1
+* Updated codes to comply with deprecating PHP4 style constructors in WordPress 4.3
+* Updated text-domain
+
+Version 2.8
+* Added Brazilian Portuguese translation pt_BR.po and pt_BR.mo files
+* Bug Fixed: Comment background and font line height issue
+* Added changelog.txt file which list the theme change log
+
+Version 2.7.4
+* Added email in social link option
+* Optimized Theme Options panel to speed up
+
+Version 2.7.3
+* Added Hungarian translation hu_HU.po and hu_HU.mo
+
+Version 2.7.2
+* Added Czech translation cs_CZ.po and cs_CZ.mo
+
+Version 2.7.1
+* Fixed menu css isssue
+* Minified admin scripts
+* Remove outdated simplecatch_backward_compatibility(), simplecatch_template_backward_compatibility(), simplecatch_sidebar_layout_backward_compatibility() and simplecatch_reset_template_cache functions
+
+Version 2.7
+* Added missing function_exists condition to support child theme
+* Added Custom Header option
+* Updated theme Tag Filter in style.css
+* Updated theme screenshot file to match with WordPress 3.8
+* Updated slider script
+* Updated jQuery Cookie Script added minified version
+* Removed depreciated functions add_custom_background()
+* Removed Redirect to Theme Options Page on Activation as per new theme review guideline
+* Replaced the logo with Generic Logo as per the review guideline
+
+Version 2.6.7
+* Added span for slider title, separator and content to give better control through CSS
+
+Version 2.6.6
+* Added brown color scheme
+* Fixed dark color scheme
+
+Version 2.6.5
+* Added dark color scheme
+* Fixed custom css issues with color options
+* Moved style.css enqueue to wp_enqueue_scripts
+* Merged Content Background and Content Color Options to Color Options
+
+Version 2.6.4
+* Added Simple Catch: Advertisement widget to add google ads and custom image ads
+* Added support for Widgets id and class for custom css support
+
+Version 2.6.3
+* Added Soundcloud social icon
+* Fixed Skype Link Data Validation as per https://dev.skype.com/skype-uri
+
+Version 2.6.2
+* Fixed Fav Icon image
+
+Version 2.6.1
+* Added Skype Social Icon
+* Fixed admin.js to support WordPress 3.6 jQuery UI version update
+* Updated Dutch translation nl_NL.po and nl_NL.mo
+
+Version 2.6
+* Added Danish translation da_DK.po and da_DK.mo
+
+Version 2.5.2
+* Added GitHub, Vkontakte, My World, Odnoklassniki and Goodreads Social Icons
+
+Version 2.5.1
+* Added Jetpack Infinite Scroll support
+* Added option to disable logo
+* Added option to disable fav icon
+* Change default logo to WordPress Logo as required by WordPress.org Theme Review Guideline
+* Change default fav icon as disabled as required by WordPress.org Theme Review Guideline
+* Fixed the layout issue when scrolling
+* Removed site verification code as required by WordPress.org Theme Review Guideline
+
+Version 2.5
+* Added Italian translation it_IT.po and it_IT.mo
+
+Version 2.4.3
+* Fixed the Slider
+
+Version 2.4.2
+* Moved function simplecatch_pass_slider_value() from header.php to simplecatch_functions.php under function simplecatch_sliderbreadcrumb()
+* Fixed the slider homepage condition while setting static Posts Page
+* Fixed Front page posts categories setting
+
+Version 2.4.1
+* Added page template blog
+
+Version 2.4
+* Added css of bold to html <b>code</b>
+* Added layout 'No Sidebar, Full Width'
+
+Version 2.3.4
+* Added Web Clip Icon Option
+
+Version 2.3.3
+* Moved comment-reply script to wp_enqueue_scripts
+* Added Post ID shown in the All Posts Table in admin section
+* Added !function_exists() condition to support child theme easy editing
+* Fixed the css for wp-caption img
+
+Version 2.3.2
+* Removed simplecatch_sort_query_by_post_in function as post orderby is already implement in WordPress Version 3.5 by default
+* Added German translation de_DE.po and de_DE.mo
+
+Version 2.3.1
+* Fixed the grammatical in Social Icons title tags
+* Fixed Search Form Title not changing as per Theme Options
+
+Version 2.3
+* Added Spanish translation es_ES.po and es_ES.mo
+
+Version 2.2.1
+* Added Instagram Social Icon
+
+Version 2.2
+* Added Chinese translation zh_CN.po and zh_CN.mo
+
+Version 2.1
+* Added Croatian translation hr_HR.po and hr_HR.mo
+
+Version 2.0.1.1
+* Minor CSS edits for Header Logo, Site Details and background
+* Added Support Forum URL in Theme Description
+
+Version 2.0.1
+* Added Simple Catch Social Icons Widget
+* Fixed Simple Catch Tag Clouds Widget
+
+Version 2.0
+* Added Greek translation el.po and el.mo
+* Language File Update for Polish
+* Added Save Button on Social Links Option Panel
+* Logo Upload Issue in Option Panel
+
+Version 1.9.1.1
+* Replace footer logo with generic WP logo as per the WPRT instruction
+* Fixed the condition of header logo
+
+Version 1.9.1
+* Redesign whole Theme Options panel
+* Made Header Logo and Favicon disable by default.
+* Added action to redirect to Theme Options upon activation
+
+Version 1.9
+* Added Logo and site title separator
+
+Version 1.8
+* Added Dutch translation nl_NL.po and nl_NL.mo
+
+Version 1.7
+* Added French translation fr_FR.po and fr_FR.mo
+
+Version 1.6.2
+* Fixed the comment validation issue.
+
+Version 1.6.1
+* Updated screenshot to match with WordPress 3.5 version update
+* Added comment form fields alteration function to match with WordPress 3.5 version update
+
+Version 1.6
+* Added Finnish translation fi.po and fi.mo
+* Added missing text translation ready
+* Updated simplecatch.pot, pl_PL.po and ru_RU.po
+* Fixed conflict with Custom CSS and Content Color Options CSS
+
+Version 1.5.1
+* Added missing text translation ready
+* Updated simplecatch.pot, pl_PL.po and ru_RU.po
+
+Version 1.5
+* Added Russian translation ru_RU.po and ru_RU.mo
+* Added Word Wrap for commentlist in style.css
+
+Version 1.4.9.1
+* Fixed CSS Pagination with WP-PageNavi and WP Page Numbers Plugins
+* Fixed CSS for default textarea
+
+Version 1.4.9
+* Improving Theme Options data validation
+
+Version 1.4.8
+* Fixed simplecatch.pot file for comment form labels
+Version 1.4
+* Added Feed Redirect Option in Theme Options
+* Added more FAQ
+* Change the Settings in Theme Options
+
+Version 1.4.7
+* Fixed menu highlight for current menu
+* Added Polish translation pl_PL.po and pl_PL.mo
+
+Version 1.4.6
+* Fixed the typo for All Rights Reserved
+
+Version 1.4.5
+* Fixed Theme Option issue with Facebook and Twitter Like
+
+Version 1.4.4
+* Update the Add Image Script
+* Fixed layout issue with the attachments
+
+Version 1.4.3
+* Fixed textdomain in Info Bar
+* Fixed float issue of Static home page.
+* Fixed footer code
+* Fixed site title though changes in wp_title and simplecatch_filter_wp_title function
+
+Version 1.4.2
+* Changed Theme URI to match with the new theme site
+* Change the license to GPL 2
+* Added Info bar in Theme Option Panel
+* Fixed Slider Initialization
+
+Version 1.4.1
+* Fixing Color Options
+
+Version 1.3.6
+* Added Content Color Option
+* Added Custom Background
+
+Version 1.3.5.4
+* Fixed pagination float issue
+* Added pagination in page
+* Added Support for Captcha Plugin
+* Replaced get_stylesheet_directory_uri to get_template_directory_uri
+
+Version 1.3.5.3
+* Fixed css for Title
+* Fixed css for input fields in sidebar
+* Fixing textdomain in theme option
+* Replace wp_print_styles to wp_enqueue_scripts
+
+Version 1.3.5.2
+* Updated FAQ in Theme Options
+* Fixed Theme Option Data Validation for html special character &rarr; in continue reading. This fixed the problem in the server where Theme Option was not being saved.
+* Fixed Slider loading issue and display overlap
+* Added un-minified version of JS as per GPL
+* Updated simplecatch.pot file
+
+Version 1.3.5.1
+* Adding back missing tanslation ready file in function
+
+Version 1.3.5
+* Changed theme options user interface design.
+* Added Toggle effect on Theme Options. Added admin_js file for the toggle effect.
+* Larger size js file(jquery.cycle.all.min.js) are minified.
+
+Version 1.3.4
+* Initialized all theme options variables and created simplecatch_themeoptions_defaults.php file.
+* Fixed add_image_scripts.js
+* Stored all theme options variables in a global variable and used it instead of get_option.
+* Change stylesheet URL to get_stylesheet_uri()
+* Added simplecatch.pot file to make theme translation ready
+
+Version 1.3.3
+* Added Excerpt Length option to alter the excerpt length in Layout Settings.
+* Fixed content.php file.
+* Used get_option( 'date_format' ) rather than hardcoding format.
+* Made Post author link prefix translation ready.
+* Changing the key name for post custom metadata i.e. 'Sidebar-layout' keyname changed to 'simplecatch-sidebarlayout'.
+
+Version 1.3.2
+* Added sidebar layout option metabox in post and page
+* Added default sidebar layout option in Theme options.
+* Fixed the issue of Dual title in feed
+* Fixed the site verification, site title, Description caching issue
+* Fixed the css issue for search title
+
+Version 1.3.1.2
+* Fixed Link for logo and site title in simplecatch_headerdetails() function
+
+Version 1.3.1.1
+* Fixed logo condition in simplecatch_headerdetails() function
+
+Version 1.3.1
+* Added option to show posts from only selected category in homepage.
+* Added option to disable site title and site description
+
+Version 1.3.0
+* Added Theme Option array Backward Compatibility for SimpleCatch version 1.2.7 and below
+
+
+Version 1.2.9
+* Cleaned simplecatch_functions.php file.
+* Removed the inline script from searchform.php
+* Theme options are saved in single option array from multiple options array
+* Unwanted wp_query removed and instead used pre_get_posts hook to alter main loop in homepage
+
+Version 1.2.8
+* Added option in Featured Slider to Exclude Slider Posts from Homepage.
+* Cleaned simplecatch_functions.php file.
+* Cleaned searchform.php file.
+* Fixed Layout settings of theme option.
+
+Version 1.2.7
+* Cleaned and arranging simpecatch_functions.php
+* Cleaned and fixing searchform.php
+* Cleaned Header.php file
+* Fixed slider to make compatible with ie7 and ie8
+* Fixed css to make compatible with ie8
+* Fixed image.php file
+* ul,next and previous bullet changed from jpg image format to png image format
+
+Version 1.2.6
+* Fixed CSS for Dropdown menu height to accept longer titles
+* Added Layout Options under Theme Options
+* Added more slider options under Slider Options
+
+Version 1.2.5
+* Cleaned and Fixed the theme_options.php
+* Cleaned and Fixed the Simplecatch_functins.php
+* Added Social Icons for Delicious and Last.fm
+
+Version 1.2.4
+* Fixed the action hook for simplecatch_haedercode to simplecatch_footercode
+
+Version 1.2.3
+* Fixed css for alignment and footer clear
+* Fixed the layout and css for error404 page
+* Change the Heading from H1 to h2 class entry title
+* Remove title modification from header.php and added function simplecatch_filter_wp_title() to filter the wp_title
+* Added Enqueue Comment Reply Script in function simplecatch_enqueue_comment_reply_script and removed it from header
+* Added Social Icons for Linkedin, Slideshare, Foursquare, Vimeo, Flickr, Tumblr, DeviantArt,  Dribbble, MySpace and WordPress
+* Added Custom CSS Styles option in Theme Options
+* Added Webmaster Tools and verification of Google, Yahoo and Bing
+
+Version 1.2.2
+* Fixed css for Pinterest
+
+Version 1.2.1
+* Fixed the Slider Image Link
+* Modified the Continue Reading Link
+* Added Social Icons for Pinterest and Google+
+* Added CSS to Support WP-PageNavi and Contact Form 7 Plugins

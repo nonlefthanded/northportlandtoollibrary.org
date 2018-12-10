@@ -1,0 +1,111 @@
+/* ---------- Header ------------- */
+#social-icons-fixed {
+	position: fixed;
+	left: 0;
+	top: 30%;
+	width: 43px; 
+	@media screen and (max-width: 600px) {
+		width: 32px;
+	}
+ 	border-right: none;
+	border-left: none;
+	z-index: 999;
+	box-shadow: -7px 2px 9px fade(black, 30%);
+	img {
+		margin-bottom: 0px;
+		.transition(0.4s all ease);
+		-webkit-filter: brightness(0.9);
+			filter: brightness(0.9);
+		&:hover {
+			-webkit-filter: brightness(1.2);
+			filter: brightness(1.2);
+		}
+	}
+	
+}
+
+#masthead {
+	position: relative;
+	z-index: 90;
+	min-height: 500px;
+	margin-bottom: 20px;
+	background-size: cover;
+	background-position-x: center;
+	background-repeat: no-repeat;
+	.site-branding { 
+		padding: 25px 0;
+		overflow: hidden;
+		text-align: center;
+		@media screen and (max-width: 991px) {
+				float: none;
+				width: 100%;
+			}
+		#text-title-desc {
+			clear: none;
+			h1.site-title {
+				font-weight: 300;
+				margin: 0px;
+				font-size: 50px;
+				padding:20px;
+				vertical-align: middle;
+				a {
+					color: @onaccent;
+				}
+			}
+			h2.site-description {
+				font-weight: 300;
+				font-size: 15px;
+				margin-top: 10px;
+				color: @onaccent;
+			}
+			@media screen and (max-width: 991px) {
+				float: none;
+				text-align: center;
+				width: 100%;
+				margin-top: 30px;
+
+			}
+		}
+	}
+
+	.search-submit{
+		text-align: center;
+		margin:25px;
+		font-size: 30px;
+		color: @onaccent;
+	}
+
+	#social-icons {
+		text-align:center !important;
+		margin: 10px;
+		a {
+			padding:10px;
+			font-size: 17px;
+			margin:5px;
+			color: @onaccent !important;
+			background: @accent-bg;
+		}
+	}
+
+
+	
+	@media screen and (max-width: 767px) {
+		text-align: center;	
+		.layer {
+			min-height: 430px;
+		}
+	}
+}
+
+
+#site-logo {
+	display: inline-block;
+	@media screen and (max-width: 768px) {
+			float: none;
+		}
+	img {
+		max-height: 120px;
+		width: auto;
+		margin-right: 10px;
+	}
+}

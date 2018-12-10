@@ -1,0 +1,769 @@
+/* =Responsive Structure
+----------------------------------------------- */
+
+/*--------------------------------------------------------------
+1. Media queries
+--------------------------------------------------------------*/
+/* Does the same thing as <meta name="viewport" content="width=device-width">,
+ * but in the future W3C standard way. -ms- prefix is required for IE10+ to
+ * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
+ * the meta tag. See http://core.trac.wordpress.org/ticket/25888.
+ */
+@-ms-viewport {
+	width: device-width;
+}
+
+@viewport {
+	width: device-width;
+}
+
+@media screen and (min-width: 991px) {	
+	#access ul.menu li:hover > ul,
+	#access ul.menu li:focus > ul {
+		display: block;
+	}
+	#access ul li ul, 
+	#access ul li:hover ul li ul,
+	#access ul li:focus ul li ul {
+		display: none;
+		list-style: none;
+		z-index: 9999;
+	}
+}
+
+@media screen and (max-width: 990px) {	
+	.wrapper {
+		width: 740px;	
+	}
+	.single-col #content {
+		width:100%;
+		margin:0;
+	}
+	.site-title {
+		font-size: 40px;	
+		line-height: 37px;
+	}
+	#masthead .searchform button {
+		float: left;
+	}
+	#header-content {
+		margin: 30px 0 20px;
+	}
+	#access ul li a {
+		font-size: 13px;
+		line-height: 40px;
+		padding: 0 10px;
+	}
+	#access ul li ul {
+		top: 40px;
+	}
+	#primary, #secondary, 
+	.contact #primary, 
+	.contact #secondary {
+		clear: both;
+		float: none;
+		width: 100%;
+		margin: 0;
+	}
+	.post .post-thumb {
+		width: 30%;
+	}	
+	.post .post-article	{
+		width: 65.18%;
+	}
+
+	/* Responsive Menu Start */
+	#site-header-menu {
+		display: none;
+	}
+	#access ul li ul {
+		display: none;
+	}
+	.main-menu-button {
+		font-weight: bold;
+	}
+	.menu-toggle {
+	    background-color: #fff;
+	    border: 1px solid #ccc;
+	    box-shadow: none;
+	    clear: both;
+	    color: #444;
+	    cursor: pointer;
+	    display: block;
+	    font-size: 15px;
+	    padding: 10px 20px;
+	    text-align: left;
+	    width: 100%;
+	}
+	.menu-toggle:hover,
+	.menu-toggle:focus {
+		background-color: #444;
+		color: #fff;
+	}
+	#site-header-menu.toggled-on {
+		display: block;
+	}
+	.dropdown-toggle.toggled-on {
+		background-color: #1a1a1a;
+		border-color: #1a1a1a;
+		color: #fff;
+	}
+	.menu-toggle.toggled-on,
+	.menu-toggle.toggled-on:hover,
+	.menu-toggle.toggled-on:focus {
+		background-color: #1a1a1a;
+		border-color: #1a1a1a;
+		color: #fff;
+	}
+	.menu-toggle:focus {
+		outline: 0;
+	}
+	.menu-toggle.toggled-on:focus {
+		outline: thin dotted;
+	}
+	.dropdown-toggle {
+		background-color: transparent;
+		border: 0;
+		border-radius: 0;
+		color: #1a1a1a;
+		content: "";
+		cursor: pointer;
+		display: block;
+		height: 40px;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		text-transform: none;
+		top: 0;
+		width: 48px;
+	}
+	.dropdown-toggle:after {
+		border: 0 solid #d1d1d1;
+		border-left-width: 1px;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		content: "\f431";
+		display: inline-block;
+		font-family: "Genericons";
+		font-size: 24px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: normal;
+		line-height: 1;
+		speak: none;
+		text-align: center;
+		text-decoration: inherit;
+		text-transform: none;
+		vertical-align: top;
+		left: 1px;
+		position: relative;
+		width: 48px;
+	}
+	.dropdown-toggle:hover,
+	.dropdown-toggle:focus {
+		background-color: transparent;
+		color: #007acc;
+	}
+	.dropdown-toggle:focus {
+		outline: thin dotted;
+		outline-offset: -1px;
+	}
+	.dropdown-toggle:focus:after {
+		border-color: transparent;
+	}
+	.dropdown-toggle.toggled-on:after {
+		content: "\f432";
+	}
+	.menu-toggle .genericon-menu {
+		float: right;
+		font-size: 19px;
+		text-align: right;
+	}
+	#access ul li {
+	    display: inline-block;
+	    float: none;
+	    margin: 0;
+	    width: 100%;
+	}
+	#access ul li a {
+	    display: block;
+	    float: none;;
+	}
+	#access .menu-item-has-children > a {
+	    margin-right: 48px;
+	}
+
+	#access ul .toggled-on {
+		display: block;
+	}
+	#access ul li ul {
+		position: relative;
+		top: auto;
+		width: 100%;
+	}
+	#access ul li ul li a {
+	    padding-left: 20px;
+	}
+	#access ul li ul li ul li a {
+		padding-left: 30px;
+	}
+	#access ul li ul li ul {
+		left: auto;
+	}
+	#access ul li:hover,
+	#access ul li:focus {
+		background-color: 444;
+	}
+	#access ul li:hover > a,
+	#access ul li:focus > a {
+		background-color: none;
+		box-shadow: none;
+		webkit-box-shadow: none;
+		moz-box-shadow: none;	
+	}
+	#access ul .dropdown-toggle:hover,
+	#access ul .dropdown-toggle:focus {
+		background-color: #000;
+		color: #fff
+	}
+	#access ul li ul .dropdown-toggle {
+		color: #fff;
+	}
+	#access ul li ul li a {
+		font-size: 13px;
+		line-height: 40px;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	/* Responsive Menu End */
+}
+
+
+@media screen and (max-width: 767px) {
+	/*  small tablet */
+	.wrapper {
+		width: 660px;
+	}
+	#header-content {
+		margin: 0%;
+	}
+	#masthead .site-branding {
+		margin: 20px 0;
+		float: none;
+		width: 100%;
+	}	
+	.site-logo {
+		display: block;
+		float: none;
+		text-align: center;
+	}	
+	.site-logo a img {
+		float: none;
+		margin-bottom: 10px;
+		max-width: 100%;
+		padding: 0;
+	}
+	.site-branding-text {
+		display: block;
+		float: none;
+		padding: 0;
+		text-align: center;
+	}
+	.site-content .woocommerce .col-1,
+	.site-content .woocommerce .col-2 {
+		width: 100%;	
+	}
+	#sidebar-top {
+		padding: 0;
+	}
+	ul.social-profile li {
+		margin-left: 9px;
+	}
+	#masthead .searchform {
+		display: block;
+		float: none;
+		padding-left: 0;
+	}
+	#masthead .searchform .search-box {
+		padding: 0 2%;
+		width: 70%;
+	}	
+	#masthead .searchform button {
+		padding: 0 2%;
+		width: 26%;
+	}	
+	#sidebar-top {
+		margin: 0;
+	}	
+	#sidebar-top .widget {
+		float: none;
+		width: 100%;
+	}	
+	#site-generator .copyright img {
+    	display: block;
+		float: none;
+		height: auto;
+		margin: 5px auto;
+		width: auto;
+	}	
+	#masthead .site-branding,
+	#sidebar-top,
+	#site-generator .copyright,
+	#site-generator .powered-by,
+	#site-generator .powered {
+		width: 100%;
+	}
+	#site-generator .copyright,
+	#site-generator .powered-by,
+	#site-generator .powered {
+		clear: both;
+		font-size: 11px;
+		text-align: center;
+	}
+	ul.social-profile {
+		float: none;
+		text-align: center;
+	}
+	.entry-meta ul li {
+		font-size: 11px;
+		font-weight: normal;
+		padding: 0 5px;	
+	}
+	.wrapper .wp-pagenavi a, 
+	.wrapper .wp-pagenavi span {
+		margin: 0 0 10px 10px;
+	}
+	/* No need to float footer widgets at this size */
+	#colophon #supplementary .widget-area {
+		float: none;
+		margin-right: 0;
+		width: 100%;
+	}		
+	a#scrollup {
+		font-size: 20px;
+		padding: 3px;
+	}		
+}
+
+@media screen and (max-width: 700px) {
+	.wrapper {
+		width: 560px;
+	}
+}
+
+@media screen and (max-width:600px) {
+	.wrapper {
+		width: 520px;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.wrapper {
+		width: 460px;
+	}
+	.site-title {
+		font-size: 30px;
+		line-height: 34px;
+	}
+	.site-title a {
+		white-space: inherit;
+	}	
+	.site-description { 
+		font-size: 12px;
+		white-space: inherit;
+	}	
+	.entry-title, 
+	#comments-title, 
+	#reply-title { 
+		font-size: 19px;
+		line-height: 25px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.wrapper {
+		width: 380px;
+	}
+	body, input, textarea {
+		font-size: 13px;
+		line-height: 20px;
+	}
+	h1 {
+		font-size: 19px;
+	}
+	h2 {
+		font-size: 17px;
+	}
+	h3 {
+		font-size: 15px;
+	}
+	h4 {
+		font-size: 14px;
+	}
+	h5 {
+		font-size: 13px;
+	}
+	h6 {
+		font-size: 12px;
+	}
+	#primary .post {
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+	}
+	ul, ol {
+		margin-bottom: 10px;
+	}
+	p, .wp-caption, blockquote, pre {
+		margin-bottom: 10px;
+	}
+	.wrapper .wp-pagenavi a, 
+	.wrapper .wp-pagenavi span, {
+		padding: 0 0 10px 10px;
+	}
+	.site-title {
+		font-size: 30px;
+		line-height: 34px;
+	}
+	.site-title a {
+		white-space: inherit;
+	}
+	.site-title a img {  
+	   padding-right: 10px;
+	}
+	.site-description { 
+		font-size: 12px;
+		white-space: inherit;
+	}
+	input#s {
+		height: 27px;
+	}
+	#masthead input#s {
+		height: 35px;
+	}
+	#masthead .searchform .search-box {
+		padding: 0 4%;
+		width: 66%;
+	}	
+	#masthead .searchform button {
+		padding: 0 3%;
+	}	
+	.breadcrumb {
+	   padding-top: 15px;
+	}
+	.site-content {
+	   padding-top: 20px;
+	}
+	#secondary {
+		line-height: 20px;
+	}
+	#primary .post { 
+		padding-bottom: 20px;
+	}
+	.content-area h1, .content-area h2, .content-area h3, .content-area h4, .content-area h5, .content-area h6 {
+	   padding-bottom: 5px;
+	}
+	.wp-caption .wp-caption-text, .gallery-caption {
+	   line-height: 20px;
+	}
+	#supplementary {
+		padding-top: 20px;
+	}
+	.widget {
+		margin-bottom: 20px;
+	}
+	.widget.simplecatch_social_widget {
+		margin-bottom: 10px;
+	}
+	.entry-header {
+	   padding-bottom: 5px;
+	}
+	.entry-title, #comments-title, #reply-title { 
+		font-size: 19px;
+		line-height: 25px;
+	}
+	.entry-meta ul li {
+	   font-size: 11px;
+	   font-weight: normal;
+	   line-height: 17px;
+	   padding: 0 5px;
+	}
+	.page-title {
+	   font-size: 24px;
+	   padding-bottom: 10px;
+	}
+	.post .post-thumb {
+	   width: 28.78%;
+	}
+	.post .post-article {
+	   width: 65.74%;
+	}
+	.post .post-thumb a {
+	   padding: 3px;
+	}
+	#wp_page_numbers, .pagination {
+	   padding-bottom: 10px;
+	   text-align:right;
+	}
+	#wp_page_numbers ul li { 
+		font-size: 11px;
+	}
+	#wp_page_numbers ul li a {
+		padding:0 10px;
+		font-size: 12px;	
+		line-height:25px;
+	}
+	.pagination {   
+		font-size: 11px;
+	}
+	.pagination span {
+		font-size:12px;
+		padding:0 10px;
+		line-height:25px;
+	}
+	input[type="text"], input[type="password"], input[type="email"], textarea {
+		clear: both;
+		float: left;
+		margin-bottom: 15px;
+		width: 92%;
+	}
+	.comment-form .form label, .comment-form .form .text, .comment-form .form .textarea {
+		float: none;
+		margin-bottom: 5px;
+		width: inherit;
+	}
+	.comment-form .form .note { 
+		padding-left: 0;
+		float: none;
+	}
+	.comment-form .form .submit {
+		margin-top: 20px;
+		float: none;
+	}
+	.contact #primary .form .note { 
+		float: none;
+		padding: 15px 0 0 0;
+	}
+	.contact #primary .form .submit { 
+		float:none;
+	}
+	#primary .gallery .gallery-item {
+		width: 100%;
+	}
+	#site-generator {
+		padding: 10px 0;
+	}
+	.woocommerce .site-content ul.products li.product,
+	.woocommerce-page .site-content ul.products li.product {
+	.woocommerce-page .site-content ul.products li.product {
+		clear: both;
+		float: none;
+		margin: 0 10% 2.992em;
+		padding: 0;
+		position: relative;
+		width: 80%;
+	}
+	
+}
+
+@media screen and (max-width: 400px) {
+	.wrapper {
+		width: 320px;
+	}
+}
+
+@media screen and (max-width: 319px) {
+	.wrapper {
+		margin: 0 auto;
+		max-width: 94%;
+		width: 300px;
+	}
+	.site-logo a img {
+		max-width: 95%;
+	}	
+	.site-title a img {
+		max-height: 60px;
+	}
+	.site-title {
+		font-size: 22px;
+		line-height: 26px;
+	}
+	.site-branding-text {
+		padding-right: 10px;
+	}
+	.entry-title {
+		font-size: 18px;
+		line-height: 22px;
+	}
+	ul.social-profile {
+		margin: -5px 0 0;
+	}
+	ul.social-profile li {
+		margin-left: 12px;
+		margin-top:5px;
+	}
+	ul.social-profile li a {
+		background-image: url("../images/device-social-profile.png");
+		width: 22px;
+		height: 22px;
+	}
+	ul.social-profile li.facebook a {
+		background-position: 0 0;
+	}
+	ul.social-profile li.facebook a:hover,
+	ul.social-profile li.facebook a:focus {
+		background-position: 0 -28px;
+	}
+	ul.social-profile li.twitter a {
+		background-position: -29px 0;
+	}
+	ul.social-profile li.twitter a:hover,
+	ul.social-profile li.twitter a:focus {
+		background-position: -29px -28px;
+	}
+	ul.social-profile li.you-tube a {
+		background-position: -57px 0;
+	}
+	ul.social-profile li.you-tube a:hover,
+	ul.social-profile li.you-tube a:focus {
+		background-position: -57px -28px;
+	}
+	ul.social-profile li.rss a {
+		background-position: -85px 0;
+	}
+	ul.social-profile li.rss a:hover,
+	ul.social-profile li.rss a:focus {
+		background-position: -85px -28px;
+	}
+	ul.social-profile li.google-plus a {
+		background-position: -113px 0;
+	}
+	ul.social-profile li.google-plus a:hover,
+	ul.social-profile li.google-plus a:focus {
+		background-position: -113px -28px;
+	}
+	ul.social-profile li.pinterest a {
+		background-position: -142px 0;
+	}
+	ul.social-profile li.pinterest a:hover,
+	ul.social-profile li.pinterest a:focus {
+		background-position: -142px -28px;
+	}
+	ul.social-profile li.slideshare a {
+		background-position: -170px 0;
+	}
+	ul.social-profile li.slideshare a:hover,
+	ul.social-profile li.slideshare a:focus {
+		background-position: -170px -28px;
+	}
+	ul.social-profile li.foursquare a {
+		background-position: -198px 0;
+	}
+	ul.social-profile li.foursquare a:hover,
+	ul.social-profile li.foursquare a:focus {
+		background-position: -198px -28px;
+	}
+	ul.social-profile li.viemo a {
+		background-position: -226px 0;
+	}
+	ul.social-profile li.viemo a:hover,
+	ul.social-profile li.viemo a:focus {
+		background-position: -226px -28px;
+	}
+	ul.social-profile li.myspace a {
+		background-position: -254px 0;
+	}
+	ul.social-profile li.myspace a:hover,
+	ul.social-profile li.myspace a:focus {
+		background-position: -254px -28px;
+	}
+	ul.social-profile li.flickr a {
+		background-position: -283px 0;
+	}
+	ul.social-profile li.flickr a:hover,
+	ul.social-profile li.flickr a:focus {
+		background-position: -283px -28px;
+	}
+	ul.social-profile li.dribbble a {
+		background-position: -311px 0;
+	}
+	ul.social-profile li.dribbble a:hover,
+	ul.social-profile li.dribbble a:focus {
+		background-position: -311px -28px;
+	}
+	ul.social-profile li.wordpress a {
+		background-position: -339px 0;
+	}
+	ul.social-profile li.wordpress a:hover,
+	ul.social-profile li.wordpress a:focus {
+		background-position: -339px -28px;
+	}
+	ul.social-profile li.deviantart a {
+		background-position: -367px 0;
+	}
+	ul.social-profile li.deviantart a:hover,
+	ul.social-profile li.deviantart a:focus {
+		background-position: -367px -28px;
+	}
+	ul.social-profile li.linkedin a {
+		background-position: -396px 0;
+	}
+	ul.social-profile li.linkedin a:hover,
+	ul.social-profile li.linkedin a:focus {
+		background-position: -396px -28px;
+	}
+	ul.social-profile li.tumblr a {
+		background-position: -424px 0;
+	}
+	ul.social-profile li.tumblr a:hover,
+	ul.social-profile li.tumblr a:focus {
+		background-position: -424px -28px;
+	}
+	ul.social-profile li.delicious a {
+		background-position: -452px 0;
+	}
+	ul.social-profile li.delicious a:hover,
+	ul.social-profile li.delicious a:focus {
+		background-position: -452px -28px;
+	}
+	ul.social-profile li.lastfm a {
+		background-position: -480px 0;
+	}
+	ul.social-profile li.lastfm a:hover,
+	ul.social-profile li.lastfm a:focus {
+		background-position: -480px -28px;
+	}
+	#masthead .searchform .search-box {
+		padding: 0 4%;
+		width: 57%;
+	}	
+	#masthead .searchform button {
+		padding: 0 3%;
+		width: 35%;
+	}	
+	#site-generator {
+		padding: 20px 0;
+	}
+	#site-generator .powered-by {
+		margin-top: 2px;
+	}
+	#masthead .searchform {
+		padding-top: 20px;
+	}
+	#sidebar-top {
+		margin-bottom: 20px;
+	}
+	input[type="text"], input[type="email"], input[type="password"], textarea {
+		width: 90%;
+	}
+	img.size-full, 
+	img.size-large,
+	img.wp-post-image {
+		max-width: 94.5%;
+	}	
+	.wp-caption	{
+		max-width: 96%;
+    	padding: 2%;
+	}
+	.wp-caption	img {
+		max-width: 100%;
+	}
+}

@@ -1,0 +1,1086 @@
+# Copyright (C) 2012 the Catch Themes Team
+# This file is distributed under the  GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Catch\n"
+"Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
+"POT-Creation-Date: 2017-06-08 16:04+0545\n"
+"PO-Revision-Date: 2017-06-08 16:04+0545\n"
+"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
+"Language-Team: Catch Themes <charni@gmail.com>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:12
+msgid "Error 404 - Page Not Found."
+msgstr "Virhe 404 - Sivua ei löydy"
+
+#: ../404.php:15
+msgid "We&rsquo;re sorry! This page is not available."
+msgstr "Olemme pahoillamme! Tämä sivu ei ole saatavilla."
+
+#: ../404.php:16
+msgid "This might be because:"
+msgstr "Tämä voi johtua esimerkiksi tästä:"
+
+#: ../404.php:17
+msgid ""
+"You have typed the web address incorrectly, or the page you were looking for "
+"may have been moved, updated or deleted."
+msgstr ""
+"Olet kirjoittanut osoitteen väärin tai sivu, jota etsit on mahdollisesti "
+"siirretty, päivitetty tai poistettu."
+
+#: ../404.php:18
+msgid "Please try the following options instead:"
+msgstr "Kokeile seuraavaa:"
+
+#: ../404.php:19
+msgid ""
+"Check for a mis-typed URL error, then press the refresh button on your "
+"browser or Use the search box below."
+msgstr ""
+"Tarkista osoite mahdollisen kirjoitusvirheen varalta, jonka jälkeen lataa "
+"sivu uudelleen tai käytä sivulta löytyvää hakutoimintoa."
+
+#: ../comments.php:21
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Tämä artikkeli on suojattu salasanalla. Anna salasana katsellaksesi "
+"artikkelia."
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "No Comments"
+msgstr "Ei kommentteja"
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "1 Comment"
+msgstr "Yksi kommentti"
+
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../image.php:23 ../page-blog.php:51
+msgid "% Comments"
+msgstr "% kommenttia"
+
+#: ../comments.php:60
+msgid "Comments are closed."
+msgstr "Kommentointi on suljettu."
+
+#: ../content.php:47 ../functions/core.php:996 ../image.php:21
+#: ../page-blog.php:49
+msgid "By"
+msgstr "Kirjoittanut"
+
+#: ../content.php:77 ../page-blog.php:96
+msgid "Not found"
+msgstr "Ei löytynyt"
+
+#: ../content.php:80 ../page-blog.php:99
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+"Pahoittelut, mutta arkistosta ei löytynyt yhtään hakuasi vastaavaa "
+"artikkelia. Ehkä etsimällä löydät haluamasi artikkelin."
+
+#: ../functions.php:115 ../functions/core.php:689
+msgid "Primary Menu"
+msgstr "Päävalikko"
+
+#: ../functions/core.php:540
+#, php-format
+msgid "%s on Facebook"
+msgstr "%s Facebookissa"
+
+#: ../functions/core.php:545
+#, php-format
+msgid "%s on Twitter"
+msgstr "%s Twitterissä"
+
+#: ../functions/core.php:550
+#, php-format
+msgid "%s on Google+"
+msgstr "%s Google+:ssa"
+
+#: ../functions/core.php:555
+#, php-format
+msgid "%s on Linkedin"
+msgstr "%s Linkedin:ssä"
+
+#: ../functions/core.php:560
+#, php-format
+msgid "%s on Pinterest"
+msgstr "%s Pinterestissä"
+
+#: ../functions/core.php:565
+#, php-format
+msgid "%s on YouTube"
+msgstr "%s YouTubessa"
+
+#: ../functions/core.php:570
+#, php-format
+msgid "%s on Vimeo"
+msgstr "%s Vimeossa"
+
+#: ../functions/core.php:575
+#, php-format
+msgid "%s on Slideshare"
+msgstr "%s Slidesharessa"
+
+#: ../functions/core.php:580
+#, php-format
+msgid "%s on Foursquare"
+msgstr "%s Foursquaressa"
+
+#: ../functions/core.php:585
+#, php-format
+msgid "%s on Flickr"
+msgstr "%s Flickrissä"
+
+#: ../functions/core.php:590
+#, php-format
+msgid "%s on Tumblr"
+msgstr "%s Tumblrissa"
+
+#: ../functions/core.php:595
+#, php-format
+msgid "%s on deviantART"
+msgstr "%s deviantARTissa"
+
+#: ../functions/core.php:600
+#, php-format
+msgid "%s on Dribbble"
+msgstr "%s Dribbblessä"
+
+#: ../functions/core.php:605
+#, php-format
+msgid "%s on MySpace"
+msgstr "%s MySpacessa"
+
+#: ../functions/core.php:610
+#, php-format
+msgid "%s on WordPress"
+msgstr "%s WordPressissä"
+
+#: ../functions/core.php:615
+#, php-format
+msgid "%s on RSS"
+msgstr "%s RSS feed"
+
+#: ../functions/core.php:620
+#, php-format
+msgid "%s on Delicious"
+msgstr "%s Delicious:ssä"
+
+#: ../functions/core.php:625
+#, php-format
+msgid "%s on Last.fm"
+msgstr "%s Last.fm:ssä"
+
+#: ../functions/core.php:630
+#, php-format
+msgid "%s on Instagram"
+msgstr "%s Instagramissa"
+
+#: ../functions/core.php:635
+#, php-format
+msgid "%s on GitHub"
+msgstr "%s on GitHub"
+
+#: ../functions/core.php:640
+#, php-format
+msgid "%s on Vkontakte"
+msgstr "%s on Vkontakte"
+
+#: ../functions/core.php:645
+#, php-format
+msgid "%s on My World"
+msgstr "%s on My World"
+
+#: ../functions/core.php:650
+#, php-format
+msgid "%s on Odnoklassniki"
+msgstr "%s on Odnoklassniki"
+
+#: ../functions/core.php:655
+#, php-format
+msgid "%s on Goodreads"
+msgstr "%s on Goodreads"
+
+#: ../functions/core.php:660
+#, php-format
+msgid "%s on Skype"
+msgstr "%s on Skype"
+
+#: ../functions/core.php:665
+#, php-format
+msgid "%s on Soundcloud"
+msgstr "%s Soundcloud"
+
+#: ../functions/core.php:670
+#, php-format
+msgid "%s on Email"
+msgstr "%s Email"
+
+#: ../functions/core.php:687 ../functions/core.php:1112
+msgid "Menu"
+msgstr "valikko"
+
+#: ../functions/core.php:690
+msgid "Primary menu"
+msgstr "Ensisijainen valikko"
+
+#: ../functions/core.php:1019
+msgid "Categories: "
+msgstr "Kategoriat:"
+
+#: ../functions/core.php:1021
+msgid "Tags"
+msgstr ""
+
+#: ../functions/core.php:1040
+msgid "Name"
+msgstr "Nimi"
+
+#: ../functions/core.php:1040 ../functions/core.php:1041
+msgid "( required )"
+msgstr "( pakollinen )"
+
+#: ../functions/core.php:1041
+msgid "Email"
+msgstr "Sähköposti"
+
+#: ../functions/core.php:1042
+msgid "Website"
+msgstr "Kotisivu"
+
+#: ../functions/metabox.php:14 ../functions/metabox.php:20
+msgid "Simple Catch Options"
+msgstr ""
+
+#: ../functions/metabox.php:33
+#, php-format
+msgid "Default Layout Set in <a href=\"%s\">Customize</a>"
+msgstr ""
+
+#: ../functions/metabox.php:39
+msgid "No sidebar"
+msgstr "Ei sivupalkkia"
+
+#: ../functions/metabox.php:45
+msgid "No sidebar, Full Width"
+msgstr "No sidebar, Full Width"
+
+#: ../functions/metabox.php:51
+msgid "Left sidebar"
+msgstr "Vasen sivupalkki"
+
+#: ../functions/metabox.php:57
+msgid "Right sidebar"
+msgstr "Oikean sivupalkki"
+
+#: ../functions/metabox.php:74
+msgid "Sidebar Layout Options"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:224
+msgid "Y"
+msgstr "Y"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:244
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:253
+msgid "Simple Catch"
+msgstr "Simple Catch"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:262
+msgid "https://catchthemes.com"
+msgstr "https://catchthemes.com"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:262
+msgid "Catch Themes"
+msgstr "Catch Themes"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:287
+msgid "Content on Left"
+msgstr "Sisältö vasemmalla"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:288
+msgid "Content on Right"
+msgstr "Sisältö oikealla"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:289
+msgid "No Sidebar"
+msgstr "Ei sivupalkkia"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:290
+msgid "No Sidebar, Full Width"
+msgstr "No Sidebar, Full Width"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:303
+msgid "fade"
+msgstr "fade"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:304
+msgid "wipe"
+msgstr "wipe"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:305
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:307
+msgid "scrollUp"
+msgstr "scrollUp"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:306
+msgid "scrollDown"
+msgstr "scrollDown"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:308
+msgid "scrollLeft"
+msgstr "scrollLeft"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:309
+msgid "scrollRight"
+msgstr "scrollRight"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:310
+msgid "blindX"
+msgstr "blindX"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:311
+msgid "blindY"
+msgstr "blindY"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:312
+msgid "blindZ"
+msgstr "blindZ"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:313
+msgid "cover"
+msgstr "cover"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:314
+msgid "shuffle"
+msgstr "shuffle"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:327
+msgid "Excerpt/Blog Display"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:328
+msgid "Full Content Display"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:341
+msgid "Homepage / Frontpage"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:342
+msgid "Entire Site"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:343
+msgid "Disable"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:356
+msgid "Featured Image Slider"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:357
+msgid "Featured Post Slider"
+msgstr "Korostetut artikkelit"
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:358
+msgid "Featured Page Slider"
+msgstr ""
+
+#: ../functions/panel/simplecatch_themeoptions_defaults.php:359
+msgid "Featured Category Slider"
+msgstr ""
+
+#: ../functions/widgets.php:17
+msgid "Main Sidebar"
+msgstr ""
+
+#: ../functions/widgets.php:19
+msgid "This is main sideabar"
+msgstr ""
+
+#: ../functions/widgets.php:42
+msgid "CT: Custom Tag Cloud"
+msgstr ""
+
+#: ../functions/widgets.php:43
+msgid "Displays Custom Tag Cloud"
+msgstr ""
+
+#: ../functions/widgets.php:101 ../functions/widgets.php:229
+msgid "Title (optional):"
+msgstr "Title (optional):"
+
+#: ../functions/widgets.php:123
+msgid "CT: Advertisement"
+msgstr ""
+
+#: ../functions/widgets.php:124
+msgid "Use this widget to add any type of Advertisement as a widget"
+msgstr ""
+
+#: ../functions/widgets.php:172
+msgid "Add Advertisement Code or Image URL"
+msgstr "Add Advertisement Code or Image URL"
+
+#: ../functions/widgets.php:234
+msgid "Ad Code:"
+msgstr ""
+
+#: ../functions/widgets.php:240
+msgid "Image Url:"
+msgstr "Image Url:"
+
+#: ../functions/widgets.php:244
+msgid "Link URL:"
+msgstr "Link URL:"
+
+#: ../functions/widgets.php:249
+msgid "Open Link in New Window"
+msgstr "Open Link in New Window"
+
+#: ../functions/widgets.php:252
+msgid "Alt text:"
+msgstr "Alt text:"
+
+#: ../functions/widgets.php:256
+msgid "Check to Hide Ad on 404 page"
+msgstr ""
+
+#: ../functions/widgets.php:279
+msgid "CT: Social Icons"
+msgstr ""
+
+#: ../functions/widgets.php:280
+msgid "Displays Social Icons added from Customizer / Theme Options Panel"
+msgstr ""
+
+#: ../header.php:34
+msgid "Skip to content"
+msgstr ""
+
+#: ../image.php:86
+msgid "Previous Image"
+msgstr "Edellinen kuva"
+
+#: ../image.php:87
+msgid "Next Image"
+msgstr "Seuraava kuva"
+
+#: ../page-blog.php:83 ../search.php:44
+msgid "Previous"
+msgstr "Edellinen"
+
+#: ../page-blog.php:85 ../search.php:45
+msgid "Next"
+msgstr "Seuraava"
+
+#: ../search.php:15
+#, php-format
+msgid "Showing results for: <span>%s</span>"
+msgstr "Näytetään tulokset haulle: <span>%s</span>"
+
+#: ../search.php:54
+#, php-format
+msgid "Your search <span> \"%s\" </span> did not match any documents"
+msgstr "Haullasi <span> \"%s\" </span> ei löytynyt yhtään tuloksia"
+
+#: ../search.php:57
+msgid "A few suggestions"
+msgstr "Tässä muutama ehdotus"
+
+#: ../search.php:59
+msgid "Make sure all words are spelled correctly"
+msgstr "Tarkista, että kaikki sanat ovat kirjoitettu oikein"
+
+#: ../search.php:60
+msgid "Try different keywords"
+msgstr "Kokeile erilaisia hakutermejä"
+
+#: ../search.php:61
+msgid "Try more general keywords"
+msgstr "Kokeile käyttää yleisempiä hakutermejä"
+
+#: ../sidebar.php:59
+msgid "Archives"
+msgstr ""
+
+#~ msgid "%s"
+#~ msgstr "%s"
+
+#~ msgid ""
+#~ "Check for a mis-typed URL error, then press the refresh button on your "
+#~ "browser or Use the search box at the Header."
+#~ msgstr ""
+#~ "Tarkista osoite mahdollisen kirjoitusvirheen varalta, jonka jälkeen lataa "
+#~ "sivu uudelleen tai käytä sivulta löytyvää hakutoimintoa."
+
+#~ msgid "Permalink to %s"
+#~ msgstr "Pysyvä linkki artikkeliin: %s"
+
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
+
+#~ msgid "All Rights Reserved."
+#~ msgstr "Kaikki oikeudet pidätetään."
+
+#~ msgid "Support"
+#~ msgstr "Support"
+
+#~ msgid "Theme Options"
+#~ msgstr "Teeman asetukset"
+
+#~ msgid "Default Layout"
+#~ msgstr "Oletusulkoasu"
+
+#~ msgid "Homepage / Frontpage Category Setting"
+#~ msgstr "Kotisivun / Etusivun kategorian asetus"
+
+#~ msgid "Search Text Settings"
+#~ msgstr "Hakukentän tekstin asetukset"
+
+#~ msgid "Excerpt / More Tag Settings"
+#~ msgstr "Katkelman / Lisää merkinnän asetukset"
+
+#~ msgid "Feed Redirect"
+#~ msgstr "Syötteen uudelleenohjaus"
+
+#~ msgid "Custom CSS"
+#~ msgstr "Mukautettu CSS"
+
+#~ msgid "Add Slider Options"
+#~ msgstr "Korostettujen artikkelien asetukset"
+
+#~ msgid "Slider Effect Options"
+#~ msgstr "Korostettujen artikkelien efektiasetukset"
+
+#~ msgid "Social Links"
+#~ msgstr "Sosiaaliset linkit"
+
+#~ msgid "Webmaster Tools"
+#~ msgstr "Webmasterin työkalut"
+
+#~ msgid "Default Color Scheme"
+#~ msgstr "Default Color Scheme"
+
+#~ msgid "Check to Reset Color"
+#~ msgstr "Check to Reset Color"
+
+#~ msgid "Front page posts categories:"
+#~ msgstr "Etusivun artikkeleiden kategoriat:"
+
+#~ msgid "Default Display Text in Search"
+#~ msgstr "Hakukentässä näytettävä oletusteksti"
+
+#~ msgid "Search Button's text"
+#~ msgstr "Hakunappulan teksti"
+
+#~ msgid "More Tag Text"
+#~ msgstr "Lisää merkinnän teksti"
+
+#~ msgid "Excerpt length(words)"
+#~ msgstr "Katkelman pituus(sanoja)"
+
+#~ msgid "Feed Redirect URL"
+#~ msgstr "Syötteen uudelleenohjaus URL"
+
+#~ msgid "Number of Slides"
+#~ msgstr "Korostettujen artikkelien lukumäärä"
+
+#~ msgid "Transition Delay"
+#~ msgstr "Siirtymisen viive"
+
+#~ msgid "Transition Length"
+#~ msgstr "Siirtymisen kesto"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+#~ msgid "Pinterest"
+#~ msgstr "Pinterest"
+
+#~ msgid "Youtube"
+#~ msgstr "Youtube"
+
+#~ msgid "Vimeo"
+#~ msgstr "Vimeo"
+
+#~ msgid "Slideshare"
+#~ msgstr "Slideshare"
+
+#~ msgid "Foursquare"
+#~ msgstr "Foursquare"
+
+#~ msgid "Flickr"
+#~ msgstr "Flickr"
+
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+#~ msgid "deviantART"
+#~ msgstr "deviantART"
+
+#~ msgid "Dribbble"
+#~ msgstr "Dribbble"
+
+#~ msgid "MySpace"
+#~ msgstr "MySpace"
+
+#~ msgid "RSS"
+#~ msgstr "RSS"
+
+#~ msgid "Delicious"
+#~ msgstr "Delicious"
+
+#~ msgid "Last.fm"
+#~ msgstr "Last.fm"
+
+#~ msgid "Instagram"
+#~ msgstr "Instagram"
+
+#~ msgid "GitHub"
+#~ msgstr "GitHub"
+
+#~ msgid "Vkontakte"
+#~ msgstr "Vkontakte"
+
+#~ msgid "My World"
+#~ msgstr "My World"
+
+#~ msgid "Odnoklassniki"
+#~ msgstr "Odnoklassniki"
+
+#~ msgid "Goodreads"
+#~ msgstr "Goodreads"
+
+#~ msgid "Skype"
+#~ msgstr "Skype"
+
+#~ msgid "Soundcloud"
+#~ msgstr "Soundcloud"
+
+#~ msgid "Code to display on Header"
+#~ msgstr "Otsakkeessa käytettävä koodi"
+
+#~ msgid "Code to display on Footer"
+#~ msgstr "Alatunnisteessa käytettävä koodi"
+
+#~ msgid "Options Saved"
+#~ msgstr "Asetukset tallennettu"
+
+#~ msgid "Theme Options By"
+#~ msgstr "Teeman asetukset"
+
+#~ msgid "https://catchthemes.com/"
+#~ msgstr "https://catchthemes.com/"
+
+#~ msgid "https://catchthemes.com/themes/simple-catch-pro/"
+#~ msgstr "https://catchthemes.com/themes/simple-catch-pro/"
+
+#~ msgid "Upgrade to Simple Catch Pro"
+#~ msgstr "Päivitä Simple Cacth Pro"
+
+#~ msgid "https://catchthemes.com/donate/"
+#~ msgstr "https://catchthemes.com/donate/"
+
+#~ msgid "Donate"
+#~ msgstr "Donate"
+
+#~ msgid "https://catchthemes.com/support/"
+#~ msgstr "https://catchthemes.com/support/"
+
+#~ msgid "https://catchthemes.com/theme-instructions/simple-catch/"
+#~ msgstr "https://catchthemes.com/theme-instructions/simple-catch/"
+
+#~ msgid "Theme Instruction"
+#~ msgstr "Teeman ohjeet"
+
+#~ msgid "https://www.facebook.com/catchthemes/"
+#~ msgstr "https://www.facebook.com/catchthemes/"
+
+#~ msgid "Like Catch Themes on Facebook"
+#~ msgstr "Tykkää Catch Themes:tä Facebookissa"
+
+#~ msgid "https://twitter.com/catchthemes/"
+#~ msgstr "https://twitter.com/catchthemes/"
+
+#~ msgid "Follow Catch Themes on Twitter"
+#~ msgstr "Seuraa Catch Themes:iä Twitterissä"
+
+#~ msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
+#~ msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
+
+#~ msgid "Rate us 5 Star on WordPress"
+#~ msgstr "Anna meille viisi tähteä WordPressissä"
+
+#~ msgid "5 Star Rating"
+#~ msgstr "5 tähden arvostelu"
+
+#~ msgid "Logo Options"
+#~ msgstr "Logon asetukset"
+
+#~ msgid "Header logo url:"
+#~ msgstr "Otsakkeen logon URL:"
+
+#~ msgid "Preview: "
+#~ msgstr "Esikatselu:"
+
+#~ msgid "Disable Header Logo?"
+#~ msgstr "Disable Header Logo?"
+
+#~ msgid "Check to Disable."
+#~ msgstr "Merkitse poistaaksesi käytöstä."
+
+#~ msgid "Disable Site Title?"
+#~ msgstr "Poista sivuston otsikko käytöstä?"
+
+#~ msgid "Disable Site Description?"
+#~ msgstr "Poista sivuston kuvaus käytöstä?"
+
+#~ msgid "Footer logo url: "
+#~ msgstr "Alatunnisteen logon URL:"
+
+#~ msgid "Disable Footer Logo?"
+#~ msgstr "Poista alatunnisteen logo käytöstä?"
+
+#~ msgid "Save"
+#~ msgstr "Tallenna"
+
+#~ msgid "Fav Icon Option"
+#~ msgstr "Fav Icon Option"
+
+#~ msgid "Favicon URL:"
+#~ msgstr "Faviconin URL:"
+
+#~ msgid "Disable Fav Icon?"
+#~ msgstr "Disable Fav Icon?"
+
+#~ msgid "Web Clip Icon Option"
+#~ msgstr "Web Clip Icon Option"
+
+#~ msgid "Web Clip Icon URL:"
+#~ msgstr "Web Clip Icon URL:"
+
+#~ msgid "No Web Clip Icon Found. Upload Web Clip Icon."
+#~ msgstr "No Web Clip Icon Found. Upload Web Clip Icon."
+
+#~ msgid "Color Options"
+#~ msgstr "Color Options"
+
+#~ msgid "Default"
+#~ msgstr "Default"
+
+#~ msgid "Dark"
+#~ msgstr "Dark"
+
+#~ msgid "Brown"
+#~ msgstr "Brown"
+
+#~ msgid "Content Background:"
+#~ msgstr "Content Background:"
+
+#~ msgid "Need to replace default background?"
+#~ msgstr "Täytyykö oletustaustakuva vaihtaa?"
+
+#~ msgid "<a class=\"button\" href=\"%s\">Click here</a>"
+#~ msgstr "<a class=\"button\" href=\"%s\">Klikkaa tästä</a>"
+
+#~ msgid "Heading Color:"
+#~ msgstr "Otsikon väri:"
+
+#~ msgid "Meta Description Color:"
+#~ msgstr "Kuvauksen väri:"
+
+#~ msgid "Text Color:"
+#~ msgstr "Tekstin väri:"
+
+#~ msgid "Link Color:"
+#~ msgstr "Linkin väri:"
+
+#~ msgid "Sidebar Widget Heading Color:"
+#~ msgstr "Sivupalkin vimpaimen otsakkeen väri:"
+
+#~ msgid "Sidebar Widget Text Color:"
+#~ msgstr "Sivupalkin vimpaimen tekstin väri:"
+
+#~ msgid "Reset Color:"
+#~ msgstr "Resetoi värit:"
+
+#~ msgid ""
+#~ "Only posts that belong to the categories selected here will be displayed "
+#~ "on the front page."
+#~ msgstr ""
+#~ "Ainoastaan artikkelit, jotka kuuluvat valittuihin kategorioihin, "
+#~ "näytetään etusivulla."
+
+#~ msgid "--Disabled--"
+#~ msgstr "--Pois käytöstä--"
+
+#~ msgid "You may select multiple categories by holding down the CTRL key."
+#~ msgstr "Voit valita useita kategorioita pitämällä CTRL-nappia pohjassa."
+
+#~ msgid "Enter your custom CSS styles."
+#~ msgstr "Kirjoita tähän mukautetut CSS-tyylisi."
+
+#~ msgid "CSS Tutorial from W3Schools."
+#~ msgstr " W3Schools:n CSS-tutoriaali."
+
+#~ msgid "http://www.w3schools.com/css/default.asp"
+#~ msgstr "http://www.w3schools.com/css/default.asp"
+
+#~ msgid "CSS Tutorial"
+#~ msgstr "CSS-tutoriaali"
+
+#~ msgid "Click Here to Read"
+#~ msgstr "Paina tästä lukeaksesi"
+
+#~ msgid "Exclude Slider post from Home page posts:"
+#~ msgstr "Älä näytä korostettua artikkelia etusivun artikkelien joukossa:"
+
+#~ msgid "Featured Post ID"
+#~ msgstr "Featured Post ID"
+
+#~ msgid "Click Here To Edit"
+#~ msgstr "Klikkaa muokataksesi"
+
+#~ msgid ""
+#~ "Note: Here You can put your Post IDs which displays on Homepage as slider."
+#~ msgstr ""
+#~ "Huom. Tähän voit laittaa artikkelin ID:t, jotka korostetaan etusivulla."
+
+#~ msgid "Disable Slider Background Effect:"
+#~ msgstr "Poista korostettujen artikkelien taustakuvaefekti käytöstä:"
+
+#~ msgid "Transition Effect:"
+#~ msgstr "Siirtymisen efekti:"
+
+#~ msgid "second(s)"
+#~ msgstr "sekunti(a)"
+
+#~ msgid "Linkedin"
+#~ msgstr "Linkedin"
+
+#~ msgid "Header and Footer Codes"
+#~ msgstr "Header and Footer Codes"
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook etc. which will load "
+#~ "on Header"
+#~ msgstr ""
+#~ "Huom. Tähän voit asettaa Google-, Facebook jne. -skriptisi, jotka "
+#~ "ladataan otsakkeessa."
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
+#~ "will load on footer"
+#~ msgstr ""
+#~ "Huom. Tähän voit laittaa Google-, Facebook-, Add This jne. skriptisi, "
+#~ "jotka ladataan alatunnisteessa."
+
+#~ msgid "Powered By:"
+#~ msgstr "Alustana toimii:"
+
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://wordpress.org/"
+
+#~ msgid "Powered By WordPress"
+#~ msgstr "Alustana toimii WordPress"
+
+#~ msgid "Theme:"
+#~ msgstr "Teema:"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Select Sidebar layout"
+#~ msgstr "Valitse sivupalkin tyyli"
+
+#~ msgid "sidebar"
+#~ msgstr "sivupalkki"
+
+#~ msgid "Advertisement Code:"
+#~ msgstr "Advertisement Code:"
+
+#~ msgid "Showing results for: <span class=\"img-title\">%s</span>"
+#~ msgstr "Näytetään tulokset haulle: <span class=\"img-title\">%s</span>"
+
+#, fuzzy
+#~ msgid "Simple Catch Pro"
+#~ msgstr "Simple Catch"
+
+#, fuzzy
+#~ msgid "https://catchthemes.com/themes/simple-catch"
+#~ msgstr "https://catchthemes.com/themes/simple-catch-pro/"
+
+#, fuzzy
+#~ msgid "Catch Themes Team"
+#~ msgstr "Catch Themes"
+
+#~ msgid "Change Header Logo"
+#~ msgstr "Change Header Logo"
+
+#~ msgid "Change Footer Logo"
+#~ msgstr "Vaihda alatunnisteen logo"
+
+#~ msgid "Change Fav icon Logo"
+#~ msgstr "Change Fav icon Logo"
+
+#~ msgid "Upload/Change Web Clip Icon"
+#~ msgstr "Upload/Change Web Clip Icon"
+
+#~ msgid "Page %s"
+#~ msgstr "Sivu %s"
+
+#~ msgid "Default Layout Set in"
+#~ msgstr "Oletusulkoasu, joka on asetettu paikassa"
+
+#~ msgid "Theme Settings"
+#~ msgstr "Teeman asetukset"
+
+#~ msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
+#~ msgstr "Displays Custom Tag Cloud designed for Simple Catch Theme."
+
+#~ msgid "1. Simple Catch: Tag Clouds"
+#~ msgstr "1. Simple Catch: Tag Clouds"
+
+#~ msgid "Displays Social Icons added from Theme Options Panel."
+#~ msgstr "Displays Social Icons added from Theme Options Panel."
+
+#~ msgid "2. Simple Catch: Social Icons"
+#~ msgstr "2. Simple Catch: Social Icons"
+
+#~ msgid "Use this widget to add any type of Advertisement as a widget."
+#~ msgstr "Use this widget to add any type of Advertisement as a widget."
+
+#~ msgid "3. Simple Catch: Advertisement"
+#~ msgstr "3. Simple Catch: Advertisement"
+
+#~ msgid "http://facebook.com/catchthemes"
+#~ msgstr "http://facebook.com/catchthemes"
+
+#~ msgid "https://twitter.com/catchthemes"
+#~ msgstr "https://twitter.com/catchthemes"
+
+#~ msgid "Content Color Options"
+#~ msgstr "Sisällön väriasetukset"
+
+#~ msgid "https://catchthemes.com/support-forum/forum/simple-catch-public/"
+#~ msgstr "https://catchthemes.com/support-forum/forum/simple-catch-public/"
+
+#~ msgid "Featured Slider Post #"
+#~ msgstr "Korostetun artikkelin #"
+
+#~ msgid "Change Logo"
+#~ msgstr "Vaihda logo"
+
+#~ msgid "Upload Logo"
+#~ msgstr "Lähetä Logo"
+
+#~ msgid "Preview:"
+#~ msgstr "Esikatselu:"
+
+#~ msgid "No Header Image Found. Upload Header Image."
+#~ msgstr "Otsakekuvaa ei löytynyt. Lähetä otsakekuva."
+
+#~ msgid "Upload/Change Favicon"
+#~ msgstr "Upload/Change Favicon"
+
+#~ msgid "No Favicon Found. Upload Favicon."
+#~ msgstr "Faviconia ei löytynyt. Lähetä favicon."
+
+#~ msgid "Site Verification"
+#~ msgstr "Sivuston varmennus"
+
+#~ msgid "Google Site Verification ID"
+#~ msgstr "Googlen sivuston varmennus-ID"
+
+#~ msgid "Enter your Google ID number only"
+#~ msgstr "Syötä ainoastaan Google ID -numerosi"
+
+#~ msgid "Yahoo Site Verification ID"
+#~ msgstr "Yahoon sivuston varmennus-ID"
+
+#~ msgid "Enter your Yahoo ID number only"
+#~ msgstr "Syötä ainoastaan Yahoo ID -numerosi"
+
+#~ msgid "Bing Site Verification ID"
+#~ msgstr "Bingin sivuston varmennus-ID"
+
+#~ msgid "Enter your Bing ID number only"
+#~ msgstr "Syötä ainostaan Bing ID -numerosi"
+
+#~ msgid "Design Settings"
+#~ msgstr "Ulkoasun asetukset"
+
+#~ msgid "No Sidebar, One Column"
+#~ msgstr "Ei sivupalkkia, yksi palsta"
+
+#~ msgid "Upload Favicon"
+#~ msgstr "Lähetä Favicon"
+
+#~ msgid "Slider Options"
+#~ msgstr "Korostettujen artikkeleiden asetukset"
+
+#~ msgid "Featured Slider Options"
+#~ msgstr "Korostettujen artikkelien asetukset"
+
+#~ msgid "Social Links Option"
+#~ msgstr "Sosiaalisten linkkien asetukset"
+
+#~ msgid "Webmaster Tools Option"
+#~ msgstr "Webmaster Tools asetukset"
+
+#~ msgid "Analytics"
+#~ msgstr "Analytics"
+
+#~ msgid ""
+#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
+#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
+#~ "Custom Widgets, "
+#~ msgstr ""
+#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
+#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
+#~ "Custom Widgets, "
+
+#~ msgid ""
+#~ "black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
+#~ "right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
+#~ "template, theme-options, threaded-comments, translation-ready"
+#~ msgstr ""
+#~ "black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
+#~ "right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
+#~ "template, theme-options, threaded-comments, translation-ready"
+
+#~ msgid "Theme Support"
+#~ msgstr "Teeman Tuki"
+
+#~ msgid "More Themes"
+#~ msgstr "Lisää teemoja"
+
+#~ msgid "FAQ: Frequently Asked Questions"
+#~ msgstr "UKK: Usein kysytyt kysymykset"
