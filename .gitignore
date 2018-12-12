@@ -1,2 +1,3 @@
 wp-config.php
 *.bak
+wp-content/cache/*
