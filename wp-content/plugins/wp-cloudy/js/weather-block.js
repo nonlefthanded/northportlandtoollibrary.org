@@ -1,86 +1,36 @@
-/**
- * Hello World: Step 4
- *
- * Adding extra controls: built-in alignment toolbar.
- */
-( function( blocks, i18n, element ) {
-	var el = element.createElement;
-	var __ = i18n.__;
-	var Editable = blocks.Editable;
-	var children = blocks.source.children;
-	var AlignmentToolbar = wp.blocks.AlignmentToolbar;
-	var BlockControls = wp.blocks.BlockControls;
-	var InspectorControls = wp.blocks.InspectorControls;
+const { __ } = wp.i18n // Importer la fonction __() d'internationalisation des chaines
+const { registerBlockType } = wp.blocks // Importe la fonction registerBlockType() de la librairie globale wp.blocks
 
-	blocks.registerBlockType( 'gutenberg-wpcloudy/wpcloudy', {
-		title: __( 'Weather', 'wp-cloudy' ),
-		icon: 'cloud',
-		category: 'widgets',
+// Fonction WordPress pour déclarer un bloc
+registerBlockType(
+	'gutenberg-wpcloudy/wpcloudy', // Nom du bloc sous forme de slug avec son préfixe (wp est bien sûr réservé)
+	{
+		title: __( "Weather"), // Titre du bloc lisible par un humain
+		description: __("WP Cloudy widget"), // Description qui apparait dans l'inspecteur
+        icon: 'cloud', // Dashicon sans le préfixe 'dashicons-' → https://developer.wordpress.org/resource/dashicons/
+		category: 'layout widgets', // Catégorie (common, formatting, layout widgets, embed)
+		keywords: [ // Mots clés pour améliorer la recherche de blocs
+			__( 'weather' ),
+			__( 'wp cloudy' ),
+			__( 'forecast' ),
+		],
 
-		attributes: {
-			content: {
-				type: 'array',
-				source: 'children',
-				selector: 'p',
-			},
+		// La partie affichée dans l'administration de WordPress
+		edit: props => {
+			return (
+				<div>
+					<p>Salut ! Je suis le backend</p>
+				</div>
+			)
 		},
 
-		edit: function( props ) {
-			var content = props.attributes.content;
-			var alignment = props.attributes.alignment;
-			var focus = props.focus;
-
-			function onChangeContent( newContent ) {
-				props.setAttributes( { content: newContent } );
-			}
-
-			function onChangeAlignment( newAlignment ) {
-				props.setAttributes( { alignment: newAlignment } );
-			}
-
-			return [
-				!! focus && el(
-					BlockControls,
-					{ key: 'controls' },
-					el(
-						AlignmentToolbar,
-						{
-							value: alignment,
-							onChange: onChangeAlignment
-						}
-					)
-				),
-				el(
-					Editable,
-					{
-						key: 'editable',
-						tagName: 'p',
-						className: props.className,
-						style: { textAlign: alignment },
-						onChange: onChangeContent,
-						value: content,
-						focus: focus,
-						onFocus: props.setFocus
-					}
-				)
-			];
+		// La partie enregistrée en base et affichée en front
+		save: props => {
+			return (
+				<div>
+					<p>Salut, je suis le frontend</p>
+				</div>
+			)
 		},
-
-		save: function( props ) {
-			var saveProps = {};
-			if ( props.attributes.alignment ) {
-				saveProps.className =
-					'gutenberg-examples-align-' + props.attributes.alignment;
-			}
-			return el(
-				'p',
-				saveProps,
-				props.attributes.content
-			);
-		},
-	} );
-} )(
-	window.wp.blocks,
-	window.wp.i18n,
-	window.wp.element
-);
+	}
+)

@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Cloudy\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/wp-cloudy\n"
-"POT-Creation-Date: 2017-11-22 13:51+0100\n"
-"PO-Revision-Date: 2017-11-22 13:52+0100\n"
+"POT-Creation-Date: 2018-05-28 13:45+0200\n"
+"PO-Revision-Date: 2018-05-28 13:45+0200\n"
 "Last-Translator: \n"
 "Language-Team: Benjamin DENIS <contact@wpcloudy.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -88,15 +88,15 @@ msgstr "Remise à zéro"
 msgid "Basic"
 msgstr "Basique"
 
-#: wpcloudy-admin.php:170 wpcloudy.php:395
+#: wpcloudy-admin.php:170 wpcloudy.php:420
 msgid "Display"
 msgstr "Affichage"
 
-#: wpcloudy-admin.php:171 wpcloudy.php:396
+#: wpcloudy-admin.php:171 wpcloudy.php:421
 msgid "Advanced"
 msgstr "Avancé"
 
-#: wpcloudy-admin.php:172 wpcloudy.php:397
+#: wpcloudy-admin.php:172 wpcloudy.php:422
 msgid "Map"
 msgstr "Carte"
 
@@ -147,7 +147,7 @@ msgstr "système de cache"
 msgid "Click this button to refresh weather cache."
 msgstr "Cliquer sur ce bouton pour vider le cache."
 
-#: wpcloudy-admin.php:276 wpcloudy.php:394
+#: wpcloudy-admin.php:276 wpcloudy.php:419
 msgid "Basic settings"
 msgstr "Base"
 
@@ -171,11 +171,11 @@ msgstr "Date"
 msgid "Display settings"
 msgstr "Paramètres d'affichage"
 
-#: wpcloudy-admin.php:323 wpcloudy.php:475
+#: wpcloudy-admin.php:323 wpcloudy.php:500
 msgid "Current weather?"
 msgstr "Temps actuel ?"
 
-#: wpcloudy-admin.php:331 wpcloudy.php:481
+#: wpcloudy-admin.php:331 wpcloudy.php:506
 msgid "Short condition?"
 msgstr "Conditions météo en texte ?"
 
@@ -187,7 +187,7 @@ msgstr "Contourner le format de la date d'aujourd'hui?"
 msgid "Todays date or day of the week?"
 msgstr "Date du jour ou jour de la semaine ?"
 
-#: wpcloudy-admin.php:355 wpcloudy.php:559
+#: wpcloudy-admin.php:355 wpcloudy.php:584
 msgid "Temperatures unit (C / F)?"
 msgstr "Unités de températures (C / F) ?"
 
@@ -195,7 +195,7 @@ msgstr "Unités de températures (C / F) ?"
 msgid "Sunrise + sunset?"
 msgstr "Lever + coucher du soleil ?"
 
-#: wpcloudy-admin.php:371 wpcloudy-admin.php:724 wpcloudy.php:517
+#: wpcloudy-admin.php:371 wpcloudy-admin.php:724 wpcloudy.php:542
 msgid "Wind?"
 msgstr "Vent ?"
 
@@ -203,19 +203,19 @@ msgstr "Vent ?"
 msgid "Wind unit?"
 msgstr "Unité du vent ?"
 
-#: wpcloudy-admin.php:387 wpcloudy.php:532
+#: wpcloudy-admin.php:387 wpcloudy.php:557
 msgid "Humidity?"
 msgstr "Humidité"
 
-#: wpcloudy-admin.php:395 wpcloudy-admin.php:740 wpcloudy.php:538
+#: wpcloudy-admin.php:395 wpcloudy-admin.php:740 wpcloudy.php:563
 msgid "Pressure?"
 msgstr "Pression atmosphérique ?"
 
-#: wpcloudy-admin.php:403 wpcloudy.php:544
+#: wpcloudy-admin.php:403 wpcloudy.php:569
 msgid "Cloudiness?"
 msgstr "Couverture nuageuse ?"
 
-#: wpcloudy-admin.php:411 wpcloudy.php:550
+#: wpcloudy-admin.php:411 wpcloudy.php:575
 msgid "Precipitation?"
 msgstr "Précipitations ?"
 
@@ -235,7 +235,7 @@ msgstr "Nombre de plages de prévisions heure par heure ?"
 msgid "Bypass individual temperatures settings?"
 msgstr "Contourner paramètres température ?"
 
-#: wpcloudy-admin.php:451 wpcloudy.php:565
+#: wpcloudy-admin.php:451 wpcloudy.php:590
 msgid "Today temperature?"
 msgstr "Température du jour ?"
 
@@ -263,11 +263,11 @@ msgstr "Contourner la longueur du nom des jours ?"
 msgid "Length name days:"
 msgstr "Taille des noms des jours :"
 
-#: wpcloudy-admin.php:507 wpcloudy.php:630
+#: wpcloudy-admin.php:507 wpcloudy.php:655
 msgid "Link to OpenWeatherMap?"
 msgstr "Lien vers OpenWeatherMap ?"
 
-#: wpcloudy-admin.php:515 wpcloudy.php:638
+#: wpcloudy-admin.php:515 wpcloudy.php:663
 msgid "Update date?"
 msgstr "Date de mise à jour ?"
 
@@ -287,15 +287,15 @@ msgstr "Paramètres avancés"
 msgid "CSS 3 Animations"
 msgstr "CSS3 Animations"
 
-#: wpcloudy-admin.php:555 wpcloudy.php:661
+#: wpcloudy-admin.php:555 wpcloudy.php:686
 msgid "Background color"
 msgstr "Couleur d'arrière plan"
 
-#: wpcloudy-admin.php:563 wpcloudy.php:665
+#: wpcloudy-admin.php:563 wpcloudy.php:690
 msgid "Text color"
 msgstr "Couleur du texte"
 
-#: wpcloudy-admin.php:571 wpcloudy.php:669
+#: wpcloudy-admin.php:571 wpcloudy.php:694
 msgid "Border color"
 msgstr "Couleur des bordures"
 
@@ -339,7 +339,7 @@ msgstr "Hauteur de la carte (en px)"
 msgid "Bypass layers opacity?"
 msgstr "Contourner l'opacité des calques ?"
 
-#: wpcloudy-admin.php:660 wpcloudy.php:697
+#: wpcloudy-admin.php:660 wpcloudy.php:722
 msgid "Layers opacity"
 msgstr "Opacité des calques"
 
@@ -347,7 +347,7 @@ msgstr "Opacité des calques"
 msgid "Bypass zoom?"
 msgstr "Contourner le zoom ?"
 
-#: wpcloudy-admin.php:676 wpcloudy.php:713
+#: wpcloudy-admin.php:676 wpcloudy.php:738
 msgid "Zoom"
 msgstr "Zoom"
 
@@ -399,11 +399,11 @@ msgstr "&nbsp;"
 msgid "Enable bypass unit on all weather?"
 msgstr "Activer le contournement de l'unité sur toutes les météos ?"
 
-#: wpcloudy-admin.php:853 wpcloudy.php:423
+#: wpcloudy-admin.php:853 wpcloudy.php:448
 msgid "Imperial"
 msgstr "Impérial"
 
-#: wpcloudy-admin.php:856 wpcloudy.php:424
+#: wpcloudy-admin.php:856 wpcloudy.php:449
 msgid "Metric"
 msgstr "Métrique"
 
@@ -411,11 +411,11 @@ msgstr "Métrique"
 msgid "Enable bypass date format on all weather?"
 msgstr "Activer le bypass du format des dates pour toutes les météos ?"
 
-#: wpcloudy-admin.php:889 wpcloudy.php:430
+#: wpcloudy-admin.php:889 wpcloudy.php:455
 msgid "12 h"
 msgstr "12 h"
 
-#: wpcloudy-admin.php:892 wpcloudy.php:431
+#: wpcloudy-admin.php:892 wpcloudy.php:456
 msgid "24 h"
 msgstr "24 h"
 
@@ -435,7 +435,7 @@ msgstr "Contourner le format des dates du jour ?"
 msgid "None (default)?"
 msgstr "Aucun (par défaut)"
 
-#: wpcloudy-admin.php:963 wpcloudy.php:496
+#: wpcloudy-admin.php:963 wpcloudy.php:521
 msgid "Day of the week (eg: Sunday)?"
 msgstr "Jour de la semaine (par exemple: dimanche)?"
 
@@ -459,19 +459,19 @@ msgstr "Afficher le vent sur toutes les météos ?"
 msgid "No bypass"
 msgstr "Pas de contournement"
 
-#: wpcloudy-admin.php:1038 wpcloudy.php:523
+#: wpcloudy-admin.php:1038 wpcloudy.php:548
 msgid "mi/h"
 msgstr "mi/h"
 
-#: wpcloudy-admin.php:1041 wpcloudy.php:524
+#: wpcloudy-admin.php:1041 wpcloudy.php:549
 msgid "m/s"
 msgstr "m/s"
 
-#: wpcloudy-admin.php:1044 wpcloudy.php:525
+#: wpcloudy-admin.php:1044 wpcloudy.php:550
 msgid "km/h"
 msgstr "km/h"
 
-#: wpcloudy-admin.php:1047 wpcloudy.php:526
+#: wpcloudy-admin.php:1047 wpcloudy.php:551
 msgid "kt"
 msgstr "noeuds"
 
@@ -501,27 +501,27 @@ msgstr ""
 "Activer le contournement du nombre d'heures de prévisions pour toutes les "
 "météos ?"
 
-#: wpcloudy-admin.php:1160 wpcloudy.php:580
+#: wpcloudy-admin.php:1160 wpcloudy.php:605
 msgid "1"
 msgstr "1"
 
-#: wpcloudy-admin.php:1163 wpcloudy.php:581
+#: wpcloudy-admin.php:1163 wpcloudy.php:606
 msgid "2"
 msgstr "2"
 
-#: wpcloudy-admin.php:1166 wpcloudy.php:582
+#: wpcloudy-admin.php:1166 wpcloudy.php:607
 msgid "3"
 msgstr "3"
 
-#: wpcloudy-admin.php:1169 wpcloudy.php:583
+#: wpcloudy-admin.php:1169 wpcloudy.php:608
 msgid "4"
 msgstr "4"
 
-#: wpcloudy-admin.php:1172 wpcloudy.php:584
+#: wpcloudy-admin.php:1172 wpcloudy.php:609
 msgid "5"
 msgstr "5"
 
-#: wpcloudy-admin.php:1175 wpcloudy.php:585
+#: wpcloudy-admin.php:1175 wpcloudy.php:610
 msgid "6"
 msgstr "6"
 
@@ -539,23 +539,23 @@ msgstr ""
 "Activer le contournement du nombre de jours de prévisions pour toutes les "
 "météos ?"
 
-#: wpcloudy-admin.php:1256 wpcloudy.php:602
+#: wpcloudy-admin.php:1256 wpcloudy.php:627
 msgid "1 day"
 msgstr "1 jour"
 
-#: wpcloudy-admin.php:1259 wpcloudy.php:603
+#: wpcloudy-admin.php:1259 wpcloudy.php:628
 msgid "2 days"
 msgstr "2 jours"
 
-#: wpcloudy-admin.php:1262 wpcloudy.php:604
+#: wpcloudy-admin.php:1262 wpcloudy.php:629
 msgid "3 days"
 msgstr "3 jours"
 
-#: wpcloudy-admin.php:1265 wpcloudy.php:605
+#: wpcloudy-admin.php:1265 wpcloudy.php:630
 msgid "4 days"
 msgstr "4 jours"
 
-#: wpcloudy-admin.php:1268 wpcloudy.php:606
+#: wpcloudy-admin.php:1268 wpcloudy.php:631
 msgid "5 days"
 msgstr "5 jours"
 
@@ -592,15 +592,15 @@ msgstr "Désactiver les animations, transformations et transitions CSS3 ?"
 msgid "Enable bypass size on all weather?"
 msgstr "Activer le contournement de la taille pour toutes les météos ?"
 
-#: wpcloudy-admin.php:1471 wpcloudy.php:679
+#: wpcloudy-admin.php:1471 wpcloudy.php:704
 msgid "Small"
 msgstr "Petite"
 
-#: wpcloudy-admin.php:1474 wpcloudy.php:680
+#: wpcloudy-admin.php:1474 wpcloudy.php:705
 msgid "Medium"
 msgstr "Moyenne"
 
-#: wpcloudy-admin.php:1477 wpcloudy.php:681
+#: wpcloudy-admin.php:1477 wpcloudy.php:706
 msgid "Large"
 msgstr "Grande"
 
@@ -740,29 +740,33 @@ msgstr "Sélectionner une météo via le lien Configurer."
 msgid "Select the weather to display:"
 msgstr "Choisissez la météo à afficher:"
 
-#: wpcloudy.php:61
+#: wpcloudy.php:59
 msgid "Settings"
 msgstr "Paramètres"
 
-#: wpcloudy.php:298
+#: wpcloudy.php:323
 msgid "Duplicate this item"
 msgstr "Dupliquer"
 
-#: wpcloudy.php:298
+#: wpcloudy.php:323
 msgid "Duplicate"
 msgstr "Dupliquer"
 
-#: wpcloudy.php:311
+#: wpcloudy.php:336
+msgid "WP Cloudy Settings"
+msgstr "Réglages WP Cloudy"
+
+#: wpcloudy.php:336
 msgid "WP Cloudy global settings"
 msgstr "Paramètres globaux de WP Cloudy"
 
-#: wpcloudy.php:316
+#: wpcloudy.php:341
 msgid "Copy and paste this shortcode anywhere in posts, pages, text widgets: "
 msgstr ""
 "Copier puis coller ce bout de code n'importe où dans vos articles, pages, "
 "widgets textes :"
 
-#: wpcloudy.php:324
+#: wpcloudy.php:349
 msgid ""
 "If you need to display this weather anywhere in your theme, simply copy and "
 "paste this code snippet in your PHP file like sidebar.php: "
@@ -771,31 +775,31 @@ msgstr ""
 "puis coller simplement ce bout de code dans votre fichier PHP de votre choix "
 "comme sidebar.php"
 
-#: wpcloudy.php:402
+#: wpcloudy.php:427
 msgid "OpenWeatherMap city ID"
 msgstr "ID de la ville OpenWeatherMap"
 
-#: wpcloudy.php:402
+#: wpcloudy.php:427
 msgid "Find my city ID"
 msgstr "Trouver mon ID de ville"
 
-#: wpcloudy.php:405
+#: wpcloudy.php:430
 msgid "OR"
 msgstr "OU"
 
-#: wpcloudy.php:407
+#: wpcloudy.php:432
 msgid "City"
 msgstr "Ville"
 
-#: wpcloudy.php:408
+#: wpcloudy.php:433
 msgid "Enter your city"
 msgstr "Saisissez votre ville"
 
-#: wpcloudy.php:411
+#: wpcloudy.php:436
 msgid "Country?"
 msgstr "Pays?"
 
-#: wpcloudy.php:414
+#: wpcloudy.php:439
 msgid ""
 "If you enter an OpenWeatherMap ID, it will automatically bypassed City and "
 "Country fields."
@@ -803,683 +807,683 @@ msgstr ""
 "Si vous saisissez un ID OpenWeatherMap, il surpassera automatiquement les "
 "champs Ville et Pays."
 
-#: wpcloudy.php:417
+#: wpcloudy.php:442
 msgid "Custom city title"
 msgstr "Titre de ville personnalisée"
 
-#: wpcloudy.php:421
+#: wpcloudy.php:446
 msgid "Imperial or metric units?"
 msgstr "Système métrique ou impérial ?"
 
-#: wpcloudy.php:428
+#: wpcloudy.php:453
 msgid "12h / 24h date format?"
 msgstr "12h / 24h format de date ?"
 
-#: wpcloudy.php:437
+#: wpcloudy.php:462
 msgid "Bypass default WordPress timezone setting?"
 msgstr "Contourner le fuseau horaire par défaut de WordPress ?"
 
-#: wpcloudy.php:441
+#: wpcloudy.php:466
 msgid "Custom timezone? (default: WordPress general settings)"
 msgstr ""
 "Fuseau horaire personnalisé ? (défaut: Paramètres généraux de WordPress)"
 
-#: wpcloudy.php:443
+#: wpcloudy.php:468
 msgid "UTC -12"
 msgstr "UTC -12"
 
-#: wpcloudy.php:444
+#: wpcloudy.php:469
 msgid "UTC -11"
 msgstr "UTC -11"
 
-#: wpcloudy.php:445
+#: wpcloudy.php:470
 msgid "UTC -10"
 msgstr "UTC -10"
 
-#: wpcloudy.php:446
+#: wpcloudy.php:471
 msgid "UTC -9"
 msgstr "UTC -9"
 
-#: wpcloudy.php:447
+#: wpcloudy.php:472
 msgid "UTC -8"
 msgstr "UTC -8"
 
-#: wpcloudy.php:448
+#: wpcloudy.php:473
 msgid "UTC -7"
 msgstr "UTC -7"
 
-#: wpcloudy.php:449
+#: wpcloudy.php:474
 msgid "UTC -6"
 msgstr "UTC -6"
 
-#: wpcloudy.php:450
+#: wpcloudy.php:475
 msgid "UTC -5"
 msgstr "UTC -5"
 
-#: wpcloudy.php:451
+#: wpcloudy.php:476
 msgid "UTC -4"
 msgstr "UTC -4"
 
-#: wpcloudy.php:452
+#: wpcloudy.php:477
 msgid "UTC -3"
 msgstr "UTC -3"
 
-#: wpcloudy.php:453
+#: wpcloudy.php:478
 msgid "UTC -2"
 msgstr "UTC -2"
 
-#: wpcloudy.php:454
+#: wpcloudy.php:479
 msgid "UTC -1"
 msgstr "UTC -1"
 
-#: wpcloudy.php:455
+#: wpcloudy.php:480
 msgid "UTC 0"
 msgstr "UTC 0"
 
-#: wpcloudy.php:456
+#: wpcloudy.php:481
 msgid "UTC +1"
 msgstr "UTC +1"
 
-#: wpcloudy.php:457
+#: wpcloudy.php:482
 msgid "UTC +2"
 msgstr "UTC +2"
 
-#: wpcloudy.php:458
+#: wpcloudy.php:483
 msgid "UTC +3"
 msgstr "UTC +3"
 
-#: wpcloudy.php:459
+#: wpcloudy.php:484
 msgid "UTC +4"
 msgstr "UTC +4"
 
-#: wpcloudy.php:460
+#: wpcloudy.php:485
 msgid "UTC +5"
 msgstr "UTC +5"
 
-#: wpcloudy.php:461
+#: wpcloudy.php:486
 msgid "UTC +6"
 msgstr "UTC +6"
 
-#: wpcloudy.php:462
+#: wpcloudy.php:487
 msgid "UTC +7"
 msgstr "UTC +7"
 
-#: wpcloudy.php:463
+#: wpcloudy.php:488
 msgid "UTC +8"
 msgstr "UTC +8"
 
-#: wpcloudy.php:464
+#: wpcloudy.php:489
 msgid "UTC +9"
 msgstr "UTC +9"
 
-#: wpcloudy.php:465
+#: wpcloudy.php:490
 msgid "UTC +10"
 msgstr "UTC +10"
 
-#: wpcloudy.php:466
+#: wpcloudy.php:491
 msgid "UTC +11"
 msgstr "UTC +11"
 
-#: wpcloudy.php:467
+#: wpcloudy.php:492
 msgid "UTC +12"
 msgstr "UTC +12"
 
-#: wpcloudy.php:485
+#: wpcloudy.php:510
 msgid "Dates"
 msgstr "Dates"
 
-#: wpcloudy.php:490
+#: wpcloudy.php:515
 msgid "No date (default)?"
 msgstr "Aucune date (par défaut)?"
 
-#: wpcloudy.php:502
+#: wpcloudy.php:527
 msgid "Todays date (based on your WordPress General Settings)?"
 msgstr "Date d'aujourd'hui (basé sur les paramètres Généraux de WordPress) ?"
 
-#: wpcloudy.php:506
+#: wpcloudy.php:531
 msgid "Misc"
 msgstr "Divers"
 
-#: wpcloudy.php:511
+#: wpcloudy.php:536
 msgid "Sunrise + sunset? appears only if today date is checked"
 msgstr ""
 "Lever / coucher du soleil ? Apparait seulement si la date du jour est cochée"
 
-#: wpcloudy.php:521
+#: wpcloudy.php:546
 msgid "Wind unit: "
 msgstr "Unité du vent: "
 
-#: wpcloudy.php:554
+#: wpcloudy.php:579
 msgid "Temperatures"
 msgstr "Températures"
 
-#: wpcloudy.php:569
+#: wpcloudy.php:594
 msgid "Hourly Forecast"
 msgstr "Prévisions heure par heure ?"
 
-#: wpcloudy.php:574
+#: wpcloudy.php:599
 msgid "Hour Forecast?"
 msgstr "Prévisions heure par heure ?"
 
-#: wpcloudy.php:578
+#: wpcloudy.php:603
 msgid "How hours ranges ?"
 msgstr "Combien de plages d'heures ?"
 
-#: wpcloudy.php:588
+#: wpcloudy.php:613
 msgid ""
 "Make sure you have properly set the date of your site in WordPress settings."
 msgstr ""
 "Assurez vous d'avoir correctement défini les paramètres de date et heure."
 
-#: wpcloudy.php:591
+#: wpcloudy.php:616
 msgid "5-Day Forecast"
 msgstr "Prévisions à 5 jours"
 
-#: wpcloudy.php:596
+#: wpcloudy.php:621
 msgid "5-Day Forecast? (today + 5 days max)"
 msgstr "5 jours de prévisions ? (aujourd'hui + 5 jours max)"
 
-#: wpcloudy.php:600
+#: wpcloudy.php:625
 msgid "How many days?"
 msgstr "Combien de jours ?"
 
-#: wpcloudy.php:612
+#: wpcloudy.php:637
 msgid "Forecast Precipitations?"
 msgstr "Précipitations dans les prévisions ?"
 
-#: wpcloudy.php:618
+#: wpcloudy.php:643
 msgid "Short days names?"
 msgstr "Noms des jours en abrégé"
 
-#: wpcloudy.php:624
+#: wpcloudy.php:649
 msgid "Normal days names?"
 msgstr "Noms des jours par défaut ?"
 
-#: wpcloudy.php:645
+#: wpcloudy.php:670
 msgid "Fluid design? (useful with small container)"
 msgstr "Design fluide ? (utile pour les conteneurs de petite taille)"
 
-#: wpcloudy.php:649
+#: wpcloudy.php:674
 msgid "Max width parent container to enable fluid design (pixels):"
 msgstr ""
 "Taille max du conteneur parent pour activer le fluide design (en pixels):"
 
-#: wpcloudy.php:657
+#: wpcloudy.php:682
 msgid "Disable CSS3 animations?"
 msgstr "Désactiver les animations CSS3 ?"
 
-#: wpcloudy.php:673
+#: wpcloudy.php:698
 msgid "Custom CSS"
 msgstr "CSS personnalisée"
 
-#: wpcloudy.php:677
+#: wpcloudy.php:702
 msgid "Weather size?"
 msgstr "Taille de la météo ?"
 
-#: wpcloudy.php:689
+#: wpcloudy.php:714
 msgid "Display map?"
 msgstr "Afficher la carte ?"
 
-#: wpcloudy.php:693
+#: wpcloudy.php:718
 msgid "Map height (in px)"
 msgstr "Hauteur de la carte (en px)"
 
-#: wpcloudy.php:738
+#: wpcloudy.php:763
 msgid "Disable zoom wheel on map?"
 msgstr "Désactiver le zoom à la souris sur le carte ?"
 
-#: wpcloudy.php:742
+#: wpcloudy.php:767
 msgid "Layers"
 msgstr "Calques"
 
-#: wpcloudy.php:747
+#: wpcloudy.php:772
 msgid "Display stations?"
 msgstr "Afficher les stations ?"
 
-#: wpcloudy.php:753
+#: wpcloudy.php:778
 msgid "Display clouds?"
 msgstr "Afficher les nuages ?"
 
-#: wpcloudy.php:759
+#: wpcloudy.php:784
 msgid "Display precipitation?"
 msgstr "Afficher les précipitations ?"
 
-#: wpcloudy.php:765
+#: wpcloudy.php:790
 msgid "Display snow?"
 msgstr "Afficher la neige ?"
 
-#: wpcloudy.php:771
+#: wpcloudy.php:796
 msgid "Display wind?"
 msgstr "Afficher le vent ?"
 
-#: wpcloudy.php:777
+#: wpcloudy.php:802
 msgid "Display temperature?"
 msgstr "Afficher les températures ?"
 
-#: wpcloudy.php:783
+#: wpcloudy.php:808
 msgid "Display pressure?"
 msgstr "Afficher la pression atmosphérique ?"
 
-#: wpcloudy.php:1414 wpcloudy.php:1422 wpcloudy.php:1437 wpcloudy.php:1502
-#: wpcloudy.php:1509 wpcloudy.php:1521
+#: wpcloudy.php:1439 wpcloudy.php:1447 wpcloudy.php:1462 wpcloudy.php:1527
+#: wpcloudy.php:1534 wpcloudy.php:1546
 msgid "Unable to retrieve weather data"
 msgstr "Impossible de retrouver les données météo"
 
-#: wpcloudy.php:1606
+#: wpcloudy.php:1644
 msgid "Full weather on OpenWeatherMap"
 msgstr "Météo complète OpenWeatherMap"
 
-#: wpcloudy.php:1606
+#: wpcloudy.php:1644
 msgid "Full weather"
 msgstr "Météo complète"
 
-#: wpcloudy.php:1609
+#: wpcloudy.php:1648
 msgid "Last update: "
 msgstr "Mis à jour le :"
 
-#: wpcloudy.php:1641 wpcloudy.php:1729 wpcloudy.php:1754
+#: wpcloudy.php:1686 wpcloudy.php:1774 wpcloudy.php:1799
 msgid "Sunday"
 msgstr "Dimanche"
 
-#: wpcloudy.php:1644 wpcloudy.php:1732 wpcloudy.php:1757
+#: wpcloudy.php:1689 wpcloudy.php:1777 wpcloudy.php:1802
 msgid "Monday"
 msgstr "Lundi"
 
-#: wpcloudy.php:1647 wpcloudy.php:1735 wpcloudy.php:1760
+#: wpcloudy.php:1692 wpcloudy.php:1780 wpcloudy.php:1805
 msgid "Tuesday"
 msgstr "Mardi"
 
-#: wpcloudy.php:1650 wpcloudy.php:1738 wpcloudy.php:1763
+#: wpcloudy.php:1695 wpcloudy.php:1783 wpcloudy.php:1808
 msgid "Wednesday"
 msgstr "Mercredi"
 
-#: wpcloudy.php:1653 wpcloudy.php:1741 wpcloudy.php:1766
+#: wpcloudy.php:1698 wpcloudy.php:1786 wpcloudy.php:1811
 msgid "Thursday"
 msgstr "Jeudi"
 
-#: wpcloudy.php:1656 wpcloudy.php:1744 wpcloudy.php:1769
+#: wpcloudy.php:1701 wpcloudy.php:1789 wpcloudy.php:1814
 msgid "Friday"
 msgstr "Vendredi"
 
-#: wpcloudy.php:1659 wpcloudy.php:1747 wpcloudy.php:1772
+#: wpcloudy.php:1704 wpcloudy.php:1792 wpcloudy.php:1817
 msgid "Saturday"
 msgstr "Samedi"
 
-#: wpcloudy.php:1704
+#: wpcloudy.php:1749
 msgid "Sun"
 msgstr "Dim"
 
-#: wpcloudy.php:1707
+#: wpcloudy.php:1752
 msgid "Mon"
 msgstr "Lun"
 
-#: wpcloudy.php:1710
+#: wpcloudy.php:1755
 msgid "Tue"
 msgstr "Mar"
 
-#: wpcloudy.php:1713
+#: wpcloudy.php:1758
 msgid "Wed"
 msgstr "Mer"
 
-#: wpcloudy.php:1716
+#: wpcloudy.php:1761
 msgid "Thu"
 msgstr "Jeu"
 
-#: wpcloudy.php:1719
+#: wpcloudy.php:1764
 msgid "Fri"
 msgstr "Ven"
 
-#: wpcloudy.php:1722
+#: wpcloudy.php:1767
 msgid "Sat"
 msgstr "Sam"
 
-#: wpcloudy.php:1801
+#: wpcloudy.php:1848
 msgid "clear sky"
 msgstr "ensoleillé"
 
-#: wpcloudy.php:1806
+#: wpcloudy.php:1853
 msgid "few clouds"
 msgstr "peu nuageux"
 
-#: wpcloudy.php:1811
+#: wpcloudy.php:1858
 msgid "scattered clouds"
 msgstr "nuages épars"
 
-#: wpcloudy.php:1816
+#: wpcloudy.php:1863
 msgid "broken clouds"
 msgstr "nuageux dans l'ensemble"
 
-#: wpcloudy.php:1821
+#: wpcloudy.php:1868
 msgid "overcast clouds"
 msgstr "couvert"
 
-#: wpcloudy.php:1828
+#: wpcloudy.php:1875
 msgid "light rain"
 msgstr "pluie faible"
 
-#: wpcloudy.php:1833
+#: wpcloudy.php:1880
 msgid "moderate rain"
 msgstr "pluie modérée"
 
-#: wpcloudy.php:1838
+#: wpcloudy.php:1885
 msgid "heavy intensity rain"
 msgstr "pluie forte"
 
-#: wpcloudy.php:1843
+#: wpcloudy.php:1890
 msgid "very heavy rain"
 msgstr "pluie très intense"
 
-#: wpcloudy.php:1848
+#: wpcloudy.php:1895
 msgid "extreme rain"
 msgstr "pluie abondante"
 
-#: wpcloudy.php:1853
+#: wpcloudy.php:1900
 msgid "freezing rain"
 msgstr "pluie verglaçante"
 
-#: wpcloudy.php:1858
+#: wpcloudy.php:1905
 msgid "light intensity shower rain"
 msgstr "averses faibles"
 
-#: wpcloudy.php:1863
+#: wpcloudy.php:1910
 msgid "shower rain"
 msgstr "averses"
 
-#: wpcloudy.php:1868
+#: wpcloudy.php:1915
 msgid "heavy intensity shower rain"
 msgstr "fortes averses"
 
-#: wpcloudy.php:1873
+#: wpcloudy.php:1920
 msgid "ragged shower rain"
 msgstr "averses éparses"
 
-#: wpcloudy.php:1880
+#: wpcloudy.php:1927
 msgid "light intensity drizzle"
 msgstr "bruine faible"
 
-#: wpcloudy.php:1885
+#: wpcloudy.php:1932
 msgid "drizzle"
 msgstr "bruine"
 
-#: wpcloudy.php:1890
+#: wpcloudy.php:1937
 msgid "heavy intensity drizzle"
 msgstr "bruine forte"
 
-#: wpcloudy.php:1895
+#: wpcloudy.php:1942
 msgid "light intensity drizzle rain"
 msgstr "pluie fine éparse"
 
-#: wpcloudy.php:1900
+#: wpcloudy.php:1947
 msgid "drizzle rain"
 msgstr "crachin"
 
-#: wpcloudy.php:1905
+#: wpcloudy.php:1952
 msgid "heavy intensity drizzle rain"
 msgstr "crachin intense"
 
-#: wpcloudy.php:1910
+#: wpcloudy.php:1957
 msgid "shower rain and drizzle"
 msgstr "averses et crachin"
 
-#: wpcloudy.php:1915
+#: wpcloudy.php:1962
 msgid "heavy shower rain and drizzle"
 msgstr "fortes averses et crachin"
 
-#: wpcloudy.php:1920
+#: wpcloudy.php:1967
 msgid "shower drizzle"
 msgstr "averses de bruine"
 
-#: wpcloudy.php:1927
+#: wpcloudy.php:1974
 msgid "light snow"
 msgstr "légères neiges"
 
-#: wpcloudy.php:1932
+#: wpcloudy.php:1979
 msgid "snow"
 msgstr "neige"
 
-#: wpcloudy.php:1937
+#: wpcloudy.php:1984
 msgid "heavy snow"
 msgstr "fortes chutes de neige"
 
-#: wpcloudy.php:1942
+#: wpcloudy.php:1989
 msgid "sleet"
 msgstr "neige fondue"
 
-#: wpcloudy.php:1947
+#: wpcloudy.php:1994
 msgid "shower sleet"
 msgstr "averses de neige fondue"
 
-#: wpcloudy.php:1952
+#: wpcloudy.php:1999
 msgid "light rain and snow"
 msgstr "pluie fine et neige"
 
-#: wpcloudy.php:1957
+#: wpcloudy.php:2004
 msgid "rain and snow"
 msgstr "pluie et neige"
 
-#: wpcloudy.php:1962
+#: wpcloudy.php:2009
 msgid "light shower snow"
 msgstr "faibles averses et neige"
 
-#: wpcloudy.php:1967
+#: wpcloudy.php:2014
 msgid "shower snow"
 msgstr "averses de neige"
 
-#: wpcloudy.php:1972
+#: wpcloudy.php:2019
 msgid "heavy shower snow"
 msgstr "fortes averses et neige"
 
-#: wpcloudy.php:1979
+#: wpcloudy.php:2026
 msgid "mist"
 msgstr "brume"
 
-#: wpcloudy.php:1984
+#: wpcloudy.php:2031
 msgid "smoke"
 msgstr "brouillard"
 
-#: wpcloudy.php:1989
+#: wpcloudy.php:2036
 msgid "haze"
 msgstr "brume"
 
-#: wpcloudy.php:1994
+#: wpcloudy.php:2041
 msgid "sand, dust whirls"
 msgstr "tempête de sable"
 
-#: wpcloudy.php:1999
+#: wpcloudy.php:2046
 msgid "fog"
 msgstr "brouillard"
 
-#: wpcloudy.php:2006
+#: wpcloudy.php:2053
 msgid "tornado"
 msgstr "tornade"
 
-#: wpcloudy.php:2011
+#: wpcloudy.php:2058
 msgid "tropical storm"
 msgstr "tempête tropical"
 
-#: wpcloudy.php:2016
+#: wpcloudy.php:2063
 msgid "hurricane"
 msgstr "ouragan"
 
-#: wpcloudy.php:2021
+#: wpcloudy.php:2068
 msgid "windy"
 msgstr "vent"
 
-#: wpcloudy.php:2026
+#: wpcloudy.php:2073
 msgid "hail"
 msgstr "grêle"
 
-#: wpcloudy.php:2033
+#: wpcloudy.php:2080
 msgid "thunderstorm with light rain"
 msgstr "orage avec pluie faible"
 
-#: wpcloudy.php:2039
+#: wpcloudy.php:2086
 msgid "thunderstorm with rain"
 msgstr "orage avec pluie modérée"
 
-#: wpcloudy.php:2045
+#: wpcloudy.php:2092
 msgid "thunderstorm with heavy rain"
 msgstr "orage avec pluie forte"
 
-#: wpcloudy.php:2051
+#: wpcloudy.php:2098
 msgid "light thunderstorm"
 msgstr "orage faible"
 
-#: wpcloudy.php:2057
+#: wpcloudy.php:2104
 msgid "thunderstorm"
 msgstr "orage"
 
-#: wpcloudy.php:2063
+#: wpcloudy.php:2110
 msgid "heavy thunderstorm"
 msgstr "orage violent"
 
-#: wpcloudy.php:2069
+#: wpcloudy.php:2116
 msgid "ragged thunderstorm"
 msgstr "orage épars"
 
-#: wpcloudy.php:2075
+#: wpcloudy.php:2122
 msgid "thunderstorm with light drizzle"
 msgstr "orage avec faible bruine"
 
-#: wpcloudy.php:2081
+#: wpcloudy.php:2128
 msgid "thunderstorm with drizzle"
 msgstr "orage avec bruine"
 
-#: wpcloudy.php:2087
+#: wpcloudy.php:2134
 msgid "thunderstorm with heavy drizzle"
 msgstr "orage avec bruine forte"
 
-#: wpcloudy.php:2119
+#: wpcloudy.php:2166
 msgid "Today"
 msgstr "Aujourd'hui"
 
-#: wpcloudy.php:2170
+#: wpcloudy.php:2218
 msgid "Wind"
 msgstr "Vent"
 
-#: wpcloudy.php:2174
+#: wpcloudy.php:2222
 msgid "Humidity"
 msgstr "Humidité"
 
-#: wpcloudy.php:2177
+#: wpcloudy.php:2225
 msgid "Pressure"
 msgstr "Pression"
 
-#: wpcloudy.php:2180
+#: wpcloudy.php:2228
 msgid "Cloudiness"
 msgstr "Nuages"
 
-#: wpcloudy.php:2184 wpcloudy.php:2189
+#: wpcloudy.php:2232 wpcloudy.php:2237
 msgid "Precipitation"
 msgstr "Précipitations"
 
-#: wpcloudy.php:2198 wpcloudy.php:2206
+#: wpcloudy.php:2246 wpcloudy.php:2254
 msgid "Now"
 msgstr "Maintenant"
 
-#: wpcloudy.php:2264 wpcloudy.php:2286
+#: wpcloudy.php:2314 wpcloudy.php:2336
 msgid "0 mm"
 msgstr "0 mm"
 
-#: wpcloudy.php:2711
+#: wpcloudy.php:2761
 msgid "Shortcode"
 msgstr "Bout de code"
 
-#: wpcloudy.php:2734 wpcloudy.php:2735 wpcloudy.php:2736
+#: wpcloudy.php:2784 wpcloudy.php:2785 wpcloudy.php:2786
 msgid "Weather"
 msgstr "Météo"
 
-#: wpcloudy.php:2737
+#: wpcloudy.php:2787
 msgid "Parent Weather:"
 msgstr "Météo parent:"
 
-#: wpcloudy.php:2738
+#: wpcloudy.php:2788
 msgid "All Weather"
 msgstr "Toutes les météos"
 
-#: wpcloudy.php:2739
+#: wpcloudy.php:2789
 msgid "View Weather"
 msgstr "Voir la météo"
 
-#: wpcloudy.php:2740
+#: wpcloudy.php:2790
 msgid "Add New Weather"
 msgstr "Ajouter une nouvelle météo"
 
-#: wpcloudy.php:2741
+#: wpcloudy.php:2791
 msgid "New Weather"
 msgstr "Nouvelle météo"
 
-#: wpcloudy.php:2742
+#: wpcloudy.php:2792
 msgid "Edit Weather"
 msgstr "Editer météo"
 
-#: wpcloudy.php:2743
+#: wpcloudy.php:2793
 msgid "Update Weather"
 msgstr "Mettre à jour la météo"
 
-#: wpcloudy.php:2744
+#: wpcloudy.php:2794
 msgid "Search Weather"
 msgstr "Rechercher une météo"
 
-#: wpcloudy.php:2745
+#: wpcloudy.php:2795
 msgid "No weather found"
 msgstr "Aucune météo trouvée"
 
-#: wpcloudy.php:2746
+#: wpcloudy.php:2796
 msgid "No weather found in Trash"
 msgstr "Aucune météo trouvée dans la corbeille"
 
-#: wpcloudy.php:2750
+#: wpcloudy.php:2800
 msgid "weather"
 msgstr "météo"
 
-#: wpcloudy.php:2751
+#: wpcloudy.php:2801
 msgid "Listing weather"
 msgstr "Liste des météos"
 
-#: wpcloudy.php:2788 wpcloudy.php:2791
+#: wpcloudy.php:2838 wpcloudy.php:2841
 msgid " updated."
 msgstr "mis à jour."
 
-#: wpcloudy.php:2789
+#: wpcloudy.php:2839
 msgid "Custom field updated."
 msgstr "Champ personnalisé mis à jour."
 
-#: wpcloudy.php:2790
+#: wpcloudy.php:2840
 msgid "Custom field deleted."
 msgstr "Champ personnalisé supprimé."
 
-#: wpcloudy.php:2792
+#: wpcloudy.php:2842
 #, php-format
 msgid " restored to revision from %s"
 msgstr "restauré de la révision du %s"
 
-#: wpcloudy.php:2793
+#: wpcloudy.php:2843
 msgid " published."
 msgstr "publiée."
 
-#: wpcloudy.php:2794
+#: wpcloudy.php:2844
 msgid "Page saved."
 msgstr "Page sauvegardée."
 
-#: wpcloudy.php:2795
+#: wpcloudy.php:2845
 msgid " submitted."
 msgstr "soumis."
 
-#: wpcloudy.php:2796
+#: wpcloudy.php:2846
 #, php-format
 msgid " scheduled for: <strong>%1$s</strong>. "
 msgstr "programmé pour: <strong>%1$s</strong>. "
 
-#: wpcloudy.php:2796
+#: wpcloudy.php:2846
 msgid "M j, Y @ G:i"
 msgstr "M j, Y @ G:i"
 
-#: wpcloudy.php:2797
+#: wpcloudy.php:2847
 msgid " draft updated."
 msgstr "brouillon mis à jour."
 
-#: wpcloudy.php:2812
+#: wpcloudy.php:2862
 msgid ""
 "WP Cloudy: Please enter your own OpenWeatherMap API key to avoid limits "
 "requests."
@@ -1594,9 +1598,6 @@ msgstr ""
 
 #~ msgid "Learn more"
 #~ msgstr "En savoir plus"
-
-#~ msgid "WP Cloudy Skins"
-#~ msgstr "WP Cloudy Skins"
 
 #~ msgid "$ 10"
 #~ msgstr "10 $"

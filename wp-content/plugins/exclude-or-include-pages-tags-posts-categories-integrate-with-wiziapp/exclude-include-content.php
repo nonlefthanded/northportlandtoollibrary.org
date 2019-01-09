@@ -3,7 +3,7 @@
 * Plugin Name: Exclude or include Pages, Tags, Posts & Categories (integrate with WiziApp)
 * Description: This plugin adds a checkbox, "Display on your web site", for pages, tags & categories. Uncheck it to exclude content from your web site. Use Tags to uncheck Posts too.
 * Author: mayerz.
-* Version: 1.0.9
+* Version: 1.0.10
 */
 
 class EIContent_Route {
@@ -21,6 +21,10 @@ class EIContent_Route {
 	public function __construct() {
 		if ( is_admin() ) {
 			$this->_controller = new EIContent_Backend;
+
+            require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+
+            add_action( 'tgmpa_register', array( $this->_controller, 'required_plugins' ) );
 
 			register_activation_hook( __FILE__, array( $this->_controller, 'activate') );
 			register_deactivation_hook( __FILE__, array( $this->_controller, 'deactivate') );

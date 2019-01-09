@@ -31,13 +31,13 @@ class nggManageGallery {
             }
         }
         // Should be only called via manage galleries overview
-		if ( isset($_POST['page']) && $_POST['page'] == 'manage-galleries' )
+		if ( isset($_POST['nggpage']) && $_POST['nggpage'] == 'manage-galleries' )
 			$this->post_processor_galleries();
 		// Should be only called via a edit single gallery page
-		if ( isset($_POST['page']) && $_POST['page'] == 'manage-images' )
+		if ( isset($_POST['nggpage']) && $_POST['nggpage'] == 'manage-images' )
 			$this->post_processor_images();
 		// Should be called via a publish dialog
-		if ( isset($_POST['page']) && $_POST['page'] == 'publish-post' )
+		if ( isset($_POST['nggpage']) && $_POST['nggpage'] == 'publish-post' )
 			$this->publish_post();
 
 		//Look for other POST process
@@ -194,7 +194,7 @@ class nggManageGallery {
 
 		$output = array();
 
-		$output[] = "<a href='{$image_url}' class='shutter' title='{$filename}'>";
+		$output[] = "<a href='{$image_url}' class='thickbox' title='{$filename}'>";
 		$output[] = "<img class='thumb' src='{$thumb_url}' id='thumb{$picture->pid}'/>";
 		$output[] = "</a>";
 
@@ -302,7 +302,7 @@ class nggManageGallery {
 		$alt_text	= empty($picture->alttext) ? $picture->filename: $picture->alttext;
 		$title		= esc_attr(__('View', 'nggallery'). " \"{$alt_text}\"");
 
-		return "<a href='{$image_url}' class='shutter' title='{$title}'>{$label}</a>";
+		return "<a href='{$image_url}' class='thickbox' title='{$title}'>{$label}</a>";
 	}
 
 	function render_meta_action_link($id, $picture)
@@ -345,28 +345,43 @@ class nggManageGallery {
 
 	function render_recover_action_link($id, $picture)
 	{
-		if ( !file_exists( $picture->imagePath . '_backup' )) return FALSE;
+		if (!file_exists($picture->imagePath . '_backup'))
+            return FALSE;
 
-		$url		= wp_nonce_url("admin.php?page=nggallery-manage-gallery&amp;mode=recoverpic&amp;gid={$picture->galleryid}&amp;pid={$picture->pid}", 'ngg_recoverpicture');
-		$title		= esc_attr__('Recover image from backup', 'nggallery');
-		$label		= esc_html__('Recover', 'nggallery');
-		$alttext	= empty($picture->alttext) ? $picture->filename : $picture->alttext;
-		$confirm	= addslashes(__("Recover", 'nggallery'). " \"{$alttext}\"?");
-		$onclick	= "javascript:if(!confirm(\"{$confirm}\")) return false";
+		$url      = wp_nonce_url("admin.php?page=nggallery-manage-gallery&amp;mode=recoverpic&amp;gid={$picture->galleryid}&amp;pid={$picture->pid}", 'ngg_recoverpicture');
+		$title    = esc_attr__('Recover image from backup', 'nggallery');
+		$label    = esc_html__('Recover', 'nggallery');
+        $question = __('Recover', 'nggallery');
 
-		return "<a href='{$url}' onclick='{$onclick}' class='confirmrecover' title='{$title}'>{$label}</a>";
+		$alttext = empty($picture->alttext) ? $picture->filename : $picture->alttext;
+		$alttext = M_NextGen_Data::strip_html(html_entity_decode($alttext), TRUE);
+		$alttext = htmlentities($alttext, ENT_QUOTES|ENT_HTML401);
+
+        // Event handler is found in nextgen_admin_page.js
+		return "<a href='{$url}'
+                   class='confirmrecover'
+                   data-question='{$question}'
+                   data-text='{$alttext}'
+                   title='{$title}'>{$label}</a>";
 	}
 
 	function render_delete_action_link($id, $picture)
 	{
-		$url		= wp_nonce_url("admin.php?page=nggallery-manage-gallery&amp;mode=delpic&amp;gid={$picture->galleryid}&amp;pid={$picture->pid}", 'ngg_delpicture');
-		$title		= esc_attr__('Delete image', 'nggallery');
-		$label		= esc_html__('Delete', 'nggallery');
-		$alttext	= empty($picture->alttext) ? $picture->filename : $picture->alttext;
-		$confirm	= addslashes(__("Delete", 'nggallery'). " \"{$alttext}\"?");
-		$onclick	= "javascript:if(!confirm(\"{$confirm}\")) return false;";
+		$url      = wp_nonce_url("admin.php?page=nggallery-manage-gallery&amp;mode=delpic&amp;gid={$picture->galleryid}&amp;pid={$picture->pid}", 'ngg_delpicture');
+		$title    = esc_attr__('Delete image', 'nggallery');
+		$label    = esc_html__('Delete', 'nggallery');
+		$question = __('Delete', 'nggallery');
 
-		return "<a href='{$url}' onclick='{$onclick}' class='submitdelete delete' title='{$title}'>{$label}</a>";
+		$alttext = empty($picture->alttext) ? $picture->filename : $picture->alttext;
+		$alttext = M_NextGen_Data::strip_html(html_entity_decode($alttext), TRUE);
+		$alttext = htmlentities($alttext, ENT_QUOTES|ENT_HTML401);
+
+		// Event handler is found in nextgen_admin_page.js
+		return "<a href='{$url}'
+                   class='submitdelete delete'
+                   data-question='{$question}'
+                   data-text='{$alttext}'
+                   title='{$title}'>{$label}</a>";
 	}
 
 	function render_image_row_header()
@@ -796,14 +811,15 @@ class nggManageGallery {
 			}
 		}
 
-		if (isset ($_POST['updatepictures']) )  {
-		// Update pictures
+		if (isset($_POST['updatepictures']))
+		{
+            // Update pictures
 			$success = FALSE;
-
 
 			check_admin_referer('ngg_updategallery');
 
-			if ( nggGallery::current_user_can( 'NextGEN Edit gallery options' )  && !isset ($_GET['s']) ) {
+			if (nggGallery::current_user_can('NextGEN Edit gallery options') && !isset($_GET['s']))
+			{
                 $tags = array('<a>', '<abbr>', '<acronym>', '<address>', '<b>', '<base>', '<basefont>', '<big>', '<blockquote>', '<br>', '<br/>', '<caption>', '<center>', '<cite>', '<code>', '<col>', '<colgroup>', '<dd>', '<del>', '<dfn>', '<dir>', '<div>', '<dl>', '<dt>', '<em>', '<fieldset>', '<font>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>', '<hr>', '<i>', '<img>', '<ins>', '<label>', '<legend>', '<li>', '<menu>', '<noframes>', '<noscript>', '<ol>', '<optgroup>', '<option>', '<p>', '<pre>', '<q>', '<s>', '<samp>', '<select>', '<small>', '<span>', '<strike>', '<strong>', '<sub>', '<sup>', '<table>', '<tbody>', '<td>', '<tfoot>', '<th>', '<thead>', '<tr>', '<tt>', '<u>', '<ul>');
 				$fields = array('title', 'galdesc');
 				
@@ -819,17 +835,20 @@ class nggManageGallery {
 				$mapper = C_Gallery_Mapper::get_instance();
 				
 				// Update the gallery
-				if (!$this->gallery) {
+				if (!$this->gallery)
+				{
 					$this->gallery = $mapper->find($this->gid, TRUE);
 				}
 
-				if ($this->gallery) {
+				if ($this->gallery)
+				{
 					foreach ($_POST as $key => $value) {
 						$this->gallery->$key = $value;
 					}
 					$mapper->save($this->gallery);
 
-					if ($this->gallery->is_invalid()) {
+					if ($this->gallery->is_invalid())
+					{
 						foreach ($this->gallery->get_errors() as $property => $errors) {
 							foreach ($errors as $error) {
 								nggGallery::show_error($error);
@@ -842,13 +861,11 @@ class nggManageGallery {
 				}
 			}
 
-
-			if ($success) {
-				$this->update_pictures();
-
-				//hook for other plugin to update the fields
+            $pictures_updated = $this->update_pictures();
+			if ($success || $pictures_updated >= 1)
+			{
+				// Hook for other plugin to update the fields
 				do_action('ngg_update_gallery', $this->gid, $_POST);
-
 				nggGallery::show_message(__('Updated successfully', 'nggallery'));
 			}
 		}
@@ -1006,7 +1023,9 @@ class nggManageGallery {
             if (!empty($results))
             {
                 foreach ($results as $term_id) {
-                    wp_delete_term($term_id, 'ngg_tag');
+                    $term_id = apply_filters('ngg_pre_delete_unused_term_id', $term_id);
+                    if (!empty($term_id))
+                        wp_delete_term($term_id, 'ngg_tag');
                 }
             }
 		}

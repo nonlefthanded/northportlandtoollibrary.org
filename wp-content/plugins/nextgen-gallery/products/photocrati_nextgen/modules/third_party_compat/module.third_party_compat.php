@@ -16,7 +16,7 @@ class M_Third_Party_Compat extends C_Base_Module
             'photocrati-third_party_compat',
             'Third Party Compatibility',
             "Adds Third party compatibility hacks, adjustments, and modifications",
-            '0.6',
+            '3.1.4.2',
             'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
             'Imagely',
             'https://www.imagely.com'
@@ -108,8 +108,9 @@ class M_Third_Party_Compat extends C_Base_Module
 
         add_action('admin_init', array($this, 'excellent_themes_admin'), -10);
 
-        add_action('plugins_loaded', array(&$this, 'wpml'), PHP_INT_MAX);
-        add_action('plugins_loaded', array(&$this, 'wpml_translation_management'), PHP_INT_MAX);
+        add_action('plugins_loaded',     array($this, 'wpml'), PHP_INT_MAX);
+        add_action('plugins_loaded',     array($this, 'wpml_translation_management'), PHP_INT_MAX);
+        add_filter('wpml_is_redirected', array($this, 'wpml_is_redirected'), -10, 3);
 
         add_filter('headway_gzip', array(&$this, 'headway_gzip'), (PHP_INT_MAX - 1));
         add_filter('ckeditor_external_plugins', array(&$this, 'ckeditor_plugins'), 11);
@@ -123,6 +124,7 @@ class M_Third_Party_Compat extends C_Base_Module
         add_filter('ngg_atp_show_display_type', array($this, 'atp_check_pro_albums'), 10, 2);
         add_filter('run_ngg_resource_manager', array($this, 'run_ngg_resource_manager'));
         add_filter('wpseo_sitemap_urlimages', array($this, 'add_wpseo_xml_sitemap_images'), 10, 2);
+        add_filter('ngg_pre_delete_unused_term_id', array($this, 'dont_auto_purge_wpml_terms'));
 
         if ($this->is_ngg_page()) add_action('admin_enqueue_scripts', array(&$this, 'dequeue_spider_calendar_resources'));
 
@@ -135,7 +137,6 @@ class M_Third_Party_Compat extends C_Base_Module
 
         // TODO: Only needed for NGG Pro 1.0.10 and lower
         add_action('the_post', array(&$this, 'add_ngg_pro_page_parameter'));
-
     }
 
     function is_ngg_page()
@@ -152,7 +153,7 @@ class M_Third_Party_Compat extends C_Base_Module
      * Filter support for WordPress SEO
      *
      * @param array $images Provided by WPSEO Filter
-     * @param int $post ID Provided by WPSEO Filter
+     * @param int $post_id ID Provided by WPSEO Filter
      * @return array $image List of a displayed galleries entities
      */
     function add_wpseo_xml_sitemap_images($images, $post_id)
@@ -164,6 +165,7 @@ class M_Third_Party_Compat extends C_Base_Module
         // Assign our own shortcode handler; ngglegacy and ATP do this same routine for their own
         // legacy and preview image placeholders.
         remove_all_shortcodes();
+        C_NextGen_Shortcode_Manager::add('ngg',        array($this, 'wpseo_shortcode_handler'));
         C_NextGen_Shortcode_Manager::add('ngg_images', array($this, 'wpseo_shortcode_handler'));
         do_shortcode($post->post_content);
 
@@ -299,6 +301,40 @@ class M_Third_Party_Compat extends C_Base_Module
     }
 
     /**
+     * NGG automatically purges unused terms when managing a gallery, but this also ensnares WPML translations
+     * @param $term_id
+     * @return bool
+     */
+    public function dont_auto_purge_wpml_terms($term_id)
+    {
+        $args = array('element_id' => $term_id,
+                      'element_type' => 'ngg_tag');
+        $term_language_code = apply_filters('wpml_element_language_code', null, $args);
+
+        if (!empty($term_language_code))
+            return FALSE;
+        else
+            return $term_id;
+    }
+
+    /**
+     * Prevent WPML's parse_query() from conflicting with NGG's pagination & router module controlled endpoints
+     *
+     * @param string $redirect What WPML is send to wp_safe_redirect()
+     * @param int $post_id
+     * @param WP_Query $q
+     * @return bool|string FALSE prevents a redirect from occurring
+     */
+    public function wpml_is_redirected($redirect, $post_id, $q)
+    {
+        $router = C_Router::get_instance();
+        if (!$router->serve_request() && $router->has_parameter_segments())
+            return false;
+        else
+            return $redirect;
+    }
+
+    /**
      * CKEditor features a custom NextGEN shortcode generator that unfortunately relies on parts of the NextGEN
      * 1.9x API that has been deprecated in NextGEN 2.0
      *
@@ -340,8 +376,8 @@ class M_Third_Party_Compat extends C_Base_Module
      * filters to apply. This checks for WeaverII and enables all NextGEN shortcodes that would otherwise be left
      * disabled by our shortcode manager. See https://core.trac.wordpress.org/ticket/17817 for more.
      *
-     * @param $content
-     * @return $content
+     * @param string $content
+     * @return string $content
      */
     function check_weaverii($content)
     {

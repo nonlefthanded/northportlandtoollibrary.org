@@ -51,18 +51,26 @@
 			editor.addButton('NextGEN_AttachToPost', {
 				title:	'ngg_attach_to_post.title',
 				cmd:	'ngg_attach_to_post',
-				image:	plugin_url+'/atp_button.png'
+				image:	plugin_url+'/igw_button.png'
+			});
+
+			editor.on('SaveContent', function(event) {
+				if (wp.blocks) {
+					handle_shortcode(event, '[ngg_images ');
+					handle_shortcode(event, '[ngg ');
+				}
 			});
 
 			/**
 			 * Listen for click events to our placeholder
 			 */
-            editor.on('mouseup', function(e) {
+            editor.on('mouseup touchend', function(e) {
+
 				tinymce.extend(self, {
 					editor: editor,
 					plugin: editor.plugins.NextGEN_AttachToPost
 				});
-
+				
 				// Support for IGW placeholder images. NGG <= 2.1.50
 				if (e.target.tagName == 'IMG') {
 					if (self.get_class_name(e.target).indexOf('ngg_displayed_gallery') >= 0) {
@@ -75,41 +83,67 @@
 						});
 					}
 				}
+
 				// Support for IGW Visual Shortcodes. NGG >= 2.1.50.1
 				else {
+
 					var $target = $(e.target);
-					if ($target.parents('.nggPlaceholderButton')) {
-						$target = $target.parents('.nggPlaceholderButton');
-					}
+
 					if ($target.hasClass('nggPlaceholderButton')) {
 
 						// Remove button
 						if ($target.hasClass('nggIgwRemove')) {
-							$target.parents('.nggPlaceholder').remove();
+							var $placeholder = $target.parents('.nggPlaceholder')
+							var shortcode = $placeholder[0].getAttribute('data-shortcode')
+							editor.fire('ngg-removed', {shortcode: shortcode})
+							$placeholder.remove();
 						}
-
+						
 						// Edit button
 						else {
-							window.igw_shortcode=  $(e.target).parents('.nggPlaceholder').data('shortcode');
+							// Do not use jQuery's .data() here: it will use cached data
+							window.igw_shortcode = $(e.target).parents('.nggPlaceholder')[0].getAttribute('data-shortcode');
+
 							self.render_attach_to_post_interface({
 								key: 'shortcode',
 								val: Base64.encode(window.igw_shortcode),
 								ref: $(e.target).parents('.nggPlaceholder').attr('id')
 							});
 						}
+
 					}
+
 				}
+
 			});
 
 			/**
 			 * Find each shortcode and replace it with the placeholder, rendered using an underscore template
 			 * in templates/tinymce_placeholder.php
 			 */
-			editor.on('BeforeSetContent', function(event){
-				var shortcode_opening_tag = '[ngg_images ';
-				while (event.content.indexOf(shortcode_opening_tag)>=0) {
+			editor.on('BeforeSetContent', function(event) {
+				handle_shortcode(event, '[ngg_images ');
+				handle_shortcode(event, '[ngg ');
+			});
+
+            /**
+             * Substitutes the IGW placeholders with the corresponding shortcode
+             */
+			editor.on('PostProcess', function(event) {
+                var $content = $('<div/>').append(event.content);
+                $content.find('.nggPlaceholder').toArray().forEach(function(placeholder){
+                    var $placeholder = $(placeholder);
+                    var shortcode = $placeholder.data('shortcode');
+                    shortcode = "[" + _.unescape(shortcode) + "]";
+                    $placeholder.replaceWith(shortcode);
+                });
+                event.content = $content[0].innerHTML;
+			});
+
+			function handle_shortcode(event, shortcode_opening_tag) {
+				while (event.content.indexOf(shortcode_opening_tag) >= 0) {
 					var start_of_shortcode = event.content.indexOf(shortcode_opening_tag);
-					var index = start_of_shortcode+shortcode_opening_tag.length;
+					var index = start_of_shortcode + shortcode_opening_tag.length;
 					var found_attribute_assignment = false;
 					var current_attribute_enclosure = null;
 					var last_found_char = false;
@@ -156,21 +190,7 @@
 						ref: _.now()
 					})));
 				}
-			});
-
-            /**
-             * Substitutes the IGW placeholders with the corresponding shortcode
-             */
-			editor.on('PostProcess', function(event) {
-                var $content = $('<div/>').append(event.content);
-                $content.find('.nggPlaceholder').toArray().forEach(function(placeholder){
-                    var $placeholder = $(placeholder);
-                    var shortcode = $placeholder.data('shortcode');
-                    shortcode = "<p>[" + _.unescape(shortcode) + "]</p>";
-                    $placeholder.replaceWith(shortcode);
-                });
-                event.content = $content.html();
-			});
+			}
 		},
 
 		get_class_name: function(node) {
@@ -202,7 +222,8 @@
 				if (typeof(params['ref']) != 'undefined') {
 					attach_to_post_url += '&ref='+encodeURIComponent(params.ref);
 				}
-            }
+			}
+			attach_to_post_url += "&editor="+this.editor.id;
 
 			var win = window;
 			while (win.parent != null && win.parent != win) {
@@ -212,17 +233,23 @@
 			win = $(win);
 			var winWidth    = win.width();
 			var winHeight   = win.height();
-			var popupWidth  = 1200;
-			var popupHeight = 600;
+			var popupWidth  = 1600;
+			var popupHeight = 1200;
 			var minWidth    = 800;
 			var minHeight   = 600;
 			var maxWidth    = winWidth  - (winWidth  * 0.05);
-			var maxHeight   = winHeight - (winHeight * 0.05);
+			var maxHeight   = winHeight - (winHeight * 0.1);
 
-			if (maxWidth    < minWidth)  { maxWidth    = winWidth - 10;  }
-			if (maxHeight   < minHeight) { maxHeight   = winHeight - 10; }
+			if (maxWidth    < minWidth)  { maxWidth    = winWidth - 20;  }
+			if (maxHeight   < minHeight) { maxHeight   = winHeight - 40; }
 			if (popupWidth  > maxWidth)  { popupWidth  = maxWidth;  }
 			if (popupHeight > maxHeight) { popupHeight = maxHeight; }
+
+			// for mobile devices: dismiss the keyboard by blurring any input with focus
+            document.activeElement.blur();
+            Array.prototype.forEach.call(document.querySelectorAll('input, textarea'), function(it) {
+                it.blur();
+            });
 
 			// Open a window, occupying 90% of the screen real estate
 			this.editor.windowManager.open({

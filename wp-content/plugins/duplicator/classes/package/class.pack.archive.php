@@ -1,6 +1,8 @@
 <?php
-if (!defined('DUPLICATOR_VERSION')) exit; // Exit if accessed directly
+// Exit if accessed directly
+if (! defined('DUPLICATOR_VERSION')) exit;
 
+require_once (DUPLICATOR_PLUGIN_PATH.'classes/package/duparchive/class.pack.archive.duparchive.php');
 require_once (DUPLICATOR_PLUGIN_PATH.'classes/package/class.pack.archive.filters.php');
 require_once (DUPLICATOR_PLUGIN_PATH.'classes/package/class.pack.archive.zip.php');
 require_once (DUPLICATOR_PLUGIN_PATH.'lib/forceutf8/Encoding.php');
@@ -15,7 +17,6 @@ require_once (DUPLICATOR_PLUGIN_PATH.'lib/forceutf8/Encoding.php');
  * @subpackage classes/package
  * @copyright (c) 2017, Snapcreek LLC
  * @license	https://opensource.org/licenses/GPL-3.0 GNU Public License
- * @since 1.0.0
  *
  */
 class DUP_Archive
@@ -32,9 +33,9 @@ class DUP_Archive
     public $File;
     public $Format;
     public $PackDir;
-    public $Size        = 0;
-    public $Dirs        = array();
-    public $Files       = array();
+    public $Size          = 0;
+    public $Dirs          = array();
+    public $Files         = array();
     public $FilterInfo;
     public $RecursiveLinks  = array();
 
@@ -42,7 +43,7 @@ class DUP_Archive
     protected $Package;
 	private $tmpFilterDirsAll = array();
 	private $wpCorePaths = array();
-
+	private $wpCoreExactPaths = array();
 
     /**
      *  Init this object
@@ -59,9 +60,11 @@ class DUP_Archive
 		$this->wpCorePaths[] = DUP_Util::safePath("{$rootPath}/wp-admin");
 		$this->wpCorePaths[] = DUP_Util::safePath(WP_CONTENT_DIR . "/uploads");
 		$this->wpCorePaths[] = DUP_Util::safePath(WP_CONTENT_DIR . "/languages");
-		$this->wpCorePaths[] = DUP_Util::safePath(WP_PLUGIN_DIR);
 		$this->wpCorePaths[] = DUP_Util::safePath(get_theme_root());
 		$this->wpCorePaths[] = DUP_Util::safePath("{$rootPath}/wp-includes");
+
+		$this->wpCoreExactPaths[] = DUP_Util::safePath("{$rootPath}");
+		$this->wpCoreExactPaths[] = DUP_Util::safePath(WP_CONTENT_DIR);
     }
 
     /**
@@ -71,37 +74,63 @@ class DUP_Archive
      *
      * @return null
      */
-    public function build($package)
-    {
-        try {
-            $this->Package = $package;
-            if (!isset($this->PackDir) && !is_dir($this->PackDir)) throw new Exception("The 'PackDir' property must be a valid diretory.");
-            if (!isset($this->File)) throw new Exception("A 'File' property must be set.");
+	public function build($package, $rethrow_exception = false)
+	{
+        DUP_LOG::trace("b1");
+        $this->Package = $package;
+        if (!isset($this->PackDir) && !is_dir($this->PackDir)) throw new Exception("The 'PackDir' property must be a valid directory.");
+        if (!isset($this->File)) throw new Exception("A 'File' property must be set.");
 
-            $this->Package->setStatus(DUP_PackageStatus::ARCSTART);
-            switch ($this->Format) {
-                case 'TAR': break;
-                case 'TAR-GZIP': break;
-                default:
-                    if (class_exists(ZipArchive)) {
-                        $this->Format = 'ZIP';
-                        DUP_Zip::create($this);
-                    }
-                    break;
-            }
+        DUP_LOG::trace("b2");
+        $completed = false;
 
+        switch ($this->Format) {
+            case 'TAR': break;
+            case 'TAR-GZIP': break;
+            case 'DAF':
+                $completed = DUP_DupArchive::create($this, $this->Package->BuildProgress, $this->Package);
+
+                $this->Package->Update();
+                break;
+
+              default:
+                if (class_exists('ZipArchive')) {
+                    $this->Format = 'ZIP';
+                    DUP_Zip::create($this, $this->Package->BuildProgress);
+                    $completed = true;
+                }
+                break;
+        }
+
+        DUP_LOG::Trace("Completed build or build thread");
+
+        if($this->Package->BuildProgress === null) {
+            // Zip path
+            DUP_LOG::Trace("Completed Zip");
             $storePath  = "{$this->Package->StorePath}/{$this->File}";
             $this->Size = @filesize($storePath);
             $this->Package->setStatus(DUP_PackageStatus::ARCDONE);
-        } catch (Exception $e) {
-            echo 'Caught exception: ', $e->getMessage(), "\n";
+        } else if($completed) {
+            // Completed DupArchive path
+            DUP_LOG::Trace("Completed DupArchive build");
+            if ($this->Package->BuildProgress->failed) {
+                DUP_LOG::Trace("Error building DupArchive");
+                $this->Package->setStatus(DUP_PackageStatus::ERROR);
+            } else {
+                $filepath    = DUP_Util::safePath("{$this->Package->StorePath}/{$this->File}");
+                $this->Size	 = @filesize($filepath);
+                $this->Package->setStatus(DUP_PackageStatus::ARCDONE);
+                DUP_LOG::Trace("Done building archive");
+            }
+        } else {
+            DUP_Log::trace("DupArchive chunk done but package not completed yet");
         }
-    }
+	}
 
     /**
      *  Builds a list of files and directories to be included in the archive
      *
-     *  Get the directory size recursively, but don't calc the snapshot directory, exclusion diretories
+     *  Get the directory size recursively, but don't calc the snapshot directory, exclusion directories
      *  @link http://msdn.microsoft.com/en-us/library/aa365247%28VS.85%29.aspx Windows filename restrictions
      *
      *  @return obj Returns a DUP_Archive object
@@ -126,7 +155,7 @@ class DUP_Archive
         $this->FilterDirsAll  = array_merge($this->FilterDirsAll, $this->FilterInfo->Dirs->Unreadable);
         $this->FilterFilesAll = array_merge($this->FilterFilesAll, $this->FilterInfo->Files->Unreadable);
 		sort($this->FilterDirsAll);
-		
+
         return $this;
     }
 
@@ -260,7 +289,7 @@ class DUP_Archive
 			$wp_content . '/updraft',
 			$wp_content . '/wishlist-backup',
 			$wp_content . '/wfcache',
-
+			$wp_content . '/cache',
 			//WP-CONTENT-UPLOADS
 			$wp_content_upload . '/aiowps_backups',
 			$wp_content_upload . '/backupbuddy_temp',
@@ -275,9 +304,18 @@ class DUP_Archive
 			$wp_content_upload . '/wpbackitup_backups'
 		);
 
+		if ($GLOBALS['DUPLICATOR_GLOBAL_FILE_FILTERS_ON']) {
+            $this->FilterInfo->Files->Global = $GLOBALS['DUPLICATOR_GLOBAL_FILE_FILTERS'];
+        }
+
         $this->FilterDirsAll  = array_merge($this->FilterInfo->Dirs->Instance, $this->FilterInfo->Dirs->Core);
         $this->FilterExtsAll  = array_merge($this->FilterInfo->Exts->Instance, $this->FilterInfo->Exts->Core);
-		$this->FilterFilesAll = array_merge($this->FilterInfo->Files->Instance);
+		$this->FilterFilesAll = array_merge($this->FilterInfo->Files->Instance, $this->FilterInfo->Files->Global);
+
+        $this->FilterFilesAll[] = DUPLICATOR_WPROOTPATH . '.htaccess';
+		$this->FilterFilesAll[] = DUPLICATOR_WPROOTPATH . 'web.config';
+		$this->FilterFilesAll[] = DUPLICATOR_WPROOTPATH . 'wp-config.php';
+
 		$this->tmpFilterDirsAll = $this->FilterDirsAll;
 
 		//PHP 5 on windows decode patch
@@ -311,7 +349,7 @@ class DUP_Archive
 		// - directories ending with period (Windows incompatable)
         foreach ($this->Dirs as $key => $val) {
             $name = basename($val);
-			
+
 			//Dir is not readble remove flag for removal
             if (! is_readable($this->Dirs[$key])) {
 				$unset_key_list[] = $key;
@@ -419,7 +457,7 @@ class DUP_Archive
 						'path'	 => $filePath);
 			 }
 		}
-		
+
 		//Try to repair utf8 paths
 		foreach ($utf8_key_list as $key) {
 			$this->Files[$key] =  DUP_Encoding::toUTF8($this->Files[$key]);
@@ -451,62 +489,78 @@ class DUP_Archive
      */
 	private function getFileLists($path)
     {
-		$handle = @opendir($path);
+        $handle = @opendir($path);
 
-		if ($handle) {
-			while (($file = readdir($handle)) !== false) {
+        if ($handle) {
+            while (($file = readdir($handle)) !== false) {
 
-				if ($file == '.' || $file == '..') {
-					continue;
-				}
+                if ($file == '.' || $file == '..') {
+                    continue;
+                }
 
-				$fullPath = str_replace("\\", '/', "{$path}/{$file}");
+                $fullPath      = str_replace("\\", '/', "{$path}/{$file}");
+                $relative_path = $fullPath;
 
-				// @todo: Don't leave it like this. Convert into an option on the package to not follow symbolic links
-				// if (is_dir($fullPath) && (is_link($fullPath) == false))
-				if (is_dir($fullPath)) {
+                if (is_link($relative_path)) {
+                    $is_link = true;
 
-                    $add = true;
-                    if(!is_link($fullPath)){
-                        foreach ($this->tmpFilterDirsAll as $key => $val) {
-                            $trimmedFilterDir = rtrim($val, '/');
-                            if ($fullPath == $trimmedFilterDir || strpos($fullPath, $trimmedFilterDir . '/') !== false) {
-                                $add = false;
+                    //Convert relative path of link to absolute path
+                    chdir($relative_path);
+                    $real_path = realpath(readlink($relative_path));
+                    chdir(dirname(__FILE__));
+                } else {
+                    $is_link   = false;
+                    $real_path = realpath($relative_path);
+                }
+
+                $exclude_check = array_unique(array($real_path, $relative_path));
+
+                if (is_dir($real_path)) {
+                    $exclude = false;
+
+                    foreach ($this->tmpFilterDirsAll as $key => $val) {
+                        $trimmedFilterDir = rtrim($val, '/');
+                        foreach ($exclude_check as $c_check) {
+                            if ($c_check == $trimmedFilterDir || strpos($c_check, $trimmedFilterDir.'/') !== false) {
+                                $exclude = true;
                                 unset($this->tmpFilterDirsAll[$key]);
+                                break 2;
+                            }
+                        }
+                    }
+
+                    if (!$exclude) {
+                        if ($is_link) {
+                            $this->RecursiveLinks[] = $relative_path;
+                            /* $this->FilterDirsAll[]  = $relative_path; */
+                        }
+
+                        $this->getFileLists($relative_path);
+                        $this->Dirs[] = $relative_path;
+                    }
+                } else {
+                    $exclude = false;
+                    if (in_array(pathinfo($file, PATHINFO_EXTENSION), $this->FilterExtsAll) || in_array($file, $this->FilterFilesAll)) {
+                        $exclude = true;
+                    } else {
+                        foreach ($exclude_check as $c_check) {
+                            if (in_array($c_check, $this->FilterFilesAll)) {
+                                $exclude = true;
                                 break;
                             }
                         }
-                    }else{
-                        //Convert relative path of link to absolute path
-                        chdir($fullPath);
-                        $link_path = realpath(readlink($fullPath));
-                        chdir(dirname(__FILE__));
-
-                        $link_pos = strpos($fullPath,$link_path);
-                        if($link_pos === 0 && (strlen($link_path) <  strlen($fullPath))){
-                            $add = false;
-                            $this->RecursiveLinks[] = $fullPath;
-                            $this->FilterDirsAll[] = $fullPath;
-                        }
                     }
-
-                    if ($add) {
-                        $this->getFileLists($fullPath);
-                        $this->Dirs[] = $fullPath;
+                    if (!$exclude) {
+                        $this->Files[] = $relative_path;
                     }
-				} else {
-					if ( ! (in_array(pathinfo($file, PATHINFO_EXTENSION), $this->FilterExtsAll)
-						|| in_array($fullPath, $this->FilterFilesAll))) {
-						$this->Files[] = $fullPath;
-					}
-				}
-			}
-			closedir($handle);
-		}
-		return $this->Dirs;
-	}
+                }
+            }
+            closedir($handle);
+        }
+        return $this->Dirs;
+    }
 
-	/**
+    /**
      *  Builds a tree for both file size warnings and name check warnings
 	 *  The trees are used to apply filters from the scan screen
      *
@@ -524,7 +578,7 @@ class DUP_Archive
 			foreach ($files as $key => $value) {
 				$sum += $value['ubytes'];
 			}
-			
+
 			//Locate core paths, wp-admin, wp-includes, etc.
 			$iscore = 0;
 			foreach ($this->wpCorePaths as $core_dir) {
@@ -533,11 +587,17 @@ class DUP_Archive
 					break;
 				}
 			}
+			// Check root and content exact dir
+			if (!$iscore) {
+				if (in_array($dir, $this->wpCoreExactPaths)) {
+					$iscore = 1;
+				}
+			}
 
 			$this->FilterInfo->TreeSize[] = array(
 				'size' => DUP_Util::byteSize($sum, 0),
 				'dir' => $dir,
-				'sdir' => str_replace(DUPLICATOR_WPROOTPATH, '', $dir),
+				'sdir' => str_replace(DUPLICATOR_WPROOTPATH, '/', $dir),
 				'iscore' => $iscore,
 				'files' => $files
 			);
@@ -558,10 +618,16 @@ class DUP_Archive
 					break;
 				}
 			}
+			// Check root and content exact dir
+			if (!$iscore) {
+				if (in_array($dir, $this->wpCoreExactPaths)) {
+					$iscore = 1;
+				}
+			}
 
 			$this->FilterInfo->TreeWarning[] = array(
 				'dir' => $dir,
-				'sdir' => str_replace(DUPLICATOR_WPROOTPATH, '', $dir),
+				'sdir' => str_replace(DUPLICATOR_WPROOTPATH, '/', $dir),
 				'iscore' => $iscore,
 				'count' => count($files),
 				'files' => $files);
@@ -586,10 +652,16 @@ class DUP_Archive
 						break;
 					}
 				}
+				// Check root and content exact dir
+				if (!$iscore) {
+					if (in_array($dir, $this->wpCoreExactPaths)) {
+						$iscore = 1;
+					}
+				}
 
 				$this->FilterInfo->TreeWarning[] = array(
 					'dir' => $dir,
-					'sdir' => str_replace(DUPLICATOR_WPROOTPATH, '', $dir),
+					'sdir' => str_replace(DUPLICATOR_WPROOTPATH, '/', $dir),
 					'iscore' => $iscore,
 					'count' => 0);
 			}
@@ -600,6 +672,5 @@ class DUP_Archive
 		}
 		usort($this->FilterInfo->TreeWarning, "_sortDir");
 	}
-
 
 }

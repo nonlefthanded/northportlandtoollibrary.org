@@ -1,7 +1,7 @@
 <?php
 /**
  * Class A_NextGen_Pro_Plus_Upgrade_Page
- * @mixin C_Page_Manager
+ * @mixin C_NextGen_Admin_Page_Manager
  * @adapts I_Page_Manager
  * @todo merge with A_NextGen_Pro_Upgrade_Page class
  */
@@ -35,7 +35,7 @@ class A_NextGen_Pro_Upgrade_Controller extends Mixin
     function enqueue_backend_resources()
     {
         $this->call_parent('enqueue_backend_resources');
-        wp_enqueue_style('nextgen_pro_upgrade_page', $this->get_static_url('photocrati-nextgen_pro_upgrade#style.css'), FALSE, NGG_SCRIPT_VERSION);
+        wp_enqueue_style('nextgen_pro_upgrade_page', $this->get_static_url('photocrati-nextgen_pro_upgrade#style.css'), array(), NGG_SCRIPT_VERSION);
     }
     function get_page_title()
     {

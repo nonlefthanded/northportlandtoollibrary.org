@@ -18,7 +18,7 @@ class M_NextGen_Settings extends C_Base_Module
 			'photocrati-nextgen_settings',
 			'NextGEN Gallery Settings',
 			'Provides central management for NextGEN Gallery settings',
-			'0.16',
+			'3.1.4.2',
 			'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
 			'Imagely',
 			'https://www.imagely.com'
@@ -62,7 +62,6 @@ class C_NextGen_Settings_Installer
 		$this->_local_settings = array(
 			'gallerypath'	 => 'wp-content'.DIRECTORY_SEPARATOR.'gallery'.DIRECTORY_SEPARATOR,
 			'deleteImg'      => TRUE,              // delete Images
-			'swfUpload'      => TRUE,              // activate the batch upload
 			'usePermalinks'  => FALSE,             // use permalinks for parameters
 			'permalinkSlug'  => 'nggallery',       // the default slug for permalinks
 			'graphicLibrary' => 'gd',              // default graphic library
@@ -83,54 +82,58 @@ class C_NextGen_Settings_Installer
 			'thumbquality' => 100,  // Thumb Quality
 
 			// Image Settings
-			'imgWidth'      => 800,   // Image Width
-			'imgHeight'     => 600,   // Image height
+			'imgWidth'      => 1800,   // Image Width
+			'imgHeight'     => 1200,   // Image height
 			'imgQuality'    => 100,   // Image Quality
 			'imgBackup'     => True,  // Create a backup
-			'imgAutoResize' => False, // Resize after upload
+			'imgAutoResize' => True, // Resize after upload
 
 			// Gallery Settings
-			'galImages'         => '20', // Number of images per page
+			'galImages'         => '24', // Number of images per page
 			'galPagedGalleries' => 0,    // Number of galleries per page (in a album)
 			'galColumns'        => 0,    // Number of columns for the gallery
-			'galShowSlide'      => True, // Show slideshow
-			'galTextSlide'      => __('[Show slideshow]', 'nggallery'), // Text for slideshow
-			'galTextGallery'    => __('[Show thumbnails]', 'nggallery'), // Text for gallery
+			'galShowSlide'      => False, // Show slideshow
+			'galTextSlide'      => __('View Slideshow', 'nggallery'), // Text for slideshow
+			'galTextGallery'    => __('View Thumbnails', 'nggallery'), // Text for gallery
 			'galShowOrder'      => 'gallery',   // Show order
 			'galSort'           => 'sortorder', // Sort order
 			'galSortDir'        => 'ASC',       // Sort direction
 			'galNoPages'        => True,        // use no subpages for gallery
 			'galImgBrowser'     => 0,       // Show ImageBrowser => instead effect
 			'galHiddenImg'      => 0,       // For paged galleries we can hide image
-			'galAjaxNav'        => 0,       // AJAX Navigation for Shutter effect
+			'galAjaxNav'        => 1,       // AJAX Navigation for Shutter effect
 
 			// Thumbnail Effect
-			'thumbEffect'  => 'fancybox', // select effect
-			'thumbCode'    => 'class="ngg-fancybox" rel="%GALLERY_NAME%"',
+			'thumbEffect'  => 'simplelightbox', // select effect
+			'thumbCode'    => 'class="ngg-simplelightbox" rel="%GALLERY_NAME%"',
 			'thumbEffectContext'  => 'nextgen_images', // select effect
 
 			// Watermark settings
-			'wmPos'    => 'botRight',             // Postion
-			'wmXpos'   => 5,                      // X Pos
+			'wmPos'    => 'midCenter',            // Postion
+			'wmXpos'   => 15,                     // X Pos
 			'wmYpos'   => 5,                      // Y Pos
-			'wmType'   => 'image',                // Type : 'image' / 'text'
+			'wmType'   => 'text',                 // Type : 'image' / 'text'
 			'wmPath'   => '',                     // Path to image
 			'wmFont'   => 'arial.ttf',            // Font type
-			'wmSize'   => 10,                     // Font Size
+			'wmSize'   => 30,                     // Font Size
 			'wmText'   => get_option('blogname'), // Text
-			'wmColor'  => '000000',               // Font Color
-			'wmOpaque' => '100',                  // Font Opaque
+			'wmColor'  => 'ffffff',               // Font Color
+			'wmOpaque' => '33',                   // Font Opaque
 
 			// Image Rotator settings
 			'slideFX'      => 'fade',
-			'irWidth'      => 600,
-			'irHeight'     => 400,
-			'irRotatetime' => 10,
+			'irWidth'      => 750,
+			'irHeight'     => 500,
+			'irRotatetime' => 5,
 
 			// CSS Style
 			'activateCSS' => 1, // activate the CSS file
 			'CSSfile'     => 'nggallery.css',     // set default css filename
-			'always_enable_frontend_logic' => FALSE
+			'always_enable_frontend_logic' => FALSE,
+
+            // Misc
+            // It is known that WPEngine disables 'order by rand()' by default, but exposes it as an option to users
+            'use_alternate_random_method' => (function_exists('is_wpe') && is_wpe()) ? TRUE : FALSE
 		);
 	}
 

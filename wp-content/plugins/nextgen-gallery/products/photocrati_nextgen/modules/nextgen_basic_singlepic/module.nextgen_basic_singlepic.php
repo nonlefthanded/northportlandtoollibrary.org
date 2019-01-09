@@ -24,7 +24,7 @@ class M_NextGen_Basic_Singlepic extends C_Base_Module
             NGG_BASIC_SINGLEPIC,
             'NextGen Basic Singlepic',
             'Provides a singlepic gallery for NextGEN Gallery',
-            '0.14',
+            '3.1.0',
             'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
             'Imagely',
             'https://www.imagely.com'
@@ -82,9 +82,15 @@ class M_NextGen_Basic_Singlepic extends C_Base_Module
             C_NextGen_Shortcode_Manager::add('singlepic', array(&$this, 'render_singlepic'));
             C_NextGen_Shortcode_Manager::add('nggsinglepic', array(&$this, 'render_singlepic'));
 
+            // TODO - why aren't we using the singlepic controller for this instead?
             // enqueue the singlepic CSS if an inline image has the ngg-singlepic class
-            add_filter('the_content', array(&$this, 'enqueue_singlepic_css'), PHP_INT_MAX, 1);
+            if (!$this->is_rest_request()) add_filter('the_content', array(&$this, 'enqueue_singlepic_css'), PHP_INT_MAX, 1);
         }
+	}
+
+	function is_rest_request()
+	{
+		return defined('REST_REQUEST') || strpos($_SERVER['REQUEST_URI'], 'wp-json') !== FALSE;
 	}
 
     /**
@@ -100,7 +106,7 @@ class M_NextGen_Basic_Singlepic extends C_Base_Module
             wp_enqueue_style(
                 'nextgen_basic_singlepic_style',
                 $router->get_static_url(NGG_BASIC_SINGLEPIC . '#nextgen_basic_singlepic.css'),
-                FALSE,
+                array(),
                 NGG_SCRIPT_VERSION
             );
         }

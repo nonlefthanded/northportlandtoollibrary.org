@@ -39,7 +39,6 @@ class C_Photocrati_Resource_Manager
 
 	/**
 	 * Determines if the resource manager should perform it's routines for this request
-	 * @return bool
 	 */
 	function validate_request()
 	{
@@ -67,8 +66,14 @@ class C_Photocrati_Resource_Manager
 		elseif ((isset($_SERVER['PATH_INFO']) && strpos($_SERVER['PATH_INFO'], 'nextgen-pro-lightbox-gallery') !== FALSE) OR strpos($_SERVER['REQUEST_URI'], 'nextgen-pro-lightbox-gallery') !== FALSE) {
 			$retval = FALSE;
 		}
+		else if ($this->is_rest_request()) $retval = FALSE;
 
 		return $retval;
+	}
+
+	function is_rest_request()
+	{
+		return defined('REST_REQUEST') || strpos($_SERVER['REQUEST_URI'], 'wp-json') !== FALSE;
 	}
 
 	/**
@@ -155,6 +160,8 @@ class C_Photocrati_Resource_Manager
 
 	/**
 	 * When PHP has finished, we output the footer scripts and closing tags
+     * @param bool $in_shutdown
+     * @return string
 	 */
 	function output_buffer($in_shutdown=FALSE)
 	{

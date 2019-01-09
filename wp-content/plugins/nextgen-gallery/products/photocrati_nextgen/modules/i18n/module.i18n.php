@@ -20,7 +20,7 @@ class M_I18N extends C_Base_Module
             'photocrati-i18n',
             'Internationalization',
             "Adds I18N resources and methods",
-            '0.4',
+            '3.0.0',
             'https://www.imagely.com/languages/',
             'Imagely',
             'https://www.imagely.com'
@@ -118,7 +118,7 @@ class M_I18N extends C_Base_Module
     /**
      * Registers gallery strings with WPML
      *
-     * @param object $gallery
+     * @param int|object $gallery_id Gallery object or ID
      */
     function register_gallery_strings($gallery_id)
     {
@@ -201,10 +201,10 @@ class M_I18N extends C_Base_Module
         {
             foreach($gallery_ids[1] as $index => $gallery_id) {
                 $translated_gallery_id = apply_filters('wpml_object_id', (int)$gallery_id, "displayed_gallery", true, $lang);
-                $search[$index] = "preview/id--" . $gallery_id;
-                $replace[$index] = "preview/id--" . $translated_gallery_id;
             }
 
+            $search[$index] = "preview/id--" . $gallery_id;
+            $replace[$index] = "preview/id--" . $translated_gallery_id;
             $post_array['post_content'] = str_replace($search, $replace, $post_array['post_content']);
 
             $to_save = array(
@@ -281,8 +281,11 @@ class M_I18N extends C_Base_Module
         if (function_exists('qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage'))
             $in = qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage($in);
 
-        if (is_string($name) && !empty($name) && function_exists('icl_translate'))
-            $in = icl_translate('plugin_ngg', $name, $in, true);
+        if (is_string($name)
+        &&  !empty($name)
+        &&  function_exists('icl_translate')
+        &&  apply_filters('wpml_default_language', NULL) != apply_filters('wpml_current_language', NULL))
+            $in = icl_translate('plugin_ngg', $name, $in, TRUE);
 
         $in = apply_filters('localization', $in);
 

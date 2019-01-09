@@ -9,6 +9,8 @@ class A_NextGen_API_Ajax extends Mixin
     var $nextgen_api = NULL;
     var $_nextgen_api_locked = false;
     var $_shutdown_registered = false;
+    var $_error_handler_registered = false;
+    var $_error_handler_old = null;
     function get_nextgen_api()
     {
         if (is_null($this->nextgen_api)) {
@@ -16,13 +18,33 @@ class A_NextGen_API_Ajax extends Mixin
         }
         return $this->nextgen_api;
     }
-    function get_nextgen_api_path_list_action()
+    function _authenticate_user($regenerate_token = false)
     {
         $api = $this->get_nextgen_api();
         $username = $this->object->param('q');
         $password = $this->object->param('z');
+        $token = $this->object->param('tok');
+        return $api->authenticate_user($username, $password, $token, $regenerate_token);
+    }
+    function get_nextgen_api_token_action()
+    {
+        $regen = $this->object->param('regenerate_token') ? true : false;
+        $user_obj = $this->_authenticate_user($regen);
+        $response = array();
+        if ($user_obj != null) {
+            $response['result'] = 'ok';
+            $response['result_object'] = array('token' => get_user_meta($user_obj->ID, 'nextgen_api_token', true));
+        } else {
+            $response['result'] = 'error';
+            $response['error'] = array('code' => C_NextGen_API::ERR_NOT_AUTHENTICATED, 'message' => __('Authentication Failed.', 'nggallery'));
+        }
+        return $response;
+    }
+    function get_nextgen_api_path_list_action()
+    {
+        $api = $this->get_nextgen_api();
         $app_config = $this->object->param('app_config');
-        $user_obj = wp_authenticate($username, $password);
+        $user_obj = $this->_authenticate_user();
         $response = array();
         if ($user_obj != null && !is_a($user_obj, 'WP_Error')) {
             wp_set_current_user($user_obj->ID);
@@ -77,18 +99,60 @@ class A_NextGen_API_Ajax extends Mixin
         }
         return $response;
     }
+    function _get_max_upload_size()
+    {
+        static $max_size = -1;
+        if ($max_size < 0) {
+            $post_max_size = $this->_parse_size(ini_get('post_max_size'));
+            if ($post_max_size > 0) {
+                $max_size = $post_max_size;
+            }
+            $upload_max = $this->_parse_size(ini_get('upload_max_filesize'));
+            if ($upload_max > 0 && $upload_max < $max_size) {
+                $max_size = $upload_max;
+            }
+        }
+        return $max_size;
+    }
+    function _parse_size($size)
+    {
+        $unit = preg_replace('/[^bkmgtpezy]/i', '', $size);
+        $size = preg_replace('/[^0-9\\.]/', '', $size);
+        if ($unit) {
+            return round($size * pow(1024, stripos('bkmgtpezy', $unit[0])));
+        } else {
+            return round($size);
+        }
+    }
+    function _get_max_upload_files()
+    {
+        return intval(ini_get('max_file_uploads'));
+    }
     function enqueue_nextgen_api_task_list_action()
     {
         $api = $this->get_nextgen_api();
-        $username = $this->object->param('q');
-        $password = $this->object->param('z');
+        $user_obj = $this->_authenticate_user();
         $response = array();
-        $user_obj = wp_authenticate($username, $password);
         if ($user_obj != null && !is_a($user_obj, 'WP_Error')) {
             wp_set_current_user($user_obj->ID);
             $security = $this->get_registry()->get_utility('I_Security_Manager');
             $app_config = $this->object->param('app_config');
             $task_list = $this->object->param('task_list');
+            $extra_data = $this->object->param('extra_data');
+            if (is_string($app_config)) {
+                $app_config = json_decode($app_config, true);
+            }
+            if (is_string($task_list)) {
+                $task_list = json_decode($task_list, true);
+            }
+            if (is_string($extra_data)) {
+                $extra_data = json_decode($extra_data, true);
+            }
+            foreach ($_FILES as $key => $file) {
+                if (substr($key, 0, strlen('file_data_')) == 'file_data_') {
+                    $extra_data[substr($key, strlen('file_data_'))] = $file;
+                }
+            }
             if ($task_list != null) {
                 $task_count = count($task_list);
                 $auth_count = 0;
@@ -145,16 +209,23 @@ class A_NextGen_API_Ajax extends Mixin
                         $handler_delay = defined('NGG_API_JOB_HANDLER_DELAY') ? intval(NGG_API_JOB_HANDLER_DELAY) : 0;
                         $handler_delay = $handler_delay > 0 ? $handler_delay : 30;
                         /* in seconds */
+                        $handler_maxsize = defined('NGG_API_JOB_HANDLER_MAXSIZE') ? intval(NGG_API_JOB_HANDLER_MAXSIZE) : 0;
+                        $handler_maxsize = $handler_maxsize > 0 ? $handler_maxsize : $this->_get_max_upload_size();
+                        /* in bytes */
+                        $handler_maxfiles = $this->_get_max_upload_files();
                         $response['result'] = 'ok';
-                        $response['result_object'] = array('job_id' => $job_id, 'job_post_back' => $post_back, 'job_handler_url' => home_url('?photocrati_ajax=1&action=execute_nextgen_api_task_list'), 'job_handler_delay' => $handler_delay);
+                        $response['result_object'] = array('job_id' => $job_id, 'job_post_back' => $post_back, 'job_handler_url' => home_url('?photocrati_ajax=1&action=execute_nextgen_api_task_list'), 'job_handler_delay' => $handler_delay, 'job_handler_maxsize' => $handler_maxsize, 'job_handler_maxfiles' => $handler_maxfiles);
                         if (!defined('NGG_API_SUPPRESS_QUICK_EXECUTE') || NGG_API_SUPPRESS_QUICK_EXECUTE == false) {
                             if (!$api->is_execution_locked()) {
                                 $this->_start_locked_execute();
-                                $result = $api->handle_job($job_id, $api->get_job_data($job_id), $app_config, $api->get_job_task_list($job_id));
-                                if ($result) {
+                                try {
+                                    $result = $api->handle_job($job_id, $api->get_job_data($job_id), $app_config, $api->get_job_task_list($job_id), $extra_data);
                                     $response['result_object']['job_result'] = $api->get_job_task_list($job_id);
-                                    // everything was finished, remove job
-                                    $api->remove_job($job_id);
+                                    if ($result) {
+                                        // everything was finished, remove job
+                                        $api->remove_job($job_id);
+                                    }
+                                } catch (Exception $e) {
                                 }
                                 $this->_stop_locked_execute();
                             }
@@ -183,12 +254,20 @@ class A_NextGen_API_Ajax extends Mixin
             $this->get_nextgen_api()->set_execution_locked(false);
         }
     }
+    function _error_handler($errno, $errstr, $errfile, $errline)
+    {
+        return false;
+    }
     function _start_locked_execute()
     {
         $api = $this->get_nextgen_api();
         if (!$this->_shutdown_registered) {
             register_shutdown_function(array($this, '_do_shutdown'));
             $this->_shutdown_registered = true;
+        }
+        if (!$this->_error_handler_registered) {
+            //$this->_error_handler_old = set_error_handler(array($this, '_error_handler'));
+            $this->_error_handler_registered = true;
         }
         $api->set_execution_locked(true);
         $this->_nextgen_api_locked = true;
@@ -198,6 +277,10 @@ class A_NextGen_API_Ajax extends Mixin
         $api = $this->get_nextgen_api();
         $api->set_execution_locked(false);
         $this->_nextgen_api_locked = false;
+        if ($this->_error_handler_registered) {
+            //set_error_handler($this->_error_handler_old);
+            $this->_error_handler_registered = false;
+        }
     }
     function execute_nextgen_api_task_list_action()
     {
@@ -210,24 +293,36 @@ class A_NextGen_API_Ajax extends Mixin
         } else {
             if ($job_list != null) {
                 $this->_start_locked_execute();
-                $job_count = count($job_list);
-                $done_count = 0;
-                $client_result = array();
-                foreach ($job_list as $job) {
-                    $job_id = $job['id'];
-                    $job_data = $job['data'];
-                    $result = $api->handle_job($job_id, $job_data, $job['app_config'], $job['task_list']);
-                    if ($result) {
-                        $done_count++;
+                try {
+                    $extra_data = $this->object->param('extra_data');
+                    $job_count = count($job_list);
+                    $done_count = 0;
+                    $client_result = array();
+                    if (is_string($extra_data)) {
+                        $extra_data = json_decode($extra_data, true);
+                    }
+                    foreach ($_FILES as $key => $file) {
+                        if (substr($key, 0, strlen('file_data_')) == 'file_data_') {
+                            $extra_data[substr($key, strlen('file_data_'))] = $file;
+                        }
+                    }
+                    foreach ($job_list as $job) {
+                        $job_id = $job['id'];
+                        $job_data = $job['data'];
+                        $result = $api->handle_job($job_id, $job_data, $job['app_config'], $job['task_list'], $extra_data);
                         if (isset($job_data['clientid']) && $job_data['clientid'] == $this->object->param('clientid')) {
                             $client_result[$job_id] = $api->get_job_task_list($job_id);
                         }
-                        // everything was finished, remove job
-                        $api->remove_job($job_id);
+                        if ($result) {
+                            $done_count++;
+                            // everything was finished, remove job
+                            $api->remove_job($job_id);
+                        }
+                        if ($api->should_stop_execution()) {
+                            break;
+                        }
                     }
-                    if ($api->should_stop_execution()) {
-                        break;
-                    }
+                } catch (Exception $e) {
                 }
                 $this->_stop_locked_execute();
                 if ($done_count == $job_count) {
@@ -269,6 +364,10 @@ class C_NextGen_API extends C_Component
     const INFO_EXECUTION_LOCKED = 6004;
     public static $_instances = array();
     var $_start_time;
+    /**
+     * @param bool|string $context
+     * @return C_NextGen_API
+     */
     public static function get_instance($context = false)
     {
         if (!isset(self::$_instances[$context])) {
@@ -307,9 +406,9 @@ class C_NextGen_API extends C_Component
     function set_execution_locked($locked)
     {
         if ($locked) {
-            update_option('ngg_api_execution_lock', time());
+            update_option('ngg_api_execution_lock', time(), false);
         } else {
-            update_option('ngg_api_execution_lock', 0);
+            update_option('ngg_api_execution_lock', 0, false);
         }
     }
     function get_job_list()
@@ -325,7 +424,7 @@ class C_NextGen_API extends C_Component
         }
         $job = array('id' => $job_id, 'post_back' => array('token' => md5($job_id)), 'data' => $job_data, 'app_config' => $app_config, 'task_list' => $task_list);
         $job_list[$job_id] = $job;
-        update_option('ngg_api_job_list', $job_list);
+        update_option('ngg_api_job_list', $job_list, false);
         return $job_id;
     }
     function _update_job($job_id, $job)
@@ -333,7 +432,7 @@ class C_NextGen_API extends C_Component
         $job_list = $this->get_job_list();
         if (isset($job_list[$job_id])) {
             $job_list[$job_id] = $job;
-            update_option('ngg_api_job_list', $job_list);
+            update_option('ngg_api_job_list', $job_list, false);
         }
     }
     function remove_job($job_id)
@@ -341,7 +440,7 @@ class C_NextGen_API extends C_Component
         $job_list = $this->get_job_list();
         if (isset($job_list[$job_id])) {
             unset($job_list[$job_id]);
-            update_option('ngg_api_job_list', $job_list);
+            update_option('ngg_api_job_list', $job_list, false);
         }
     }
     function get_job($job_id)
@@ -385,6 +484,46 @@ class C_NextGen_API extends C_Component
             return $job['post_back'];
         }
         return null;
+    }
+    function authenticate_user($username, $password, $token, $regenerate_token = false)
+    {
+        $user_obj = null;
+        if ($token != null) {
+            $users = get_users(array('meta_key' => 'nextgen_api_token', 'meta_value' => $token));
+            if ($users != null && count($users) == 1) {
+                $user_obj = $users[0];
+            }
+        }
+        if ($user_obj == null) {
+            if ($username != null && $password != null) {
+                $user_obj = wp_authenticate($username, $password);
+                $token = get_user_meta($user_obj->ID, 'nextgen_api_token', true);
+                if ($token == null) {
+                    $regenerate_token = true;
+                }
+            }
+        }
+        if (is_a($user_obj, 'WP_Error')) {
+            $user_obj = null;
+        }
+        if ($regenerate_token) {
+            if ($user_obj != null) {
+                $token = '';
+                if (function_exists('random_bytes')) {
+                    $token = bin2hex(random_bytes(16));
+                } else {
+                    if (function_exists('openssl_random_pseudo_bytes')) {
+                        $token = bin2hex(openssl_random_pseudo_bytes(16));
+                    } else {
+                        for ($i = 0; $i < 16; $i++) {
+                            $token .= bin2hex(mt_rand(0, 15));
+                        }
+                    }
+                }
+                update_user_meta($user_obj->ID, 'nextgen_api_token', $token);
+            }
+        }
+        return $user_obj;
     }
     function create_filesystem_access($args, $method = null)
     {
@@ -485,8 +624,31 @@ class C_NextGen_API extends C_Component
         }
         return $id;
     }
+    function _array_find_by_entry(array $array_target, $entry_key, $entry_value)
+    {
+        foreach ($array_target as $key => $value) {
+            $item = $value;
+            if (isset($item[$entry_key]) && $item[$entry_key] == $entry_value) {
+                return $key;
+            }
+        }
+        return null;
+    }
+    function _array_filter_by_entry(array $array_target, array $array_source, $entry_key)
+    {
+        foreach ($array_source as $key => $value) {
+            $item = $value;
+            if (isset($item[$entry_key])) {
+                $find_key = $this->_array_find_by_entry($array_target, $entry_key, $item[$entry_key]);
+                if ($find_key !== null) {
+                    unset($array_target[$find_key]);
+                }
+            }
+        }
+        return $array_target;
+    }
     // Note: handle_job only worries about processing the job, it does NOT remove finished jobs anymore, the responsibility is on the caller to remove the job when handle_job returns true, this is to allow calling get_job_*() methods after handle_job has been called
-    function handle_job($job_id, $job_data, $app_config, $task_list)
+    function handle_job($job_id, $job_data, $app_config, $task_list, $extra_data = null)
     {
         $job_user = $job_data['user'];
         $task_count = count($task_list);
@@ -628,15 +790,16 @@ class C_NextGen_API extends C_Component
                                         $images_folder = str_replace(array('\\', '/'), $fs_sep, $images_folder);
                                         $images = $task_object['image_list'];
                                         $result_images = isset($task_result['image_list']) ? $task_result['image_list'] : array();
+                                        $images_todo = array_values($this->_array_filter_by_entry($images, $result_images, 'localId'));
                                         $image_count = count($images);
                                         $result_image_count = count($result_images);
-                                        for ($image_index = $result_image_count; $image_index < $image_count; $image_index++) {
-                                            $image = $images[$image_index];
+                                        foreach ($images_todo as $image_index => $image) {
                                             $image_id = isset($image['id']) ? $image['id'] : null;
                                             $image_filename = isset($image['filename']) ? $image['filename'] : null;
                                             $image_path = isset($image['path']) ? $image['path'] : null;
+                                            $image_data_key = isset($image['data_key']) ? $image['data_key'] : null;
                                             $image_action = isset($image['action']) ? $image['action'] : null;
-                                            $image_status = 'skip';
+                                            $image_status = isset($image['status']) ? $image['status'] : 'skip';
                                             if ($image_filename == null) {
                                                 $image_filename = basename($image_path);
                                             }
@@ -670,10 +833,36 @@ class C_NextGen_API extends C_Component
                                                 }
                                             } else {
                                                 /* image was added or edited and needs updating */
-                                                $image_path = $images_folder . $image_path;
-                                                if ($image_path != null && $wp_fs->exists($image_path)) {
+                                                $image_data = null;
+                                                if ($image_data_key != null) {
+                                                    if (!isset($extra_data['__queuedImages'][$image_data_key])) {
+                                                        if (isset($extra_data[$image_data_key])) {
+                                                            $image_data_arr = $extra_data[$image_data_key];
+                                                            $image_data = file_get_contents($image_data_arr['tmp_name']);
+                                                        }
+                                                        if ($image_data == null) {
+                                                            $image_error = __('Could not obtain data for image (%1$s).', 'nggallery');
+                                                        }
+                                                    } else {
+                                                        $image_status = 'queued';
+                                                    }
+                                                } else {
+                                                    $image_path = $images_folder . $image_path;
+                                                    if ($image_path != null && $wp_fs->exists($image_path)) {
+                                                        $image_data = $wp_fs->get_contents($image_path);
+                                                    } else {
+                                                        if (is_multisite()) {
+                                                            $image_error = __('Could not find image file for image (%1$s). Using FTP Upload Method in Multisite is not recommended.', 'nggallery');
+                                                        } else {
+                                                            $image_error = __('Could not find image file for image (%1$s).', 'nggallery');
+                                                        }
+                                                    }
+                                                    // delete temporary image
+                                                    $wp_fs->delete($image_path);
+                                                }
+                                                if ($image_data != null) {
                                                     try {
-                                                        $ngg_image = $storage->upload_base64_image($gallery, $wp_fs->get_contents($image_path), $image_filename, $image_id, true);
+                                                        $ngg_image = $storage->upload_base64_image($gallery, $image_data, $image_filename, $image_id, true);
                                                         if ($ngg_image != null) {
                                                             $image_status = 'done';
                                                             $image_id = $ngg_image->{$ngg_image->id_field};
@@ -683,7 +872,7 @@ class C_NextGen_API extends C_Component
                                                     } catch (E_UploadException $e) {
                                                         $image_error = $e->getMessage . __(' (%1$s).', 'nggallery');
                                                     } catch (E_No_Image_Library_Exception $e) {
-                                                        $error = __('No image library present, image uploads will fail (%1$s).', 'nggallery');
+                                                        $image_error = __('No image library present, image uploads will fail (%1$s).', 'nggallery');
                                                         // no point in continuing if the image library is not present but we don't break here to ensure that all images are processed (otherwise they'd be processed in further fruitless handle_job calls)
                                                     } catch (E_InsufficientWriteAccessException $e) {
                                                         $image_error = __('Inadequate system permissions to write image (%1$s).', 'nggallery');
@@ -692,10 +881,6 @@ class C_NextGen_API extends C_Component
                                                     } catch (E_EntityNotFoundException $e) {
                                                         // gallery doesn't exist - already checked above so this should never happen
                                                     }
-                                                    // delete temporary image
-                                                    $wp_fs->delete($image_path);
-                                                } else {
-                                                    $image_error = __('Could not find image file for image (%1$s).', 'nggallery');
                                                 }
                                             }
                                             if ($image_error != null) {
@@ -708,8 +893,10 @@ class C_NextGen_API extends C_Component
                                             if ($image_status) {
                                                 $image['status'] = $image_status;
                                             }
-                                            // append processed image to result image_list array
-                                            $result_images[] = $image;
+                                            if ($image_status != 'queued') {
+                                                // append processed image to result image_list array
+                                                $result_images[] = $image;
+                                            }
                                             if ($this->should_stop_execution()) {
                                                 break;
                                             }
@@ -717,7 +904,7 @@ class C_NextGen_API extends C_Component
                                         $task_result['image_list'] = $result_images;
                                         $image_list_unfinished = count($result_images) < $image_count;
                                         // if images have finished processing, remove the folder used to store the temporary images (the folder should be empty due to delete() calls above)
-                                        if (!$image_list_unfinished) {
+                                        if (!$image_list_unfinished && $storage_path != null && $storage_path != $fs_sep && $path_prefix != null && $path_prefix != $fs_sep) {
                                             $wp_fs->rmdir($images_folder);
                                         }
                                     } else {
@@ -737,7 +924,7 @@ class C_NextGen_API extends C_Component
                             $error = __('Could not find gallery (%1$s).', 'nggallery');
                         }
                         // XXX workaround for $gallery->save() returning false even if successful
-                        if (isset($task_result['image_list'])) {
+                        if (isset($task_result['image_list']) && $gallery != null) {
                             $task_result['object_id'] = $gallery->id();
                         }
                         if ($error == null) {
@@ -887,18 +1074,21 @@ class C_NextGen_API extends C_Component
             // unfinished tasks, return false
             return false;
         } else {
-            // everything was finished, write status file
-            $status_file = '_ngg_job_status_' . strval($job_id) . '.txt';
-            $status_content = json_encode($task_list);
-            if ($wp_fs != null) {
-                $status_path = $path_prefix . $fs_sep . $status_file;
-                $status_path = str_replace(array('\\', '/'), $fs_sep, $status_path);
-                $wp_fs->put_contents($status_path, $status_content);
-            } else {
-                // if WP_Filesystem failed try one last desperate attempt at direct file writing
-                $status_path = str_replace($ftp_path, $root_path, $full_path) . DIRECTORY_SEPARATOR . $status_file;
-                $status_path = str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $status_path);
-                file_put_contents($status_path, $status_content);
+            $upload_method = isset($app_config['upload_method']) ? $app_config['upload_method'] : 'ftp';
+            if ($upload_method == 'ftp') {
+                // everything was finished, write status file
+                $status_file = '_ngg_job_status_' . strval($job_id) . '.txt';
+                $status_content = json_encode($task_list);
+                if ($wp_fs != null) {
+                    $status_path = $path_prefix . $fs_sep . $status_file;
+                    $status_path = str_replace(array('\\', '/'), $fs_sep, $status_path);
+                    $wp_fs->put_contents($status_path, $status_content);
+                } else {
+                    // if WP_Filesystem failed try one last desperate attempt at direct file writing
+                    $status_path = str_replace($ftp_path, $root_path, $full_path) . DIRECTORY_SEPARATOR . $status_file;
+                    $status_path = str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $status_path);
+                    file_put_contents($status_path, $status_content);
+                }
             }
             return true;
         }
@@ -916,6 +1106,10 @@ class C_NextGen_API_XMLRPC extends C_Component
         parent::define($context);
         $this->implement('I_NextGen_API_XMLRPC');
     }
+    /**
+     * @param bool|string $context
+     * @return C_NextGen_API_XMLRPC
+     */
     public static function get_instance($context = false)
     {
         if (!isset(self::$_instances[$context])) {
@@ -925,7 +1119,7 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Gets the version of NextGEN Gallery installed
-     * @return string
+     * @return array
      */
     function get_version()
     {
@@ -985,7 +1179,8 @@ class C_NextGen_API_XMLRPC extends C_Component
             // his plugin
             $gallery->gid = (string) $gallery->gid;
             // Set other gallery properties
-            $image_counter = array_pop($image_mapper->select('DISTINCT COUNT(*) as counter')->where(array("galleryid = %d", $gallery->gid))->run_query(FALSE, FALSE, TRUE));
+            $tmp = $image_mapper->select('DISTINCT COUNT(*) as counter')->where(array("galleryid = %d", $gallery->gid))->run_query(FALSE, FALSE, TRUE);
+            $image_counter = array_pop($tmp);
             $gallery->counter = $image_counter->counter;
             $gallery->abspath = $storage->get_gallery_abspath($gallery);
         } else {
@@ -995,7 +1190,9 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Returns a single image object
-     * @param $args (blog_id, username, password, pid)
+     * @param array $args (blog_id, username, password, pid)
+     * @param bool $return_model (optional)
+     * @return object|IXR_Error
      */
     function get_image($args, $return_model = FALSE)
     {
@@ -1036,7 +1233,8 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Returns a collection of images
-     * @param $args (blog_id, username, password, gallery_id
+     * @param array $args (blog_id, username, password, gallery_id
+     * @return array|IXR_Error
      */
     function get_images($args)
     {
@@ -1073,7 +1271,7 @@ class C_NextGen_API_XMLRPC extends C_Component
      *			  o bool overwrite (optional)
      *			  o int gallery
      *			  o int image_id  (optional)
-     * @return image
+     * @return object|IXR_Error
      */
     function upload_image($args)
     {
@@ -1130,6 +1328,7 @@ class C_NextGen_API_XMLRPC extends C_Component
     /**
      * Edits an image object
      * @param $args (blog_id, username, password, image_id, alttext, description, exclude, other_properties
+     * @return IXR_Error|object
      */
     function edit_image($args)
     {
@@ -1156,7 +1355,8 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Deletes an existing image from a gallery
-     * @param $args (blog_id, username, password, image_id)
+     * @param array $args (blog_id, username, password, image_id)
+     * @return bool
      */
     function delete_image($args)
     {
@@ -1168,7 +1368,8 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Creates a new gallery
-     * @param $args (blog_id, username, password, title)
+     * @param array $args (blog_id, username, password, title)
+     * @return int|IXR_Error
      */
     function create_gallery($args)
     {
@@ -1195,7 +1396,8 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Edits an existing gallery
-     * @param $args (blog_id, username, password, gallery_id, name, title, description, preview_pic_id)
+     * @param array $args (blog_id, username, password, gallery_id, name, title, description, preview_pic_id)
+     * @return int|bool|IXR_Error
      */
     function edit_gallery($args)
     {
@@ -1236,7 +1438,8 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Returns all galleries
-     * @param $args (blog_id, username, password)
+     * @param array $args (blog_id, username, password)
+     * @return array|IXR_Error
      */
     function get_galleries($args)
     {
@@ -1263,7 +1466,9 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Gets a single gallery instance
-     * @param $args (blog_id, username, password, gallery_id)
+     * @param array $args (blog_id, username, password, gallery_id)
+     * @param bool $return_model
+     * @return object|bool|IXR_Error
      */
     function get_gallery($args, $return_model = FALSE)
     {
@@ -1290,7 +1495,8 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Deletes a gallery
-     * @param $args (blog_id, username, password, gallery_id)
+     * @param array $args (blog_id, username, password, gallery_id)
+     * @return bool
      */
     function delete_gallery($args)
     {
@@ -1302,7 +1508,8 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Creates a new album
-     * @param $args (blog_id, username, password, title, previewpic, description, galleries
+     * @param array $args (blog_id, username, password, title, previewpic, description, galleries
+     * @return int|IXR_Error
      */
     function create_album($args)
     {
@@ -1366,7 +1573,9 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Gets a single album
-     * @param $args (blog_id, username, password, album_id)
+     * @param array $args (blog_id, username, password, album_id)
+     * @param bool $return_model (optional)
+     * @return object|bool|IXR_Error
      */
     function get_album($args, $return_model = FALSE)
     {
@@ -1399,7 +1608,8 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Deletes an existing album
-     * @param $args (blog_id, username, password, album_id)
+     * @param array $args (blog_id, username, password, album_id)
+     * @return bool
      */
     function delete_album($args)
     {
@@ -1411,7 +1621,8 @@ class C_NextGen_API_XMLRPC extends C_Component
     }
     /**
      * Edit an existing album
-     * @param $args (blog_id, username, password, album_id, name, preview pic id, description, galleries)
+     * @param array $args (blog_id, username, password, album_id, name, preview pic id, description, galleries)
+     * @return object|IXR_Error
      */
     function edit_album($args)
     {

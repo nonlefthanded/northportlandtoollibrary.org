@@ -26,8 +26,8 @@ class Mixin_Validation extends Mixin
     }
     /**
      * Adds an error for a particular property of the object
-     * @param string $property
      * @param string $msg
+     * @param string $property
      */
     function add_error($msg, $property = '*')
     {
@@ -78,7 +78,7 @@ class Mixin_Validation extends Mixin
     }
     /**
      * Gets all of the errors for the object
-     * @return type
+     * @return array
      */
     function get_errors($property = FALSE)
     {
@@ -92,7 +92,7 @@ class Mixin_Validation extends Mixin
      * Determines if an object, or a particular field for that object, has
      * errors
      * @param string $property
-     * @return boolean
+     * @return bool
      */
     function is_valid($property = FALSE)
     {
@@ -109,8 +109,8 @@ class Mixin_Validation extends Mixin
     }
     /**
      * Determines if the object, or a particular field on the object, has errors
-     * @param type $property
-     * @return type
+     * @param string $property
+     * @return bool
      */
     function is_invalid($property = FALSE)
     {
@@ -147,9 +147,10 @@ class Mixin_Validation extends Mixin
     }
     /**
      * Validates the length of a property's value
-     * @param type $property
-     * @param type $length
-     * @param type $msg
+     * @param string $property
+     * @param int $length
+     * @param string $comparison_operator ===, !=, <, >, <=, or >=
+     * @param bool|string $msg
      */
     function validates_length_of($property, $length, $comparison_operator = '=', $msg = FALSE)
     {
@@ -160,28 +161,28 @@ class Mixin_Validation extends Mixin
             switch ($comparison_operator) {
                 case '=':
                 case '==':
-                    $valid = strlen($value) == $comparison;
+                    $valid = strlen($value) == $length;
                     $default_msg = $this->_get_default_error_message_for('validates_equals');
                     break;
                 case '!=':
                 case '!':
-                    $valid = strlen($value) != $comparison;
+                    $valid = strlen($value) != $length;
                     $default_msg = $this->_get_default_error_message_for('validates_equals');
                     break;
                 case '<':
-                    $valid = strlen($value) < $comparion;
+                    $valid = strlen($value) < $length;
                     $default_msg = $this->_get_default_error_message_for('validates_less_than');
                     break;
                 case '>':
-                    $valid = strlen($value) > $comparison;
+                    $valid = strlen($value) > $length;
                     $default_msg = $this->_get_default_error_message_for('validates_greater_than');
                     break;
                 case '<=':
-                    $valid = strlen($value) <= $comparison;
+                    $valid = strlen($value) <= $length;
                     $default_msg = $this->_get_default_error_message_for('validates_less_than');
                     break;
                 case '>=':
-                    $valid = strlen($value) >= $comparion;
+                    $valid = strlen($value) >= $length;
                     $default_msg = $this->_get_default_error_message_for('validates_greater_than');
                     break;
             }
@@ -201,9 +202,9 @@ class Mixin_Validation extends Mixin
      * Validates that a property contains a numeric value. May optionally be tested against
      * other numbers.
      * @param string $property
-     * @param decimal $comparison
+     * @param int|float $comparison
      * @param string $comparison_operator
-     * @param type $msg
+     * @param string $msg
      */
     function validates_numericality_of($property, $comparison = FALSE, $comparison_operator = FALSE, $int_only = FALSE, $msg = FALSE)
     {
@@ -389,7 +390,8 @@ class Mixin_Validation extends Mixin
     }
     /**
      * Validates the presence of a value for a particular field
-     * @param string $property
+     * @param string|array $properties
+     * @param array $with
      * @param string $msg
      */
     function validates_presence_of($properties, $with = array(), $msg = FALSE)

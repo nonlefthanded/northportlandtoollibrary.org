@@ -2,8 +2,8 @@
 Contributors: wiziapp
 Tags: categories, links, exclude, exclude categories, exclude pages, exclude posts, exclude tags, hide, pages, posts, tags, exclude links
 Requires at least: 3.4
-Tested up to: 4.1
-Stable tag: 1.0.9
+Tested up to: 5.0
+Stable tag: 1.0.10
 License: GPLv2
 
 Exclude pages, tags, links & categories by un checking the the "Display on your web site" checkbox, Use an excluded Tag to exclude Posts
@@ -43,6 +43,8 @@ Installing the "Exclude or include Pages, Tags, Posts and Categories" Plugin fro
 4. Add New Category page of the Admin panel with Exclude Include Content plugin checkboxes.
 
 == Changelog ==
+= 1.0.10 =
+* Bug Fixes.
 
 = 1.0.9 =
 * Bug Fixes.

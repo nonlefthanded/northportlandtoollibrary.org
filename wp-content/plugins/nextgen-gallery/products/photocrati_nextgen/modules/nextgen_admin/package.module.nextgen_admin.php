@@ -63,7 +63,7 @@ class A_MVC_Validation extends Mixin
 }
 /**
  * Class A_NextGen_Admin_Default_Pages
- * @mixin C_Page_Manager
+ * @mixin C_NextGen_Admin_Page_Manager
  * @adapts I_Page_Manager
  */
 class A_NextGen_Admin_Default_Pages extends Mixin
@@ -204,6 +204,9 @@ class C_Admin_Notification_Manager
      * @var C_Admin_Notification_Manager
      */
     static $_instance = NULL;
+    /**
+     * @return C_Admin_Notification_Manager
+     */
     static function get_instance()
     {
         if (!isset(self::$_instance)) {
@@ -325,7 +328,7 @@ class C_Admin_Notification_Manager
     {
         if ($this->has_displayed_notice()) {
             $router = C_Router::get_instance();
-            wp_enqueue_script('ngg_admin_notices', $router->get_static_url('photocrati-nextgen_admin#admin_notices.js'), FALSE, NGG_SCRIPT_VERSION, TRUE);
+            wp_enqueue_script('ngg_admin_notices', $router->get_static_url('photocrati-nextgen_admin#admin_notices.js'), array(), NGG_SCRIPT_VERSION, TRUE);
             wp_localize_script('ngg_admin_notices', 'ngg_dismiss_url', $this->_dismiss_url);
         }
     }
@@ -358,12 +361,175 @@ class C_Admin_Notification_Manager
             $has_method = method_exists($handler, 'is_renderable');
             if ($has_method && $handler->is_renderable() || !$has_method) {
                 $show_dismiss_button = method_exists($handler, 'show_dismiss_button') ? $handler->show_dismiss_button() : method_exists($handler, 'is_dismissable') ? $handler->is_dismissable() : FALSE;
-                $view = new C_MVC_View('photocrati-nextgen_admin#admin_notice', array('css_class' => method_exists($handler, 'get_css_class') ? $handler->get_css_class() : 'updated', 'is_dismissable' => method_exists($handler, 'is_dismissable') ? $handler->is_dismissable() : FALSE, 'html' => method_exists($handler, 'render') ? $handler->render() : '', 'show_dismiss_button' => $show_dismiss_button, 'notice_name' => $name));
+                $template = method_exists($handler, 'get_mvc_template') ? $handler->get_mvc_template() : 'photocrati-nextgen_admin#admin_notice';
+                $view = new C_MVC_View($template, array('css_class' => method_exists($handler, 'get_css_class') ? $handler->get_css_class() : 'updated', 'is_dismissable' => method_exists($handler, 'is_dismissable') ? $handler->is_dismissable() : FALSE, 'html' => method_exists($handler, 'render') ? $handler->render() : '', 'show_dismiss_button' => $show_dismiss_button, 'notice_name' => $name));
                 $retval = $view->render(TRUE);
                 $this->_displayed_notice = TRUE;
             }
         }
         return $retval;
+    }
+}
+class C_Admin_Requirements_Manager
+{
+    protected $_requirements = array();
+    protected $_groups = array();
+    public function __construct()
+    {
+        $this->set_initial_groups();
+    }
+    protected function set_initial_groups()
+    {
+        // Requirements can be added with any group key desired but only registered groups will be displayed
+        $this->_groups = apply_filters('ngg_admin_requirements_manager_groups', array('phpext' => __('NextGen Gallery requires the following PHP extensions to function correctly. Please contact your hosting provider or systems admin and ask them for assistance:', 'nggallery'), 'phpver' => __('NextGen Gallery has degraded functionality because of your PHP version. Please contact your hosting provider or systems admin and ask them for assistance:', 'nggallery'), 'dirperms' => __('NextGen Gallery has found an issue trying to access the following files or directories. Please ensure the following locations have the correct permissions:', 'nggallery')));
+    }
+    /**
+     * @return C_Admin_Requirements_Manager
+     */
+    private static $_instance = NULL;
+    public static function get_instance()
+    {
+        if (!isset(self::$_instance)) {
+            self::$_instance = new C_Admin_Requirements_Manager();
+        }
+        return self::$_instance;
+    }
+    /**
+     * @param string $name Unique notification ID
+     * @param string $group Choose one of phpext | phpver | dirperms
+     * @param callable $callback Method that determines whether the notification should display
+     * @param array $data Possible keys: className, message, dismissable
+     */
+    public function add($name, $group, $callback, $data)
+    {
+        $this->_requirements[$group][$name] = new C_Admin_Requirements_Notice($name, $callback, $data);
+    }
+    /**
+     * @param string $name
+     */
+    public function remove($name)
+    {
+        unset($this->_notifications[$name]);
+    }
+    public function create_notification()
+    {
+        foreach ($this->_groups as $groupID => $groupLabel) {
+            if (empty($this->_requirements[$groupID])) {
+                continue;
+            }
+            $dismissable = TRUE;
+            $notices = array();
+            foreach ($this->_requirements[$groupID] as $key => $requirement) {
+                $passOrFail = $requirement->run_callback();
+                if (!$passOrFail) {
+                    // If any of the notices can't be dismissed then all notices in that group can't be dismissed
+                    if (!$requirement->is_dismissable()) {
+                        // Add important notices to the beginning of the list
+                        $dismissable = FALSE;
+                        array_unshift($notices, $requirement);
+                    } else {
+                        // Less important notices go to the end of the list
+                        $notices[] = $requirement;
+                    }
+                }
+            }
+            // Don't display empty group notices
+            if (empty($notices)) {
+                continue;
+            }
+            // Generate the combined message for this group
+            $message = '<p>' . $this->_groups[$groupID] . '</p><ul>';
+            foreach ($notices as $requirement) {
+                // Make non-dismissable notifications bold
+                $string = $requirement->is_dismissable() ? $requirement->get_message() : '<strong>' . $requirement->get_message() . '</strong>';
+                $message .= '<li>' . $string . '</li>';
+            }
+            $message .= '</ul>';
+            // Generate the notice object
+            $name = 'ngg_requirement_notice_' . $groupID . '_' . md5($message);
+            $notice = new C_Admin_Requirements_Notice($name, '__return_true', array('dismissable' => $dismissable, 'message' => $message));
+            C_Admin_Notification_Manager::get_instance()->add($name, $notice);
+        }
+    }
+}
+class C_Admin_Requirements_Notice
+{
+    protected $_name;
+    protected $_data;
+    protected $_callback;
+    /**
+     * C_Admin_Requirements_Notice constructor
+     * @param string $name
+     * @param callable $callback
+     * @param array $data
+     */
+    public function __construct($name, $callback, $data)
+    {
+        $this->_name = $name;
+        $this->_data = $data;
+        $this->_callback = $callback;
+    }
+    /**
+     * @return bool
+     */
+    public function is_renderable()
+    {
+        return true;
+    }
+    /**
+     * @return bool
+     */
+    public function is_dismissable()
+    {
+        return isset($this->_data['dismissable']) ? $this->_data['dismissable'] : TRUE;
+    }
+    /**
+     * @return string
+     */
+    public function render()
+    {
+        return $this->_data["message"];
+    }
+    /**
+     * @return string
+     */
+    public function get_mvc_template()
+    {
+        return 'photocrati-nextgen_admin#requirement_notice';
+    }
+    /**
+     * @return string
+     */
+    public function get_name()
+    {
+        return $this->_name;
+    }
+    /**
+     * @return bool
+     */
+    public function run_callback()
+    {
+        if (is_callable($this->_callback)) {
+            return call_user_func($this->_callback);
+        } else {
+            return false;
+        }
+    }
+    /**
+     * @return string
+     */
+    public function get_css_class()
+    {
+        $prefix = 'notice notice-';
+        if ($this->is_dismissable()) {
+            return $prefix . 'warning';
+        } else {
+            return $prefix . 'error';
+        }
+    }
+    public function get_message()
+    {
+        return empty($this->_data['message']) ? "" : $this->_data['message'];
     }
 }
 /**
@@ -391,7 +557,7 @@ class C_Form extends C_MVC_Controller
     }
     /**
      * Defines the form
-     * @param string $context
+     * @param string|bool $context (optional)
      */
     function define($context = FALSE)
     {
@@ -428,7 +594,7 @@ class Mixin_Form_Instance_Methods extends Mixin
     /**
      * Saves the form/model
      * @param array $attributes
-     * @return type
+     * @return bool
      */
     function save_action($attributes = array())
     {
@@ -443,6 +609,8 @@ class Mixin_Form_Instance_Methods extends Mixin
     }
     /**
      * Returns the rendered form
+     * @param bool $wrap (optional) Default = true
+     * @return string
      */
     function render($wrap = TRUE)
     {
@@ -515,7 +683,8 @@ class C_Form_Manager extends C_Component
     var $_forms = array();
     /**
      * Returns an instance of the form manager
-     * @returns C_Form_Manager
+     * @param string|bool $context (optional)
+     * @return C_Form_Manager
      */
     static function &get_instance($context = FALSE)
     {
@@ -540,9 +709,9 @@ class Mixin_Form_Manager extends Mixin
 {
     /**
      * Adds one or more
-     * @param type $type
-     * @param type $form_names
-     * @return type
+     * @param string $type
+     * @param array|string $form_names
+     * @return int Results of get_form_count($type)
      */
     function add_form($type, $form_names)
     {
@@ -598,7 +767,7 @@ class Mixin_Form_Manager extends Mixin
     }
     /**
      * Gets known form types
-     * @return type
+     * @return array
      */
     function get_known_types()
     {
@@ -607,6 +776,7 @@ class Mixin_Form_Manager extends Mixin
     /**
      * Gets forms of a particular type
      * @param string $type
+     * @param string|bool $instantiate (optional)
      * @return array
      */
     function get_forms($type, $instantiate = FALSE)
@@ -703,6 +873,10 @@ if (!class_exists('C_NextGen_Admin_Installer')) {
 class C_NextGen_Admin_Page_Controller extends C_MVC_Controller
 {
     static $_instances = array();
+    /**
+     * @param bool|string $context
+     * @return C_NextGen_Admin_Page_Controller
+     */
     static function get_instance($context = FALSE)
     {
         if (!isset(self::$_instances[$context])) {
@@ -754,21 +928,37 @@ class Mixin_NextGen_Admin_Page_Instance_Methods extends Mixin
     {
         return $this->object->name;
     }
+    // Sets an appropriate screen for NextGEN Admin Pages
+    function set_screen()
+    {
+        $screen = get_current_screen();
+        if ($screen) {
+            $screen->ngg = TRUE;
+        } else {
+            if (is_null($screen)) {
+                $screen = WP_Screen::get($this->object->name);
+                $screen->ngg = TRUE;
+                set_current_screen($this->object->name);
+            }
+        }
+    }
     /**
      * Enqueues resources required by a NextGEN Admin page
      */
     function enqueue_backend_resources()
     {
+        $this->set_screen();
+        if (C_NextGen_Admin_Page_Manager::is_requested()) {
+            M_NextGen_Admin::enqueue_common_admin_static_resources();
+        }
         wp_enqueue_script('jquery');
         $this->object->enqueue_jquery_ui_theme();
         wp_enqueue_script('photocrati_ajax');
         wp_enqueue_script('jquery-ui-accordion');
-        wp_enqueue_script('nextgen_display_settings_page_placeholder_stub', $this->get_static_url('photocrati-nextgen_admin#jquery.placeholder.min.js'), array('jquery'), NGG_SCRIPT_VERSION, TRUE);
-        wp_register_script('iris', $this->get_router()->get_url('/wp-admin/js/iris.min.js', FALSE, TRUE), array('jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch'), NGG_SCRIPT_VERSION);
-        wp_register_script('wp-color-picker', $this->get_router()->get_url('/wp-admin/js/color-picker.js', FALSE, TRUE), array('iris'), NGG_SCRIPT_VERSION);
-        wp_localize_script('wp-color-picker', 'wpColorPickerL10n', array('clear' => __('Clear', 'nggallery'), 'defaultString' => __('Default', 'nggallery'), 'pick' => __('Select Color', 'nggallery'), 'current' => __('Current Color', 'nggallery')));
-        wp_enqueue_script('nextgen_admin_page', $this->get_static_url('photocrati-nextgen_admin#nextgen_admin_page.js'), array('wp-color-picker'), NGG_SCRIPT_VERSION);
-        wp_enqueue_style('nextgen_admin_page', $this->get_static_url('photocrati-nextgen_admin#nextgen_admin_page.css'), array('wp-color-picker'), NGG_SCRIPT_VERSION);
+        wp_enqueue_style('imagely-admin-font', 'https://fonts.googleapis.com/css?family=Lato:300,400,700,900', array(), NGG_SCRIPT_VERSION);
+        if (method_exists('M_Gallery_Display', 'enqueue_fontawesome')) {
+            M_Gallery_Display::enqueue_fontawesome();
+        }
         // Ensure select2
         wp_enqueue_style('ngg_select2');
         wp_enqueue_script('ngg_select2');
@@ -776,7 +966,7 @@ class Mixin_NextGen_Admin_Page_Instance_Methods extends Mixin
     function enqueue_jquery_ui_theme()
     {
         $settings = C_NextGen_Settings::get_instance();
-        wp_enqueue_style($settings->jquery_ui_theme, is_ssl() ? str_replace('http:', 'https:', $settings->jquery_ui_theme_url) : $settings->jquery_ui_theme_url, FALSE, $settings->jquery_ui_theme_version);
+        wp_enqueue_style($settings->jquery_ui_theme, is_ssl() ? str_replace('http:', 'https:', $settings->jquery_ui_theme_url) : $settings->jquery_ui_theme_url, array(), $settings->jquery_ui_theme_version);
     }
     /**
      * Returns the page title
@@ -795,6 +985,19 @@ class Mixin_NextGen_Admin_Page_Instance_Methods extends Mixin
         return $this->object->get_page_title();
     }
     /**
+     * Returns a header message
+     * @return string
+     */
+    function get_header_message()
+    {
+        if (defined('NGG_PRO_PLUGIN_VERSION')) {
+            $message = __("Good work. Keep making the web beautiful.", 'nggallery');
+        } else {
+            $message = __('Create more beautiful galleries. Upgrade to ') . '<a href="https://www.imagely.com/wordpress-gallery-plugin/nextgen-pro/?utm_source=ngg&utm_medium=ngguser&utm_campaign=ngpro" target="_blank">' . __('NextGEN Pro') . '</a>';
+        }
+        return $message;
+    }
+    /**
      * Returns the type of forms to render on this page
      * @return string
      */
@@ -808,15 +1011,16 @@ class Mixin_NextGen_Admin_Page_Instance_Methods extends Mixin
     }
     /**
      * Returns an accordion tab, encapsulating the form
-     * @param I_Form $form
+     * @param C_Form $form
+     * @return string
      */
     function to_accordion_tab($form)
     {
         return $this->object->render_partial('photocrati-nextgen_admin#accordion_tab', array('id' => $form->get_id(), 'title' => $form->get_title(), 'content' => $form->render(TRUE)), TRUE);
     }
     /**
-     * Returns the
-     * @return type
+     * Returns the forms registered for the current get_form_type()
+     * @return array
      */
     function get_forms()
     {
@@ -888,6 +1092,7 @@ class Mixin_NextGen_Admin_Page_Instance_Methods extends Mixin
                     }
                 }
                 $tabs[] = $this->object->to_accordion_tab($form);
+                $forms[] = $form;
                 if ($form->has_method('get_model') && $form->get_model()) {
                     if ($form->get_model()->is_invalid()) {
                         if ($form_errors = $this->object->show_errors_for($form->get_model(), TRUE)) {
@@ -898,12 +1103,209 @@ class Mixin_NextGen_Admin_Page_Instance_Methods extends Mixin
                 }
             }
             // Render the view
-            $index_params = array('page_heading' => $this->object->get_page_heading(), 'tabs' => $tabs, 'errors' => $errors, 'success' => $success, 'form_header' => $token->get_form_html(), 'show_save_button' => $this->object->show_save_button(), 'model' => $this->object->has_method('get_model') ? $this->get_model() : NULL);
+            $index_params = array('page_heading' => $this->object->get_page_heading(), 'tabs' => $tabs, 'forms' => $forms, 'errors' => $errors, 'success' => $success, 'header_message' => $this->object->get_header_message(), 'form_header' => $token->get_form_html(), 'show_save_button' => $this->object->show_save_button(), 'model' => $this->object->has_method('get_model') ? $this->get_model() : NULL, 'logo' => $this->get_router()->get_static_url('photocrati-nextgen_admin#imagely_icon.png'));
             $index_params = array_merge($index_params, $this->object->get_index_params());
             $this->render_partial($this->object->index_template(), $index_params);
         } else {
             $this->render_view('photocrati-nextgen_admin#not_authorized', array('name' => $this->object->name, 'title' => $this->object->get_page_title()));
         }
+    }
+}
+/**
+ * Class C_NextGen_Admin_Page_Manager
+ * @mixin Mixin_Page_Manager
+ * @implements I_Page_Manager
+ */
+class C_NextGen_Admin_Page_Manager extends C_Component
+{
+    static $_instance = NULL;
+    var $_pages = array();
+    /**
+     * Gets an instance of the Page Manager
+     * @param string|false $context (optional)
+     * @return C_NextGen_Admin_Page_Manager
+     */
+    static function &get_instance($context = FALSE)
+    {
+        if (is_null(self::$_instance)) {
+            $klass = get_class();
+            self::$_instance = new $klass($context);
+        }
+        return self::$_instance;
+    }
+    /**
+     * Defines the instance of the Page Manager
+     * @param string $context
+     */
+    function define($context = FALSE)
+    {
+        parent::define($context);
+        $this->add_mixin('Mixin_Page_Manager');
+        $this->implement('I_Page_Manager');
+    }
+    /**
+     * Determines if a NextGEN Admin page is being requested
+     * @return bool|string
+     */
+    static function is_requested()
+    {
+        $retval = FALSE;
+        // First, check the screen for the "ngg" property. This is how ngglegacy pages register themselves
+        $screen = get_current_screen();
+        if (property_exists($screen, 'ngg') && $screen->ngg) {
+            $retval = TRUE;
+        } else {
+            foreach (self::get_instance()->get_all() as $slug => $properties) {
+                // Are we rendering a NGG added page?
+                if (isset($properties['hook_suffix'])) {
+                    $hook_suffix = $properties['hook_suffix'];
+                    if (did_action("load-{$hook_suffix}")) {
+                        $retval = $slug;
+                        break;
+                    }
+                } elseif (isset($properties['post_type']) && $screen->post_type == $properties['post_type']) {
+                    $retval = $slug;
+                    break;
+                }
+            }
+        }
+        return apply_filters('is_ngg_admin_page', $retval);
+    }
+}
+class Mixin_Page_Manager extends Mixin
+{
+    function add($slug, $properties = array())
+    {
+        if (!isset($properties['adapter'])) {
+            $properties['adapter'] = NULL;
+        }
+        if (!isset($properties['parent'])) {
+            $properties['parent'] = NULL;
+        }
+        if (!isset($properties['add_menu'])) {
+            $properties['add_menu'] = TRUE;
+        }
+        if (!isset($properties['before'])) {
+            $properties['before'] = NULL;
+        }
+        if (!isset($properties['url'])) {
+            $properties['url'] = NULL;
+        }
+        $this->object->_pages[$slug] = $properties;
+    }
+    function move_page($slug, $other_slug, $after = false)
+    {
+        $page_list = $this->object->_pages;
+        if (isset($page_list[$slug]) && isset($page_list[$other_slug])) {
+            $slug_list = array_keys($page_list);
+            $item_list = array_values($page_list);
+            $slug_idx = array_search($slug, $slug_list);
+            $item = $page_list[$slug];
+            unset($slug_list[$slug_idx]);
+            unset($item_list[$slug_idx]);
+            $slug_list = array_values($slug_list);
+            $item_list = array_values($item_list);
+            $other_idx = array_search($other_slug, $slug_list);
+            array_splice($slug_list, $other_idx, 0, array($slug));
+            array_splice($item_list, $other_idx, 0, array($item));
+            $this->object->_pages = array_combine($slug_list, $item_list);
+        }
+    }
+    function remove($slug)
+    {
+        unset($this->object->_pages[$slug]);
+    }
+    function get_all()
+    {
+        return $this->object->_pages;
+    }
+    function setup()
+    {
+        $registry = $this->get_registry();
+        $controllers = array();
+        foreach ($this->object->_pages as $slug => $properties) {
+            $post_type = NULL;
+            $page_title = "Unnamed Page";
+            $menu_title = "Unnamed Page";
+            $permission = NULL;
+            $callback = NULL;
+            // There's two type of pages we can have. Some are powered by our controllers, and others
+            // are powered by WordPress, such as a custom post type page.
+            // Is this powered by a controller? If so, we expect an adapter
+            if ($properties['adapter']) {
+                $controllers[$slug] = $registry->get_utility('I_NextGen_Admin_Page', $slug);
+                $menu_title = $controllers[$slug]->get_page_heading();
+                $page_title = $controllers[$slug]->get_page_title();
+                $permission = $controllers[$slug]->get_required_permission();
+                $callback = array(&$controllers[$slug], 'index_action');
+            } elseif ($properties['url']) {
+                $url = $properties['url'];
+                if (preg_match("/post_type=([^&]+)/", $url, $matches)) {
+                    $this->object->_pages[$slug]['post_type'] = $matches[1];
+                }
+                $slug = $url;
+                if (isset($properties['menu_title'])) {
+                    $menu_title = $properties['menu_title'];
+                }
+                if (isset($properties['permission'])) {
+                    $permission = $properties['permission'];
+                }
+            }
+            // Are we to add a menu?
+            if ($properties['add_menu'] && current_user_can($permission)) {
+                $this->object->_pages[$slug]['hook_suffix'] = add_submenu_page($properties['parent'], $page_title, $menu_title, $permission, $slug, $callback);
+                if ($properties['before']) {
+                    global $submenu;
+                    if (empty($submenu[$properties['parent']])) {
+                        $parent = null;
+                    } else {
+                        $parent = $submenu[$properties['parent']];
+                    }
+                    $item_index = -1;
+                    $before_index = -1;
+                    if ($parent != null) {
+                        foreach ($parent as $index => $menu) {
+                            // under add_submenu_page, $menu_slug is index 2
+                            // $submenu[$parent_slug][] = array ( $menu_title, $capability, $menu_slug, $page_title );
+                            if ($menu[2] == $slug) {
+                                $item_index = $index;
+                            } else {
+                                if ($menu[2] == $properties['before']) {
+                                    $before_index = $index;
+                                }
+                            }
+                        }
+                    }
+                    if ($item_index > -1 && $before_index > -1) {
+                        $item = $parent[$item_index];
+                        unset($parent[$item_index]);
+                        $parent = array_values($parent);
+                        if ($item_index < $before_index) {
+                            $before_index--;
+                        }
+                        array_splice($parent, $before_index, 0, array($item));
+                        $submenu[$properties['parent']] = $parent;
+                    }
+                }
+            }
+        }
+        do_action('ngg_pages_setup');
+    }
+}
+// For backwards compatibility
+// TODO: Remove some time in 2018
+class C_Page_Manager
+{
+    /**
+     * @return C_NextGen_Admin_Page_Manager
+     */
+    static function get_instance()
+    {
+        return C_NextGen_Admin_Page_Manager::get_instance();
+    }
+    static function is_requested()
+    {
+        return C_NextGen_Admin_Page_Manager::is_requested();
     }
 }
 /**
@@ -1024,6 +1426,14 @@ class C_NextGEN_Wizard
     {
         $this->set_step_property($step_id, 'target_wait', $wait);
     }
+    function get_step_optional($step_id)
+    {
+        return $this->get_step_property($step_id, 'optional');
+    }
+    function set_step_optional($step_id, $optional)
+    {
+        $this->set_step_property($step_id, 'optional', $optional);
+    }
     function get_step_lazy($step_id)
     {
         return $this->get_step_property($step_id, 'lazy');
@@ -1139,7 +1549,8 @@ class C_NextGEN_Wizard_Manager extends C_Component
     var $_handled_query = false;
     /**
      * Returns an instance of the wizard manager
-     * @returns C_NextGEN_Wizard_Manager
+     * @param bool|string $context
+     * @return C_NextGEN_Wizard_Manager
      */
     static function get_instance($context = FALSE)
     {
@@ -1283,153 +1694,6 @@ class C_NextGEN_Wizard_Manager extends C_Component
                 }
             }
             $this->_handled_query = true;
-        }
-    }
-}
-/**
- * Class C_Page_Manager
- * @mixin Mixin_Page_Manager
- * @implements I_Page_Manager
- */
-class C_Page_Manager extends C_Component
-{
-    static $_instance = NULL;
-    var $_pages = array();
-    /**
-     * Gets an instance of the Page Manager
-     * @param string $context
-     * @return C_Page_Manager
-     */
-    static function &get_instance($context = FALSE)
-    {
-        if (is_null(self::$_instance)) {
-            $klass = get_class();
-            self::$_instance = new $klass($context);
-        }
-        return self::$_instance;
-    }
-    /**
-     * Defines the instance of the Page Manager
-     * @param type $context
-     */
-    function define($context = FALSE)
-    {
-        parent::define($context);
-        $this->add_mixin('Mixin_Page_Manager');
-        $this->implement('I_Page_Manager');
-    }
-}
-class Mixin_Page_Manager extends Mixin
-{
-    function add($slug, $properties = array())
-    {
-        if (!isset($properties['adapter'])) {
-            $properties['adapter'] = NULL;
-        }
-        if (!isset($properties['parent'])) {
-            $properties['parent'] = NULL;
-        }
-        if (!isset($properties['add_menu'])) {
-            $properties['add_menu'] = TRUE;
-        }
-        if (!isset($properties['before'])) {
-            $properties['before'] = NULL;
-        }
-        if (!isset($properties['url'])) {
-            $properties['url'] = NULL;
-        }
-        $this->object->_pages[$slug] = $properties;
-    }
-    function move_page($slug, $other_slug, $after = false)
-    {
-        $page_list = $this->object->_pages;
-        if (isset($page_list[$slug]) && isset($page_list[$other_slug])) {
-            $slug_list = array_keys($page_list);
-            $item_list = array_values($page_list);
-            $slug_idx = array_search($slug, $slug_list);
-            $item = $page_list[$slug];
-            unset($slug_list[$slug_idx]);
-            unset($item_list[$slug_idx]);
-            $slug_list = array_values($slug_list);
-            $item_list = array_values($item_list);
-            $other_idx = array_search($other_slug, $slug_list);
-            array_splice($slug_list, $other_idx, 0, array($slug));
-            array_splice($item_list, $other_idx, 0, array($item));
-            $this->object->_pages = array_combine($slug_list, $item_list);
-        }
-    }
-    function remove($slug)
-    {
-        unset($this->object->_pages[$slug]);
-    }
-    function get_all()
-    {
-        return $this->object->_pages;
-    }
-    function setup()
-    {
-        $registry = $this->get_registry();
-        $controllers = array();
-        foreach ($this->object->_pages as $slug => $properties) {
-            $page_title = "Unnamed Page";
-            $menu_title = "Unnamed Page";
-            $permission = NULL;
-            $callback = NULL;
-            // There's two type of pages we can have. Some are powered by our controllers, and others
-            // are powered by WordPress, such as a custom post type page.
-            // Is this powered by a controller? If so, we expect an adapter
-            if ($properties['adapter']) {
-                $controllers[$slug] = $registry->get_utility('I_NextGen_Admin_Page', $slug);
-                $menu_title = $controllers[$slug]->get_page_heading();
-                $page_title = $controllers[$slug]->get_page_title();
-                $permission = $controllers[$slug]->get_required_permission();
-                $callback = array(&$controllers[$slug], 'index_action');
-            } elseif ($properties['url']) {
-                $slug = $properties['url'];
-                if (isset($properties['menu_title'])) {
-                    $menu_title = $properties['menu_title'];
-                }
-                if (isset($properties['permission'])) {
-                    $permission = $properties['permission'];
-                }
-            }
-            // Are we to add a menu?
-            if ($properties['add_menu'] && current_user_can($permission)) {
-                add_submenu_page($properties['parent'], $page_title, $menu_title, $permission, $slug, $callback);
-                if ($properties['before']) {
-                    global $submenu;
-                    if (empty($submenu[$properties['parent']])) {
-                        $parent = null;
-                    } else {
-                        $parent = $submenu[$properties['parent']];
-                    }
-                    $item_index = -1;
-                    $before_index = -1;
-                    if ($parent != null) {
-                        foreach ($parent as $index => $menu) {
-                            // under add_submenu_page, $menu_slug is index 2
-                            // $submenu[$parent_slug][] = array ( $menu_title, $capability, $menu_slug, $page_title );
-                            if ($menu[2] == $slug) {
-                                $item_index = $index;
-                            } else {
-                                if ($menu[2] == $properties['before']) {
-                                    $before_index = $index;
-                                }
-                            }
-                        }
-                    }
-                    if ($item_index > -1 && $before_index > -1) {
-                        $item = $parent[$item_index];
-                        unset($parent[$item_index]);
-                        $parent = array_values($parent);
-                        if ($item_index < $before_index) {
-                            $before_index--;
-                        }
-                        array_splice($parent, $before_index, 0, array($item));
-                        $submenu[$properties['parent']] = $parent;
-                    }
-                }
-            }
         }
     }
 }

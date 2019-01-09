@@ -122,9 +122,12 @@ jQuery(function($){
 
         render: function(){
             this.$el.empty();
-            if (this.options.include_blank) {
-                this.$el.append("<option></option>");
+
+            if (this.multiple) {
+                this.$el.prop('multiple', true);
+                this.$el.attr('multiple', 'multiple');
             }
+
             this.collection.each(function(item){
                 var option = new this.Option({
                     model: item,
@@ -133,8 +136,11 @@ jQuery(function($){
                 });
                 this.$el.append(option.render().el);
             }, this);
-            if (this.multiple) this.$el.prop('multiple', true).attr('multiple', 'multiple');
-            if (this.width) this.$el.width(this.width);
+
+            if (this.width) {
+                this.$el.width(this.width);
+            }
+
             return this;
         },
 
@@ -175,7 +181,6 @@ jQuery(function($){
         initialize: function(options) {
             this.options = options || {};
             this.collection = this.options.collection;
-            this.options.include_blank = true;
             this.select_tag = new Ngg.Views.SelectTag(this.options);
             this.collection.on('change', this.selection_changed, this);
         },
@@ -196,28 +201,7 @@ jQuery(function($){
             };
 
             // Create the select2 drop-down
-            if (this.$el.parent().length == 0) {
-                $('body').append(this.$el);
-                this.select_tag.$el.select2(this.select2_opts);
-                var container = this.select_tag.$el.select2('container').detach();
-                this.$el.append(container);
-                this.$el.detach();
-            }
-            else this.select_tag.$el.select2(this.select2_opts);
-
-            // Ensure that values are pre-populated
-            if (this.options.multiple) {
-                var selected = [];
-                _.each(this.collection.selected_ids(), function(id){
-                    selected.push(id.toString());
-                });
-                if (selected.length == 0) selected = '';
-                this.select_tag.$el.select2('val', selected);
-            }
-
-
-            // For IE, ensure that the text field has a width
-            this.$el.find('.select2-input').width(this.options.width-20);
+            this.select_tag.$el.select2(this.select2_opts);
 
             return this;
         }
@@ -304,7 +288,7 @@ jQuery(function($){
      * Ngg.DisplayTab.Models.Displayed_Gallery
      * Represents the displayed gallery being edited or created by the Display Tab
      **/
-    Ngg.DisplayTab.Models.Displayed_Gallery        = Backbone.Model.extend({
+    Ngg.DisplayTab.Models.Displayed_Gallery = Backbone.Model.extend({
         defaults: {
             source: null,
             container_ids: [],
@@ -316,17 +300,30 @@ jQuery(function($){
             slug: null
         },
 
-        to_shortcode: function(){
+        to_shortcode: function() {
             retval = null;
 
-            var get_shortcode_attr= function(object, key){
+            var get_shortcode_attr = function(object, key) {
                 var val = object[key];
+
+                // Prevent default shortcode attributes from being included
+                if (typeof igw_data.shortcode_defaults[key] !== 'undefined'
+                &&  igw_data.shortcode_defaults[key] == val) {
+                    val = null;
+                }
+
                 if (_.isArray(val)) {
                     val = val.length > 0 ? val.join(',') : null;
                 }
                 if (val) {
                     val = val.toString().replace('[', '&#91;');
                     val = val.toString().replace(']', '&#93;');
+
+                    // Some keys have aliases to be used when writing shortcodes
+                    if (typeof igw_data.shortcode_attr_replacements[key] !== 'undefined') {
+                        key = igw_data.shortcode_attr_replacements[key];
+                    }
+
                     return key + '="' + val +'"';
                 }
             };
@@ -337,8 +334,9 @@ jQuery(function($){
             obj.display_type = display_type.get_shortcode_value();
 
             // Convert the displayed gallery to a shortcode
-            var snippet = '[ngg_images';
+            var snippet = '[ngg';
             var val = null;
+
             if ((val = get_shortcode_attr(obj, 'source'))) 			snippet += ' ' + val;
             if ((val = get_shortcode_attr(obj, 'container_ids')))	snippet += ' ' + val;
             if ((val = get_shortcode_attr(obj, 'entity_ids')))		snippet += ' ' + val;
@@ -358,15 +356,21 @@ jQuery(function($){
                     'ID'
                 ];
 
-                if (skipped.indexOf(key) > -1) continue;
+                if (skipped.indexOf(key) > -1) {
+                    continue;
+                }
                 else if (key == 'display_settings') {
                     for (var display_key in obj[key]) {
-                        if ((val = get_shortcode_attr(obj[key], display_key))) snippet += ' ' + val;
+                        if ((val = get_shortcode_attr(obj[key], display_key))) {
+                            snippet += ' ' + val;
+                        }
                     }
                 }
                 else {
                     val = get_shortcode_attr(obj, key);
-                    if (val) snippet += ' ' + val;
+                    if (val) {
+                        snippet += ' ' + val;
+                    }
                 }
             }
 
@@ -504,15 +508,14 @@ jQuery(function($){
             return success;
         },
 
-
-        get_shortcode_value: function(){
+        get_shortcode_value: function() {
             var retval = this.id;
 
-            // TODO: Uncomment for a later version
-            // var aliases = this.get('aliases');
-            // if (_.isArray(aliases) && aliases.length > 0) {
-            //     retval = aliases[0];
-            // }
+            var aliases = this.get('aliases');
+            if (_.isArray(aliases) && aliases.length > 0) {
+                retval = aliases[0];
+            }
+
             return retval;
         }
     });
@@ -674,13 +677,17 @@ jQuery(function($){
                 width: 500
             });
 
-            var template = _.template('<tr><td><label><%- sources %></label></td><td id="source_column"></td></tr>');
+            var template = _.template('<tr><td id="source_column"></td><td><label><%- sources %></label></td></tr>');
             this.$el.html(template(igw_data.i18n));
             this.$el.find('#source_column').append(chosen.render().el);
 
             var selected = this.sources.selected();
             if (selected.length) {
-                var view_name = _.str.capitalize(selected.pop().id)+"Source";
+                function capitalizeFirstLetter(text) {
+                    text = String(text);
+                    return text.charAt(0).toUpperCase() + text.slice(1);
+                }
+                var view_name = capitalizeFirstLetter(selected.pop().id) + "Source";
                 if (typeof(Ngg.DisplayTab.Views[view_name]) != 'undefined') {
                     var selected_view = new Ngg.DisplayTab.Views[view_name];
                     this.$el.append(selected_view.render().el);
@@ -760,27 +767,6 @@ jQuery(function($){
                 }
             });
 
-            if (selected_type) {
-                var selected_source = this.sources.selected_value();
-                var default_source = selected_type.get('default_source');
-
-                // If the default source isn't selected, then select it
-                if (default_source && selected_source != default_source) {
-
-                    // Get the default source object by name
-                    default_source = this.sources.where({
-                        name: default_source
-                    });
-
-                    // Does the default source exist ?
-                    if (default_source.length > 0) {
-                        default_source = default_source[0];
-                        this.sources.deselect_all();
-                        this.sources.select(default_source.id);
-                    }
-                }
-            }
-
             $('.display_settings_form').each(function(){
                 $this = $(this);
                 if ($this.attr('rel') == value) $this.removeClass('hidden');
@@ -817,12 +803,10 @@ jQuery(function($){
                 if (!display_order)
                     display_order = order_base;
                 var display_step = Math.floor(display_order / order_step);
-                if (current_step > 0 && display_step > current_step) {
-                    this.$el.append('<li class="clear" style="height: 10px" />');
-                }
                 current_step = display_step;
                 this.$el.append(display_type.render().el);
             }, this);
+            this.$el.append('<li class="clear" style="height: 10px; list-style-type:none" />');
             return this;
         },
 
@@ -868,10 +852,14 @@ jQuery(function($){
                     name: 'display_type',
                     checked: this.model.get('selected')
                 });
+                var line_break = $('<br>');
                 image_container.append(inner_div);
                 image_container.append(img);
+                image_container.append('<br>');
+                image_container.append(this.model.get('title').replace(/nextgen /gi, ''));
                 inner_div.append(radio_button);
-                inner_div.append(this.model.get('title'));
+                inner_div.append(line_break);
+                // inner_div.append(this.model.get('title').replace(/nextgen /gi, ''));
                 this.$el.append(image_container);
                 return this;
             }
@@ -999,7 +987,7 @@ jQuery(function($){
         },
 
         RefreshButton: Backbone.View.extend({
-            className: 'refresh_button',
+            className: 'refresh_button button-primary',
 
             tagName: 'input',
 
@@ -1041,7 +1029,7 @@ jQuery(function($){
 
             render: function(){
                 this.$el.empty();
-                this.$el.append('<strong>Exclude:</strong>');
+                this.$el.append('<span style="margin-right: 8px;">Exclude:</span>');
                 var all_button = new this.Button({
                     value: true,
                     text: 'All',
@@ -1212,7 +1200,7 @@ jQuery(function($){
             render: function(){
                 this.$el.empty();
                 this.populate_sorting_fields();
-                this.$el.append('<strong>Sort By:</strong>');
+                this.$el.append('<span style="margin-right: 8px;">Sort By:</span>');
                 this.sortorder_options.each(function(item, index){
                     var button = new this.Button({model: item, className: 'sortorder'});
                     this.$el.append(button.render().el);
@@ -1220,7 +1208,7 @@ jQuery(function($){
                         this.$el.append('<span class="separator">|</span>');
                     }
                 }, this);
-                this.$el.append('<strong style="margin-left: 30px;">Order By:</strong>');
+                this.$el.append('<span style="margin: 0 8px 0 40px;">Order By:</span>');
                 this.sortdirection_options.each(function(item, index){
                     var button = new this.Button({model: item, className: 'sortdirection'});
                     this.$el.append(button.render().el);
@@ -1366,7 +1354,7 @@ jQuery(function($){
                 multiple: true,
                 width: 500
             });
-            var html = $('<tr><td><label>'+igw_data.i18n.galleries+'</label></td><td class="galleries_column"></td></tr>');
+            var html = $('<tr><td class="galleries_column"></td><td><label>'+igw_data.i18n.galleries+'</label></td></tr>');
             this.$el.empty();
             this.$el.append(html);
             this.$el.find('.galleries_column').append(select.render().el);
@@ -1390,7 +1378,7 @@ jQuery(function($){
                 width: 500
             });
             this.$el.empty();
-            this.$el.append('<tr><td><label>'+igw_data.i18n.albums+'</label></td><td class="albums_column"></td></tr>');
+            this.$el.append('<tr><td class="albums_column"></td><td><label>'+igw_data.i18n.albums+'</label></td></tr>');
             this.$el.find('.albums_column').append(album_select.render().el);
             return this;
         }
@@ -1412,7 +1400,7 @@ jQuery(function($){
                 width: 500
             });
             this.$el.empty();
-            this.$el.append('<tr><td><label>Tags</label></td><td class="tags_column"></td></tr>');
+            this.$el.append('<tr><td class="tags_column"></td><td><label>Tags</label></td></tr>');
             this.$el.find('.tags_column').append(tag_select.render().el);
             return this;
         }
@@ -1440,7 +1428,7 @@ jQuery(function($){
             });
 
             this.$el.empty();
-            this.$el.append('<tr><td><label># of Images To Display</label></td><td class="recent_images_column"></td></tr>');
+            this.$el.append('<tr><td class="recent_images_column"></td><td><label># of Images To Display</label></td></tr>');
             this.$el.find('.recent_images_column').append(edit_field);
             return this;
         }
@@ -1468,7 +1456,7 @@ jQuery(function($){
             });
 
             this.$el.empty();
-            this.$el.append('<tr><td><label># of Images To Display</label></td><td class="random_images_column"></td></tr>');
+            this.$el.append('<tr><td class="random_images_column"></td><td><label># of Images To Display</label></td></tr>');
             this.$el.find('.random_images_column').append(edit_field);
             return this;
         }
@@ -1493,27 +1481,41 @@ jQuery(function($){
 
         clicked: function(){
             this.set_display_settings();
-            insert_into_editor(this.displayed_gallery.to_shortcode(), (this.displayed_gallery.id ? this.displayed_gallery.id : igw_data.shortcode_ref));
+            var shortcode = this.displayed_gallery.to_shortcode();
+            insert_into_editor(shortcode, (this.displayed_gallery.id ? this.displayed_gallery.id : igw_data.shortcode_ref));
+            var editor = null
+            if ((editor = location.toString().match(/editor=([^\&]+)/)) && editor.length >= 2) {
+                top.tinyMCE.editors[editor[1]].fire('ngg-inserted', {shortcode: shortcode})
+            }
+            
             close_attach_to_post_window();
         },
 
-        set_display_settings: function(){
+        set_display_settings: function() {
             var display_type = this.displayed_gallery.get('display_type');
             if (display_type) {
                 // Collect display settings
-                var form = $("form[rel='"+display_type+"']");
-                var display_settings	= (function(item){
+                var form = $("form[rel='" + display_type + "']");
+                var defaults = form.data('defaults')
+                var display_settings = (function(item) {
                     var obj = {};
                     $.each(item.serializeArray(), function(key, item) {
                         var parts = item.name.split('[');
                         var current_obj = obj;
-                        for (var i=0; i<parts.length; i++) {
+                        for (var i = 0; i < parts.length; i++) {
                             var part = parts[i].replace(/\]$/, '');
+
+                            // Skip settings that haven't been changed from the default
+                            if (defaults[part] == item.value) {
+                                return true;
+                            }
+
                             if (!current_obj[part]) {
-                                if (i == parts.length-1)
+                                if (i == (parts.length - 1)) {
                                     current_obj[part] = item.value;
-                                else
+                                } else {
                                     current_obj[part] = {};
+                                }
                             }
                             current_obj = current_obj[part];
                         }
@@ -1599,7 +1601,17 @@ jQuery(function($){
             }, this);
 
             // Bind to the 'selected' event for the source, updating the displayed gallery
-            this.sources.on('selected', function(){
+            this.sources.on('selected', function() {
+
+                // It is possible for fast acting users to get an invalid shortcode: by changing gallery source and
+                // then rushing to the 'insert gallery' button it's possible for the state to be unchanged when the new
+                // shortcode is written thus 'leaving behind' the old displayed gallery without the newly chosen attr.
+                // This just temporarily disables that button for one second for the internal state to catch up.
+                $('#save_displayed_gallery').prop('disabled', true);
+                setTimeout(function() {
+                    $('#save_displayed_gallery').prop('disabled', false);
+                }, 1000);
+
                 this.displayed_gallery.set('source', this.sources.selected_value());
 
                 // If the source changed, and it's not the set to the original value, then
@@ -1640,6 +1652,15 @@ jQuery(function($){
                 //this.displayed_gallery.set('sortorder', this.entities.entity_ids());
                 this.displayed_gallery.set('exclusions', this.entities.excluded_ids());
             }, this);
+
+            // Default to the "galleries" display types when creating new entries
+            if (!this.displayed_gallery.get('source')) {
+                var defaultsource = this.sources.find_by_name_or_alias('galleries');
+                if (defaultsource) {
+                    defaultsource.set('selected', true);
+                    this.sources.trigger('selected');
+                }
+            }
 
             // Monitor events in other tabs and respond as appropriate
             if (window.Frame_Event_Publisher) {

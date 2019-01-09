@@ -3,7 +3,7 @@
 Plugin Name: WP Cloudy
 Plugin URI: https://wpcloudy.com/
 Description: WP Cloudy is a powerful weather plugin for WordPress, based on Open Weather Map API, using Custom Post Types and shortcodes, bundled with a ton of features.
-Version: 4.4.6
+Version: 4.4.7
 Author: Benjamin DENIS
 Author URI: https://wpcloudy.com/
 License: GPLv2
@@ -40,9 +40,7 @@ function weather_deactivation() {
 }
 register_deactivation_hook(__FILE__, 'weather_deactivation');
 
-load_plugin_textdomain('wp-cloudy', false, basename( dirname( __FILE__ ) ) . '/lang' );
-
-define( 'WPCLOUDY_VERSION', '4.4.6' );
+define( 'WPCLOUDY_VERSION', '4.4.7' );
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //Shortcut settings page
@@ -68,19 +66,16 @@ function wpc_plugin_action_links($links, $file) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //Translation
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
 function wpcloudy_init() {
-  load_plugin_textdomain( 'wp-cloudy', false, dirname( plugin_basename( __FILE__ ) ) . '/lang/' ); 
+	load_plugin_textdomain( 'wp-cloudy', false, dirname( plugin_basename( __FILE__ ) ) . '/lang/' ); 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//Admin panel + Dashboard widget
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-if ( is_admin() )
-	require_once dirname( __FILE__ ) . '/wpcloudy-admin.php';
-	require_once dirname( __FILE__ ) . '/wpcloudy-export.php';
-    require_once dirname( __FILE__ ) . '/wpcloudy-widget.php';
-    require_once dirname( __FILE__ ) . '/wpcloudy-pointers.php';
+	//Admin panel + Dashboard widget
+	if ( is_admin() ) {
+		require_once dirname( __FILE__ ) . '/wpcloudy-admin.php';
+		require_once dirname( __FILE__ ) . '/wpcloudy-export.php';
+	    require_once dirname( __FILE__ ) . '/wpcloudy-widget.php';
+	    require_once dirname( __FILE__ ) . '/wpcloudy-pointers.php';
+	}
 }
 add_action('plugins_loaded', 'wpcloudy_init');
 
@@ -186,14 +181,29 @@ if (isset($_GET['page']) && ($_GET['page'] == 'wpc-settings-admin')) {
 }
 
 //Gutenberg
-// function gutenberg_boilerplate_block() {
-//     wp_register_script('gutenberg-wpcloudy', plugins_url( 'js/weather-block.js', __FILE__ ), array( 'wp-blocks', 'wp-element' ));
+/* BE + FE */
+// function capitainewp_block_assets() {
+
+// 	// CSS des blocs
+// 	wp_enqueue_style(
+// 		'capitainewp-blocks',
+// 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
+// 		array( 'wp-blocks' )  // Dépendances 
+// 	);
+
+// 	// Possibilité de charger un JS supplémentaire pour le front si besoin
+// }
+// add_action( 'enqueue_block_assets', 'capitainewp_block_assets' );
+
+/*BE*/
+// function wpc_gutenberg_boilerplate_block() {
+//     wp_register_script('gutenberg-wpcloudy', plugins_url( 'js/blocks.build.js', __FILE__ ), array( 'wp-blocks', 'wp-element' ));
 
 //     register_block_type( 'gutenberg-wpcloudy/wpcloudy', array('editor_script' => 'gutenberg-wpcloudy'));
 
 //     wp_enqueue_script('gutenberg-wpcloudy');
 // }
-// add_action( 'init', 'gutenberg_boilerplate_block' );
+// add_action( 'enqueue_block_editor_assets', 'wpc_gutenberg_boilerplate_block' );
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //Get all registered post types
@@ -323,7 +333,7 @@ add_filter( 'post_row_actions', 'wpc_duplicate_post_link', 999, 2 );
 
 add_action('add_meta_boxes','init_metabox');
 function init_metabox(){
-	add_meta_box('wpcloudy_basic', 'WP Cloudy Settings - <a href="'.admin_url("options-general.php?page=wpc-settings-admin").'">'.__('WP Cloudy global settings','wp-cloudy').'</a>', 'wpcloudy_basic', 'wpc-weather', 'advanced');
+	add_meta_box('wpcloudy_basic', __('WP Cloudy Settings','wp-cloudy') .' - <a href="'.admin_url("options-general.php?page=wpc-settings-admin").'">'.__('WP Cloudy global settings','wp-cloudy').'</a>', 'wpcloudy_basic', 'wpc-weather', 'advanced');
 	add_meta_box('wpcloudy_shortcode', 'WP Cloudy Shortcode', 'wpcloudy_shortcode', 'wpc-weather', 'side');
 }
 
@@ -1420,7 +1430,7 @@ function wpc_get_my_weather($attr) {
 			$wpcloudy_select_city_name  			= $_COOKIE['wpc-posCityName'];
 		}
 
-        //XML : Current weather   
+        //JSON : Current weather   
         //Geolocation ON / Automatic Detection
         if( $wpcloudy_enable_geolocation == 'yes' && $_COOKIE['wpc-detectGeolocation']=='1' && $wpcloudy_enable_geolocation_custom_field != 'yes' ) { 
         	$myweather_current_url = wp_remote_retrieve_body(wp_remote_get("https://api.openweathermap.org/data/2.5/weather?lat=".$wpcloudy_lat."&lon=".$wpcloudy_lon."&mode=json&units=".$wpcloudy_unit."&APPID=".$wpc_advanced_api_key));
@@ -1508,7 +1518,7 @@ function wpc_get_my_weather($attr) {
 	        }
 	    }
 
-        //XML : Hourly - 5 days forecast weather      
+        //JSON : Hourly - 5 days forecast weather      
         if( ($wpcloudy_hour_forecast && !$wpcloudy_hour_forecast_nd =='') || ($wpcloudy_forecast && !$wpcloudy_forecast_nd == '' ) ) {
           	if( $wpcloudy_enable_geolocation == 'yes' && $_COOKIE['wpc-detectGeolocation']=='1' && $wpcloudy_enable_geolocation_custom_field != 'yes' ) {
             	$myweather_url = wp_remote_retrieve_body(wp_remote_get("https://api.openweathermap.org/data/2.5/forecast/?lat=".$wpcloudy_lat."&lon=".$wpcloudy_lon."&mode=json&units=".$wpcloudy_unit."&APPID=".$wpc_advanced_api_key));
