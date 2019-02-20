@@ -207,7 +207,7 @@ $new_tab_message         = '<span class="screen-reader-text">' . esc_html__( '(O
 					);
 					echo $new_tab_message;
 					?>
-				 </a>
+				</a>
 			<?php endif; ?>
 			<?php if ( ! $extensions->is_activated( 'wordpress-seo-premium' ) ) { ?>
 				<p><small class="yoast-money-back-guarantee"><?php esc_html_e( 'Comes with our 30-day no questions asked money back guarantee', 'wordpress-seo' ); ?></small></p>
@@ -223,7 +223,7 @@ $new_tab_message         = '<span class="screen-reader-text">' . esc_html__( '(O
 				$yoast_seo_extensions = '<span class="yoast-heading-highlight">' . $yoast_seo_extensions . '</span>';
 
 				/* translators: %1$s expands to Yoast SEO extensions */
-				printf( __( '%1$s to optimize your site even further', 'wordpress-seo' ), $yoast_seo_extensions );
+				printf( esc_html__( '%1$s to optimize your site even further', 'wordpress-seo' ), $yoast_seo_extensions );
 				?></h2>
 
 			<?php foreach ( $extensions->get_all() as $id => $extension ) : ?>
