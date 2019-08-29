@@ -1,4 +1,5 @@
 wp-config.php
+wp-config-sample.php
 *.bak
 wp-content/cache/*
 wp-content/advanced-cache.php
