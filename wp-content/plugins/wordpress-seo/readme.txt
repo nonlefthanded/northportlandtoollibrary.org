@@ -5,8 +5,8 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: SEO, XML sitemap, Content analysis, Readability
 Requires at least: 4.9
-Tested up to: 5.2.1
-Stable tag: 11.3
+Tested up to: 5.2.2
+Stable tag: 12.0
 Requires PHP: 5.2.4
 
 Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.
@@ -105,67 +105,39 @@ You'll find answers to many of your questions on [kb.yoast.com](https://yoa.st/1
 
 == Changelog ==
 
-= 11.3.0 =
-Release Date: May 28th, 2019
+= 12.0.0 =
+Release Date: September 3rd, 2019
 
-High-time for another release, namely Yoast SEO 11.3. This release features enhancements and bug fixes aimed at improving the way your favorite SEO plugin performs. Read more about the release in [our 11.3 release post](https://yoa.st/release-11-3).
-
-Enhancements:
-
-* When the site is set to represent a person, a logo/avatar to be used in the knowledge graph can now be selected in the Search Appearance settings.
-* Adds the `wpseo_should_index_links` filter that can be used to disable the link indexation.
-* Enables builtin Taxonomies for the 'Content type archive to show in breadcrumbs for taxonomies' section to allow the Blog archive page be added to the breadcrumbs.
-* Props to [@ramiy](https://profiles.wordpress.org/ramiy/) for making translating the plugin easier by merging near identical strings.
-
-Bugfixes:
-
-* Fixes a bug where sitemaps would be shown in the `sitemap_index.xml` but result in a 404 when requested.
-* Fixes a bug where the schema output would include an invalid publisher when the site was set to represent a person.
-* Fixes a bug where a `Person` schema object would be output, when the site was set to represent a person, but no specific person was selected.
-* Fixes a bug where it would no longer be possible to change the user in the Search Appearance settings when the previously selected user had been deleted.
-
-Other:
-
-* Removes the help center from the metabox.
-* Removes redundant `name` attribute from `author` in `Article` schema markup piece.
-* Increases the MyYoast API request timeout from 1 to 5 seconds, to give servers with a less optimal connection to our services more room to fetch the data.
-
-= 11.2.1 =
-Release Date: May 16th, 2019
-
-Bugfixes:
-
-* Fixes a bug where the metabox would be empty on WordPress versions below 5.0.
-* Fixes a bug where the metabox would be empty when both the classic editor plugin as well as the Gutenberg plugin were installed.
-
-Other:
-
-* Introduces a notification that encourages updating to the latest WordPress version.
-
-= 11.2.0 =
-Release Date: May 15th, 2019
+Contrary to what the version number might suggest, Yoast SEO 12.0 isn’t a huge release. It’s simply the next release in our current release schedule, but after hitting 11.9 a couple of weeks ago we had no choice but to go for 12.0. That’s how it goes! But don’t worry, there’s enough interesting stuff in this release, including two new checks for the Portuguese language. Read more about Yoast SEO 12.0 in [our 12.0 release post](https://yoa.st/release-12-0)!
 
 Enhancements:
 
-* Introduces a fallback to the first image in the content for the schema output when no featured image has been set.
-* Adds a `wpseo_schema_person_social_profiles` filter to allow filtering in/out extra social profiles to show.
-* Adds a `wpseo_schema_needs_<class_name>` filter that allows filtering graph pieces in or out.
-* Adds a `wpseo_sitemap_post_statuses` filter to add posts with custom post statuses to the sitemap. Props to [stodorovic](https://github.com/stodorovic) and [tolnem](https://github.com/tolnem).
-* Adds a custom overlay color to the snippet preview modal.
-* Adds the correct focus style to the Configuration Wizard navigation buttons.
-* Props to [@ramiy](https://profiles.wordpress.org/ramiy/) for making translating the plugin easier by merging near identical strings.
+* Adds a filter `wpseo_exclude_from_sitemap_by_term_ids` that allows excluding a term from the XML sitemap.
+* Adds a filter `wpseo_xml_sitemap_include_images` that allows excluding images from the XML sitemap.
+* Adds a maximum width to the metabox, props to [@justemoilouise](https://github.com/justemoilouise).
+* Adds support for the assessment that checks whether multiple sentences begin with the same word for Portuguese, props to [amesdigital](https://github.com/amesdigital).
+* Improves the wording in the configuration wizard notification, props to [@emilyatmobtown](https://github.com/emilyatmobtown).
+* Improves user input validation for URLs.
+* Improves the sentence length assessment for Portuguese by increasing the recommended sentence length limit, props to [amesdigital](https://github.com/amesdigital).
+* Updates the document title with a message to communicate form submission errors have occurred.
 
 Bugfixes:
 
-* Fixes a bug where the URL to Pinterest's claim page was incorrect. Props [@ramiy](https://profiles.wordpress.org/ramiy/).
-* Fixes a bug where notifications about incompatibility would be thrown for inactive add-ons.
-* Fixes a bug where URLs with a non-Yoast SEO related xsl query string parameter would result in a blank page. Props [@stodorovic](https://github.com/stodorovic) and [@yiska](https://github.com/yiska).
+* Fixes a bug where a 404 error would be shown for the second sitemap (and up) of the author sitemaps in case of multiple author sitemaps.
 
-Other:
+= 11.9.0 =
+Release Date: August 20th, 2019
 
-* Removes the `add_opengraph_namespace` filter because the OGP.me HTML namespace is not used anymore.
-* Decouples the sitemap debug information from the general `WP_DEBUG` development flag and introduces the `YOAST_SEO_DEBUG_SITEMAPS` flag to better control this functionality.
+Are you ready for another exciting release to round up the Yoast SEO 11 cycle? Because we are! In Yoast SEO 11.9 we have improvements for security and accessibility. Read more about Yoast SEO 11.9 in [our 11.9 release post](https://yoa.st/release-11-9)!
+
+Enhancements:
+
+* Improves security by adding output escaping.
+
+Bugfixes:
+
+* Fixes a bug where the image from the configuration wizard notification was missing an empty alt attribute.
+* Fixes a bug where some translations would be missing in the metabox, sidebar, configuration wizard and the help center.
 
 = Earlier versions =
-
-For the changelog of earlier versions, please refer to https://yoa.st/yoast-seo-changelog
+For the changelog of earlier versions, please refer to [the changelog on yoast.com](https://yoa.st/yoast-seo-changelog).
