@@ -25,6 +25,83 @@
  */
 
 /*
+ * Custom Functions/Classes
+ */
+
+class Events{
+	public function __construct(){ 
+		echo '<!-- The class "' . __CLASS__ . '" was initiated! -->'; 
+	}
+
+	public function is_upcoming_events(){
+		return ( count( $this->get_events() ) > 0 ) ? true : false ;
+	}
+
+	public function get_events(){
+		global $post;
+		$tomorrow = strftime( "%Y%m%d", time() + (get_option('gmt_offset')*60*60) + (60*60*24) );
+		
+		$events_args = array(  'post_type' => 'events',
+	    'posts_per_page' => -1,
+	    'meta_key' => 'event_date',
+	    'orderby' => 'meta_value',
+	    'order' => 'ASC',
+	    'meta_query' => array(
+	        array(
+	            'key' => 'event_date',
+	            'value' => $tomorrow,
+	            'compare' => '>=',
+	        )
+	    )
+		);
+		return get_posts( $events_args );
+		wp_reset_postdata();
+	}
+
+	public function format_excerpt($excerpt, $words){
+		$_ = explode(' ', $excerpt); // print_r($_); die;
+		$_ = array_slice($_, 0, $words);
+
+		return implode(' ', $_);
+	}
+
+	public function format_event($event){
+		$meta = array_map( function($el){ return $el[0]; }, get_post_meta( get_the_ID() ));
+		$thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+		$_ = '';
+		$_ .= sprintf('<h4><a href="%s" title="More info: %s">%s</a></h4>', get_the_permalink(), get_the_title(), get_the_title() );
+
+		if ($thumbnail):
+			$_ .= sprintf('<a href="%s" title="More info: %s"><img src="%s" /></a><br />', get_the_permalink(), get_the_title(), $thumbnail );
+		endif;
+
+		$_ .= sprintf('<big><strong>%s</strong></big><br /><strong>%s</strong>-<strong>%s</strong><hr />', get_field('event_date'), get_field('event_time_start'), get_field('event_time_end') );
+
+		$_ .= sprintf('<p>%s...</p>', $this->format_excerpt(get_the_excerpt(), 20) );
+
+		return $_;
+	}
+
+	public function print_events(){
+		global $post;
+		$_ = $this->get_events();
+		if ($_):
+			foreach ( $_ as $post ) : setup_postdata( $post );
+				echo $this->format_event($_);
+			endforeach;
+		endif;
+		// echo $this->debug();
+	}
+
+	public function debug(){
+		echo '<pre>';
+		print_r( $this->get_events() );
+		echo '</pre>';
+	}
+
+}
+
+/*
  * Set up the content width value based on the theme's design.
  *
  * @see twentythirteen_content_width() for template-specific adjustments.

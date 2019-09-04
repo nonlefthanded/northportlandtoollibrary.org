@@ -14,7 +14,21 @@
 if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 	<div id="tertiary" class="sidebar-container" role="complementary">
 		<div class="sidebar-inner">
+
 			<div class="widget-area">
+        <?php 
+          $events = new Events();
+          if ($events->is_upcoming_events() ):
+        ?>
+        <aside class="widget widget_text">
+          <h3 class="widget-title">Events</h3>
+          <div class="textwidget">
+            <?php $events->print_events(); ?>
+          </div>
+        </aside>
+        <?php
+          endif;
+        ?>
 				<?php dynamic_sidebar( 'sidebar-2' ); ?>
 			</div><!-- .widget-area -->
 		</div><!-- .sidebar-inner -->
