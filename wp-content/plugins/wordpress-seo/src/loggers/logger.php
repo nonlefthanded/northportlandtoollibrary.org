@@ -5,7 +5,7 @@
  * @package Yoast\YoastSEO\Loggers
  */
 
-namespace Yoast\WP\Free\Loggers;
+namespace Yoast\WP\SEO\Loggers;
 
 use YoastSEO_Vendor\Psr\Log\LoggerInterface;
 use YoastSEO_Vendor\Psr\Log\LoggerTrait;
@@ -18,6 +18,8 @@ class Logger implements LoggerInterface {
 	use LoggerTrait;
 
 	/**
+	 * The logger object.
+	 *
 	 * @var \YoastSEO_Vendor\Psr\Log\LoggerInterface
 	 */
 	protected $wrapped_logger;
@@ -47,7 +49,7 @@ class Logger implements LoggerInterface {
 	 *
 	 * @return void
 	 */
-	public function log( $level, $message, array $context = array() ) {
+	public function log( $level, $message, array $context = [] ) {
 		$this->wrapped_logger->log( $level, $message, $context );
 	}
 }
