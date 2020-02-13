@@ -38,11 +38,12 @@ class Events{
 	}
 
 	public function get_events(){
-		global $post;
+		// global $post;
+		$how_many = 2;
 		$tomorrow = strftime( "%Y%m%d", time() + (get_option('gmt_offset')*60*60) + (60*60*24) );
 		
 		$events_args = array(  'post_type' => 'events',
-	    'posts_per_page' => -1,
+	    'posts_per_page' => $how_many,
 	    'meta_key' => 'event_date',
 	    'orderby' => 'meta_value',
 	    'order' => 'ASC',
