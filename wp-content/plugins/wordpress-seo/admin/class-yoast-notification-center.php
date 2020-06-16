@@ -424,7 +424,7 @@ class Yoast_Notification_Center {
 		}
 
 		if ( $notification->is_persistent() && $resolve ) {
-			$this->resolved++;
+			++$this->resolved;
 			$this->clear_dismissal( $notification );
 		}
 
@@ -566,6 +566,8 @@ class Yoast_Notification_Center {
 		$notifications = $this->notifications;
 
 		/**
+		 * One array of Yoast_Notifications, merged from multiple arrays.
+		 *
 		 * @var Yoast_Notification[] $merged_notifications
 		 */
 		$merged_notifications = [];

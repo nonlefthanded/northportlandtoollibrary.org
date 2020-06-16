@@ -195,8 +195,8 @@ class WPSEO_Sitemaps_Cache {
 	public static function invalidate_helper( $unused, $type ) {
 
 		if (
-			WPSEO_Options::get( 'noindex-' . $type ) === false ||
-			WPSEO_Options::get( 'noindex-tax-' . $type ) === false
+			WPSEO_Options::get( 'noindex-' . $type ) === false
+			|| WPSEO_Options::get( 'noindex-tax-' . $type ) === false
 		) {
 			self::invalidate( $type );
 		}
@@ -275,12 +275,12 @@ class WPSEO_Sitemaps_Cache {
 		}
 
 		// Always invalidate the index sitemap as well.
-		if ( ! in_array( WPSEO_Sitemaps::SITEMAP_INDEX_TYPE, $types ) ) {
+		if ( ! in_array( WPSEO_Sitemaps::SITEMAP_INDEX_TYPE, $types, true ) ) {
 			array_unshift( $types, WPSEO_Sitemaps::SITEMAP_INDEX_TYPE );
 		}
 
 		foreach ( $types as $type ) {
-			if ( ! in_array( $type, self::$clear_types ) ) {
+			if ( ! in_array( $type, self::$clear_types, true ) ) {
 				self::$clear_types[] = $type;
 			}
 		}

@@ -4,9 +4,9 @@ Donate link: https://yoa.st/1up
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: SEO, XML sitemap, Content analysis, Readability
-Requires at least: 5.2
-Tested up to: 5.3.2
-Stable tag: 13.0
+Requires at least: 5.3
+Tested up to: 5.4.1
+Stable tag: 14.3
 Requires PHP: 5.6.20
 
 Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.
@@ -77,7 +77,7 @@ You should also check out these other products by Yoast:
 
 * **[Yoast Local SEO](https://yoa.st/1uu)** to optimize all website that serve a local audience, like certain small businesses, or businesses with multiple locations.
 * **[Yoast Video SEO](https://yoa.st/1uw)** to make sure Google understands what you video is about, thus increasing your chances to rank in video results.
-* **[Yoast News SEO](https://yoa.st/1uv)** for websites that are in Google News and what to optimize all news articles for the best indexation and ranking.
+* **[Yoast News SEO](https://yoa.st/1uv)** for news publishers who want to improve their visibility and performance in Google News.
 * **[WooCommerce SEO](https://yoa.st/3rh)** for all online shops that want to perform better in search engines and on social platforms.
 
 They work with the FREE version of Yoast SEO already, and these premium extensions of course come with support too.
@@ -131,16 +131,16 @@ The sitemap index and individual sitemaps are updated automatically as you add o
 
 It is straightforward to add your website to Google Search Console. 
 1. Create a Google Search Console account and login into your account.
-1. Click ‘Add a property’ under the search drop-down.
-1. Enter your website URL in the box and click ‘Continue’.
-1. Click the arrow next to ‘HTML tag’ to expand the option.
-1. Copy the meta tag.
-1. Log in to your WordPress website.
-1. Click on ‘SEO’ in the dashboard.
-1. Click on ‘General’.
-1. Click on the ‘Webmaster Tools’ tab.
-1. Paste the code in the Google field and click ‘Save Changes’.
-1. Go back to Google Search Console and click ‘Verify’.
+2. Click ‘Add a property’ under the search drop-down.
+3. Enter your website URL in the box and click ‘Continue’.
+4. Click the arrow next to ‘HTML tag’ to expand the option.
+5. Copy the meta tag.
+6. Log in to your WordPress website.
+7. Click on ‘SEO’ in the dashboard.
+8. Click on ‘General’.
+9. Click on the ‘Webmaster Tools’ tab.
+10. Paste the code in the Google field and click ‘Save Changes’.
+11. Go back to Google Search Console and click ‘Verify’.
 
 If you want more details steps, please visit [our article on our knowledge base](https://yoa.st/3qu).
 
@@ -148,18 +148,18 @@ If you want more details steps, please visit [our article on our knowledge base]
 
 The steps below are a temporary solution as manual edits made to theme files may be overwritten with future theme updates. Please contact the theme developer for a permanent solution. We’ve written an article about the [importance of breadcrumbs for SEO](https://yoa.st/3qv). 
 
-To implement the [breadcrumbs]https://yoa.st/3qw) function in Yoast SEO, you will have to edit your theme. We recommend that prior to any editing of the theme files, a backup is taken. Your host provider can help you take a backup.
+To implement the [breadcrumbs](https://yoa.st/3qw) function in Yoast SEO, you will have to edit your theme. We recommend that prior to any editing of the theme files, a backup is taken. Your host provider can help you take a backup.
 Copy the following code into your theme where you want the breadcrumbs to be. If you are not sure, you will need to experiment with placement:
 
 ```
 <?php
-*if* ( function_exists(‘yoast_breadcrumb’) ) {
-  yoast_breadcrumb( ‘<p id=“breadcrumbs”>’,’</p>’ );
+if ( function_exists( 'yoast_breadcrumb' ) ) {
+    yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 }
 ?>
 ```
 
-Common places where you could place your breadcrumbs are inside your `single.php` and/or `page.php` file just above the page’s title. Another option that makes it really easy in some themes is by just pasting the code in `header.php`at the very end.
+Common places where you could place your breadcrumbs are inside your `single.php` and/or `page.php` file just above the page’s title. Another option that makes it really easy in some themes is by just pasting the code in `header.php` at the very end.
 
 In most non-WooTheme themes, this code snippet should not be added to your `functions.php` file. 
 Alternatively, you can manually add the breadcrumb shortcode to individual posts or pages: `[wpseo_breadcrumb]`
@@ -209,65 +209,33 @@ Your question has most likely been answered on our knowledge base: [kb.yoast.com
 
 == Changelog ==
 
-= 13.0 =
-Release Date: February 4th, 2020
+= 14.3 =
+Release Date: June 9th, 2020
 
-Today, we’re releasing Yoast SEO 13.0. This release is one in a series of releases focusing on improving our code and fixing issues — most of them behind the scenes. Read more about those changes in [our 13.0 release post](https://yoa.st/release-13-0)!
+In every release of Yoast SEO, we fix bugs and find other ways to enhance our code. For instance, we’re always working on quality assurance, code style and other behind the scenes work. In Yoast SEO 14.3, you’ll find many of these improvements plus some bugfixes. Read more about those changes in [our release post](https://yoa.st/release-14-3)!
+
+Bugfixes:
+
+* Fixes a bug where the FAQ schema list item's position would start at 0 instead of 1.
+* Fixes a bug where the filters `wpseo_metadesc` and `wpseo_title` weren't called with the right argument, which could lead to errors.
+* Fixes a bug where our global CSS variables could conflict with global CSS variables of themes.
+
+= 14.2 =
+Release Date: May 26th, 2020
+
+In today's release, we’ve fixed several issues with breadcrumbs. One of these bugs turned the order of breadcrumbs on its head, which is not something we like. Things should work as expected now. We’ve also changed how we check if a focus keyphrase was used before. We currently run this against our indexable table, making the process more efficient. Read more about those changes in [our release post](https://yoa.st/release-14-2)!
+
+Bugfixes:
+
+* Fixes a bug where breadcrumbs would be saved in reversed order.
+* Fixes a bug where setting `Security: no advanced settings for authors` to `off` would remove the advanced settings tab for all users.
+* Fixes a bug where replacement variables would not be replaced when using the deprecated `WPSEO_Frontend` output without echoing it.
+* Fixes a bug where our `select2` styling would overwrite the `select2` styling of other plugins.
+* Fixes a bug where JavaScript could be executed via the error message on the Social section in the Yoast Settings. As this potentially dangerous data is not saved, abusing this was not possible.
 
 Enhancements:
 
-* Hides the Facebook settings when Open Graph is disabled.
-* Adds a success state to the paginated comments Health Check. This means the paginated comments check will also be shown when the paginated comments are set up correctly.
-
-= 12.9.1 =
-Release Date: January 21st, 2020
-
-Bugfixes:
-
-* Fixes a bug where a notification would be shown that Gutenberg was outdated when the latest version of Gutenberg was already installed.
-
-= 12.9 =
-Release Date: January 21st, 2020
-
-Today, we’re releasing Yoast SEO 12.9. In this release, you’ll find a number of bug fixes and enhancements. Among other things, you’ll find a renamed snippet preview with clearer settings. Find out what else is new in [our 12.9 release post](https://yoa.st/release-12-9)!
-
-Other:
-
-* Renames the 'Snippet preview' to 'Google preview'.
-* Replaces the Google preview mode switcher toggle with radio buttons.
-
-= 12.8.1 =
-Release Date: January 15th, 2020
-
-Bugfixes:
-
-* Fixes a bug where the Yoast SEO metabox would not be shown on custom post types and taxonomies when the settings of our plugin were never saved before.
-* Fixes a bug where the default titles for custom post types and taxonomies were not shown in the Search Appearance settings when the settings of our plugin were never saved before.
-
-= 12.8 =
-Release Date: January 7th, 2020
-
-Welcome to another year of helping you achieve your goals with your site! Today, it’s time for the first in a long line of releases planned for 2020: Yoast SEO 12.8. In this release, you’ll find a number of bug fixes and performance enhancements. Find out more about this release in [our 12.8 release post](https://yoa.st/release-12-8)!
-
-Bugfixes:
-
-* Fixes a bug where clicking the notification center buttons would result in an incorrect icon and a misplaced focus style for the dismiss and restore buttons.
-* Fixes a bug where `create` and `update` actions would be done twice on multisite environments in combination with MultilingualPress.
-* Fixes a bug where an empty page title would cause the breadcrumbs schema to set a wrong url.
-* Fixes a bug where author archives for authors without post would show up in the search results, even though the "Show archives for authors without posts in search results?" option was enabled.
-* Fixes a bug where the styling was missing from admin error notices in WordPress 5.3.
-* Fixes a bug where the results of the images alt attribute SEO assessment in the Classic Editor were incorrect when the image did not have an alt attribute but did have a title attribute.
-
-Enhancements:
-
-* Optimizes the options retrieval processes. Props to [Alex Bouma](https://alex.bouma.dev/) for his testing and suggestions.
-* Adds the possibility to declare an identifier when integrating with the Schema output.
-
-Other:
-
-* Fixes the documentation in the Schema HowTo file. Props to [timvaniersel](https://github.com/timvaniersel).
-* Fixes the documentation in the Breadcrumbs file. Props to [alfiosalanitri](https://github.com/alfiosalanitri).
-* Moves the paginated comments notice from the dashboard to WordPress' Site Health screen.
+* Optimizes the query used to check if a focus keyphrase has been previously used, by running it against our indexable table.
 
 = Earlier versions =
 For the changelog of earlier versions, please refer to [the changelog on yoast.com](https://yoa.st/yoast-seo-changelog).
